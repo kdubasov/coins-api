@@ -5,7 +5,7 @@ const MainPage = () => {
 
     return (
         <div>
-            <h1>MainPage</h1>
+            <h3 className="m-3">Главная страница</h3>
 
             <PaginateCoins />
         </div>
