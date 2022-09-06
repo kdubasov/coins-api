@@ -1,5 +1,7 @@
 export const GL_MC_RANK = 'market_cap_rank';
 export const GL_IMAGE = 'image';
+export const GL_NAME = 'name';
+export const GL_SYMBOL = 'symbol';
 export const GL_CUR_PRICE = 'current_price';
 export const GL_CH_PR_1H_PR = 'price_change_percentage_1h_in_currency';
 export const GL_CH_PR_24H_PR = 'price_change_percentage_24h';

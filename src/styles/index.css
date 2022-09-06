@@ -10,3 +10,13 @@
     --black:#000;
     --gray:#555;
 }
+
+.SearchResult{
+    display: block;
+    width: 100%;
+    min-height: 50vh;
+    background: var(--gray);
+    border-radius: 1em;
+    z-index: 10;
+    position: absolute;
+}
