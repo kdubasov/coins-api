@@ -1,0 +1,78 @@
+import React from 'react';
+import {ListGroup} from "react-bootstrap";
+
+const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
+
+    //для того чтобы находились элементы только с именами из запроса
+    const handleSortName = value => value?value[1].filter(elem => (elem.name.toLowerCase()).includes(query.toLowerCase())):false;
+    //для показа не более 10 рез-ов по результатам сортировки по именам
+    const handleSortMaxName = value => value?value.length>10?value.filter((elem,ids) => ids<10):value:false;
+
+    //сортировка для показа не более 10 резульаттов
+    const handleFilterMax = value => value?value[1].length>10?value[1].filter((elem,ids) => ids<10):value[1]:false;
+
+    //проерка на вход данных про монеты или нфт
+    const resCoinNfts = coins||nfts;
+
+    return (
+        <ListGroup.Item>
+            <h3>
+                {
+                    resCoinNfts?
+                        (nfts?nfts[0]:coins[0]).toUpperCase()
+                    :
+                        (exchanges?exchanges[0]:categories[0]).toUpperCase()
+                }
+            </h3>
+            <ListGroup>
+                {
+                    //nft or coin show
+                    resCoinNfts?
+                        (nfts?handleSortMaxName(handleSortName(nfts)):handleFilterMax(coins)).map(elem =>(
+                            <ListGroup.Item action href="#link1" key={elem.id}>
+                                <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
+                                <strong>({elem.symbol})</strong> {elem.name}
+                            </ListGroup.Item>
+                        ))
+                    :
+                        ''
+                }
+
+                {
+                    //exchanges show
+                    exchanges?handleFilterMax(exchanges).map(elem =>(
+                        <ListGroup.Item action href="#link1" key={elem.id}>
+                            <img
+                                src={
+                                    elem['thumb']==='missing_thumb.png'?//если картинки нет там файл missing_thumb.png
+                                        '/images/general-svg/quest.svg':elem['thumb']
+                                }
+                                style={{marginRight:5,maxWidth:25}}
+                                alt={elem.name}
+                            />
+                            {elem.name}
+                        </ListGroup.Item>
+                    )):''
+                }
+
+                {
+                    //categories show
+                    categories?handleSortMaxName(handleSortName(categories)).map(elem =>(
+                        <ListGroup.Item action href="#link1" key={elem.id}>
+                            <img
+                                style={{marginRight:5,maxWidth:25}}
+                                src='/images/general-svg/folder.svg'
+                                alt={elem.name}
+                            />
+                            {elem.name}
+                        </ListGroup.Item>
+                    ))
+                        :
+                    ''
+                }
+            </ListGroup>
+        </ListGroup.Item>
+    );
+};
+
+export default SearchResultInner;
