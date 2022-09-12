@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {ListGroup} from "react-bootstrap";
+import {Button, ListGroup} from "react-bootstrap";
 import SearchResultInner from "./SearchResultInner";
 
-const SearchResult = ({show,query,data}) => {
+const SearchResult = ({show,setShowRes,query,data}) => {
 
     const [dataArrAll,setDataArrAll] = useState([])
     // console.log(data)
@@ -26,6 +26,9 @@ const SearchResult = ({show,query,data}) => {
             className={`SearchResult`}
             style={{display:`${show?'block':'none'}`}}
         >
+            {/*кнопка для закрытия результатов поиска*/}
+            {show? <Button onClick={() =>setShowRes(false)} className={'mb-3'}>Скрыть результаты поиска</Button>:''}
+
             <ListGroup>
                 {!coins?'': <SearchResultInner coins={coins} />}
                 {!nfts?'': <SearchResultInner query={query} nfts={nfts} />}

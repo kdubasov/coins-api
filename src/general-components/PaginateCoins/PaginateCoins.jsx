@@ -10,7 +10,7 @@ const PaginateCoins = () => {
     //paginate
     const [currentPage,setCurrentPage] = useState(1);
     const [sizePage] = useState(20);
-    const [allPages] = useState(Math.ceil(12000/sizePage));
+    const [allPages] = useState(Math.ceil(12500/sizePage));
 
     //data (ADD ERROR CHECK)
     const data = useApi(GLOBAL_API_COIN_LIST_ALL(sizePage,currentPage)).data;

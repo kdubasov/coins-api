@@ -1,5 +1,6 @@
 import React from 'react';
 import {ListGroup} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
 
@@ -29,10 +30,16 @@ const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
                     //nft or coin show
                     resCoinNfts?
                         (nfts?handleSortMaxName(handleSortName(nfts)):handleFilterMax(coins)).map(elem =>(
-                            <ListGroup.Item action href="#link1" key={elem.id}>
-                                <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
-                                <strong>({elem.symbol})</strong> {elem.name}
+                            <Link
+                                key={elem.id}
+                                to={nfts?`/nft/${elem.id}`:`/coins/${elem.id}`}
+                                style={{textDecoration:"none",borderRadius:'.5em'}}
+                            >
+                            <ListGroup.Item action>
+                                    <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
+                                    <strong>({elem.symbol})</strong> {elem.name}
                             </ListGroup.Item>
+                            </Link>
                         ))
                     :
                         ''
@@ -41,31 +48,43 @@ const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
                 {
                     //exchanges show
                     exchanges?handleFilterMax(exchanges).map(elem =>(
-                        <ListGroup.Item action href="#link1" key={elem.id}>
-                            <img
-                                src={
-                                    elem['thumb']==='missing_thumb.png'?//если картинки нет там файл missing_thumb.png
-                                        '/images/general-svg/quest.svg':elem['thumb']
-                                }
-                                style={{marginRight:5,maxWidth:25}}
-                                alt={elem.name}
-                            />
-                            {elem.name}
-                        </ListGroup.Item>
+                        <Link
+                            key={elem.id}
+                            to={`/exchanges/${(elem.id)}`}
+                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                        >
+                            <ListGroup.Item action>
+                                <img
+                                    src={
+                                        elem['thumb']==='missing_thumb.png'?//если картинки нет там файл missing_thumb.png
+                                            '/images/general-svg/quest.svg':elem['thumb']
+                                    }
+                                    style={{marginRight:5,maxWidth:25}}
+                                    alt={elem.name}
+                                />
+                                {elem.name}
+                            </ListGroup.Item>
+                        </Link>
                     )):''
                 }
 
                 {
                     //categories show
                     categories?handleSortMaxName(handleSortName(categories)).map(elem =>(
-                        <ListGroup.Item action href="#link1" key={elem.id}>
-                            <img
-                                style={{marginRight:5,maxWidth:25}}
-                                src='/images/general-svg/folder.svg'
-                                alt={elem.name}
-                            />
-                            {elem.name}
-                        </ListGroup.Item>
+                        <Link
+                            key={elem.id}
+                            to={`/categories/${(elem.name).replace(/[\s/]/g, '')}`}//пробелы и слеши реплейсим
+                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                        >
+                            <ListGroup.Item action>
+                                <img
+                                    style={{marginRight:5,maxWidth:25}}
+                                    src='/images/general-svg/folder.svg'
+                                    alt={elem.name}
+                                />
+                                {elem.name}
+                            </ListGroup.Item>
+                        </Link>
                     ))
                         :
                     ''

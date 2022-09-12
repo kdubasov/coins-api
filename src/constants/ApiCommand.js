@@ -5,7 +5,7 @@ export const GLOBAL_API_COIN_LIST_ALL = (sizePage,currentPage) =>{
 };
 
 export const GLOBAL_API_SEARCH = (query) => {
-    console.log(query)
+    // console.log(query)
     return `/search?query=${query}`
 }
 
