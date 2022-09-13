@@ -5,6 +5,7 @@ import {Pagination, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 
 
+//table with coins
 const PaginateCoins = () => {
 
     //paginate
@@ -14,10 +15,10 @@ const PaginateCoins = () => {
 
     //data (ADD ERROR CHECK)
     const data = useApi(GLOBAL_API_COIN_LIST_ALL(sizePage,currentPage)).data;
-    // console.log(data,'Data for coins (PaginateCoins)');
+    console.log(data,'Data for coins (PaginateCoins)');
 
     return (
-        <div className="m-3">
+        <div className="container">
 
             {/*TABLE FOR COINS*/}
             <Table striped bordered hover>
@@ -25,11 +26,12 @@ const PaginateCoins = () => {
                 <tr>
                     <th>#</th>
                     <th>Название</th>
-                    <th>Актуальная цена</th>
+                    <th>Акт. цена</th>
                     <th>За 1 час</th>
                     <th>За 24 часа</th>
+                    <th>За 7 дней</th>
                     <th>Мин/Макс 24ч</th>
-                    <th>Объем торгов за 24 часа	</th>
+                    <th>Об. торг. 24 часа	</th>
                     <th>Рыночная кап-ция</th>
                 </tr>
                 </thead>

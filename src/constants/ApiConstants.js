@@ -5,6 +5,7 @@ export const GL_SYMBOL = 'symbol';
 export const GL_CUR_PRICE = 'current_price';
 export const GL_CH_PR_1H_PR = 'price_change_percentage_1h_in_currency';
 export const GL_CH_PR_24H_PR = 'price_change_percentage_24h';
+export const GL_CH_PR_7D_PR = 'price_change_percentage_7d_in_currency';
 export const GL_LOW_24H = 'low_24h';
 export const GL_HIGH_24H = 'high_24h';
 export const GL_TT_VOL = 'total_volume';

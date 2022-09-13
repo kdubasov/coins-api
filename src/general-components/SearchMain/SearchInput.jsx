@@ -16,11 +16,11 @@ const SearchInput = () => {
     // console.log(data,'SEARCH DATA')
 
     return (
-        <div className={`SearchInput m-3`}>
+        <div className={`SearchInput container`}>
             <FloatingLabel
                 controlId="floatingInput"
                 label="Поиск по сайту"
-                className="mb-3"
+                className="mb-3 mt-5"
             >
                 <Form.Control
                     value={query}

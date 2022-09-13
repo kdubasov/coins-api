@@ -6,7 +6,6 @@ const MainPage = () => {
 
     return (
         <div>
-            <h3 className="m-3">Главная страница</h3>
             <SearchInput />
             <PaginateCoins />
         </div>

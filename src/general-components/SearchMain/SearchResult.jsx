@@ -29,7 +29,7 @@ const SearchResult = ({show,setShowRes,query,data}) => {
             {/*кнопка для закрытия результатов поиска*/}
             {show? <Button onClick={() =>setShowRes(false)} className={'mb-3'}>Скрыть результаты поиска</Button>:''}
 
-            <ListGroup>
+            <ListGroup style={{width:"100%",marginBottom:"1em"}}>
                 {!coins?'': <SearchResultInner coins={coins} />}
                 {!nfts?'': <SearchResultInner query={query} nfts={nfts} />}
                 {!exchanges?'': <SearchResultInner exchanges={exchanges} />}

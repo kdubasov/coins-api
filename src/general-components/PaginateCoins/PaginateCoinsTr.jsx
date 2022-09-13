@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     GL_CH_PR_1H_PR,
-    GL_CH_PR_24H_PR,
+    GL_CH_PR_24H_PR, GL_CH_PR_7D_PR,
     GL_CUR_PRICE, GL_HIGH_24H,
     GL_IMAGE, GL_LOW_24H,
     GL_MC_RANK, GL_MK,
@@ -38,6 +38,12 @@ const PaginateCoinsTr = ({elem}) => {
             <td style={String(elem[GL_CH_PR_24H_PR]).startsWith('-')?{color:'red'}:{color:'green'}}>
                 {String(elem[GL_CH_PR_24H_PR]).startsWith('-')?'':'+'}
                 {elem[GL_CH_PR_24H_PR] ? String(elem[GL_CH_PR_24H_PR]).slice(0,5) : '?'}%
+            </td>
+
+            {/*price change 7 days*/}
+            <td style={String(elem[GL_CH_PR_7D_PR]).startsWith('-')?{color:'red'}:{color:'green'}}>
+                {String(elem[GL_CH_PR_7D_PR]).startsWith('-')?'':'+'}
+                {elem[GL_CH_PR_7D_PR] ? String(elem[GL_CH_PR_7D_PR]).slice(0,5) : '?'}%
             </td>
 
             {/*min max price 24 hours*/}
