@@ -10,3 +10,4 @@ export const GL_LOW_24H = 'low_24h';
 export const GL_HIGH_24H = 'high_24h';
 export const GL_TT_VOL = 'total_volume';
 export const GL_MK = 'market_cap';
+export const GL_ACT_COINS = 'active_cryptocurrencies';

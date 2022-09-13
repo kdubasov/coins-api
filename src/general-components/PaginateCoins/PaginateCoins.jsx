@@ -1,21 +1,41 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useApi} from "../../functions/useApi";
-import {GLOBAL_API_COIN_LIST_ALL} from "../../constants/ApiCommand";
+import {
+    GLOBAL_API_COIN_LIST_ALL,
+    GLOBAL_API_GLOBAL_COMMAND
+} from "../../constants/ApiCommand";
 import {Pagination, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
+import {GL_ACT_COINS} from "../../constants/ApiConstants";
 
 
 //table with coins
 const PaginateCoins = () => {
 
+    //global data about main changes (ADD ERROR CHECK)
+    const globalData = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
+
     //paginate
     const [currentPage,setCurrentPage] = useState(1);
     const [sizePage] = useState(20);
-    const [allPages] = useState(Math.ceil(12500/sizePage));
+
+    //all paginate pages count
+    const [allPages,setAllPages] = useState(100);
 
     //data (ADD ERROR CHECK)
     const data = useApi(GLOBAL_API_COIN_LIST_ALL(sizePage,currentPage)).data;
-    console.log(data,'Data for coins (PaginateCoins)');
+    // console.log(data,'Data for coins (PaginateCoins)');
+
+
+    useEffect(() =>{
+
+        //for set paginate pages count
+        if (globalData){
+            setAllPages(Math.ceil(globalData[GL_ACT_COINS]/sizePage))
+        }
+
+    },[globalData,sizePage])
+
 
     return (
         <div className="container">
