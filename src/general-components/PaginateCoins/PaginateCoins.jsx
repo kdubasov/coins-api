@@ -7,6 +7,7 @@ import {
 import {Pagination, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../constants/ApiConstants";
+import PaginateSort from "./PaginateSort";
 
 
 //table with coins
@@ -17,21 +18,25 @@ const PaginateCoins = () => {
 
     //paginate
     const [currentPage,setCurrentPage] = useState(1);
-    const [sizePage] = useState(20);
+    const [sizePage] = useState(50);
 
     //all paginate pages count
-    const [allPages,setAllPages] = useState(100);
+    const [allPages,setAllPages] = useState(10000/sizePage);
 
     //data (ADD ERROR CHECK)
     const data = useApi(GLOBAL_API_COIN_LIST_ALL(sizePage,currentPage)).data;
     // console.log(data,'Data for coins (PaginateCoins)');
 
+    const sortCoinsNumsData = hrName =>{
+        console.log(hrName)
+    }
 
     useEffect(() =>{
 
         //for set paginate pages count
         if (globalData){
-            setAllPages(Math.ceil(globalData[GL_ACT_COINS]/sizePage))
+            const dataSort = Math.ceil(globalData[GL_ACT_COINS]/sizePage)
+            setAllPages(dataSort)
         }
 
     },[globalData,sizePage])
@@ -43,17 +48,7 @@ const PaginateCoins = () => {
             {/*TABLE FOR COINS*/}
             <Table striped bordered hover>
                 <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Название</th>
-                    <th>Акт. цена</th>
-                    <th>За 1 час</th>
-                    <th>За 24 часа</th>
-                    <th>За 7 дней</th>
-                    <th>Мин/Макс 24ч</th>
-                    <th>Об. торг. 24 часа	</th>
-                    <th>Рыночная кап-ция</th>
-                </tr>
+                    <PaginateSort sortCoinsNumsData={sortCoinsNumsData} />
                 </thead>
 
                 <tbody>
