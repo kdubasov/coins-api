@@ -7,7 +7,7 @@ import {
 import {Pagination, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../constants/ApiConstants";
-import PaginateSort from "./PaginateSort";
+import PaginateCoinsSort from "./PaginateCoinsSort";
 
 
 //table with coins
@@ -50,7 +50,7 @@ const PaginateCoins = () => {
             {/*TABLE FOR COINS*/}
             <Table striped bordered hover>
                 <thead>
-                    <PaginateSort data={data} setDataSort={setDataSort} />
+                    <PaginateCoinsSort data={data} setDataSort={setDataSort} />
                 </thead>
 
                 <tbody>
