@@ -27,11 +27,13 @@ const PaginateCoins = () => {
     const data = useApi(GLOBAL_API_COIN_LIST_ALL(sizePage,currentPage)).data;
     // console.log(data,'Data for coins (PaginateCoins)');
 
-    const sortCoinsNumsData = hrName =>{
-        console.log(hrName)
-    }
+    //for sort data
+    const [dataSort,setDataSort] = useState(null)
+
 
     useEffect(() =>{
+
+        // console.log(dataSort)
 
         //for set paginate pages count
         if (globalData){
@@ -39,7 +41,7 @@ const PaginateCoins = () => {
             setAllPages(dataSort)
         }
 
-    },[globalData,sizePage])
+    },[globalData,sizePage,dataSort])
 
 
     return (
@@ -48,12 +50,12 @@ const PaginateCoins = () => {
             {/*TABLE FOR COINS*/}
             <Table striped bordered hover>
                 <thead>
-                    <PaginateSort sortCoinsNumsData={sortCoinsNumsData} />
+                    <PaginateSort data={data} setDataSort={setDataSort} />
                 </thead>
 
                 <tbody>
                     {
-                        data.map(elem =>(
+                        (dataSort?dataSort:data).map(elem =>(
                             <PaginateCoinsTr key={elem.id} elem={elem} />
                         ))
                     }
