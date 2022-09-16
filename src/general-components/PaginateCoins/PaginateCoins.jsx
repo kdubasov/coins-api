@@ -15,6 +15,7 @@ const PaginateCoins = () => {
 
     //global data about main changes (ADD ERROR CHECK)
     const globalData = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
+    // console.log(globalData,"GLOBAL DATA DATA")
 
     //paginate
     const [currentPage,setCurrentPage] = useState(1);

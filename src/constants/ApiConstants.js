@@ -1,4 +1,5 @@
 export const GL_MC_RANK = 'market_cap_rank';
+export const GL_TT_MK = 'total_market_cap';
 export const GL_IMAGE = 'image';
 export const GL_NAME = 'name';
 export const GL_SYMBOL = 'symbol';
@@ -11,3 +12,5 @@ export const GL_HIGH_24H = 'high_24h';
 export const GL_TT_VOL = 'total_volume';
 export const GL_MK = 'market_cap';
 export const GL_ACT_COINS = 'active_cryptocurrencies';
+export const GL_CH_ALL_PR = 'market_cap_change_percentage_24h_usd';
+export const GL_MK_PR = 'market_cap_percentage';
