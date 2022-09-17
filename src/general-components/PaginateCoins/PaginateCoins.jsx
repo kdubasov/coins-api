@@ -4,7 +4,7 @@ import {
     GLOBAL_API_COIN_LIST_ALL,
     GLOBAL_API_GLOBAL_COMMAND
 } from "../../constants/ApiCommand";
-import {Pagination, Table} from "react-bootstrap";
+import {Pagination, Spinner, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
@@ -18,7 +18,7 @@ const PaginateCoins = () => {
     // console.log(globalData,"GLOBAL DATA DATA")
 
     //paginate
-    const [currentPage,setCurrentPage] = useState(1);
+    const [currentPage,setCurrentPage] = useState(1);//now page
     const [sizePage] = useState(50);
 
     //all paginate pages count
@@ -49,19 +49,25 @@ const PaginateCoins = () => {
         <div className="container">
 
             {/*TABLE FOR COINS*/}
-            <Table striped bordered hover>
-                <thead>
-                    <PaginateCoinsSort data={data} setDataSort={setDataSort} />
-                </thead>
+            {
+                //check result and show spinner or table with coins
+                Object.keys(data).length?
+                    <Table striped bordered hover>
+                        <thead>
+                        <PaginateCoinsSort data={data} setDataSort={setDataSort} />
+                        </thead>
 
-                <tbody>
-                    {
-                        (dataSort?dataSort:data).map(elem =>(
-                            <PaginateCoinsTr key={elem.id} elem={elem} />
-                        ))
-                    }
-                </tbody>
-            </Table>
+                        <tbody>
+                        {
+                            (dataSort ?? data).map(elem =>(
+                                <PaginateCoinsTr key={elem.id} elem={elem} />
+                            ))
+                        }
+                        </tbody>
+                    </Table>
+                    :
+                    <Spinner animation={"border"} className={'mb-3'} />
+            }
 
             {/*PAGINATION*/}
             <Pagination>

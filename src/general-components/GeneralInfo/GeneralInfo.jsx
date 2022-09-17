@@ -18,8 +18,7 @@ const GeneralInfo = () => {
             let maxCoin = [];
             for (let elem in data) {
                 if (!maxCoin.length || maxCoin[1]<data[elem]){
-                    //обрежем после точки все до двух цифр
-                    maxCoin = [elem,+String(data[elem]).slice(0,String(data[elem]).indexOf('.')+3)]
+                    maxCoin = [elem,data[elem]]
                 }
             }
             return returnValue === 'coin'?maxCoin[0]:maxCoin[1]
@@ -32,19 +31,19 @@ const GeneralInfo = () => {
             <ListGroup horizontal>
                 <ListGroup.Item>
                     Количество монет:
-                    <strong> {data?data[GL_ACT_COINS]:SpinnerSmall}шт.</strong>
+                    <strong> {data?data[GL_ACT_COINS].toLocaleString():SpinnerSmall}шт.</strong>
                 </ListGroup.Item>
 
                 <ListGroup.Item>
                     За 24 часа рынок изменился на:
-                    <strong> {data?String(data[GL_CH_ALL_PR]).slice(0,6):SpinnerSmall}%</strong>
+                    <strong> {data?data[GL_CH_ALL_PR].toLocaleString():SpinnerSmall}%</strong>
                 </ListGroup.Item>
 
                 <ListGroup.Item>
                     Доминирование
                     <strong> {data?getMainCoin(data[GL_MK_PR],'coin'):SpinnerSmall} </strong>
                     по рыночной капитализации:
-                    <strong> {data?getMainCoin(data[GL_MK_PR],'price'):SpinnerSmall}% </strong>
+                    <strong> {data?getMainCoin(data[GL_MK_PR],'price').toLocaleString():SpinnerSmall}% </strong>
                 </ListGroup.Item>
             </ListGroup>
         </div>
