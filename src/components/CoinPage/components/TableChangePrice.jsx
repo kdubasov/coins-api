@@ -7,7 +7,7 @@ import {
 
 const TableChangePrice = ({data}) => {
 
-    console.log(data)
+    // console.log(data)
 
     const tdValue = (command,currency = false) =>{
         if (currency){

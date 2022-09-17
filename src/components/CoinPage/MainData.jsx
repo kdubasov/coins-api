@@ -4,12 +4,13 @@ import {
     GL_CUR_PRICE,
     GL_IMAGE,
     GL_MC_RANK,
-    GL_MD,
+    GL_MD, GL_MD_SPL_7D,
     GL_NAME,
     GL_SYMBOL
 } from "../../constants/ApiConstants";
 import TableMarketData from "./components/TableMarketData";
 import TableChangePrice from "./components/TableChangePrice";
+import Graph from "./components/Graph";
 
 const MainData = ({dataMain}) => {
 
@@ -42,6 +43,9 @@ const MainData = ({dataMain}) => {
 
             {/*change price table*/}
             <TableChangePrice data={dataMain[GL_MD]} />
+
+            {/*graph for one coin*/}
+            <Graph data={dataMain[GL_MD][GL_MD_SPL_7D]} />
 
         </div>
     );

@@ -20,6 +20,7 @@ export const GL_VS_OBR = 'circulating_supply';
 export const GL_FULL_VAL = 'fully_diluted_valuation';
 export const GL_MAX_CNS = 'max_supply';
 export const GL_TT_CNS = 'total_supply';
+export const GL_MD_SPL_7D = 'sparkline_7d';
 
 // for table change price in coin page
 export const GL_CH_PR_CN_1H = 'price_change_percentage_1h_in_currency';
