@@ -33,7 +33,12 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
     const imgArrow = active =>{
         return(
             <img
-                style={active?{transform: 'rotate(180deg)',transition:'.3s'}:{transition:'.3s'}}
+                style={
+                    active?
+                        {transform: 'rotate(180deg)',transition:'.3s',marginLeft:5}
+                        :
+                        {transition:'.3s',marginLeft:5}
+                }
                 width={12}
                 src="/images/general-svg/arrow.svg"
                 alt="arrow"
@@ -50,7 +55,7 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
                 </Button>
             </th>
             <th>
-                <Button>
+                <Button disabled={true}>
                     Название
                 </Button>
             </th>
@@ -62,19 +67,19 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
             </th>
             <th>
                 <Button onClick={() => sortCoinsNumsData(GL_CH_PR_1H_PR,sortCheck[3],3)}>
-                    За 1 час
+                    1ч
                     {imgArrow(sortCheck[3])}
                 </Button>
             </th>
             <th>
                 <Button onClick={() => sortCoinsNumsData(GL_CH_PR_24H_PR,sortCheck[4],4)}>
-                    За 24 часа
+                    24ч
                     {imgArrow(sortCheck[4])}
                 </Button>
             </th>
             <th>
                 <Button onClick={() => sortCoinsNumsData(GL_CH_PR_7D_PR,sortCheck[5],5)}>
-                    За 7 дней
+                    7д
                     {imgArrow(sortCheck[5])}
                 </Button>
             </th>
