@@ -4,13 +4,15 @@ import {
     GL_CH_PR_24H_PR, GL_CH_PR_7D_PR,
     GL_CUR_PRICE, GL_HIGH_24H,
     GL_IMAGE, GL_LOW_24H,
-    GL_MC_RANK, GL_MK,
+    GL_MC_RANK, GL_MD_SPL_IN_7D, GL_MK,
     GL_NAME,
     GL_SYMBOL, GL_TT_VOL
 } from "../../constants/ApiConstants";
 import {Link} from "react-router-dom";
+import PaginateGraph from "./PaginateGraph";
 
 const PaginateCoinsTr = ({elem}) => {
+
     return (
         <tr>
 
@@ -54,6 +56,11 @@ const PaginateCoinsTr = ({elem}) => {
 
             {/*Рыночная кап-ция*/}
             <td>{elem[GL_MK] ? elem[GL_MK].toLocaleString() : '?'}$</td>
+
+            {/*График*/}
+            <td>
+                <PaginateGraph data={elem[GL_MD_SPL_IN_7D]["price"]} />
+            </td>
         </tr>
     );
 };

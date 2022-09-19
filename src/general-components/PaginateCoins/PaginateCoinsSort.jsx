@@ -100,6 +100,9 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
                     {imgArrow(sortCheck[8])}
                 </Button>
             </th>
+            <th>
+                <Button disabled={true}>Последние 7д</Button>
+            </th>
         </tr>
     );
 };

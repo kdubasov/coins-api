@@ -12,7 +12,7 @@ export const GLOBAL_API_SEARCH = (query) => {
 // --- DATA COINS ---
 //for paginate
 export const GLOBAL_API_COIN_LIST_ALL = (sizePage,currentPage) =>{
-    return `/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${sizePage}&page=${currentPage}&price_change_percentage=1h%2C24h%2C7d`
+    return `/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${sizePage}&page=${currentPage}&price_change_percentage=1h%2C24h%2C7d&sparkline=true`
 };
 //for main data of one coins
 export const GLOBAL_API_COIN_ONE_MAIN = id =>{
