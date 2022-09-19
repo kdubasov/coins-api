@@ -23,6 +23,24 @@ export const GL_TT_CNS = 'total_supply';
 export const GL_MD_SPL_7D = 'sparkline_7d';
 export const GL_MD_SPL_IN_7D = 'sparkline_in_7d';
 
+//developer data for one coin
+export const GL_DEV_DATA = 'developer_data';
+export const GL_DEV_STARS = 'stars';
+export const GL_DEV_SUBS = 'subscribers';
+export const GL_CL_ISS = 'closed_issues';
+export const GL_TOT_ISS = 'total_issues';
+export const GL_COMM_4W = 'commit_count_4_weeks';
+export const GL_COMM_GRAPH = 'last_4_weeks_commit_activity_series';
+
+//links
+export const GL_LINKS = 'links';
+export const GL_LINK_BLCKCHN = 'blockchain_site';
+export const GL_LINK_HOMEPAGE = 'homepage';
+export const GL_LINK_OFF_FORUM = 'official_forum_url';
+export const GL_LINK_REDDIT = 'subreddit_url';
+export const GL_LINK_REPOS = 'repos_url'
+export const GL_LINK_GITHUB = 'github';
+
 // for table change price in coin page
 export const GL_CH_PR_CN_1H = 'price_change_percentage_1h_in_currency';
 export const GL_CH_PR_CN_24H = 'price_change_percentage_24h';

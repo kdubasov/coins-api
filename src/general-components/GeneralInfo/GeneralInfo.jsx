@@ -13,6 +13,7 @@ const GeneralInfo = () => {
     //SPINNER!!!!!
     const SpinnerSmall = <Spinner animation="border" size="sm" />;
 
+    //для получения объекта с данными о самой популярной монетке
     const getMainCoin = (data,returnValue) =>{
         if (data){
             let maxCoin = [];

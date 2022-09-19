@@ -22,10 +22,12 @@ const PaginateGraph = ({data}) => {
         getObjectForGraph(data)
     },[data])
 
+    // console.log(dataState)
+
     return (
         <div className={`PaginateGraph`}>
             {
-                dataState[0]?
+                dataState.length?
                     <ResponsiveContainer width="100%" height={22}>
                         <LineChart data={dataState}>
                             <YAxis

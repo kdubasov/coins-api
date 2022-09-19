@@ -1,8 +1,8 @@
 import React from 'react';
 import {Badge} from "react-bootstrap";
 import {
-    GL_CUR_PRICE,
-    GL_IMAGE,
+    GL_CUR_PRICE, GL_DEV_DATA,
+    GL_IMAGE, GL_LINKS,
     GL_MC_RANK,
     GL_MD, GL_MD_SPL_7D,
     GL_NAME,
@@ -11,6 +11,8 @@ import {
 import TableMarketData from "./components/TableMarketData";
 import TableChangePrice from "./components/TableChangePrice";
 import Graph from "./components/Graph";
+import Links from "./components/Links";
+import Developers from "./components/Developers/Developers";
 
 const MainData = ({dataMain}) => {
 
@@ -44,8 +46,18 @@ const MainData = ({dataMain}) => {
             {/*change price table*/}
             <TableChangePrice data={dataMain[GL_MD]} />
 
-            {/*graph for one coin*/}
-            <Graph data={dataMain[GL_MD][GL_MD_SPL_7D]} />
+            {/*graph for one coin (проверим на наличие информации для графика)*/}
+            {
+                dataMain[GL_MD][GL_MD_SPL_7D]["price"].length?
+                    <Graph data={dataMain[GL_MD][GL_MD_SPL_7D]} />
+                    :""
+            }
+
+            {/*links*/}
+            <Links data={dataMain[GL_LINKS]} />
+
+            {/*Developers data*/}
+            <Developers data={dataMain[GL_DEV_DATA]} />
 
         </div>
     );
