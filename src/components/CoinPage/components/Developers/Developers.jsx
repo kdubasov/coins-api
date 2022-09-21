@@ -11,7 +11,18 @@ import DevGraph from "./DevGraph";
 
 const Developers = ({data}) => {
 
-    // console.log(data)
+    // console.log(data,'Developers data')
+
+    //for get list item
+    const getListItem = (value) =>{
+        if (value){
+            return(
+                <ListGroup.Item>
+                    Звезды: <strong>{value}</strong>
+                </ListGroup.Item>
+            )
+        }else return false;
+    }
 
     return (
         <div className={`Developers mt-4 mb-3`}>
@@ -22,25 +33,19 @@ const Developers = ({data}) => {
                             <ListGroup.Item active={true}>Информация о разработке</ListGroup.Item>
                         </ListGroup>
                         <ListGroup horizontal>
-                            <ListGroup.Item>
-                                Звезды: <strong>{data[GL_DEV_STARS]}</strong>
-                            </ListGroup.Item>
-                            <ListGroup.Item>
-                                Подписчики: <strong>{data[GL_DEV_SUBS]}</strong>
-                            </ListGroup.Item>
+                            {getListItem(data[GL_DEV_STARS])}
+                            {getListItem(data[GL_DEV_SUBS])}
                             <ListGroup.Item>
                                 Вопросы (закрытые/всего):
                                 <strong>
                                     {' ' + data[GL_CL_ISS]} / {data[GL_TOT_ISS]}
                                 </strong>
                             </ListGroup.Item>
-                            <ListGroup.Item>
-                                Коммиты 1мес: <strong>{data[GL_COMM_4W]}</strong>
-                            </ListGroup.Item>
+                            {getListItem(data[GL_COMM_4W])}
                         </ListGroup>
 
-                        {
-                            data[GL_COMM_GRAPH].length?
+                        {   //массив все равно будет но с нулями поэтому такая проверка
+                            data[GL_COMM_GRAPH][0] === 0 && data[GL_COMM_GRAPH][1] !== 0?
                                 <DevGraph data={data[GL_COMM_GRAPH]} />
                                 :''
                         }

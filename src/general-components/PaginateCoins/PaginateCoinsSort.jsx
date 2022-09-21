@@ -101,7 +101,7 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
                 </Button>
             </th>
             <th>
-                <Button disabled={true}>Последние 7д</Button>
+                <Button disabled={true}>Последние 24ч</Button>
             </th>
         </tr>
     );
