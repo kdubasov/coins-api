@@ -7,7 +7,6 @@ import {
     GL_LINK_REDDIT,
     GL_LINK_REPOS
 } from "../../../constants/ApiConstants";
-import {Link} from "react-router-dom";
 
 const Links = ({data}) => {
 
@@ -15,7 +14,7 @@ const Links = ({data}) => {
 
     const getLink = url =>{
         return(
-            <Link to={url}>{url}</Link>
+            <a rel={"noreferrer"} target={"_blank"} href={url}>{url}</a>
         )
     }
 
@@ -34,7 +33,7 @@ const Links = ({data}) => {
                         <ListGroup.Item as="li">
                             {getLink(data[GL_LINK_BLCKCHN][0])}
                         </ListGroup.Item>
-                        <ListGroup.Item as="li" disabled>
+                        <ListGroup.Item as="li">
                             {getLink(data[GL_LINK_HOMEPAGE][0])}<br/>
                             {getLink(data[GL_LINK_REPOS][GL_LINK_GITHUB][0])}
                         </ListGroup.Item>

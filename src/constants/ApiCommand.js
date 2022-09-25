@@ -18,3 +18,7 @@ export const GLOBAL_API_COIN_LIST_ALL = (sizePage,currentPage) =>{
 export const GLOBAL_API_COIN_ONE_MAIN = id =>{
     return `/coins/${id}?tickers=false&sparkline=true`
 }
+
+
+//DEFI DATA
+export const GLOBAL_API_DEFI = '/global/decentralized_finance_defi';

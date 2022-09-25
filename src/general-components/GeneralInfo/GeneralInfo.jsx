@@ -36,7 +36,7 @@ const GeneralInfo = () => {
                 </ListGroup.Item>
 
                 <ListGroup.Item>
-                    За 24 часа рынок изменился на:
+                    Изменение рынка за 24ч:
                     <strong> {data?data[GL_CH_ALL_PR].toLocaleString():SpinnerSmall}%</strong>
                 </ListGroup.Item>
 

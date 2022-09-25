@@ -1,16 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PaginateCoins from "../general-components/PaginateCoins/PaginateCoins";
 import SearchInput from "../general-components/SearchMain/SearchInput";
 import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
+import NavbarPaginate from "../components/MainPage/NavbarPaginate/NavbarPaginate";
+import DeFi from "../components/MainPage/DeFi/DeFi";
+import Categories from "../components/MainPage/Categories/Categories";
+import Nft from "../components/MainPage/Nft/Nft";
 
 const MainPage = () => {
 
+    const [navPaginate,setNavPaginate] = useState("coins")
+
     return (
-        <div>
+        <>
             <SearchInput />
             <GeneralInfo />
-            <PaginateCoins />
-        </div>
+
+            <NavbarPaginate
+                navPaginate={navPaginate}
+                setNavPaginate={setNavPaginate}
+            />
+            {navPaginate === "coins" && <PaginateCoins />}
+            {navPaginate === "nft" && <Nft />}
+            {navPaginate === "defi" && <DeFi />}
+            {navPaginate === "categories" && <Categories />}
+        </>
     );
 };
 

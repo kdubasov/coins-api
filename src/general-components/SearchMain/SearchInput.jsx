@@ -20,7 +20,7 @@ const SearchInput = () => {
             <FloatingLabel
                 controlId="floatingInput"
                 label="Поиск по сайту"
-                className="mb-3 mt-5"
+                className="mb-3 mt-3"
             >
                 <Form.Control
                     value={query}

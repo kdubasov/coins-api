@@ -50,3 +50,12 @@ export const GL_CH_PR_CN_30D = 'price_change_percentage_30d';
 export const GL_CH_PR_CN_60D = 'price_change_percentage_60d';
 export const GL_CH_PR_CN_200D = 'price_change_percentage_200d';
 export const GL_CH_PR_CN_1Y = 'price_change_percentage_1y';
+
+//defi
+export const GL_DEFI_DOM = 'defi_dominance';
+export const GL_DEFI_MK = 'defi_market_cap';
+export const GL_DEFI_ETH_RAT = 'defi_to_eth_ratio';
+export const GL_DEFI_ETH_MK = 'eth_market_cap';
+export const GL_DEFI_TOP_COIN_DOM = 'top_coin_defi_dominance';
+export const GL_DEFI_TOP_COIN_NAME = 'top_coin_name';
+export const GL_DEFI_TR_24H = 'trading_volume_24h';
