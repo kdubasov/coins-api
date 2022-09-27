@@ -22,3 +22,8 @@ export const GLOBAL_API_COIN_ONE_MAIN = id =>{
 
 //DEFI DATA
 export const GLOBAL_API_DEFI = '/global/decentralized_finance_defi';
+
+//NFTS LIST
+export const GLOBAL_API_NFTS_LIST_ALL = (sizePage,currentPage) =>{
+    return `/nfts/list?order=h24_volume_native_asc&per_page=${sizePage}&page=${currentPage}`
+}

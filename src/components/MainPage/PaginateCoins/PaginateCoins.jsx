@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {useApi} from "../../functions/useApi";
+import {useApi} from "../../../functions/useApi";
 import {
     GLOBAL_API_COIN_LIST_ALL,
     GLOBAL_API_GLOBAL_COMMAND
-} from "../../constants/ApiCommand";
+} from "../../../constants/ApiCommand";
 import {Pagination, Spinner, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
-import {GL_ACT_COINS} from "../../constants/ApiConstants";
+import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
 
 

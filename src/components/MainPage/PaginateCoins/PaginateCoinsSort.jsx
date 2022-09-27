@@ -7,7 +7,7 @@ import {
     GL_CH_PR_7D_PR,
     GL_TT_VOL,
     GL_MK, GL_MC_RANK
-} from "../../constants/ApiConstants";
+} from "../../../constants/ApiConstants";
 
 const PaginateCoinsSort = ({data,setDataSort}) => {
 

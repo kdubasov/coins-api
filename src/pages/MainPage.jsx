@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import PaginateCoins from "../general-components/PaginateCoins/PaginateCoins";
+import PaginateCoins from "../components/MainPage/PaginateCoins/PaginateCoins";
 import SearchInput from "../general-components/SearchMain/SearchInput";
 import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
 import NavbarPaginate from "../components/MainPage/NavbarPaginate/NavbarPaginate";

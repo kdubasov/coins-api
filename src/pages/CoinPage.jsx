@@ -18,10 +18,7 @@ const CoinPage = () => {
 
             {
                 Object.values(dataMain).length?
-                    <>
-                        <MainData dataMain={dataMain} />
-                    </>
-                    :
+                    <MainData dataMain={dataMain} /> :
                     <Spinner animation={"border"} />
             }
 

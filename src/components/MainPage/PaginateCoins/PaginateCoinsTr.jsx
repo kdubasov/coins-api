@@ -7,7 +7,7 @@ import {
     GL_MC_RANK, GL_MD_SPL_IN_7D, GL_MK,
     GL_NAME,
     GL_SYMBOL, GL_TT_VOL
-} from "../../constants/ApiConstants";
+} from "../../../constants/ApiConstants";
 import {Link} from "react-router-dom";
 import PaginateGraph from "./PaginateGraph";
 

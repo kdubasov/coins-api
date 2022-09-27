@@ -19,7 +19,7 @@ const MainData = ({dataMain}) => {
     // console.log(dataMain,'data for one coin all')
 
     return (
-        <div className={`MainData`}>
+        <div className={`MainData coin`}>
 
             <h5 className={'mt-2 mb-2'}>
                 <Badge>Номер #{dataMain[GL_MC_RANK] ?? '?'}</Badge>
