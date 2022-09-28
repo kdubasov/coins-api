@@ -3,14 +3,17 @@ export const GL_TT_MK = 'total_market_cap';
 export const GL_IMAGE = 'image';
 export const GL_NAME = 'name';
 export const GL_SYMBOL = 'symbol';
+export const GL_DESCRIPT= 'description';
 export const GL_CUR_PRICE = 'current_price';
 export const GL_CH_PR_1H_PR = 'price_change_percentage_1h_in_currency';
 export const GL_CH_PR_24H_PR = 'price_change_percentage_24h';
 export const GL_CH_PR_7D_PR = 'price_change_percentage_7d_in_currency';
+export const GL_VOL_24H = 'volume_24h';
 export const GL_LOW_24H = 'low_24h';
 export const GL_HIGH_24H = 'high_24h';
 export const GL_TT_VOL = 'total_volume';
 export const GL_MK = 'market_cap';
+export const GL_FL_PR = 'floor_price';
 export const GL_MD = 'market_data';
 export const GL_ACT_COINS = 'active_cryptocurrencies';
 export const GL_CH_ALL_PR = 'market_cap_change_percentage_24h_usd';
@@ -59,3 +62,7 @@ export const GL_DEFI_ETH_MK = 'eth_market_cap';
 export const GL_DEFI_TOP_COIN_DOM = 'top_coin_defi_dominance';
 export const GL_DEFI_TOP_COIN_NAME = 'top_coin_name';
 export const GL_DEFI_TR_24H = 'trading_volume_24h';
+
+//nfts
+export const GL_NFT_OWN = 'number_of_unique_addresses';
+export const GL_NFT_NAT_CUR = 'native_currency';
