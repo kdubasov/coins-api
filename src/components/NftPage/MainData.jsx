@@ -9,10 +9,12 @@ import {
     GL_TT_CNS,
     GL_VOL_24H
 } from "../../constants/ApiConstants";
-import {ListGroup} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 const MainData = ({dataMain}) => {
+
+    // console.log(dataMain,'data for one nft')
 
     const getListItem = (title,value) => {
         return (
@@ -31,7 +33,7 @@ const MainData = ({dataMain}) => {
                     src={dataMain[GL_IMAGE]['small' || 'large']}
                     alt={dataMain[GL_NAME]}
                 />
-                {dataMain[GL_NAME]}
+                <Badge>{dataMain[GL_NAME]}</Badge>
             </h4>
             {/*description*/}
             <p className="small">
@@ -50,8 +52,8 @@ const MainData = ({dataMain}) => {
                     Валюта:
                     {
                         dataMain[GL_NFT_NAT_CUR]?
-                            <Link to={`/coins/${dataMain[GL_NFT_NAT_CUR]}`}>
-                                <strong>{dataMain[GL_NFT_NAT_CUR]}</strong>
+                            <Link className={'mx-1'} to={`/coins/${dataMain[GL_NFT_NAT_CUR]}`}>
+                                <Badge>{dataMain[GL_NFT_NAT_CUR]}</Badge>
                             </Link>:'?'
                     }
                 </ListGroup.Item>

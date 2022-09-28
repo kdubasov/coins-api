@@ -1,5 +1,5 @@
 export const GL_MC_RANK = 'market_cap_rank';
-export const GL_TT_MK = 'total_market_cap';
+// export const GL_TT_MK = 'total_market_cap';
 export const GL_IMAGE = 'image';
 export const GL_NAME = 'name';
 export const GL_SYMBOL = 'symbol';
@@ -25,6 +25,7 @@ export const GL_MAX_CNS = 'max_supply';
 export const GL_TT_CNS = 'total_supply';
 export const GL_MD_SPL_7D = 'sparkline_7d';
 export const GL_MD_SPL_IN_7D = 'sparkline_in_7d';
+// export const GL_PR_BTC = 'price_btc';
 
 //developer data for one coin
 export const GL_DEV_DATA = 'developer_data';
