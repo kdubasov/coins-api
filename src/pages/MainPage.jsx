@@ -4,7 +4,7 @@ import SearchInput from "../general-components/SearchMain/SearchInput";
 import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
 import NavbarPaginate from "../components/MainPage/NavbarPaginate/NavbarPaginate";
 import DeFi from "../components/MainPage/DeFi/DeFi";
-import Categories from "../components/MainPage/Categories/Categories";
+import PaginateCategories from "../components/MainPage/PaginateCategories/PaginateCategories";
 import Nft from "../components/MainPage/PaginateNft/Nft";
 import TrendCoins from "../components/TrendCoins/TrendCoins";
 
@@ -24,7 +24,7 @@ const MainPage = () => {
             {navPaginate === "coins" && <PaginateCoins />}
             {navPaginate === "nft" && <Nft />}
             {navPaginate === "defi" && <DeFi />}
-            {navPaginate === "categories" && <Categories />}
+            {navPaginate === "categories" && <PaginateCategories />}
             {navPaginate === "trendCoins" && <TrendCoins />}
         </>
     );
