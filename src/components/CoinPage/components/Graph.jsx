@@ -37,7 +37,7 @@ const Graph = ({data}) => {
             <header className={"mt-4 mb-2"} style={{display:"flex",justifyContent:"space-between"}}>
                 <Button disabled={true}>
                     График изменения цены за
-                    {' ' + (dataObj ?? data).length/24 + 'дн '}
+                    {' ' + Math.round((dataObj ?? data).length/24) + 'дн '}
                     /
                     {' ' + (dataObj ?? data).length + 'ч'}
                 </Button>
