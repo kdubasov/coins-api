@@ -1,13 +1,16 @@
 import React from 'react';
 import {useLastWordPath} from "../functions/useLastWordPath";
+import MainData from "../components/ExchangesPage/MainData";
+import ExchangesCoins from "../components/ExchangesPage/components/ExchangesCoins/ExchangesCoins";
 
 const ExchangesPage = () => {
 
     const exchangeId = useLastWordPath()
 
     return (
-        <div className={`ExchangesPage`}>
-            <h3 className={'m-3'}>{exchangeId}</h3>
+        <div className={`ExchangesPage container py-5`}>
+            <MainData id={exchangeId} />
+            <ExchangesCoins id={exchangeId} />
         </div>
     );
 };

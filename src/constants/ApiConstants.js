@@ -77,3 +77,5 @@ export const GL_EXH_TR_SC = 'trust_score';
 export const GL_EXC_TR_SC_RANK = 'trust_score_rank';
 export const GL_EXH_24H_VOL = 'trade_volume_24h_btc_normalized';
 export const GL_EXC_YEAR = 'year_established';
+export const GL_EXC_CENTR = 'centralized';
+export const GL_COUNTR = 'country';
