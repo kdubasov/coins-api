@@ -19,7 +19,7 @@ const PaginateNft = () => {
     // console.log(data,'NFTS LIST')
 
     return (
-        <div className={`Nft container`}>
+        <div className={`PaginateNft container`}>
             <h3><Badge>NFTS</Badge></h3>
 
             <ListGroup className={`my-2`}>

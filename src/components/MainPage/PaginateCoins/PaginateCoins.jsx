@@ -67,7 +67,7 @@ const PaginateCoins = () => {
                         </tbody>
                     </Table>
                     :
-                    <Spinner animation={"border"} className={'mb-3'} />
+                    <Spinner animation={"border"} variant={"primary"} className={'mb-3'} />
             }
 
             {/*PAGINATION*/}
