@@ -40,3 +40,9 @@ export const GLOBAL_API_CATEGORIES_LIST_IDS = `/coins/categories/list`;
 
 //Top-7 trending coins
 export const GLOBAL_API_TOP_7_COINS = `/search/trending`;
+
+//exchanges
+export const GLOBAL_API_EXCHANGES = (sizePage,currentPage) => `/exchanges?per_page=${sizePage}&page=${currentPage}`;
+export const GLOBAL_API_EXCHANGES_LIST = `/exchanges/list`;
+export const GLOBAL_API_EXCHANGES_ID_DATA = id => `/exchanges/${id}`;
+export const GLOBAL_API_EXCHANGES_ID_TICKERS = id => `/exchanges/${id}/tickers`;

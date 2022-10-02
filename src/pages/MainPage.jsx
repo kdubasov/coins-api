@@ -6,7 +6,8 @@ import NavbarPaginate from "../components/MainPage/NavbarPaginate/NavbarPaginate
 import DeFi from "../components/MainPage/DeFi/DeFi";
 import PaginateCategories from "../components/MainPage/PaginateCategories/PaginateCategories";
 import Nft from "../components/MainPage/PaginateNft/PaginateNft";
-import TrendCoins from "../components/TrendCoins/TrendCoins";
+import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
+import ExchangesPaginate from "../components/MainPage/Exchanges/ExchangesPaginate";
 
 const MainPage = () => {
 
@@ -26,6 +27,7 @@ const MainPage = () => {
             {navPaginate === "defi" && <DeFi />}
             {navPaginate === "categories" && <PaginateCategories />}
             {navPaginate === "trendCoins" && <TrendCoins />}
+            {navPaginate === "exchanges" && <ExchangesPaginate />}
         </>
     );
 };

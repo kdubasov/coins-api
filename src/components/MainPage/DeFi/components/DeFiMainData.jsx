@@ -1,7 +1,7 @@
 import React from 'react';
 import {useApi} from "../../../../functions/useApi";
 import {GLOBAL_API_DEFI} from "../../../../constants/ApiCommand";
-import {ListGroup} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {
     GL_DEFI_DOM,
     GL_DEFI_ETH_MK, GL_DEFI_ETH_RAT, GL_DEFI_MK,
@@ -10,6 +10,7 @@ import {
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 
+
 const DeFiMainData = () => {
 
     const data = useApi(GLOBAL_API_DEFI).data.data;
@@ -17,14 +18,16 @@ const DeFiMainData = () => {
     const getListItem = (text,apiConst,redact,sign) =>{
         return(
             <ListGroup.Item className={'p-3'}>
-                <h5 className={`m-0`}>
+                <Badge bg={"secondary"}>
+                <h6 className={`m-0`}>
                     {
                         redact?
                             getNumRedAfterDoot(data[apiConst],3) + (sign?sign:''):
                             data[apiConst]
                     }
-                </h5>
-                {text}
+                </h6>
+                </Badge>
+                <p>{text}</p>
             </ListGroup.Item>
         )
     }
@@ -40,10 +43,12 @@ const DeFiMainData = () => {
                         {getListItem('Объем торгов за 24 часа',GL_DEFI_MK,true,'$')}
 
                         <ListGroup.Item className={'p-3'}>
-                            <h5 className={'m-0'}>
-                                {data[GL_DEFI_TOP_COIN_NAME]} :
-                                {' ' + getNumRedAfterDoot(data[GL_DEFI_TOP_COIN_DOM],3) + '%'}
-                            </h5>
+                            <Badge bg={"secondary"}>
+                                <h6 className={'m-0'}>
+                                    {data[GL_DEFI_TOP_COIN_NAME]} :
+                                    {' ' + getNumRedAfterDoot(data[GL_DEFI_TOP_COIN_DOM],3) + '%'}
+                                </h6>
+                            </Badge>
                             Доминирование
                         </ListGroup.Item>
                     </ListGroup>
