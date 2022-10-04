@@ -79,3 +79,4 @@ export const GL_EXH_24H_VOL = 'trade_volume_24h_btc_normalized';
 export const GL_EXC_YEAR = 'year_established';
 export const GL_EXC_CENTR = 'centralized';
 export const GL_COUNTR = 'country';
+export const GL_TICKERS = 'tickers';

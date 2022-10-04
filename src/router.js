@@ -6,12 +6,16 @@ import CoinPage from "./pages/CoinPage";
 import NftPage from "./pages/NftPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ExchangesPage from "./pages/ExchangesPage";
+import CheckConnectApi from "./general-components/CheckConnectApi/CheckConnectApi";
 
 const Router = () => {
 
     return (
         <>
             <NavbarTop />
+
+            <CheckConnectApi />
+
             <Routes>
                 <Route path={`/`} element={<MainPage />} />
                 <Route path={'/coins/:coinId'} element={<CoinPage />} />

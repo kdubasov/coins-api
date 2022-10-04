@@ -1,6 +1,4 @@
 import React from 'react';
-import {useApi} from "../../functions/useApi";
-import {GLOBAL_API_EXCHANGES_ID_DATA} from "../../constants/ApiCommand";
 import {Badge, ListGroup} from "react-bootstrap";
 import {
     GL_COUNTR,
@@ -13,10 +11,7 @@ import {
 } from "../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
 
-const MainData = ({id}) => {
-
-    const data = useApi(GLOBAL_API_EXCHANGES_ID_DATA(id)).data;
-    console.log(data)
+const MainData = ({data}) => {
 
     return (
         <div className={`MainData exch`}>
