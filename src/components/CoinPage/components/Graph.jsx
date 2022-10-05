@@ -24,6 +24,18 @@ const Graph = ({data}) => {
         setDataObj(newArr)
     }
 
+    //for get button for sort graph (days/hours)
+    const getButtonTimeInterval = (text,hours) =>{
+        return (
+            <Button
+                style={{marginLeft:5}}
+                onClick={() => getObject(data["price"],hours)}
+            >
+                {text}
+            </Button>
+        )
+    }
+
     useEffect(() =>{
 
         getObject(data["price"])
@@ -42,11 +54,11 @@ const Graph = ({data}) => {
                     {' ' + (dataObj ?? data).length + 'ч'}
                 </Button>
                 <span>
-                    <Button onClick={() => getObject(data["price"],data["price"].length)}>7д</Button>
-                    <Button onClick={() => getObject(data["price"],24 * 3)}>3д</Button>
-                    <Button onClick={() => getObject(data["price"],24)}>24ч</Button>
-                    <Button onClick={() => getObject(data["price"],12)}>12ч</Button>
-                    <Button onClick={() => getObject(data["price"],6)}>6ч</Button>
+                    {getButtonTimeInterval('7д',data["price"].length)}
+                    {getButtonTimeInterval('3д',24*3)}
+                    {getButtonTimeInterval('24ч',24)}
+                    {getButtonTimeInterval('12ч',12)}
+                    {getButtonTimeInterval('6ч',6)}
                 </span>
             </header>
 

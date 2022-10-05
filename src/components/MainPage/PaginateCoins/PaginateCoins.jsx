@@ -4,7 +4,7 @@ import {
     GLOBAL_API_COIN_LIST_ALL,
     GLOBAL_API_GLOBAL_COMMAND
 } from "../../../constants/ApiCommand";
-import {Spinner, Table} from "react-bootstrap";
+import {Badge, Spinner, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
@@ -48,6 +48,12 @@ const PaginateCoins = () => {
 
     return (
         <div className="container">
+
+            <h3 className={'mb-0'}><Badge>Цены криптовалют.</Badge></h3>
+            <p>
+                Ниже представлены все существующие на мировом рынке монеты,
+                ранжированныe по рыночной капитализации.
+            </p>
 
             {/*TABLE FOR COINS*/}
             {

@@ -2,6 +2,8 @@ import React from 'react';
 import {useApi} from "../../../../functions/useApi";
 import {GLOBAL_API_EXCHANGES_ID_TICKERS} from "../../../../constants/ApiCommand";
 import {GL_TICKERS} from "../../../../constants/ApiConstants";
+import {Table} from "react-bootstrap";
+
 
 const ExchangesCoins = ({id,mainData}) => {
 
@@ -13,10 +15,23 @@ const ExchangesCoins = ({id,mainData}) => {
 
     //eslint-disable-next-line
     const showData = dataFromApi || tickersMainData;
+    console.log(showData)
 
     return (
         <div className={`ExchangesCoins`}>
-            <h5>Таблица с тикерс (доделать) <strong>ExchangesCoins</strong></h5>
+            <Table striped bordered hover>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                </tr>
+                </thead>
+            </Table>
         </div>
     );
 };

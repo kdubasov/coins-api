@@ -1,7 +1,7 @@
 import React from 'react';
 import {useApi} from "../../../../functions/useApi";
 import {GLOBAL_API_DEFI} from "../../../../constants/ApiCommand";
-import {Badge, ListGroup} from "react-bootstrap";
+import {Badge, ListGroup, Spinner} from "react-bootstrap";
 import {
     GL_DEFI_DOM,
     GL_DEFI_ETH_MK, GL_DEFI_ETH_RAT, GL_DEFI_MK,
@@ -14,6 +14,7 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 const DeFiMainData = () => {
 
     const data = useApi(GLOBAL_API_DEFI).data.data;
+    // console.log(data,'DeFi data')
 
     const getListItem = (text,apiConst,redact,sign) =>{
         return(
@@ -35,7 +36,7 @@ const DeFiMainData = () => {
     return (
         <div className={`DeFiMainData`}>
             {
-                data &&
+                data ?
                 <>
                     <ListGroup horizontal>
                         {getListItem('Доминирование DeFi на глобальном рынке',GL_DEFI_DOM,true,'%')}
@@ -57,7 +58,8 @@ const DeFiMainData = () => {
                         {getListItem('Соотношение DeFi/ETH',GL_DEFI_ETH_RAT,true,'%')}
                         {getListItem('Объем торгов за 24 часа',GL_DEFI_TR_24H,true,'$')}
                     </ListGroup>
-                </>
+                </>:
+                <Spinner animation={"border"} variant={"primary"} />
             }
         </div>
     );

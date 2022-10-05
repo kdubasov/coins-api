@@ -28,11 +28,11 @@ const PaginateGraph = ({data}) => {
         <div className={`PaginateGraph`}>
             {
                 dataState.length?
-                    <ResponsiveContainer width="100%" height={22}>
+                    <ResponsiveContainer width="100%" height={30}>
                         <LineChart data={dataState}>
                             <YAxis
                                 hide={true}
-                                //тут показываем мин и макс значение рафика
+                                //тут показываем мин и макс значение графика
                                 domain={['dataMin', 'dataMax']}
                             />
 
