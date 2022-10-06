@@ -31,10 +31,14 @@ const ExchangesTickersTr = ({tick,ids}) => {
                 </a>
             </td>
             <td className={`d-flex justify-content-center align-content-center`}>
-                <div style={{width:15,height:15,borderRadius:15,background:tick[GL_EXH_TR_SC]}} />
+                {
+                    tick[GL_EXH_TR_SC]?
+                        <div style={{width:15,height:15,borderRadius:15,background:tick[GL_EXH_TR_SC]}} />:
+                        '-'
+                }
             </td>
             <td>
-                {getNumRedAfterDoot(tick[GL_EXC_TICK_SPR],3) + '%'}
+                {tick[GL_EXC_TICK_SPR]? getNumRedAfterDoot(tick[GL_EXC_TICK_SPR],3) + '%' : '-'}
             </td>
             <td>
                 {getNumRedAfterDoot(tick[GL_VOL],3) + ' ' + tick[GL_EXC_BASE]}

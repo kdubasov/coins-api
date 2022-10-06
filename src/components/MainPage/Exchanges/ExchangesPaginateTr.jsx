@@ -33,7 +33,7 @@ const MyComponent = ({elem}) => {
                     href={elem.url}
                     rel={"noreferrer"}
                     target={"_blank"}>
-                    {elem.url.slice(0,20)+'...'}
+                    {elem.url.slice(8,25)+'...'}
                 </a>
             </td>
             <td>

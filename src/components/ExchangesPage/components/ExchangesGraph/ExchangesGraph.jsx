@@ -9,7 +9,7 @@ const ExchangesGraph = ({id}) => {
     const [dataObjGraph,setDataObjGraph] = useState([])
 
     const data = useApi(GlOBAL_API_EXCHANGES_ID_GRAPH(id)).data;
-    console.log(data,'EXCH GRAPH')
+    // console.log(data,'EXCH GRAPH')
 
     //for get arr with objects for graph
     const getObject = () =>{
@@ -27,7 +27,7 @@ const ExchangesGraph = ({id}) => {
         setDataObjGraph(newArr)
     }
 
-    console.log(dataObjGraph)
+    // console.log(dataObjGraph)
 
     useEffect(() =>{
         getObject()

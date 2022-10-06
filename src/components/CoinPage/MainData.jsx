@@ -1,7 +1,8 @@
 import React from 'react';
 import {Badge} from "react-bootstrap";
 import {
-    GL_CUR_PRICE, GL_DEV_DATA,
+    GL_CH_PR_CN_24H,
+    GL_CUR_PRICE, GL_DESCRIPT, GL_DEV_DATA,
     GL_IMAGE, GL_LINKS,
     GL_MC_RANK,
     GL_MD, GL_MD_SPL_7D,
@@ -13,6 +14,7 @@ import TableChangePrice from "./components/TableChangePrice";
 import Graph from "./components/Graph";
 import Links from "./components/Links";
 import Developers from "./components/Developers/Developers";
+import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
 
 const MainData = ({dataMain}) => {
 
@@ -27,18 +29,29 @@ const MainData = ({dataMain}) => {
 
             <h4 className={'mt-3 mb-3'}>
                 {/* name symbol logo act.price */}
-                <img width={50} style={{marginRight:5}} src={dataMain[GL_IMAGE]['large']} alt=""/>
+                <img width={50} style={{marginRight:5}} src={dataMain[GL_IMAGE]['large']} alt={dataMain[GL_NAME]}/>
                 ({dataMain[GL_SYMBOL].toUpperCase()}) {dataMain[GL_NAME]}
                 <br/>
-                Акт. цена:
                 <strong>
                     {
                         dataMain[GL_MD][GL_CUR_PRICE]["usd"]?
                             dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString():
                             '?'
                     }$
+                    <span style={{fontSize:15,marginLeft:10,color:String(dataMain[GL_MD][GL_CH_PR_CN_24H]).startsWith('-')?'red':'green'}}>
+                        ({String(dataMain[GL_MD][GL_CH_PR_CN_24H]).startsWith('-')?'':'+' + getNumRedAfterDoot(dataMain[GL_MD][GL_CH_PR_CN_24H],3) + '%/24ч'})
+                    </span>
                 </strong>
             </h4>
+
+            {/*description*/}
+            <p className="small">
+                {
+                    dataMain[GL_DESCRIPT]['en']?
+                        dataMain[GL_DESCRIPT]['en'].slice(0,800) + ' ...':
+                        'No description available'
+                }
+            </p>
 
             {/*market-data table*/}
             <TableMarketData data={dataMain[GL_MD]} />
