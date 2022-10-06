@@ -13,6 +13,8 @@ import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
 
 const MainData = ({data}) => {
 
+    console.log(data,'MAIN DATA FOR EXCHANGE')
+
     return (
         <div className={`MainData exch`}>
             {/*header*/}
@@ -31,7 +33,12 @@ const MainData = ({data}) => {
                     <h2 className={`m-0`}>
                         <Badge bg={"success"}>{data[GL_EXH_TR_SC]}</Badge>
                     </h2>
+
                     <p className={`small m-0 w-100 text-center`}>Очков доверия</p>
+
+                    <a href={data["url"]}>
+                        Перейти на оф. сайт
+                    </a>
                 </div>
             </header>
 
@@ -43,7 +50,10 @@ const MainData = ({data}) => {
             <ListGroup horizontal className={'w-100 mb-3'}>
                 <ListGroup.Item>
                     <h5 className="m-0 w-100 text-center">
-                        {getNumRedAfterDoot(data[GL_EXH_24H_VOL],2) + '(btc)'}
+                        {
+                            data[GL_EXH_24H_VOL] &&
+                            getNumRedAfterDoot(data[GL_EXH_24H_VOL],2) + '(btc)'
+                        }
                     </h5>
                     <p className="small m-0 w-100 text-center">Объем торгов за 24 часа</p>
                 </ListGroup.Item>

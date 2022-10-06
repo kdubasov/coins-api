@@ -1,10 +1,11 @@
 import React from 'react';
 import {useLastWordPath} from "../functions/useLastWordPath";
 import MainData from "../components/ExchangesPage/MainData";
-import ExchangesCoins from "../components/ExchangesPage/components/ExchangesCoins/ExchangesCoins";
+import ExchangesTickers from "../components/ExchangesPage/components/ExchangesTickers/ExchangesTickers";
 import {useApi} from "../functions/useApi";
 import {GLOBAL_API_EXCHANGES_ID_DATA} from "../constants/ApiCommand";
 import {Spinner} from "react-bootstrap";
+import ExchangesGraph from "../components/ExchangesPage/components/ExchangesGraph/ExchangesGraph";
 
 const ExchangesPage = () => {
 
@@ -20,7 +21,8 @@ const ExchangesPage = () => {
                 Object.values(mainData).length?
                     <>
                         <MainData data={mainData} />
-                        <ExchangesCoins id={exchangeId} mainData={mainData} />
+                        <ExchangesGraph id={exchangeId} />
+                        <ExchangesTickers id={exchangeId} mainData={mainData} />
                     </>:
                     <Spinner animation={"border"} variant={"primary"} />
             }

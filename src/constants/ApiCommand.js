@@ -26,7 +26,7 @@ export const GLOBAL_API_COINS_SORT_CATEGORIES_LIST = (categ,sizePage,currentPage
 //for main data of one coins
 export const GLOBAL_API_COIN_ONE_MAIN = id =>{
     return `/coins/${id}?tickers=false&sparkline=true`
-}
+};
 
 
 //DEFI DATA
@@ -49,3 +49,4 @@ export const GLOBAL_API_EXCHANGES = (sizePage,currentPage) => `/exchanges?per_pa
 export const GLOBAL_API_EXCHANGES_LIST = `/exchanges/list`;
 export const GLOBAL_API_EXCHANGES_ID_DATA = id => `/exchanges/${id}`;
 export const GLOBAL_API_EXCHANGES_ID_TICKERS = id => `/exchanges/${id}/tickers`;
+export const GlOBAL_API_EXCHANGES_ID_GRAPH = id => `/exchanges/${id}/volume_chart?days=30`;
