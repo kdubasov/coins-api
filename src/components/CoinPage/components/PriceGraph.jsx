@@ -76,15 +76,25 @@ const PriceGraph = ({data}) => {
                     data={dataObj}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
+
                     <YAxis
+                        fontSize={10}
                         width={80}
-                        orientation={"right"}
                         hide={false}
                         //тут показываем мин и макс значение рафика
                         domain={['dataMin', 'dataMax']}
                     />
+
                     <Tooltip />
-                    <Area type="natural" strokeWidth={3} dataKey="price" stroke="#0d6efd" fill="rgba(13, 110, 253, 0.5)" />
+
+                    <defs>
+                        <linearGradient id="gradient-bg" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#0d6efd" stopOpacity={0.7}/>
+                            <stop offset="95%" stopColor="#999" stopOpacity={0}/>
+                        </linearGradient>
+                    </defs>
+
+                    <Area type="monotone" strokeWidth={3} dataKey="price" stroke="#0d6efd" fillOpacity={1} fill="url(#gradient-bg)" />
                 </AreaChart>
             </ResponsiveContainer>
         </>

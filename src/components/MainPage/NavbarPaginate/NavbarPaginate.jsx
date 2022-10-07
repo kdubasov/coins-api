@@ -21,7 +21,7 @@ const NavbarPaginate = ({navPaginate,setNavPaginate}) => {
 
     return (
         <div className={'NavbarPaginate container mb-3 mt-3 d-flex'}>
-            <ButtonGroup>
+            <ButtonGroup size={"sm"}>
                 {getButton("Монеты","coins")}
                 {getButton("Категории","categories")}
                 {getButton("NFT","nft")}

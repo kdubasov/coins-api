@@ -4,20 +4,19 @@ import {
     GL_CUR_PRICE, GL_DESCRIPT, GL_DEV_DATA,
     GL_IMAGE, GL_LINKS,
     GL_MC_RANK,
-    GL_MD, GL_MD_SPL_7D,
+    GL_MD,
     GL_NAME,
     GL_SYMBOL
 } from "../../constants/ApiConstants";
 import TableMarketData from "./components/TableMarketData";
 import TableChangePrice from "./components/TableChangePrice";
-import PriceGraph from "./components/PriceGraph";
 import Links from "./components/Links";
 import Developers from "./components/Developers/Developers";
-import GeneralGraph from "./components/GeneralGraph";
+import GeneralGraph from "./components/GeneralGraph/GeneralGraph";
 
 const MainData = ({dataMain}) => {
 
-    console.log(dataMain,'data for one coin all')
+    // console.log(dataMain,'data for one coin all')
 
     return (
         <div className={`MainData coin`}>
@@ -56,10 +55,10 @@ const MainData = ({dataMain}) => {
             <TableChangePrice data={dataMain[GL_MD]} />
 
             {/*graph for one coin (проверим на наличие информации для графика)*/}
-            {
-                dataMain[GL_MD][GL_MD_SPL_7D]["price"].length &&
-                <PriceGraph data={dataMain[GL_MD][GL_MD_SPL_7D]} />
-            }
+            {/*{*/}
+            {/*    dataMain[GL_MD][GL_MD_SPL_7D]["price"].length &&*/}
+            {/*    <PriceGraph data={dataMain[GL_MD][GL_MD_SPL_7D]} />*/}
+            {/*}*/}
 
             <GeneralGraph id={dataMain.id} />
 

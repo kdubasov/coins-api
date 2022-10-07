@@ -3,6 +3,7 @@ import {Badge} from "react-bootstrap";
 import {useApi} from "../../../../functions/useApi";
 import {GlOBAL_API_EXCHANGES_ID_GRAPH} from "../../../../constants/ApiCommand";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {getGraphDate} from "../../../../functions/getGraphDate";
 
 const ExchangesGraph = ({id}) => {
 
@@ -17,11 +18,8 @@ const ExchangesGraph = ({id}) => {
         //без сортировок
         for (let elem in data){
             newArr.push({
-                date:
-                    new Date(data[elem][0]).getDate() + '.' +
-                    new Date(data[elem][0]).getMonth()+ '.' +
-                    new Date(data[elem][0]).getFullYear(),
-                value:Number(data[elem][1])
+                date:getGraphDate(data[elem][0]),
+                value:Number(String(data[elem][1]).slice(0,String(data[elem][1]).indexOf('.') + 2)),
             })
         }
         setDataObjGraph(newArr)
@@ -44,12 +42,14 @@ const ExchangesGraph = ({id}) => {
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <YAxis
-                        hide={true}
+                        fontSize={10}
+                        width={80}
+                        hide={false}
                         //тут показываем мин и макс значение рафика
                         domain={['dataMin', 'dataMax']}
                     />
                     <Tooltip />
-                    <XAxis dataKey="date" />
+                    <XAxis dataKey="date" fontSize={12} />
                     <Area type="natural" strokeWidth={3} dataKey="value" stroke="#0d6efd" fill="rgba(13, 110, 253, 0.5)" />
                 </AreaChart>
             </ResponsiveContainer>

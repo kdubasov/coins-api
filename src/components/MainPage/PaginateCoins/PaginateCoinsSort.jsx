@@ -49,59 +49,59 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
     return (
         <tr>
             <th>
-                <Button onClick={() => sortCoinsNumsData(GL_MC_RANK,sortCheck[0],0)}>
+                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MC_RANK,sortCheck[0],0)}>
                     #
                     {imgArrow(sortCheck[0])}
                 </Button>
             </th>
             <th>
-                <Button disabled={true}>
+                <Button size={"sm"} disabled={true}>
                     Название
                 </Button>
             </th>
             <th>
-                <Button onClick={() => sortCoinsNumsData(GL_CUR_PRICE,sortCheck[2],2)}>
+                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CUR_PRICE,sortCheck[2],2)}>
                     Акт. цена
                     {imgArrow(sortCheck[2])}
                 </Button>
             </th>
             <th>
-                <Button onClick={() => sortCoinsNumsData(GL_CH_PR_1H_PR,sortCheck[3],3)}>
+                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_1H_PR,sortCheck[3],3)}>
                     1ч
                     {imgArrow(sortCheck[3])}
                 </Button>
             </th>
             <th>
-                <Button onClick={() => sortCoinsNumsData(GL_CH_PR_24H_PR,sortCheck[4],4)}>
+                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_24H_PR,sortCheck[4],4)}>
                     24ч
                     {imgArrow(sortCheck[4])}
                 </Button>
             </th>
             <th>
-                <Button onClick={() => sortCoinsNumsData(GL_CH_PR_7D_PR,sortCheck[5],5)}>
+                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_7D_PR,sortCheck[5],5)}>
                     7д
                     {imgArrow(sortCheck[5])}
                 </Button>
             </th>
             <th>
-                <Button disabled={true}>
+                <Button size={"sm"} disabled={true}>
                     Мин/Макс 24ч
                 </Button>
             </th>
             <th>
-                <Button onClick={() => sortCoinsNumsData(GL_TT_VOL,sortCheck[7],7)}>
+                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_TT_VOL,sortCheck[7],7)}>
                     Об. торг. 24 часа
                     {imgArrow(sortCheck[7])}
                 </Button>
             </th>
             <th>
-                <Button onClick={() => sortCoinsNumsData(GL_MK,sortCheck[8],8)}>
+                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MK,sortCheck[8],8)}>
                     Рыночная кап-ция
                     {imgArrow(sortCheck[8])}
                 </Button>
             </th>
             <th>
-                <Button disabled={true}>Последние 24ч</Button>
+                <Button size={"sm"} disabled={true}>Последние 24ч</Button>
             </th>
         </tr>
     );
