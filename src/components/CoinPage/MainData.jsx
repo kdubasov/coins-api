@@ -1,7 +1,6 @@
 import React from 'react';
 import {Badge} from "react-bootstrap";
 import {
-    GL_CH_PR_CN_24H,
     GL_CUR_PRICE, GL_DESCRIPT, GL_DEV_DATA,
     GL_IMAGE, GL_LINKS,
     GL_MC_RANK,
@@ -11,14 +10,14 @@ import {
 } from "../../constants/ApiConstants";
 import TableMarketData from "./components/TableMarketData";
 import TableChangePrice from "./components/TableChangePrice";
-import Graph from "./components/Graph";
+import PriceGraph from "./components/PriceGraph";
 import Links from "./components/Links";
 import Developers from "./components/Developers/Developers";
-import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
+import GeneralGraph from "./components/GeneralGraph";
 
 const MainData = ({dataMain}) => {
 
-    // console.log(dataMain,'data for one coin all')
+    console.log(dataMain,'data for one coin all')
 
     return (
         <div className={`MainData coin`}>
@@ -35,12 +34,9 @@ const MainData = ({dataMain}) => {
                 <strong>
                     {
                         dataMain[GL_MD][GL_CUR_PRICE]["usd"]?
-                            dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString():
-                            '?'
-                    }$
-                    <span style={{fontSize:15,marginLeft:10,color:String(dataMain[GL_MD][GL_CH_PR_CN_24H]).startsWith('-')?'red':'green'}}>
-                        ({String(dataMain[GL_MD][GL_CH_PR_CN_24H]).startsWith('-')?'':'+' + getNumRedAfterDoot(dataMain[GL_MD][GL_CH_PR_CN_24H],3) + '%/24ч'})
-                    </span>
+                            dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString() + "$":
+                            'Нет информации о цене'
+                    }
                 </strong>
             </h4>
 
@@ -49,7 +45,7 @@ const MainData = ({dataMain}) => {
                 {
                     dataMain[GL_DESCRIPT]['en']?
                         dataMain[GL_DESCRIPT]['en'].slice(0,800) + ' ...':
-                        'No description available'
+                        'Описание отсутствует'
                 }
             </p>
 
@@ -61,10 +57,11 @@ const MainData = ({dataMain}) => {
 
             {/*graph for one coin (проверим на наличие информации для графика)*/}
             {
-                dataMain[GL_MD][GL_MD_SPL_7D]["price"].length?
-                    <Graph data={dataMain[GL_MD][GL_MD_SPL_7D]} />
-                    :""
+                dataMain[GL_MD][GL_MD_SPL_7D]["price"].length &&
+                <PriceGraph data={dataMain[GL_MD][GL_MD_SPL_7D]} />
             }
+
+            <GeneralGraph id={dataMain.id} />
 
             {/*links*/}
             <Links data={dataMain[GL_LINKS]} />
