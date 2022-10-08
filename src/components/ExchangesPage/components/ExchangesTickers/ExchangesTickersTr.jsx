@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    GL_EXC_BASE,
+    GL_EXC_BASE, GL_EXC_CONV_VOL,
     GL_EXC_TICK_SPR,
     GL_EXC_TRD_URL,
     GL_EXH_TR_SC, GL_TRG,
@@ -11,6 +11,7 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 const ExchangesTickersTr = ({tick,ids}) => {
 
     // console.log(tick,'data for one tickers in exchanges')
+    // console.log(Object.entries(tick[GL_EXC_CONV_VOL]))
 
     return (
         <tr>
@@ -42,6 +43,15 @@ const ExchangesTickersTr = ({tick,ids}) => {
             </td>
             <td>
                 {getNumRedAfterDoot(tick[GL_VOL],3) + ' ' + tick[GL_EXC_BASE]}
+            </td>
+            <td>
+                {
+                    Object.entries(tick[GL_EXC_CONV_VOL]).map(elem => (
+                        <p className={"small m-0"}>
+                            <strong>{elem[0]}</strong>: {elem[1]}
+                        </p>
+                    ))
+                }
             </td>
         </tr>
     );

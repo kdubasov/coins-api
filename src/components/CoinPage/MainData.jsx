@@ -13,6 +13,7 @@ import TableChangePrice from "./components/TableChangePrice";
 import Links from "./components/Links";
 import Developers from "./components/Developers/Developers";
 import GeneralGraph from "./components/GeneralGraph/GeneralGraph";
+import DateInfo from "./components/DateInfo/DateInfo";
 
 const MainData = ({dataMain}) => {
 
@@ -51,9 +52,6 @@ const MainData = ({dataMain}) => {
             {/*market-data table*/}
             <TableMarketData data={dataMain[GL_MD]} />
 
-            {/*change price table*/}
-            <TableChangePrice data={dataMain[GL_MD]} />
-
             {/*graph for one coin (проверим на наличие информации для графика)*/}
             {/*{*/}
             {/*    dataMain[GL_MD][GL_MD_SPL_7D]["price"].length &&*/}
@@ -61,6 +59,12 @@ const MainData = ({dataMain}) => {
             {/*}*/}
 
             <GeneralGraph id={dataMain.id} />
+
+            {/*change price table*/}
+            <TableChangePrice data={dataMain[GL_MD]} />
+
+            {/*date info about coin*/}
+            <DateInfo id={dataMain.id} />
 
             {/*links*/}
             <Links data={dataMain[GL_LINKS]} />

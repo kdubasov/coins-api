@@ -86,3 +86,9 @@ export const GL_EXC_CENTR = 'centralized';
 export const GL_COUNTR = 'country';
 export const GL_TICKERS = 'tickers';
 export const GL_EXC_TICK_SPR = 'bid_ask_spread_percentage';
+export const GL_EXC_CONV_VOL = 'converted_volume';
+
+//GENERAL GRAPH
+export const GL_MKS = 'market_caps';
+export const GL_TT_VOLS = 'total_volumes';
+export const GL_PRICES = 'prices';

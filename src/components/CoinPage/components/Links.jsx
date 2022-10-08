@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroup} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {
     GL_LINK_BLCKCHN, GL_LINK_GITHUB,
     GL_LINK_HOMEPAGE,
@@ -19,7 +19,7 @@ const Links = ({data}) => {
     }
 
     return (
-        <ListGroup className={`Links`} as="ul">
+        <ListGroup className={`Links`}>
             {
                 data[GL_LINK_BLCKCHN][0] &&
                 data[GL_LINK_HOMEPAGE][0] &&
@@ -27,9 +27,9 @@ const Links = ({data}) => {
                 data[GL_LINK_OFF_FORUM][0] &&
                 data[GL_LINK_REDDIT] ?
                     <>
-                        <ListGroup.Item as="li" active>
+                        <Badge>
                             Полезные ссылки
-                        </ListGroup.Item>
+                        </Badge>
                         <ListGroup.Item as="li">
                             {getLink(data[GL_LINK_BLCKCHN][0])}
                         </ListGroup.Item>

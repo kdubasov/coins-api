@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroup} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {
     GL_CL_ISS,
     GL_COMM_4W, GL_COMM_GRAPH,
@@ -25,13 +25,11 @@ const Developers = ({data}) => {
     }
 
     return (
-        <div className={`Developers mt-4 mb-3`}>
+        <div className={`Developers my-2`}>
+            <h4><Badge>Информация о разработке</Badge></h4>
             {
                 data?
                     <>
-                        <ListGroup>
-                            <ListGroup.Item active={true}>Информация о разработке</ListGroup.Item>
-                        </ListGroup>
                         <ListGroup horizontal>
                             {getListItem(data[GL_DEV_STARS])}
                             {getListItem(data[GL_DEV_SUBS])}

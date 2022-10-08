@@ -3,9 +3,19 @@ import {useApi} from "../../../../functions/useApi";
 import {GLOBAL_API_COIN_MARKET_CHART} from "../../../../constants/ApiCommand";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 import {Alert, Badge} from "react-bootstrap";
-import {Brush, Line, LineChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {
+    Brush,
+    Line,
+    LineChart,
+    CartesianGrid,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis,
+} from "recharts";
 import {getGraphDate} from "../../../../functions/getGraphDate";
 import GeneralGraphHeader from "./GeneralGraphHeader";
+import {GL_MKS, GL_PRICES, GL_TT_VOLS} from "../../../../constants/ApiConstants";
 
 
 const GeneralGraph = ({id}) => {
@@ -21,9 +31,9 @@ const GeneralGraph = ({id}) => {
     //main data
     const data = useApi(GLOBAL_API_COIN_MARKET_CHART(id,timeInterval)).data;
     //categories for data
-    const dataMarketCaps = data['market_caps'];
-    const dataVolumes = data['total_volumes'];
-    const dataPrices = data['prices'];
+    const dataMarketCaps = data[GL_MKS];
+    const dataVolumes = data[GL_TT_VOLS];
+    const dataPrices = data[GL_PRICES];
 
     //get redact num price
     const getRedactNum = num =>{
@@ -60,6 +70,7 @@ const GeneralGraph = ({id}) => {
             </h4>
 
             <GeneralGraphHeader
+                timeInterval={timeInterval}
                 setTimeInterval={setTimeInterval}
                 getObjectGraph={getObjectGraph}
                 dataMarketCaps={dataMarketCaps}
@@ -82,10 +93,10 @@ const GeneralGraph = ({id}) => {
                         //тут показываем мин и макс значение рафика
                         domain={['dataMin', 'dataMax']}
                     />
-                    <Tooltip cursor={{ stroke: 'red', strokeWidth: 1 }}  />
+                    <Tooltip cursor={{ stroke: 'red', strokeWidth: 1, }} />
                     <XAxis dataKey="date" fontSize={12} />
                     <Line dot={false} type="natural" strokeWidth={2} dataKey="value" stroke="#0d6efd" strokeDasharray="4 2" />
-                    <Brush height={25}/>
+                    <Brush height={20}/>
                 </LineChart>
             </ResponsiveContainer>
         </div>

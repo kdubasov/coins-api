@@ -25,6 +25,8 @@ export const GLOBAL_API_COIN_MARKET_CHART = (id,days) =>{
 export const GLOBAL_API_COINS_SORT_CATEGORIES_LIST = (categ,sizePage,currentPage) =>{
     return `/coins/markets?vs_currency=usd&category=${categ}&order=market_cap_desc&per_page=${sizePage}&page=${currentPage}&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
 };
+//COINS HISTORY
+export const GLOBAL_API_COINS_HISTORY = (id,date) => `/coins/${id}/history?date=${date}`
 
 
 //for main data of one coins
@@ -52,5 +54,5 @@ export const GLOBAL_API_TOP_7_COINS = `/search/trending`;
 export const GLOBAL_API_EXCHANGES = (sizePage,currentPage) => `/exchanges?per_page=${sizePage}&page=${currentPage}`;
 export const GLOBAL_API_EXCHANGES_LIST = `/exchanges/list`;
 export const GLOBAL_API_EXCHANGES_ID_DATA = id => `/exchanges/${id}`;
-export const GLOBAL_API_EXCHANGES_ID_TICKERS = id => `/exchanges/${id}/tickers`;
+export const GLOBAL_API_EXCHANGES_ID_TICKERS = id => `/exchanges/${id}/tickers?include_exchange_logo=true&page=1&depth=true`;
 export const GlOBAL_API_EXCHANGES_ID_GRAPH = id => `/exchanges/${id}/volume_chart?days=30`;

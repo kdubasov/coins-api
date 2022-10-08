@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, ButtonGroup} from "react-bootstrap";
 
 const GeneralGraphHeader = ({
-    setTimeInterval,getObjectGraph,
+    setTimeInterval,getObjectGraph,timeInterval,
     dataVolumes,dataPrices,dataMarketCaps
 }) => {
     return (
@@ -14,15 +14,15 @@ const GeneralGraphHeader = ({
             </ButtonGroup>
 
             <ButtonGroup size={"sm"}>
-                <Button onClick={() => setTimeInterval(1/24)}>1h</Button>
-                <Button onClick={() => setTimeInterval(6/24)}>6h</Button>
-                <Button onClick={() => setTimeInterval(12/24)}>12h</Button>
-                <Button onClick={() => setTimeInterval(24/24)}>24h</Button>
-                <Button onClick={() => setTimeInterval(7)}>7d</Button>
-                <Button onClick={() => setTimeInterval(30)}>30d</Button>
-                <Button onClick={() => setTimeInterval(180)}>6m</Button>
-                <Button onClick={() => setTimeInterval(365)}>1y</Button>
-                <Button onClick={() => setTimeInterval('max')}>Max</Button>
+                <Button disabled={timeInterval===1/24} onClick={() => setTimeInterval(1/24)}>1h</Button>
+                <Button disabled={timeInterval===6/24} onClick={() => setTimeInterval(6/24)}>6h</Button>
+                <Button disabled={timeInterval===12/24} onClick={() => setTimeInterval(12/24)}>12h</Button>
+                <Button disabled={timeInterval===24/24} onClick={() => setTimeInterval(24/24)}>24h</Button>
+                <Button disabled={timeInterval===7} onClick={() => setTimeInterval(7)}>7d</Button>
+                <Button disabled={timeInterval===30} onClick={() => setTimeInterval(30)}>30d</Button>
+                <Button disabled={timeInterval===180} onClick={() => setTimeInterval(180)}>6m</Button>
+                <Button disabled={timeInterval===365} onClick={() => setTimeInterval(365)}>1y</Button>
+                <Button disabled={timeInterval>365} onClick={() => setTimeInterval('max')}>Max</Button>
             </ButtonGroup>
         </header>
     );

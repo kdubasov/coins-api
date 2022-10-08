@@ -8,11 +8,11 @@ import ExchangesTickersTr from "./ExchangesTickersTr";
 
 const ExchangesTickers = ({id,mainData}) => {
 
-    const dataFromApi = useApi(GLOBAL_API_EXCHANGES_ID_TICKERS(id))['data'][GL_TICKERS];
-    // console.log(dataFromApi,'GLOBAL_API_EXCHANGES_ID_TICKERS')
+    const dataFromApi = useApi(GLOBAL_API_EXCHANGES_ID_TICKERS(id)).data[GL_TICKERS];
+    // console.log(dataFromApi,'GLOBAL_API_EXCHANGES_ID_TICKERS');
 
     const tickersMainData = mainData[GL_TICKERS];
-    // console.log(tickersMainData,'tickersMainData exch')
+    // console.log(tickersMainData,'tickersMainData exch');
 
     //eslint-disable-next-line
     const showData = dataFromApi || tickersMainData;
@@ -26,8 +26,9 @@ const ExchangesTickers = ({id,mainData}) => {
                         <th>Монета</th>
                         <th>Ссылка</th>
                         <th>Доверие</th>
-                        <th>Spread</th>
+                        <th>Спред</th>
                         <th>Объем торгов за 24 часа</th>
+                        <th>Преобразованный объем</th>
                     </tr>
                 </thead>
 
