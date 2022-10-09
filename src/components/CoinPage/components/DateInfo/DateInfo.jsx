@@ -22,7 +22,7 @@ const DateInfo = ({id}) => {
 
     //data from api
     const data = useApi(GLOBAL_API_COINS_HISTORY(id,date)).data;
-    console.log(data,'GLOBAL_API_COINS_HISTORY');
+    // console.log(data,'GLOBAL_API_COINS_HISTORY');
 
     //ref for input with date
     const inpurRef = useRef();

@@ -14,6 +14,7 @@ import Links from "./components/Links";
 import Developers from "./components/Developers/Developers";
 import GeneralGraph from "./components/GeneralGraph/GeneralGraph";
 import DateInfo from "./components/DateInfo/DateInfo";
+import TickersTable from "./components/TickersTable/TickersTable";
 
 const MainData = ({dataMain}) => {
 
@@ -71,6 +72,8 @@ const MainData = ({dataMain}) => {
 
             {/*Developers data*/}
             <Developers data={dataMain[GL_DEV_DATA]} />
+
+            <TickersTable id={dataMain.id} />
 
         </div>
     );

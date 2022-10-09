@@ -27,6 +27,8 @@ export const GLOBAL_API_COINS_SORT_CATEGORIES_LIST = (categ,sizePage,currentPage
 };
 //COINS HISTORY
 export const GLOBAL_API_COINS_HISTORY = (id,date) => `/coins/${id}/history?date=${date}`
+//COINS TICKERS
+export const GLOBAL_API_COINS_TICKERS = id => `/coins/${id}/tickers?include_exchange_logo=true&page=1&depth=true`;
 
 
 //for main data of one coins

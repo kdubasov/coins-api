@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    FL_ECH_COIN_ID, FL_ECH_TG_COIN_ID,
     GL_EXC_BASE, GL_EXC_CONV_VOL,
     GL_EXC_TICK_SPR,
     GL_EXC_TRD_URL,
@@ -7,6 +8,7 @@ import {
     GL_VOL
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
+import {Link} from "react-router-dom";
 
 const ExchangesTickersTr = ({tick,ids}) => {
 
@@ -17,7 +19,13 @@ const ExchangesTickersTr = ({tick,ids}) => {
         <tr>
             <td>{ids + 1}</td>
             <td>
-                {tick[GL_EXC_BASE]} / {tick[GL_TRG]}
+                <Link to={`/coins/${tick[FL_ECH_COIN_ID]}`}>
+                    {tick[GL_EXC_BASE]}
+                </Link>
+                /
+                <Link to={`/coins/${tick[FL_ECH_TG_COIN_ID]}`}>
+                    {tick[GL_TRG]}
+                </Link>
             </td>
             <td>
                 <a
@@ -46,8 +54,8 @@ const ExchangesTickersTr = ({tick,ids}) => {
             </td>
             <td>
                 {
-                    Object.entries(tick[GL_EXC_CONV_VOL]).map(elem => (
-                        <p className={"small m-0"}>
+                    Object.entries(tick[GL_EXC_CONV_VOL]).map((elem,ids) => (
+                        <p key={ids} className={"small m-0"}>
                             <strong>{elem[0]}</strong>: {elem[1]}
                         </p>
                     ))

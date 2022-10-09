@@ -1,5 +1,7 @@
 export const GL_MC_RANK = 'market_cap_rank';
 // export const GL_TT_MK = 'total_market_cap';
+export const GL_IDENT = 'identifier';
+export const GL_LOGO = 'logo';
 export const GL_IMAGE = 'image';
 export const GL_NAME = 'name';
 export const GL_SYMBOL = 'symbol';
@@ -14,6 +16,7 @@ export const GL_VOL = 'volume';
 export const GL_LOW_24H = 'low_24h';
 export const GL_HIGH_24H = 'high_24h';
 export const GL_TT_VOL = 'total_volume';
+export const GL_MKT = 'market';
 export const GL_MK = 'market_cap';
 export const GL_FL_PR = 'floor_price';
 export const GL_MD = 'market_data';
@@ -33,6 +36,7 @@ export const GL_MD_SPL_IN_7D = 'sparkline_in_7d';
 //developer data for one coin
 export const GL_DEV_DATA = 'developer_data';
 export const GL_DEV_STARS = 'stars';
+export const GL_DEV_FORKS = 'forks';
 export const GL_DEV_SUBS = 'subscribers';
 export const GL_CL_ISS = 'closed_issues';
 export const GL_TOT_ISS = 'total_issues';
@@ -87,6 +91,8 @@ export const GL_COUNTR = 'country';
 export const GL_TICKERS = 'tickers';
 export const GL_EXC_TICK_SPR = 'bid_ask_spread_percentage';
 export const GL_EXC_CONV_VOL = 'converted_volume';
+export const FL_ECH_COIN_ID = 'coin_id';
+export const FL_ECH_TG_COIN_ID = 'target_coin_id';
 
 //GENERAL GRAPH
 export const GL_MKS = 'market_caps';
