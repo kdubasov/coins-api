@@ -11,7 +11,8 @@ import DevGraph from "./DevGraph";
 
 const Developers = ({data}) => {
 
-    // console.log(data,'Developers data')
+    // console.log(data,'Developers data');
+    // console.log( data[GL_COMM_GRAPH],'DevGraph data');
 
     //for get list item
     const getListItem = (value,text) =>{
@@ -25,7 +26,7 @@ const Developers = ({data}) => {
     }
 
     return (
-        <div className={`Developers my-2`}>
+        <div className={`Developers my-3 p-3 border`}>
             <h4><Badge>Информация о разработке</Badge></h4>
             {
                 data?

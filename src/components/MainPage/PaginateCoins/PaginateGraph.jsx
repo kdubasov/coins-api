@@ -48,7 +48,7 @@ const PaginateGraph = ({data}) => {
                         </LineChart>
                     </ResponsiveContainer>
                     :
-                    <Spinner size={"sm"} animation={'border'} />
+                    <Spinner size={"sm"} animation={'border'} variant={"primary"} />
             }
         </div>
     );

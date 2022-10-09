@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useLastWordPath} from "../functions/useLastWordPath";
 import {useApi} from "../functions/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_IDS, GLOBAL_API_COINS_SORT_CATEGORIES_LIST} from "../constants/ApiCommand";
-import {Badge, Spinner, Table} from "react-bootstrap";
+import {Alert, Badge, Spinner, Table} from "react-bootstrap";
 import PaginateCoinsSort from "../components/MainPage/PaginateCoins/PaginateCoinsSort";
 import PaginateCoinsTr from "../components/MainPage/PaginateCoins/PaginateCoinsTr";
 import {GL_NAME} from "../constants/ApiConstants";
@@ -44,6 +44,14 @@ const CategoriesPage = () => {
 
     return (
         <div className={`CategoriesPage container`}>
+
+            {
+                !getIdAndName() &&
+                <Alert className={'my-3 small'}>
+                    Информация о данной категории не найдена,
+                    попробуйте позже или сообщите о проблеме в поддержку
+                </Alert>
+            }
 
             <h3 className={'mt-5 mb-0'}>
                 Категория: <Badge>{getIdAndName() && getIdAndName()[GL_NAME]}</Badge>
