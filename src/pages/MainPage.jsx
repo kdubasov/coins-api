@@ -8,6 +8,7 @@ import PaginateCategories from "../components/MainPage/PaginateCategories/Pagina
 import Nft from "../components/MainPage/PaginateNft/PaginateNft";
 import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
 import ExchangesPaginate from "../components/MainPage/Exchanges/ExchangesPaginate";
+import TopLoseCoins from "../components/MainPage/TableTopLoseCoins/TopLoseCoins";
 
 const MainPage = () => {
 
@@ -22,12 +23,14 @@ const MainPage = () => {
                 navPaginate={navPaginate}
                 setNavPaginate={setNavPaginate}
             />
+
             {navPaginate === "coins" && <PaginateCoins />}
             {navPaginate === "nft" && <Nft />}
             {navPaginate === "defi" && <DeFi />}
             {navPaginate === "categories" && <PaginateCategories />}
             {navPaginate === "trendCoins" && <TrendCoins />}
             {navPaginate === "exchanges" && <ExchangesPaginate />}
+            {navPaginate === "topLoseCoins" && <TopLoseCoins />}
         </>
     );
 };

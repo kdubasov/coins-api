@@ -99,3 +99,4 @@ export const FL_ECH_TG_COIN_ID = 'target_coin_id';
 export const GL_MKS = 'market_caps';
 export const GL_TT_VOLS = 'total_volumes';
 export const GL_PRICES = 'prices';
+export const GL_LAST_TR = 'last_traded_at';

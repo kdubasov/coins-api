@@ -28,6 +28,7 @@ const NavbarPaginate = ({navPaginate,setNavPaginate}) => {
                 {getButton("DeFi","defi")}
                 {getButton("Топ монет","trendCoins")}
                 {getButton("Биржи","exchanges")}
+                {getButton("Лучшие/худшие монеты","topLoseCoins")}
             </ButtonGroup>
         </div>
     );
