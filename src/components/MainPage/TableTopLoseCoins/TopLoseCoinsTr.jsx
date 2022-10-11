@@ -6,6 +6,7 @@ import {
     GL_NAME,
     GL_SYMBOL, GL_TT_VOL
 } from "../../../constants/ApiConstants";
+import {Badge} from "react-bootstrap";
 
 const TopLoseCoinsTr = ({selectSort,elem}) => {
     return (
@@ -25,9 +26,11 @@ const TopLoseCoinsTr = ({selectSort,elem}) => {
             <td>{elem[GL_TT_VOL] ? elem[GL_TT_VOL].toLocaleString() : '?'}$</td>
 
             {/*price change 24 hours*/}
-            <td style={String(elem[selectSort]).startsWith('-')?{color:'red'}:{color:'green'}}>
-                {String(elem[selectSort]).startsWith('-')?'':'+'}
-                {elem[selectSort] ? String(elem[selectSort]).slice(0,5) : '?'}%
+            <td>
+                <Badge pill bg={String(elem[selectSort]).startsWith('-')?'danger':'success'}>
+                    {String(elem[selectSort]).startsWith('-')?'':'+'}
+                    {elem[selectSort] ? String(elem[selectSort]).slice(0,5) : '?'}%
+                </Badge>
             </td>
         </tr>
     );

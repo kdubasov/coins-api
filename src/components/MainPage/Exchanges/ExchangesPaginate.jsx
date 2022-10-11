@@ -21,7 +21,7 @@ const ExchangesPaginate = () => {
 
     return (
         <div className={`ExchangesPaginate container`}>
-            <h3><Badge>Exchanges</Badge></h3>
+            <h3><Badge>Список бирж</Badge></h3>
 
             {
                 //check result and show spinner or table with coins

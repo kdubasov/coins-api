@@ -19,7 +19,7 @@ const TopLoseCoins = () => {
     const getOption = (value,text) =>{
         return (
             <option
-                selected={selectSort === value}
+                // selected={selectSort === value}
                 value={value}
             >
                 {text}

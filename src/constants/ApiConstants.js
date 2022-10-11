@@ -17,7 +17,9 @@ export const GL_LOW_24H = 'low_24h';
 export const GL_HIGH_24H = 'high_24h';
 export const GL_TT_VOL = 'total_volume';
 export const GL_MKT = 'market';
+export const GL_MKTS = 'markets';
 export const GL_MK = 'market_cap';
+export const GL_TT_MK = 'total_market_cap';
 export const GL_FL_PR = 'floor_price';
 export const GL_MD = 'market_data';
 export const GL_ACT_COINS = 'active_cryptocurrencies';
@@ -75,6 +77,7 @@ export const GL_DEFI_TR_24H = 'trading_volume_24h';
 //nfts
 export const GL_NFT_OWN = 'number_of_unique_addresses';
 export const GL_NFT_NAT_CUR = 'native_currency';
+export const GL_NFT_PERSENT_24H = 'floor_price_in_usd_24h_percentage_change';
 
 //categories
 export const GL_CAT_TOP_3 = 'top_3_coins';

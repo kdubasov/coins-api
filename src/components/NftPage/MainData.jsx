@@ -1,12 +1,8 @@
 import React from 'react';
 import {
-    GL_DESCRIPT,
-    GL_FL_PR,
-    GL_IMAGE,
-    GL_MK,
-    GL_NAME, GL_NFT_NAT_CUR,
-    GL_NFT_OWN,
-    GL_TT_CNS,
+    GL_DESCRIPT, GL_FL_PR, GL_IMAGE,
+    GL_MK, GL_NAME, GL_NFT_PERSENT_24H,
+    GL_NFT_NAT_CUR, GL_NFT_OWN, GL_TT_CNS,
     GL_VOL_24H
 } from "../../constants/ApiConstants";
 import {Badge, ListGroup} from "react-bootstrap";
@@ -14,7 +10,7 @@ import {Link} from "react-router-dom";
 
 const MainData = ({dataMain}) => {
 
-    // console.log(dataMain,'data for one nft')
+    console.log(dataMain,'data for one nft');
 
     const getListItem = (title,value) => {
         return (
@@ -26,15 +22,27 @@ const MainData = ({dataMain}) => {
 
     return (
         <div className={`MainData nft`}>
-            <h4 className={'mt-3 mb-3'}>
+            <p className={'mt-3 mb-3 small d-flex align-items-center'}>
                 <img
                     width={100}
                     style={{marginRight:15,borderRadius:5}}
-                    src={dataMain[GL_IMAGE]['small' || 'large']}
+                    src={dataMain[GL_IMAGE]['large'] || dataMain[GL_IMAGE]['small']}
                     alt={dataMain[GL_NAME]}
                 />
-                <Badge>{dataMain[GL_NAME]}</Badge>
-            </h4>
+                <span>
+                    <Badge style={{fontSize:18}}>{dataMain[GL_NAME]}</Badge>
+                    {
+                        dataMain[GL_NFT_PERSENT_24H] &&
+                        <p
+                            style={String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-')?{color:'red'}:{color:'green'}}
+                            className={'m-0 fw-bold'}
+                        >
+                            {String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-')?'':'+'}
+                            {dataMain[GL_NFT_PERSENT_24H] + '% (24ч)'}
+                        </p>
+                    }
+                </span>
+            </p>
             {/*description*/}
             <p className="small">
                 {dataMain[GL_DESCRIPT] || '?'}

@@ -2,13 +2,13 @@ import React from 'react';
 import {useApi} from "../../functions/useApi";
 import {GLOBAL_API_GLOBAL_COMMAND} from "../../constants/ApiCommand";
 import {ListGroup, Spinner} from "react-bootstrap";
-import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR} from "../../constants/ApiConstants";
+import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../constants/ApiConstants";
 
 const GeneralInfo = () => {
 
     //data
     const data = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
-    // console.log(data,"GLOBAL DATA IN GeneralInfo.jsx")
+    // console.log(data,"GLOBAL DATA IN GeneralInfo.jsx");
 
     //SPINNER!!!!!
     const SpinnerSmall = <Spinner animation="border" size="sm" />;
@@ -45,6 +45,16 @@ const GeneralInfo = () => {
                     <strong> {data?getMainCoin(data[GL_MK_PR],'coin'):SpinnerSmall} </strong>
                     по рыночной капитализации:
                     <strong> {data?getMainCoin(data[GL_MK_PR],'price').toLocaleString():SpinnerSmall}% </strong>
+                </ListGroup.Item>
+
+                <ListGroup.Item>
+                    Общая рыночная капитализация:
+                    <strong> {data?data[GL_TT_MK]['usd'].toLocaleString() + '$':SpinnerSmall} </strong>
+                </ListGroup.Item>
+
+                <ListGroup.Item>
+                    Кол-во бирж:
+                    <strong> {data?data[GL_MKTS]:SpinnerSmall} </strong>
                 </ListGroup.Item>
             </ListGroup>
         </div>

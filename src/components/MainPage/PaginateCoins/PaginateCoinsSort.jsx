@@ -90,18 +90,18 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_TT_VOL,sortCheck[7],7)}>
-                    Об. торг. 24 часа
+                    Об. торг. 24ч
                     {imgArrow(sortCheck[7])}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MK,sortCheck[8],8)}>
-                    Рыночная кап-ция
+                    Рын. кап-ция
                     {imgArrow(sortCheck[8])}
                 </Button>
             </th>
             <th>
-                <Button size={"sm"} disabled={true}>Последние 24ч</Button>
+                <Button size={"sm"} disabled={true}>График 24ч</Button>
             </th>
         </tr>
     );
