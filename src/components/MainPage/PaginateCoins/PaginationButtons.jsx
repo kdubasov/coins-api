@@ -3,7 +3,7 @@ import {Pagination} from "react-bootstrap";
 
 const MyComponent = ({currentPage,setCurrentPage,allPages}) => {
     return (
-        <Pagination>
+        <Pagination size={"sm"}>
             <Pagination.Prev
                 disabled={currentPage===1}
                 onClick={() => setCurrentPage(currentPage -1)}

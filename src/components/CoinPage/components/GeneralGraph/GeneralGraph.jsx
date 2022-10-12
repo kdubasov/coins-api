@@ -5,8 +5,8 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 import {Alert, Badge} from "react-bootstrap";
 import {
     Brush,
-    Line,
-    LineChart,
+    Area,
+    AreaChart,
     CartesianGrid,
     ResponsiveContainer,
     Tooltip,
@@ -25,11 +25,15 @@ const GeneralGraph = ({id}) => {
     // above 90 days from current time = daily data (00:00 UTC)
 
     const [showValue,setShowValue] = useState([])
-    //interval for fetch from api
+    // console.log(showValue)
+
+    //interval for fetch from api (default = 1day)
     const [timeInterval,setTimeInterval] = useState(1)
 
     //main data
     const data = useApi(GLOBAL_API_COIN_MARKET_CHART(id,timeInterval)).data;
+    // console.log(data,'GLOBAL_API_COIN_MARKET_CHART');
+
     //categories for data
     const dataMarketCaps = data[GL_MKS];
     const dataVolumes = data[GL_TT_VOLS];
@@ -37,10 +41,10 @@ const GeneralGraph = ({id}) => {
 
     //get redact num price
     const getRedactNum = num =>{
-        if (num < 3){
-            return getNumRedAfterDoot(num,6).replace(/,/g,'')
+        if (Number(num) < 3){
+            return getNumRedAfterDoot(num,6).split(/\s+/).join('').replace(',','.')
         }else {
-            return getNumRedAfterDoot(num,3).replace(/,/g,'')
+            return getNumRedAfterDoot(num,3).split(/\s+/).join('').replace(',','.')
         }
     };
 
@@ -50,7 +54,7 @@ const GeneralGraph = ({id}) => {
         for (let elem in arr){
             newArr.push({
                 date:getGraphDate(arr[elem][0]),
-                value:getRedactNum(arr[elem][1])
+                value:Number(getRedactNum(arr[elem][1])),
             })
         }
         setShowValue(newArr)
@@ -81,9 +85,15 @@ const GeneralGraph = ({id}) => {
             {showValue.length <= 1 && <Alert>Информация пока не обновилась или отсутствует, попробуйте позже.</Alert>}
 
             <ResponsiveContainer className={'mt-3 mb-3'} width="100%" height={400}>
-                <LineChart
+                <AreaChart
                     data={showValue}
                 >
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#0d6efd" stopOpacity={1}/>
+                            <stop offset="95%" stopColor="#0d6efd" stopOpacity={0}/>
+                        </linearGradient>
+                    </defs>
                     <CartesianGrid strokeDasharray="5 5" />
                     <YAxis
                         fontSize={12}
@@ -95,9 +105,9 @@ const GeneralGraph = ({id}) => {
                     />
                     <Tooltip cursor={{ stroke: 'red', strokeWidth: 1, }} />
                     <XAxis dataKey="date" fontSize={12} />
-                    <Line dot={false} type="natural" strokeWidth={2} dataKey="value" stroke="#0d6efd" strokeDasharray="4 2" />
+                    <Area dot={false} type="natural" strokeWidth={2} dataKey="value" fill="url(#gradient)" stroke="#0d6efd" strokeDasharray="4 2" />
                     <Brush height={20}/>
-                </LineChart>
+                </AreaChart>
             </ResponsiveContainer>
         </div>
     );
