@@ -11,6 +11,10 @@
     --gray:#555;
 }
 
+p,button,a,td{
+    font-size: 10px !important;
+}
+
 .SearchResult{
     display: block;
     width: 100%;

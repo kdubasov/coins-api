@@ -29,6 +29,7 @@ const ExchangesTickers = ({id,mainData}) => {
                         <th>Спред</th>
                         <th>Объем торгов за 24 часа</th>
                         <th>Преобразованный объем</th>
+                        <th>Последняя сделка</th>
                     </tr>
                 </thead>
 

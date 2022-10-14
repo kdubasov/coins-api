@@ -40,9 +40,7 @@ const PaginateGraph = ({data}) => {
                                 dot={false}
                                 type="natural"
                                 dataKey="x"
-                                stroke={
-                                    (dataState[0]["x"]) >= (dataState[dataState.length - 1]["x"]) ? "red" : "green"
-                                }
+                                stroke={(dataState[0]["x"]) >= (dataState[dataState.length - 1]["x"]) ? "red" : "green"}
                                 strokeWidth={2}
                             />
                         </LineChart>

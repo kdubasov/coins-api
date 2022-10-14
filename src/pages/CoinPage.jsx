@@ -8,10 +8,10 @@ import {Spinner} from "react-bootstrap";
 const CoinPage = () => {
 
     //coin id from path
-    const coindId = useLastWordPath()
+    const coindId = useLastWordPath();
 
     //main data od coin
-    const dataMain = useApi(GLOBAL_API_COIN_ONE_MAIN(coindId)).data
+    const dataMain = useApi(GLOBAL_API_COIN_ONE_MAIN(coindId)).data;
 
     return (
         <div className={`CoinPage container pt-3 pb-3`}>

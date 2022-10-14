@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useApi} from "../../../../functions/useApi";
 import {GLOBAL_API_COINS_TICKERS} from "../../../../constants/ApiCommand";
 import {GL_TICKERS} from "../../../../constants/ApiConstants";
-import {Spinner, Table} from "react-bootstrap";
+import {Badge, Spinner, Table} from "react-bootstrap";
 import TickersTableTr from "./TickersTableTr";
 import TickersTableShowMore from "./TickersTableShowMore";
 
@@ -15,6 +15,7 @@ const TickersTable = ({id}) => {
 
     return (
         <div className={'TickersTable'}>
+            <h4><Badge>Рынки:</Badge></h4>
             {
                 data?
                     <>
@@ -39,7 +40,7 @@ const TickersTable = ({id}) => {
                             ))}
                             </tbody>
                         </Table>
-                        <TickersTableShowMore showMore={showMore} setShowMore={setShowMore} />
+                        {Object.values(data).length>=50 && <TickersTableShowMore showMore={showMore} setShowMore={setShowMore} />}
                     </>:
                     <Spinner animation={"border"} variant={"primary"} />
             }

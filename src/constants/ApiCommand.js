@@ -33,7 +33,7 @@ export const GLOBAL_API_COINS_TICKERS = id => `/coins/${id}/tickers?include_exch
 
 //for main data of one coins
 export const GLOBAL_API_COIN_ONE_MAIN = id =>{
-    return `/coins/${id}?tickers=false&sparkline=true`
+    return `/coins/${id}?localization=true&tickers=false&market_data=true&sparkline=true`
 };
 
 

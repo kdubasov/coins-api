@@ -13,7 +13,7 @@ import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
 
 const MainData = ({data}) => {
 
-    console.log(data,'MAIN DATA FOR EXCHANGE')
+    // console.log(data,'MAIN DATA FOR EXCHANGE');
 
     return (
         <div className={`MainData exch`}>

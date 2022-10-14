@@ -4,7 +4,7 @@ import {
     GL_EXC_BASE, GL_EXC_CONV_VOL,
     GL_EXC_TICK_SPR,
     GL_EXC_TRD_URL,
-    GL_EXH_TR_SC, GL_TRG,
+    GL_EXH_TR_SC, GL_LAST_TR, GL_TRG,
     GL_VOL
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
@@ -59,6 +59,13 @@ const ExchangesTickersTr = ({tick,ids}) => {
                             <strong>{elem[0]}</strong>: {elem[1]}
                         </p>
                     ))
+                }
+            </td>
+            <td>
+                {
+                    tick[GL_LAST_TR]?
+                        Number(tick[GL_LAST_TR].slice(8,10)) === Number(new Date().getDate()) ? 'Недавно' : 'Более дня назад'
+                        :'?'
                 }
             </td>
         </tr>

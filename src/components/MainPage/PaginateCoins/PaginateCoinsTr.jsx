@@ -58,7 +58,7 @@ const PaginateCoinsTr = ({elem}) => {
             <td>{elem[GL_MK] ? elem[GL_MK].toLocaleString() : '?'}$</td>
 
             {/*График*/}
-            <td>
+            <td width={180}>
                 <PaginateGraph data={elem[GL_MD_SPL_IN_7D]["price"]} />
             </td>
         </tr>

@@ -15,6 +15,7 @@ import Developers from "./components/Developers/Developers";
 import GeneralGraph from "./components/GeneralGraph/GeneralGraph";
 import DateInfo from "./components/DateInfo/DateInfo";
 import TickersTable from "./components/TickersTable/TickersTable";
+import CoinConverter from "./components/CoinСonverter/CoinСonverter";
 
 const MainData = ({dataMain}) => {
 
@@ -72,6 +73,8 @@ const MainData = ({dataMain}) => {
 
             {/*Developers data*/}
             <Developers data={dataMain[GL_DEV_DATA]} />
+
+            <CoinConverter symbol={dataMain[GL_SYMBOL].toUpperCase()} data={dataMain[GL_MD][GL_CUR_PRICE]} />
 
             <TickersTable id={dataMain.id} />
 
