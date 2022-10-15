@@ -7,6 +7,7 @@ import NftPage from "./pages/NftPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ExchangesPage from "./pages/ExchangesPage";
 import CheckConnectApi from "./general-components/CheckConnectApi/CheckConnectApi";
+import DerivativePage from "./pages/DerivativePage";
 
 const Router = () => {
 
@@ -22,6 +23,7 @@ const Router = () => {
                 <Route path={'/nft/:nftId'} element={<NftPage />} />
                 <Route path={'/categories/:categoryId'} element={<CategoriesPage />} />
                 <Route path={'/exchanges/:exchangeId'} element={<ExchangesPage />} />
+                <Route path={'/derivatives/:exchangeId'} element={<DerivativePage />} />
             </Routes>
         </>
     );

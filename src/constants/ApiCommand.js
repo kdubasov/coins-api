@@ -29,13 +29,11 @@ export const GLOBAL_API_COINS_SORT_CATEGORIES_LIST = (categ,sizePage,currentPage
 export const GLOBAL_API_COINS_HISTORY = (id,date) => `/coins/${id}/history?date=${date}`
 //COINS TICKERS
 export const GLOBAL_API_COINS_TICKERS = id => `/coins/${id}/tickers?include_exchange_logo=true&page=1&depth=true`;
-
-
 //for main data of one coins
 export const GLOBAL_API_COIN_ONE_MAIN = id =>{
     return `/coins/${id}?localization=true&tickers=false&market_data=true&sparkline=true`
 };
-
+// --- DATA COINS END ---
 
 //DEFI DATA
 export const GLOBAL_API_DEFI = `/global/decentralized_finance_defi`;
@@ -57,4 +55,9 @@ export const GLOBAL_API_EXCHANGES = (sizePage,currentPage) => `/exchanges?per_pa
 export const GLOBAL_API_EXCHANGES_LIST = `/exchanges/list`;
 export const GLOBAL_API_EXCHANGES_ID_DATA = id => `/exchanges/${id}`;
 export const GLOBAL_API_EXCHANGES_ID_TICKERS = id => `/exchanges/${id}/tickers?include_exchange_logo=true&page=1&depth=true`;
-export const GlOBAL_API_EXCHANGES_ID_GRAPH = id => `/exchanges/${id}/volume_chart?days=30`;
+export const GlOBAL_API_EXCHANGES_ID_GRAPH = (id,days) => `/exchanges/${id}/volume_chart?days=${days}`;
+
+//Derivatives
+export const GLOBAL_API_DERIVATIVES_LIST = '/derivatives/exchanges/list';
+export const GLOBAL_API_DERIVATIVES = (sizePage,currentPage) => `/derivatives/exchanges?per_page=${sizePage}&page=${currentPage}`;
+export const GLOBAL_API_DERIVATIVE_ONE = id => `/derivatives/exchanges/${id}?include_tickers=all`

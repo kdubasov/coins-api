@@ -1,16 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import {Badge} from "react-bootstrap";
+import {Alert, Badge} from "react-bootstrap";
 import {useApi} from "../../../../functions/useApi";
 import {GlOBAL_API_EXCHANGES_ID_GRAPH} from "../../../../constants/ApiCommand";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {getGraphDate} from "../../../../functions/getGraphDate";
+import ExchangesGraphSelect from "./ExchangesGraphSelect";
 
 const ExchangesGraph = ({id}) => {
 
-    const [dataObjGraph,setDataObjGraph] = useState([])
+    const [dataObjGraph,setDataObjGraph] = useState([]);
 
-    const data = useApi(GlOBAL_API_EXCHANGES_ID_GRAPH(id)).data;
-    // console.log(data,'EXCH GRAPH')
+    const [daysShow,setDaysShow] = useState(1);
+
+    const data = useApi(GlOBAL_API_EXCHANGES_ID_GRAPH(id,daysShow)).data;
+    // console.log(data,'EXCH GRAPH');
 
     //for get arr with objects for graph
     const getObject = () =>{
@@ -25,7 +28,7 @@ const ExchangesGraph = ({id}) => {
         setDataObjGraph(newArr)
     }
 
-    // console.log(dataObjGraph)
+    console.log(dataObjGraph)
 
     useEffect(() =>{
         getObject()
@@ -34,7 +37,18 @@ const ExchangesGraph = ({id}) => {
 
     return (
         <div className={`ExchangesGraph pt-4 pb-5`}>
-            <Badge>График изменения рыночной капитализации биржи</Badge>
+            <Badge className={'d-flex align-items-center'}>
+                График изменения рыночной капитализации биржи за
+                <ExchangesGraphSelect daysShow={daysShow} setDaysShow={setDaysShow} />
+            </Badge>
+
+            {//check data for graph
+                dataObjGraph.length &&
+                (!dataObjGraph[0].value && !dataObjGraph[1].value) &&
+                <Alert className={'small mt-3 p-2'}>
+                    Данные об изменения рыночной капитализации для данной биржи не найдены, попробуйте позже.
+                </Alert>
+            }
 
             <ResponsiveContainer className={'mt-3 mb-3'} width="100%" height={250}>
                 <AreaChart
@@ -50,7 +64,7 @@ const ExchangesGraph = ({id}) => {
                     />
                     <Tooltip />
                     <XAxis dataKey="date" fontSize={12} />
-                    <Area type="natural" strokeWidth={3} dataKey="value" stroke="#0d6efd" fill="rgba(13, 110, 253, 0.5)" />
+                    <Area type="natural" strokeWidth={2} dataKey="value" stroke="#0d6efd" fill="rgba(13, 110, 253, 0.5)" />
                 </AreaChart>
             </ResponsiveContainer>
         </div>

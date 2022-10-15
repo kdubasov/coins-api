@@ -1,6 +1,7 @@
 export const GL_MC_RANK = 'market_cap_rank';
 // export const GL_TT_MK = 'total_market_cap';
 export const GL_IDENT = 'identifier';
+export const GL_URL = 'url';
 export const GL_LOGO = 'logo';
 export const GL_IMAGE = 'image';
 export const GL_NAME = 'name';
@@ -103,3 +104,9 @@ export const GL_MKS = 'market_caps';
 export const GL_TT_VOLS = 'total_volumes';
 export const GL_PRICES = 'prices';
 export const GL_LAST_TR = 'last_traded_at';
+
+//Derivatives
+export const GL_OP_INT_BTC = 'open_interest_btc';
+export const GL_DEFI_TR_24H_BTC = 'trade_volume_24h_btc';
+export const GL_FUT_PAIRS = 'number_of_futures_pairs';
+export const GL_PER_PAIRS = 'number_of_perpetual_pairs';

@@ -9,6 +9,7 @@ import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
 import ExchangesPaginate from "../components/MainPage/Exchanges/ExchangesPaginate";
 import TopLoseCoins from "../components/MainPage/TableTopLoseCoins/TopLoseCoins";
 import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
+import PaginateDerivatives from "../components/MainPage/PaginateDerivatives/PaginateDerivatives";
 
 const MainPage = () => {
 
@@ -31,6 +32,7 @@ const MainPage = () => {
             {navPaginate === "trendCoins" && <TrendCoins />}
             {navPaginate === "exchanges" && <ExchangesPaginate />}
             {navPaginate === "topLoseCoins" && <TopLoseCoins />}
+            {navPaginate === "derivatives" && <PaginateDerivatives />}
         </>
     );
 };

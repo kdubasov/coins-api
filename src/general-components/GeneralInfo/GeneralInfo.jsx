@@ -31,8 +31,13 @@ const GeneralInfo = () => {
         <div className={'GeneralInfo container mt-3 mb-3'}>
             <ListGroup horizontal>
                 <ListGroup.Item>
-                    Количество монет:
+                    Кол-во монет:
                     <strong> {data?data[GL_ACT_COINS].toLocaleString():SpinnerSmall}шт.</strong>
+                </ListGroup.Item>
+
+                <ListGroup.Item>
+                    Кол-во бирж:
+                    <strong> {data?data[GL_MKTS]:SpinnerSmall} </strong>
                 </ListGroup.Item>
 
                 <ListGroup.Item>
@@ -50,11 +55,6 @@ const GeneralInfo = () => {
                 <ListGroup.Item>
                     Общая рыночная капитализация:
                     <strong> {data?data[GL_TT_MK]['usd'].toLocaleString() + '$':SpinnerSmall} </strong>
-                </ListGroup.Item>
-
-                <ListGroup.Item>
-                    Кол-во бирж:
-                    <strong> {data?data[GL_MKTS]:SpinnerSmall} </strong>
                 </ListGroup.Item>
             </ListGroup>
         </div>

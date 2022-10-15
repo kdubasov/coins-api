@@ -30,7 +30,7 @@ const TopLoseCoins = () => {
     return (
         <div className={'TopLoseCoins container'}>
             <h3 className={'m-0'}><Badge>Топ лучших/худших монет.</Badge></h3>
-            <p className={'small mb-4'}>
+            <p className={'mb-4'}>
                 Рейтинг популярных монет, которые максимально выросли/упали в цене за 24 часа.
             </p>
 
