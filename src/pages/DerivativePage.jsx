@@ -12,7 +12,7 @@ const DerivativePage = () => {
     const derivativeId = useLastWordPath();
 
     const mainData = useApi(GLOBAL_API_DERIVATIVE_ONE(derivativeId)).data;
-    console.log(mainData,'DerivativePage');
+    // console.log(mainData,'DerivativePage');
 
     return (
         <div className={`Derivative container`}>

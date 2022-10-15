@@ -28,7 +28,7 @@ const ExchangesGraph = ({id}) => {
         setDataObjGraph(newArr)
     }
 
-    console.log(dataObjGraph)
+    // console.log(dataObjGraph,'ExchangesGraph')
 
     useEffect(() =>{
         getObject()
