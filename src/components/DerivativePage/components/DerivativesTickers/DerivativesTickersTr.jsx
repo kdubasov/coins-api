@@ -8,6 +8,7 @@ import {
     GL_TRG
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
+import {Badge} from "react-bootstrap";
 
 const DerivativesTickersTr = ({ids,tick}) => {
 
@@ -24,15 +25,27 @@ const DerivativesTickersTr = ({ids,tick}) => {
             {/*Индексная цена*/}
             <td>{tick[GL_IND] ? tick[GL_IND]+'$' : '-'}</td>
             {/*24ч*/}
-            <td>{tick[GL_PER_DEL_TICK] + '%'}</td>
+            <td>
+                <Badge pill bg={String(tick[GL_PER_DEL_TICK]).startsWith('-')?"danger":"success"}>
+                    {tick[GL_PER_DEL_TICK] + '%'}
+                </Badge>
+            </td>
             {/*Об. торгов 24ч*/}
             <td>{getNumRedAfterDoot(tick[GL_PER_H24_VOL],3) + '$'}</td>
             {/*Спред*/}
             <td>{tick[GL_EXC_SPR] && getNumRedAfterDoot(tick[GL_EXC_SPR],5) + '%'}</td>
             {/*Базис*/}
-            <td>{tick[GL_BAS_PERS] ? tick[GL_BAS_PERS] + '%' : '-'}</td>
+            <td>
+                <Badge pill bg={String(tick[GL_BAS_PERS]).startsWith('-')?"danger":"success"}>
+                    {tick[GL_BAS_PERS] ? tick[GL_BAS_PERS] + '%' : '-'}
+                </Badge>
+            </td>
             {/*Ставка финансирования*/}
-            <td>{Number(tick[GL_FUND_RATE]) ? tick[GL_FUND_RATE] : '-'}</td>
+            <td>
+                <Badge pill bg={String(tick[GL_FUND_RATE]).startsWith('-')?"danger":"success"}>
+                    {Number(tick[GL_FUND_RATE]) ? tick[GL_FUND_RATE] + '%' : '-'}
+                </Badge>
+            </td>
             {/*Сумма открытых позиций*/}
             <td>
                 {Number(tick[GL_OP_INT_USD]) ? getNumRedAfterDoot(tick[GL_OP_INT_USD],2) + '$' : '-'}

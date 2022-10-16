@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 
 const MainData = ({dataMain}) => {
 
-    console.log(dataMain,'data for one nft');
+    // console.log(dataMain,'data for one nft');
 
     const getListItem = (title,value) => {
         return (
@@ -29,17 +29,17 @@ const MainData = ({dataMain}) => {
                     src={dataMain[GL_IMAGE]['large'] || dataMain[GL_IMAGE]['small']}
                     alt={dataMain[GL_NAME]}
                 />
-                <span>
+                <span className={'d-flex flex-column'}>
                     <Badge style={{fontSize:18}}>{dataMain[GL_NAME]}</Badge>
                     {
                         dataMain[GL_NFT_PERSENT_24H] &&
-                        <p
+                        <span
                             style={String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-')?{color:'red'}:{color:'green'}}
                             className={'m-0 fw-bold'}
                         >
                             {String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-')?'':'+'}
                             {dataMain[GL_NFT_PERSENT_24H] + '% (24ч)'}
-                        </p>
+                        </span>
                     }
                 </span>
             </p>
