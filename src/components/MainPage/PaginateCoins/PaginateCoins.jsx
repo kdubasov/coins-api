@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useApi} from "../../../functions/useApi";
+import {useApi} from "../../../hooks/useApi";
 import {
     GLOBAL_API_COIN_LIST_ALL,
     GLOBAL_API_GLOBAL_COMMAND

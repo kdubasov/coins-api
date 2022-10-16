@@ -1,5 +1,5 @@
 import React from 'react';
-import {useApi} from "../../../functions/useApi";
+import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_DERIVATIVES} from "../../../constants/ApiCommand";
 import {Badge, Spinner} from "react-bootstrap";
 import PaginateDerivativesTable from "./PaginateDerivativesTable";

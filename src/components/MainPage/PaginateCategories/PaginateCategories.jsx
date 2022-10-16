@@ -1,6 +1,6 @@
 import React from 'react';
 import {Badge, Spinner, Table} from "react-bootstrap";
-import {useApi} from "../../../functions/useApi";
+import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_ALL} from "../../../constants/ApiCommand";
 import PaginateCategoriesTr from "./PaginateCategoriesTr";
 

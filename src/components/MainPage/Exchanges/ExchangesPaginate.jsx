@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Badge, Spinner, Table} from "react-bootstrap";
-import {useApi} from "../../../functions/useApi";
+import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST} from "../../../constants/ApiCommand"
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import ExchangesPaginateTr from "./ExchangesPaginateTr";

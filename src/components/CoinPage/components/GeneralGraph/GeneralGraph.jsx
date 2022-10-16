@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useApi} from "../../../../functions/useApi";
+import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_COIN_MARKET_CHART} from "../../../../constants/ApiCommand";
-import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 import {Alert, Badge} from "react-bootstrap";
 import {
     Brush,
@@ -41,10 +40,10 @@ const GeneralGraph = ({id}) => {
 
     //get redact num price
     const getRedactNum = num =>{
-        if (Number(num) < 3){
-            return getNumRedAfterDoot(num,6).split(/\s+/).join('').replace(',','.')
+        if (Number(num) < 10){
+            return String(num).slice(0,String(num).indexOf('.') + 5);
         }else {
-            return getNumRedAfterDoot(num,3).split(/\s+/).join('').replace(',','.')
+            return String(num).slice(0,String(num).indexOf('.') + 3);
         }
     };
 
@@ -64,6 +63,8 @@ const GeneralGraph = ({id}) => {
         getObjectGraph(dataPrices)
         //eslint-disable-next-line
     }, [data]);
+
+
 
     return (
         <div className={`GeneralGraph mb-3 mt-5`}>

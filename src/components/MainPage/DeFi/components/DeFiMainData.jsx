@@ -1,5 +1,5 @@
 import React from 'react';
-import {useApi} from "../../../../functions/useApi";
+import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_DEFI} from "../../../../constants/ApiCommand";
 import {Badge, ListGroup, Spinner} from "react-bootstrap";
 import {

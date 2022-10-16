@@ -1,10 +1,12 @@
 import React from 'react';
-import {useLastWordPath} from "../functions/useLastWordPath";
-import {useApi} from "../functions/useApi";
+import {useLastWordPath} from "../hooks/useLastWordPath";
+import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_DERIVATIVE_ONE} from "../constants/ApiCommand";
 import ExchangesGraph from "../components/ExchangesPage/components/ExchangesGraph/ExchangesGraph";
 import {Spinner} from "react-bootstrap";
 import MainData from "../components/DerivativePage/MainData";
+import DerivativesTickers from "../components/DerivativePage/components/DerivativesTickers/DerivativesTickers";
+import {GL_TICKERS} from "../constants/ApiConstants";
 
 const DerivativePage = () => {
 
@@ -12,7 +14,7 @@ const DerivativePage = () => {
     const derivativeId = useLastWordPath();
 
     const mainData = useApi(GLOBAL_API_DERIVATIVE_ONE(derivativeId)).data;
-    // console.log(mainData,'DerivativePage');
+    console.log(mainData,'DerivativePage');
 
     return (
         <div className={`Derivative container`}>
@@ -21,7 +23,10 @@ const DerivativePage = () => {
                     <>
                         <MainData data={mainData} />
                         <ExchangesGraph id={derivativeId} />
-                        {/*<ExchangesTickers id={derivativeId} mainData={mainData} />*/}
+                        {
+                            mainData[GL_TICKERS] &&
+                            <DerivativesTickers data={mainData[GL_TICKERS]} />
+                        }
                     </>:
                     <Spinner animation={"border"} variant={"primary"} />
             }

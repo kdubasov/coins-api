@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FloatingLabel, Form} from "react-bootstrap";
-import {useApi} from "../../functions/useApi";
+import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_SEARCH} from "../../constants/ApiCommand";
 import SearchResult from "./SearchResult";
 

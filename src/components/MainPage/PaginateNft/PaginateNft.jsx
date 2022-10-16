@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useApi} from "../../../functions/useApi";
+import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_NFTS_LIST_ALL} from "../../../constants/ApiCommand";
 import {Badge, ListGroup, Spinner} from "react-bootstrap";
 import {GL_NAME, GL_SYMBOL} from "../../../constants/ApiConstants";

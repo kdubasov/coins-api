@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Badge, Spinner} from "react-bootstrap";
-import {useApi} from "../../../functions/useApi";
+import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_COIN_LIST_ALL} from "../../../constants/ApiCommand";
 import TopLoseCoinsTable from "./TopLoseCoinsTable";
 import {Form} from "react-bootstrap";

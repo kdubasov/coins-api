@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {useLastWordPath} from "../functions/useLastWordPath";
-import {useApi} from "../functions/useApi";
+import {useLastWordPath} from "../hooks/useLastWordPath";
+import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_IDS, GLOBAL_API_COINS_SORT_CATEGORIES_LIST} from "../constants/ApiCommand";
 import {Alert, Badge, Spinner, Table} from "react-bootstrap";
 import PaginateCoinsSort from "../components/MainPage/PaginateCoins/PaginateCoinsSort";

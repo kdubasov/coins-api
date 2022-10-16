@@ -1,5 +1,5 @@
 import React from 'react';
-import {useApi} from "../../functions/useApi";
+import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_PING} from "../../constants/ApiCommand";
 import {Alert} from "react-bootstrap";
 

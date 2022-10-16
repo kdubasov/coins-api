@@ -1,6 +1,6 @@
 import React from 'react';
-import {useLastWordPath} from "../functions/useLastWordPath";
-import {useApi} from "../functions/useApi";
+import {useLastWordPath} from "../hooks/useLastWordPath";
+import {useApi} from "../hooks/useApi";
 import MainData from "../components/NftPage/MainData";
 import {Alert, Spinner} from "react-bootstrap";
 import {Link} from "react-router-dom";

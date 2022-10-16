@@ -1,8 +1,8 @@
 import React from 'react';
-import {useApi} from "../../../../functions/useApi";
+import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES_ID_TICKERS} from "../../../../constants/ApiCommand";
 import {GL_TICKERS} from "../../../../constants/ApiConstants";
-import {Table} from "react-bootstrap";
+import {Badge, Table} from "react-bootstrap";
 import ExchangesTickersTr from "./ExchangesTickersTr";
 
 
@@ -19,6 +19,9 @@ const ExchangesTickers = ({id,mainData}) => {
 
     return (
         <div className={`ExchangesCoins`}>
+
+            <h4><Badge>Рынки</Badge></h4>
+
             <Table striped bordered hover>
                 <thead>
                     <tr>

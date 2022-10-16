@@ -56,7 +56,7 @@ const ExchangesTickersTr = ({tick,ids}) => {
                 {
                     Object.entries(tick[GL_EXC_CONV_VOL]).map((elem,ids) => (
                         <p key={ids} className={"small m-0"}>
-                            <strong>{elem[0]}</strong>: {elem[1]}
+                            <strong>{elem[0]}</strong>: {getNumRedAfterDoot(elem[1],3)}
                         </p>
                     ))
                 }

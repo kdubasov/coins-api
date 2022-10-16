@@ -1,5 +1,5 @@
 import React from 'react';
-import {useApi} from "../../functions/useApi";
+import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_GLOBAL_COMMAND} from "../../constants/ApiCommand";
 import {ListGroup, Spinner} from "react-bootstrap";
 import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../constants/ApiConstants";

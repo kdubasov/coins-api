@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {useApi} from "../../../../functions/useApi";
+import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_COINS_TICKERS} from "../../../../constants/ApiCommand";
 import {GL_TICKERS} from "../../../../constants/ApiConstants";
-import {Badge, Spinner, Table} from "react-bootstrap";
+import {Alert, Badge, Spinner, Table} from "react-bootstrap";
 import TickersTableTr from "./TickersTableTr";
 import TickersTableShowMore from "./TickersTableShowMore";
 
@@ -16,6 +16,14 @@ const TickersTable = ({id}) => {
     return (
         <div className={'TickersTable'}>
             <h4><Badge>Рынки:</Badge></h4>
+
+            {
+                data && !Object.values(data).length &&
+                <Alert className={'small p-2'}>
+                    Не удалось найти рынки для данной монеты, попробуйте позже.
+                </Alert>
+            }
+
             {
                 data?
                     <>

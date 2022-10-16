@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {Badge, Button, FormControl} from "react-bootstrap";
 import DateInfoResult from "./DateInfoResult";
-import {useApi} from "../../../../functions/useApi";
+import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_COINS_HISTORY} from "../../../../constants/ApiCommand";
 import {GL_MD} from "../../../../constants/ApiConstants";
 

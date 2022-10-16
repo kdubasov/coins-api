@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Badge} from "react-bootstrap";
-import {useApi} from "../../../../functions/useApi";
+import {useApi} from "../../../../hooks/useApi";
 import {GlOBAL_API_EXCHANGES_ID_GRAPH} from "../../../../constants/ApiCommand";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {getGraphDate} from "../../../../functions/getGraphDate";
