@@ -40,10 +40,14 @@ const GeneralGraph = ({id}) => {
 
     //get redact num price
     const getRedactNum = num =>{
-        if (Number(num) < 10){
-            return String(num).slice(0,String(num).indexOf('.') + 5);
-        }else {
-            return String(num).slice(0,String(num).indexOf('.') + 3);
+        if (String(num).indexOf('.') !== -1){
+            if (Number(num) < 10){
+                return String(num).slice(0,String(num).indexOf('.') + 5);
+            }else {
+                return String(num).slice(0,String(num).indexOf('.') + 3);
+            }
+        }else{
+            return num
         }
     };
 

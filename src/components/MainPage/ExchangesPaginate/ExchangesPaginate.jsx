@@ -16,7 +16,7 @@ const ExchangesPaginate = () => {
 
     //main data
     const data = useApi(GLOBAL_API_EXCHANGES(sizePage,currentPage)).data;
-    // console.log(data,'GLOBAL_API_EXCHANGES')
+    // console.log(data,'GLOBAL_API_EXCHANGES');
 
 
     return (

@@ -4,12 +4,12 @@ import SearchInput from "../general-components/SearchMain/SearchInput";
 import NavbarPaginate from "../components/MainPage/NavbarPaginate/NavbarPaginate";
 import DeFi from "../components/MainPage/DeFi/DeFi";
 import PaginateCategories from "../components/MainPage/PaginateCategories/PaginateCategories";
-import Nft from "../components/MainPage/PaginateNft/PaginateNft";
 import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
-import ExchangesPaginate from "../components/MainPage/Exchanges/ExchangesPaginate";
+import ExchangesPaginate from "../components/MainPage/ExchangesPaginate/ExchangesPaginate";
 import TopLoseCoins from "../components/MainPage/TableTopLoseCoins/TopLoseCoins";
 import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
 import PaginateDerivatives from "../components/MainPage/PaginateDerivatives/PaginateDerivatives";
+import PaginateNft from "../components/MainPage/PaginateNft/PaginateNft";
 
 const MainPage = () => {
 
@@ -26,7 +26,7 @@ const MainPage = () => {
             />
 
             {navPaginate === "coins" && <PaginateCoins />}
-            {navPaginate === "nft" && <Nft />}
+            {navPaginate === "nft" && <PaginateNft />}
             {navPaginate === "defi" && <DeFi />}
             {navPaginate === "categories" && <PaginateCategories />}
             {navPaginate === "trendCoins" && <TrendCoins />}

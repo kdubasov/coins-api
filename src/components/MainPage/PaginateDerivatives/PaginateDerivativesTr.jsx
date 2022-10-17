@@ -21,10 +21,15 @@ const PaginateDerivativesTr = ({id,data}) => {
                 <img width={30} src={data[GL_IMAGE]} alt={data[GL_NAME]} />
                 <Link to={`/derivatives/${data.id}`} className={'m-0 mx-2'}>{data[GL_NAME]}</Link>
             </td>
-            <td>{data[GL_OP_INT_BTC]}</td>
-            <td>{data[GL_DEFI_TR_24H_BTC]}</td>
+            {/*Сумма открытых позиций 24ч*/}
+            <td>{data[GL_OP_INT_BTC] ? data[GL_OP_INT_BTC] + '(btc)' : '-'}</td>
+            {/*Об. торгов 24ч*/}
+            <td>{data[GL_DEFI_TR_24H_BTC] + '(btc)'}</td>
+            {/*Бессрочные контр.*/}
             <td>{data[GL_PER_PAIRS]}</td>
+            {/*Фьючерсы*/}
             <td>{data[GL_FUT_PAIRS]}</td>
+            {/*Оф. сайт*/}
             <td>
                 {
                     data[GL_URL] &&

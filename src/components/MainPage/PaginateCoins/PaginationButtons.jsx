@@ -10,7 +10,7 @@ const MyComponent = ({currentPage,setCurrentPage,allPages}) => {
             />
 
             {//if currentPage===1 not show dots in start
-                currentPage===1? '' :
+                currentPage!==1 &&
                     <>
                         <Pagination.Item onClick={() => setCurrentPage(1)}>{1}</Pagination.Item>
                         <Pagination.Ellipsis />
@@ -20,7 +20,7 @@ const MyComponent = ({currentPage,setCurrentPage,allPages}) => {
             <Pagination.Item active>{currentPage}</Pagination.Item>
 
             {//if currentPage===allPages not show dots in end
-                currentPage===allPages?'':
+                currentPage!==allPages &&
                     <>
                         <Pagination.Ellipsis />
                         <Pagination.Item onClick={() => setCurrentPage(allPages)}>{allPages}</Pagination.Item>

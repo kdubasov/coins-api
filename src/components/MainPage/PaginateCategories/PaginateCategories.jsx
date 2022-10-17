@@ -7,7 +7,7 @@ import PaginateCategoriesTr from "./PaginateCategoriesTr";
 const PaginateCategories = () => {
 
     const data = useApi(GLOBAL_API_CATEGORIES_LIST_ALL).data;
-    // console.log(data,'GLOBAL_API_CATEGORIES_LIST_ALL data')
+    // console.log(data,'GLOBAL_API_CATEGORIES_LIST_ALL data');
 
 
     return (

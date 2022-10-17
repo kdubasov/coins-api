@@ -5,6 +5,7 @@ import {GlOBAL_API_EXCHANGES_ID_GRAPH} from "../../../../constants/ApiCommand";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {getGraphDate} from "../../../../functions/getGraphDate";
 import ExchangesGraphSelect from "./ExchangesGraphSelect";
+import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 
 const ExchangesGraph = ({id}) => {
 
@@ -22,7 +23,7 @@ const ExchangesGraph = ({id}) => {
         for (let elem in data){
             newArr.push({
                 date:getGraphDate(data[elem][0]),
-                value:Number(String(data[elem][1]).slice(0,String(data[elem][1]).indexOf('.') + 2)),
+                value:getNumRedAfterDoot(data[elem][1],3),
             })
         }
         setDataObjGraph(newArr)

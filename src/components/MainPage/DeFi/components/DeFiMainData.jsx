@@ -14,7 +14,7 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 const DeFiMainData = () => {
 
     const data = useApi(GLOBAL_API_DEFI).data.data;
-    // console.log(data,'DeFi data')
+    // console.log(data,'DeFi data');
 
     const getListItem = (text,apiConst,redact,sign) =>{
         return(

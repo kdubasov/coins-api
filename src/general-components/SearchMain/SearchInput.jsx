@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FloatingLabel, Form} from "react-bootstrap";
+import {FormControl} from "react-bootstrap";
 import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_SEARCH} from "../../constants/ApiCommand";
 import SearchResult from "./SearchResult";
@@ -17,18 +17,15 @@ const SearchInput = () => {
 
     return (
         <div className={`SearchInput container`}>
-            <FloatingLabel
-                controlId="floatingInput"
-                label="Поиск по сайту"
+
+            <FormControl
                 className="mb-3 mt-3"
-            >
-                <Form.Control
-                    value={query}
-                    onChange={event => setQuery(event.target.value)}
-                    onFocus={() => setShowRes(true)}
-                    placeholder="Поиск по сайту"
-                />
-            </FloatingLabel>
+                // size={"sm"}
+                value={query}
+                onChange={event => setQuery(event.target.value)}
+                onFocus={() => setShowRes(true)}
+                placeholder="Поиск по сайту"
+            />
 
             <SearchResult
                 show={showRes}
