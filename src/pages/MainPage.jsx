@@ -17,8 +17,8 @@ const MainPage = () => {
 
     return (
         <>
-            <SearchInput />
             <GeneralInfo />
+            <SearchInput />
 
             <NavbarPaginate
                 navPaginate={navPaginate}

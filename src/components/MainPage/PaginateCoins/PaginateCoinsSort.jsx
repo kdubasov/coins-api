@@ -101,7 +101,7 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
                 </Button>
             </th>
             <th>
-                <Button size={"sm"} disabled={true}>График 24ч</Button>
+                <Button size={"sm"} disabled={true}>График 3д</Button>
             </th>
         </tr>
     );

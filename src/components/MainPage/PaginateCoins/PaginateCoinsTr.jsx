@@ -17,7 +17,7 @@ const PaginateCoinsTr = ({elem}) => {
         <tr>
 
             {/*id*/}
-            <td>{elem[GL_MC_RANK]}</td>
+            <td>#{elem[GL_MC_RANK]}</td>
 
             {/*img and name*/}
             <td>

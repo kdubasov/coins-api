@@ -10,16 +10,16 @@ const PaginateGraph = ({data}) => {
     const getObjectForGraph = (data) =>{
         let newArr = [];
 
-        const startDelete = data.length - 24;
+        const startDelete = data.length - 72;
         const sortData = data.slice(startDelete,data.length+1);
         for (let elem in sortData){
-            newArr.push({x:sortData[elem]})
+            newArr.push({x:sortData[elem]});
         }
-        setDataState(newArr)
+        setDataState(newArr);
     }
 
     useEffect(() =>{
-        getObjectForGraph(data)
+        getObjectForGraph(data);
     },[data])
 
     // console.log(dataState)
@@ -41,7 +41,7 @@ const PaginateGraph = ({data}) => {
                                 type="natural"
                                 dataKey="x"
                                 stroke={(dataState[0]["x"]) >= (dataState[dataState.length - 1]["x"]) ? "red" : "green"}
-                                strokeWidth={2}
+                                strokeWidth={1.5}
                             />
                         </LineChart>
                     </ResponsiveContainer>
