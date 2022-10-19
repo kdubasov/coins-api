@@ -54,12 +54,7 @@ const MainData = ({dataMain}) => {
             {/*market-data table*/}
             <TableMarketData data={dataMain[GL_MD]} />
 
-            {/*graph for one coin (проверим на наличие информации для графика)*/}
-            {/*{*/}
-            {/*    dataMain[GL_MD][GL_MD_SPL_7D]["price"].length &&*/}
-            {/*    <PriceGraph data={dataMain[GL_MD][GL_MD_SPL_7D]} />*/}
-            {/*}*/}
-
+            {/*general graph*/}
             <GeneralGraph id={dataMain.id} />
 
             {/*change price table*/}

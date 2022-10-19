@@ -32,7 +32,7 @@ const GeneralGraphHeader = ({
                 <Button disabled={timeInterval===30} onClick={() => setTimeInterval(30)}>30d</Button>
                 <Button disabled={timeInterval===180} onClick={() => setTimeInterval(180)}>6m</Button>
                 <Button disabled={timeInterval===365} onClick={() => setTimeInterval(365)}>1y</Button>
-                <Button disabled={timeInterval>365} onClick={() => setTimeInterval('max')}>Max</Button>
+                <Button disabled={timeInterval==='max'} onClick={() => setTimeInterval('max')}>Max</Button>
             </ButtonGroup>
         </header>
     );

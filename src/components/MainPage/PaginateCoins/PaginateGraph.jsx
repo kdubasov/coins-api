@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {YAxis, LineChart, Line, ResponsiveContainer} from "recharts";
-import {Spinner} from "react-bootstrap";
 
 const PaginateGraph = ({data}) => {
 
@@ -22,32 +21,32 @@ const PaginateGraph = ({data}) => {
         getObjectForGraph(data);
     },[data])
 
+    //check data for graph if this false return
+    if (!dataState.length){
+        return false
+    }
+
     // console.log(dataState)
 
     return (
         <div className={`PaginateGraph`}>
-            {
-                dataState.length?
-                    <ResponsiveContainer width="100%" height={30}>
-                        <LineChart data={dataState}>
-                            <YAxis
-                                hide={true}
-                                //тут показываем мин и макс значение графика
-                                domain={['dataMin', 'dataMax']}
-                            />
+            <ResponsiveContainer width="100%" height={30}>
+                <LineChart data={dataState}>
+                    <YAxis
+                        hide={true}
+                        //тут показываем мин и макс значение графика
+                        domain={['dataMin', 'dataMax']}
+                    />
 
-                            <Line
-                                dot={false}
-                                type="natural"
-                                dataKey="x"
-                                stroke={(dataState[0]["x"]) >= (dataState[dataState.length - 1]["x"]) ? "red" : "green"}
-                                strokeWidth={1.5}
-                            />
-                        </LineChart>
-                    </ResponsiveContainer>
-                    :
-                    <Spinner size={"sm"} animation={'border'} variant={"primary"} />
-            }
+                    <Line
+                        dot={false}
+                        type="natural"
+                        dataKey="x"
+                        stroke={(dataState[0]["x"]) >= (dataState[dataState.length - 1]["x"]) ? "red" : "green"}
+                        strokeWidth={1.5}
+                    />
+                </LineChart>
+            </ResponsiveContainer>
         </div>
     );
 };
