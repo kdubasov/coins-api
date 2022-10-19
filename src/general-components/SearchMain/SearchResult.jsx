@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, ListGroup} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import SearchResultInner from "./SearchResultInner";
 
 const SearchResult = ({show,setShowRes,query,data}) => {
@@ -27,14 +27,14 @@ const SearchResult = ({show,setShowRes,query,data}) => {
             style={{display:`${show?'block':'none'}`}}
         >
             {/*кнопка для закрытия результатов поиска*/}
-            {show && <Button onClick={() =>setShowRes(false)} size={"sm"} className={'mb-3'}>Скрыть результаты поиска</Button>}
+            {show && <Button onClick={() =>setShowRes(false)} size={"sm"} className={'mb-1'}>Скрыть результаты поиска</Button>}
 
-            <ListGroup style={{width:"100%",marginBottom:"1em"}}>
+            <div className={'my-1 w-100 d-flex flex-wrap border'}>
                 {!coins?'': <SearchResultInner coins={coins} />}
                 {!nfts?'': <SearchResultInner query={query} nfts={nfts} />}
                 {!exchanges?'': <SearchResultInner exchanges={exchanges} />}
                 {!categories?'': <SearchResultInner query={query} categories={categories} />}
-            </ListGroup>
+            </div>
         </div>
     );
 };

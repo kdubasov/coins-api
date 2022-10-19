@@ -118,3 +118,11 @@ export const GL_PER_DEL_TICK = 'h24_percentage_change';
 export const GL_PER_H24_VOL = 'h24_volume';
 export const GL_FUND_RATE = 'funding_rate';
 export const GL_BAS_PERS = 'index_basis_percentage';
+
+//hold companies
+export const GL_HOLD_MC_DOM = 'market_cap_dominance';
+export const GL_HOLD_TT = 'total_holdings';
+export const GL_HOLD_TT_VAL = 'total_value_usd';
+export const GL_COMP = 'companies';
+export const GL_TT_CUR_VAL_USD = 'total_current_value_usd';
+export const GL_TT_SUP_PERC = 'percentage_of_total_supply';

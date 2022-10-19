@@ -10,6 +10,7 @@ import TopLoseCoins from "../components/MainPage/TableTopLoseCoins/TopLoseCoins"
 import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
 import PaginateDerivatives from "../components/MainPage/PaginateDerivatives/PaginateDerivatives";
 import PaginateNft from "../components/MainPage/PaginateNft/PaginateNft";
+import HoldCompanies from "../components/MainPage/HoldCompanies/HoldCompanies";
 
 const MainPage = () => {
 
@@ -33,6 +34,7 @@ const MainPage = () => {
             {navPaginate === "exchanges" && <ExchangesPaginate />}
             {navPaginate === "topLoseCoins" && <TopLoseCoins />}
             {navPaginate === "derivatives" && <PaginateDerivatives />}
+            {navPaginate === "holdCompanies" && <HoldCompanies />}
         </>
     );
 };

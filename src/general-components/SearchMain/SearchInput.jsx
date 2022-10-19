@@ -19,7 +19,7 @@ const SearchInput = () => {
         <div className={`SearchInput container`}>
 
             <FormControl
-                className="mb-3 mt-3"
+                className="mb-1 mt-3"
                 // size={"sm"}
                 value={query}
                 onChange={event => setQuery(event.target.value)}

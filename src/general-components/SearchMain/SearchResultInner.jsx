@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroup} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
@@ -16,16 +16,19 @@ const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
     const resCoinNfts = coins||nfts;
 
     return (
-        <ListGroup.Item>
-            <h3>
-                {
-                    resCoinNfts?
-                        (nfts?nfts[0]:coins[0]).toUpperCase()
-                    :
-                        (exchanges?exchanges[0]:categories[0]).toUpperCase()
-                }
-            </h3>
-            <ListGroup>
+        <div className={'w-50 p-2'}>
+            {/*title for category in search*/}
+            <h4>
+                <Badge bg={"secondary"}>
+                    {
+                        resCoinNfts?
+                            (nfts?nfts[0]:coins[0]).toUpperCase() :
+                            (exchanges?exchanges[0]:categories[0]).toUpperCase()
+                    }
+                </Badge>
+            </h4>
+
+            <ListGroup className={'small'}>
                 {
                     //nft or coin show
                     resCoinNfts?
@@ -90,7 +93,7 @@ const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
                     ''
                 }
             </ListGroup>
-        </ListGroup.Item>
+        </div>
     );
 };
 

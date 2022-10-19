@@ -61,3 +61,6 @@ export const GlOBAL_API_EXCHANGES_ID_GRAPH = (id,days) => `/exchanges/${id}/volu
 export const GLOBAL_API_DERIVATIVES_LIST = '/derivatives/exchanges/list';
 export const GLOBAL_API_DERIVATIVES = (sizePage,currentPage) => `/derivatives/exchanges?per_page=${sizePage}&page=${currentPage}`;
 export const GLOBAL_API_DERIVATIVE_ONE = id => `/derivatives/exchanges/${id}?include_tickers=all`
+
+//companies holdings
+export const GLOBAL_API_HOLD_COMPANIES = id => `/companies/public_treasury/${id}`;
