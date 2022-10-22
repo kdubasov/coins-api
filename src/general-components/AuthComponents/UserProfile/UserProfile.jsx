@@ -23,12 +23,12 @@ const UserProfile = () => {
 
         {
             user &&
-            <>
+            <div className={'d-flex align-items-center justify-content-evenly'}>
                 {/*main data about userProfile*/}
                 <UserData user={user} handleLogout={handleLogout} />
                 {/*redact or add password*/}
                 <RedactPassword user={user} />
-            </>
+            </div>
         }
 
     </Container>

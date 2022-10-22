@@ -15,7 +15,7 @@ export const useGetUserData = uid =>{
             if (dataInner){
                 setData(dataInner);
             }else {
-                return false
+                return {}
             }
         })
         // eslint-disable-next-line
