@@ -10,9 +10,9 @@ import CheckConnectApi from "./general-components/CheckConnectApi/CheckConnectAp
 import DerivativePage from "./pages/DerivativePage";
 import {UserAuthContextProvider} from "./contexts/UserAuthContext";
 import ProtectedAuthRoute from "./general-components/AuthComponents/ProtectedAuthRoute";
-import UserProfile from "./general-components/AuthComponents/UserProfile";
-import Login from "./general-components/AuthComponents/Login";
-import PhoneLogin from "./general-components/AuthComponents/PhoneLogin";
+import UserProfile from "./general-components/AuthComponents/UserProfile/UserProfile";
+import Login from "./general-components/AuthComponents/LoginComponents/Login";
+import PhoneLogin from "./general-components/AuthComponents/LoginComponents/PhoneLogin";
 
 const Router = () => {
 

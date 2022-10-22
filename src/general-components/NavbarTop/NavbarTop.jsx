@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Container, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {useUserAuth} from "../../contexts/UserAuthContext";
-import {useNavigate} from "react-router";
+import {useNavigate} from "react-router-dom";
 
 const NavbarTop = () => {
 

@@ -4,7 +4,7 @@ import {Form, Alert, Badge} from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import { useUserAuth } from "../../contexts/UserAuthContext";
+import { useUserAuth } from "../../../contexts/UserAuthContext";
 
 const PhoneLogin = () => {
   const [error, setError] = useState("");
