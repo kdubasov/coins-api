@@ -3,7 +3,14 @@ import {Badge, Button} from "react-bootstrap";
 
 const UserData = ({user,handleLogout}) => {
     return (
-        <div className="box w-25 border p-3">
+        <div className="box w-50 border p-3">
+
+            {//photo
+                (user && user.photoURL) &&
+                <img src={user.photoURL} alt={user.email || user.phoneNumber}/>
+            }
+
+            {/*email\phoneNumber and uid*/}
             <h5 className={'mb-2'}>
                 <Badge bg={"secondary"}>
                     {user && (user.email || user.phoneNumber)}

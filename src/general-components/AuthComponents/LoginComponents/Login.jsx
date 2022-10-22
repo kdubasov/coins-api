@@ -23,14 +23,16 @@ const Login = () => {
       <div className="p-4 box border w-50 mx-auto">
 
         <GoogleButton
-            className="w-100 g-btn mb-3"
+            className="w-100 g-btn"
             type="dark"
             onClick={handleGoogleSignIn}
         />
 
+        <hr/>
+
         <Link to="/phoneLogin">
             <Button variant="success" className={'w-100 p-2'}>
-              Sign in with Phone
+              Вход по номеру телефона и смс
             </Button>
         </Link>
 

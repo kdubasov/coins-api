@@ -83,11 +83,11 @@ const PhoneLogin = () => {
           </Form.Group>
           <div className="button-right">
             <Link to="/login">
-              <Button variant="secondary">Cancel</Button>
+              <Button variant="secondary">Отменить</Button>
             </Link>
             &nbsp;
             <Button type="submit" variant="primary">
-              Verify
+              Подтвердить
             </Button>
           </div>
         </Form>
