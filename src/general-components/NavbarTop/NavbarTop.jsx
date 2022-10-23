@@ -1,8 +1,10 @@
 import React from 'react';
-import {Button, Container, Navbar} from "react-bootstrap";
+import {Button, Container, Navbar, Form} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {useUserAuth} from "../../contexts/UserAuthContext";
 import {useNavigate} from "react-router-dom";
+import {setTheme} from "../../functions/Theme/setTheme";
+import {getTheme} from "../../functions/Theme/getTheme";
 
 const NavbarTop = () => {
 
@@ -20,16 +22,24 @@ const NavbarTop = () => {
         }
     };
 
+
     return (
-        <Navbar bg="primary" variant={"dark"} className="mb-3 small">
+        <Navbar bg={getTheme()?'light':'dark'} variant={getTheme()?'light':'dark'} className="mb-3 small">
             <Container>
-                <Link style={{color:"#FFF",fontSize:20}} to={'/'}>cryptoQuick</Link>
+                <Link style={{fontSize:20}} to={'/'}>cryptoQuick</Link>
 
                 {//check user is logged or not
                     user ?
-                        <div className={'w-25 d-flex justify-content-between align-items-center'}>
-                            <Link style={{color:"#FFF"}} to={'/userProfile'}>Аккаунт</Link>
-                            <Button onClick={handleLogout} variant={"dark"}>Выйти</Button>
+                        <div className={'w-50 d-flex justify-content-between align-items-center'}>
+                            <Form.Check
+                                className={'text-primary m-0'}
+                                type="switch"
+                                label="Светлая тема"
+                                checked={getTheme()}
+                                onChange={() => setTheme()}
+                            />
+                            <Link className={'text-primary'} to={'/userProfile'}>Аккаунт</Link>
+                            <Button size={"sm"} onClick={handleLogout} variant={"primary"}>Выйти</Button>
                         </div>:
                         <Link to={'/login'}>
                             <Button size={"sm"} variant={'light'}>Вход</Button>

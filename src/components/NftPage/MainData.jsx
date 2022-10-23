@@ -45,7 +45,7 @@ const MainData = ({dataMain}) => {
             </p>
             {/*description*/}
             <p className="small">
-                {dataMain[GL_DESCRIPT] || '?'}
+                {dataMain[GL_DESCRIPT] || 'Описание отсутствует'}
             </p>
 
             <ListGroup>

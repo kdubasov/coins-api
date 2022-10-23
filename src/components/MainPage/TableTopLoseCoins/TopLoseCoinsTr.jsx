@@ -13,7 +13,7 @@ const TopLoseCoinsTr = ({selectSort,elem}) => {
         <tr>
             {/*img and name*/}
             <td>
-                <Link style={{color:"inherit"}} to={`/coins/${elem.id}`}>
+                <Link to={`/coins/${elem.id}`}>
                     <img style={{width:25,marginRight:5}} src={elem[GL_IMAGE]} alt=""/>
                     {elem[GL_SYMBOL].toUpperCase()} ({elem[GL_NAME]})
                 </Link>

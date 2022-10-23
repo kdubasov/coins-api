@@ -5,14 +5,21 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 
 const CoinConverter = ({symbol,data}) => {
 
-    // console.log(data,'CoinConverter');
+    console.log(data,'CoinConverter');
 
-    const [nowCoinValue,setNowCoinValue] = useState('')
-    const [selectValue,setSelectValue] = useState('usd')
+    const [nowCoinValue,setNowCoinValue] = useState('');
+    const [selectValue,setSelectValue] = useState('usd');
 
     return (
         <div className={`CoinConverter w-100 p-3 my-3 border`}>
-            <h4><Badge>Конвертировать</Badge></h4>
+            <h4 className={'mb-0'}>
+                <Badge>Конвертировать</Badge>
+            </h4>
+
+            {//планка с ценой одной монеты
+                (Object.values(data).length && data['usd']) &&
+                <Badge className={'mb-2'}>1{symbol} = ${data['usd']}</Badge>
+            }
 
             {
                 Object.keys(data).length?
@@ -49,7 +56,6 @@ const CoinConverter = ({symbol,data}) => {
                         Информация для конвертирования неоступна для данной монеты.
                     </Alert>
             }
-
         </div>
     );
 };

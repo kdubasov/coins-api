@@ -16,7 +16,7 @@ const PaginateNft = () => {
     const [allPages] = useState(Math.ceil(allNfts/sizePage))
 
     const data = useApi(GLOBAL_API_NFTS_LIST_ALL(sizePage,currentPage)).data;
-    console.log(data,'NFTS LIST')
+    // console.log(data,'NFTS LIST')
 
     return (
         <div className={`PaginateNft container`}>
