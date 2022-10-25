@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button} from "react-bootstrap";
+import {Alert, Button} from "react-bootstrap";
 import SearchResultInner from "./SearchResultInner";
 
 const SearchResult = ({show,setShowRes,query,data}) => {
@@ -15,7 +15,26 @@ const SearchResult = ({show,setShowRes,query,data}) => {
     const coins = dataArrSomeCateg('coins');
     const nfts = dataArrSomeCateg('nfts');
     const exchanges = dataArrSomeCateg('exchanges');
-    const categories = dataArrSomeCateg('categories')
+    const categories = dataArrSomeCateg('categories');
+
+    //проверить есть ли результат в категории поиска
+    const checkValue = arr => {
+        // if (!Object.values(arr[1]).length){return false}
+        return Boolean(arr && Object.values(arr[1]).length)
+    };
+
+    //для того чтобы находились элементы только с именами из запроса (для категорий и нфт)
+    const handleSortName = value => value?value[1].filter(elem => (elem.name?.toLowerCase())?.includes(query.toLowerCase())):false;
+
+    //for check result for all queries
+    const getFalseRes = () => {
+        return Boolean(
+            (coins && handleSortName(coins).length) ||
+            (nfts && handleSortName(nfts).length) ||
+            (categories && handleSortName(categories).length) ||
+            (exchanges && handleSortName(exchanges).length)
+        )
+    }
 
     useEffect(() =>{
         setDataArrAll(Object.entries(data))
@@ -30,10 +49,16 @@ const SearchResult = ({show,setShowRes,query,data}) => {
             {show && <Button onClick={() =>setShowRes(false)} size={"sm"} className={'mb-1'}>Скрыть результаты поиска</Button>}
 
             <div className={'my-1 w-100 d-flex flex-wrap border'}>
-                {!coins?'': <SearchResultInner coins={coins} />}
-                {!nfts?'': <SearchResultInner query={query} nfts={nfts} />}
-                {!exchanges?'': <SearchResultInner exchanges={exchanges} />}
-                {!categories?'': <SearchResultInner query={query} categories={categories} />}
+                {
+                    getFalseRes()?
+                    <>
+                        {(coins ? checkValue(coins) : false) && <SearchResultInner coins={coins} handleSortName={handleSortName} />}
+                        {(nfts ? checkValue(nfts) : false)  && <SearchResultInner nfts={nfts} handleSortName={handleSortName} />}
+                        {(exchanges ? checkValue(exchanges) : false)  && <SearchResultInner exchanges={exchanges} handleSortName={handleSortName} />}
+                        {(categories ? checkValue(categories) : false)  && <SearchResultInner categories={categories} handleSortName={handleSortName} />}
+                    </>:
+                    <Alert className={"w-100 m-3 p-2 small"}>По вашему запросу результатов поиска нет</Alert>
+                }
             </div>
         </div>
     );

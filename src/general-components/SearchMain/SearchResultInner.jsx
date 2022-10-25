@@ -2,55 +2,70 @@ import React from 'react';
 import {Badge, ListGroup} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
-const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
+const SearchResultInner = ({nfts,coins,exchanges,categories,handleSortName}) => {
 
-    //для того чтобы находились элементы только с именами из запроса
-    const handleSortName = value => value?value[1].filter(elem => (elem.name.toLowerCase()).includes(query.toLowerCase())):false;
+    // console.log(nfts,'nfts')
+    // console.log(coins,'coins')
+    // console.log(exchanges,'exchanges')
+    // console.log(categories,'categories')
+
     //для показа не более 10 рез-ов по результатам сортировки по именам
     const handleSortMaxName = value => value?value.length>10?value.filter((elem,ids) => ids<10):value:false;
 
     //сортировка для показа не более 10 резульаттов
     const handleFilterMax = value => value?value[1].length>10?value[1].filter((elem,ids) => ids<10):value[1]:false;
 
-    //проерка на вход данных про монеты или нфт
-    const resCoinNfts = coins||nfts;
+    //check value for show
+    const checkValueWithoutName = arr => {
+        return Boolean(handleSortName(arr).length)
+    }
 
     return (
         <div className={'w-50 p-2'}>
             {/*title for category in search*/}
-            <h4>
-                <Badge bg={"secondary"}>
-                    {
-                        resCoinNfts?
-                            (nfts?nfts[0]:coins[0]).toUpperCase() :
-                            (exchanges?exchanges[0]:categories[0]).toUpperCase()
-                    }
+            <h5>
+                <Badge bg={"secondary"} className={"fw-light p-1 px-3"}>
+                    {(nfts && checkValueWithoutName(nfts)) && nfts[0]}
+                    {(categories && checkValueWithoutName(categories)) && categories[0]}
+                    {coins && coins[0]}
+                    {exchanges && exchanges[0]}
                 </Badge>
-            </h4>
+            </h5>
 
             <ListGroup className={'small'}>
-                {
-                    //nft or coin show
-                    resCoinNfts?
-                        (nfts?handleSortMaxName(handleSortName(nfts)):handleFilterMax(coins)).map(elem =>(
-                            <Link
-                                key={elem.id}
-                                to={nfts?`/nft/${elem.id}`:`/coins/${elem.id}`}
-                                style={{textDecoration:"none",borderRadius:'.5em'}}
-                            >
+
+                {//coins
+                    coins && handleFilterMax(coins).map(elem =>(
+                        <Link
+                            key={elem.id}
+                            to={nfts?`/nft/${elem.id}`:`/coins/${elem.id}`}
+                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                        >
                             <ListGroup.Item action>
-                                    <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
-                                    <strong>({elem.symbol})</strong> {elem.name}
+                                <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
+                                <strong>({elem.symbol})</strong> {elem.name}
                             </ListGroup.Item>
-                            </Link>
+                        </Link>
                         ))
-                    :
-                        ''
                 }
 
-                {
-                    //exchanges show
-                    exchanges?handleFilterMax(exchanges).map(elem =>(
+                {//nfts
+                    nfts && handleSortMaxName(handleSortName(nfts)).map(elem =>(
+                        <Link
+                            key={elem.id}
+                            to={nfts?`/nft/${elem.id}`:`/coins/${elem.id}`}
+                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                        >
+                            <ListGroup.Item action>
+                                <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
+                                <strong>({elem.symbol})</strong> {elem.name}
+                            </ListGroup.Item>
+                        </Link>
+                    ))
+                }
+
+                {//exchanges
+                    exchanges && handleFilterMax(exchanges).map(elem =>(
                         <Link
                             key={elem.id}
                             to={`/exchanges/${(elem.id)}`}
@@ -68,12 +83,11 @@ const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
                                 {elem.name}
                             </ListGroup.Item>
                         </Link>
-                    )):''
+                    ))
                 }
 
-                {
-                    //categories show
-                    categories?handleSortMaxName(handleSortName(categories)).map(elem =>(
+                {//categories
+                    categories && handleSortMaxName(handleSortName(categories)).map(elem =>(
                         <Link
                             key={elem.id}
                             to={`/categories/${(elem.name).replace(/[\s/]/g, '')}`}//пробелы и слеши реплейсим
@@ -89,8 +103,6 @@ const SearchResultInner = ({query,nfts,coins,exchanges,categories}) => {
                             </ListGroup.Item>
                         </Link>
                     ))
-                        :
-                    ''
                 }
             </ListGroup>
         </div>
