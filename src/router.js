@@ -17,33 +17,35 @@ import PhoneLogin from "./general-components/AuthComponents/LoginComponents/Phon
 const Router = () => {
 
     return (
-        <UserAuthContextProvider>
-            <NavbarTop />
+        <div className={"general-container"}>
+            <UserAuthContextProvider>
+                <NavbarTop />
 
-            <CheckConnectApi />
+                <CheckConnectApi />
 
-            {/*auth provider*/}
-                <Routes>
-                    <Route path={`/`} element={<MainPage />} />
-                    <Route path={'/coins/:coinId'} element={<CoinPage />} />
-                    <Route path={'/nft/:nftId'} element={<NftPage />} />
-                    <Route path={'/categories/:categoryId'} element={<CategoriesPage />} />
-                    <Route path={'/exchanges/:exchangeId'} element={<ExchangesPage />} />
-                    <Route path={'/derivatives/:exchangeId'} element={<DerivativePage />} />
+                {/*auth provider*/}
+                    <Routes>
+                        <Route path={`/`} element={<MainPage />} />
+                        <Route path={'/coins/:coinId'} element={<CoinPage />} />
+                        <Route path={'/nft/:nftId'} element={<NftPage />} />
+                        <Route path={'/categories/:categoryId'} element={<CategoriesPage />} />
+                        <Route path={'/exchanges/:exchangeId'} element={<ExchangesPage />} />
+                        <Route path={'/derivatives/:exchangeId'} element={<DerivativePage />} />
 
-                    {/*auth routs*/}
-                    <Route
-                        path="/userProfile"
-                        element={
-                            <ProtectedAuthRoute>
-                                <UserProfile />
-                            </ProtectedAuthRoute>
-                        }
-                    />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/phoneLogin" element={<PhoneLogin />} />
-                </Routes>
-        </UserAuthContextProvider>
+                        {/*auth routs*/}
+                        <Route
+                            path="/userProfile"
+                            element={
+                                <ProtectedAuthRoute>
+                                    <UserProfile />
+                                </ProtectedAuthRoute>
+                            }
+                        />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/phoneLogin" element={<PhoneLogin />} />
+                    </Routes>
+            </UserAuthContextProvider>
+        </div>
     );
 };
 

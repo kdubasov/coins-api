@@ -1,11 +1,12 @@
 import React from 'react';
 import {Table} from "react-bootstrap";
 import PaginateDerivativesTr from "./PaginateDerivativesTr";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const PaginateDerivativesTable = ({data}) => {
 
     return (
-        <Table striped bordered hover>
+        <Table striped bordered hover variant={getTheme(true)}>
             <thead>
             <tr>
                 <th>#</th>

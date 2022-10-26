@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Alert, Badge} from "react-bootstrap";
 import {useApi} from "../../../../hooks/useApi";
 import {GlOBAL_API_EXCHANGES_ID_GRAPH} from "../../../../constants/ApiCommand";
-import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {Area, AreaChart, Brush, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {getGraphDate} from "../../../../functions/getGraphDate";
 import ExchangesGraphSelect from "./ExchangesGraphSelect";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
@@ -66,6 +66,7 @@ const ExchangesGraph = ({id}) => {
                     <Tooltip />
                     <XAxis dataKey="date" fontSize={12} />
                     <Area type="natural" strokeWidth={2} dataKey="value" stroke="#0d6efd" fill="rgba(13, 110, 253, 0.5)" />
+                    <Brush height={15}/>
                 </AreaChart>
             </ResponsiveContainer>
         </div>

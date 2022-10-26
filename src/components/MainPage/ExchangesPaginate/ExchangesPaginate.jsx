@@ -4,6 +4,7 @@ import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST} from "../../../constants/ApiCommand"
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import ExchangesPaginateTr from "./ExchangesPaginateTr";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const ExchangesPaginate = () => {
 
@@ -26,7 +27,7 @@ const ExchangesPaginate = () => {
             {
                 //check result and show spinner or table with coins
                 Object.keys(data).length?
-                    <Table striped bordered hover>
+                    <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
                         <tr>
                             <th>Рейтинг доверия</th>

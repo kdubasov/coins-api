@@ -12,7 +12,7 @@ import {Badge} from "react-bootstrap";
 
 const DerivativesTickersTr = ({ids,tick}) => {
 
-    console.log(tick,'DerivativesTickersTr')
+    // console.log(tick,'DerivativesTickersTr');
 
     return (
         <tr>

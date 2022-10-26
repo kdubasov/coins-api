@@ -1,6 +1,7 @@
 import React from 'react';
 import {Badge, Table} from "react-bootstrap";
 import DerivativesTickersTr from "./DerivativesTickersTr";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 const DerivativesTickers = ({data}) => {
 
@@ -10,7 +11,7 @@ const DerivativesTickers = ({data}) => {
         <div className={`DerivativesTickers`}>
             <h4><Badge>Рынки</Badge></h4>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover variant={getTheme(true)}>
                 <thead>
                 <tr>
                     <th>#</th>

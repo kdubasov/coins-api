@@ -4,6 +4,7 @@ import {
     GL_CH_PR_CN_14D, GL_CH_PR_CN_1H, GL_CH_PR_CN_1Y, GL_CH_PR_CN_200D,
     GL_CH_PR_CN_24H, GL_CH_PR_CN_30D, GL_CH_PR_CN_60D, GL_CH_PR_CN_7D,
 } from "../../../constants/ApiConstants";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const TableChangePrice = ({data}) => {
 
@@ -32,7 +33,7 @@ const TableChangePrice = ({data}) => {
     }
 
     return (
-        <Table className={'mt-3 mb-3'} striped bordered hover>
+        <Table className={'mt-3 mb-3'} striped bordered hover variant={getTheme(true)}>
             <thead>
             <tr>
                 <th>1 час</th>

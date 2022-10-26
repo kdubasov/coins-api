@@ -28,23 +28,26 @@ const NavbarTop = () => {
             <Container>
                 <Link style={{fontSize:20}} to={'/'}>cryptoQuick</Link>
 
-                {//check user is logged or not
-                    user ?
-                        <div className={'w-50 d-flex justify-content-between align-items-center'}>
-                            <Form.Check
-                                className={'text-primary m-0'}
-                                type="switch"
-                                label="Светлая тема"
-                                checked={getTheme()}
-                                onChange={() => setTheme()}
-                            />
-                            <Link className={'text-primary'} to={'/userProfile'}>Аккаунт</Link>
-                            <Button size={"sm"} onClick={handleLogout} variant={"primary"}>Выйти</Button>
-                        </div>:
-                        <Link to={'/login'}>
-                            <Button size={"sm"} variant={'light'}>Вход</Button>
-                        </Link>
-                }
+                <div className={"d-flex align-items-center"}>
+                    <Form.Check
+                        className={'text-primary m-0'}
+                        type="switch"
+                        label="Светлая тема"
+                        checked={getTheme()}
+                        onChange={() => setTheme()}
+                    />
+
+                    {//check user is logged or not
+                        user ?
+                            <div className={'d-flex justify-content-between align-items-center'}>
+                                <Link className={'text-primary mx-3'} to={'/userProfile'}>Аккаунт</Link>
+                                <Button size={"sm"} onClick={handleLogout} variant={"primary"}>Выйти</Button>
+                            </div>:
+                            <Link to={'/login'}>
+                                <Button size={"sm"} variant={'light'}>Вход</Button>
+                            </Link>
+                    }
+                </div>
             </Container>
         </Navbar>
     );

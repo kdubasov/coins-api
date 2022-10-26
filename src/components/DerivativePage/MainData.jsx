@@ -8,7 +8,6 @@ import {
     GL_PER_PAIRS,
     GL_URL
 } from "../../constants/ApiConstants";
-import {Link} from "react-router-dom";
 import {ListGroup, ListGroupItem} from "react-bootstrap";
 
 const MainData = ({data}) => {
@@ -34,7 +33,7 @@ const MainData = ({data}) => {
                     <img width={50} src={data[GL_IMAGE]} alt={data[GL_NAME]} style={{borderRadius:'.25em'}}/>
                     <p className={'m-0 mx-2'}>{data[GL_NAME]}</p>
                 </span>
-                <Link to={data[GL_URL]}>Перейти на оф.сайт</Link>
+                <a href={data[GL_URL]} target={"_blank"} rel={"noreferrer"}>Перейти на оф.сайт</a>
             </div>
 
             <ListGroup className={'mt-3'} horizontal>

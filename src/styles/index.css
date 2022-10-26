@@ -6,6 +6,8 @@
 }
 
 :root{
+    --dark:#2c3034;
+    --light: #f8f8f8;
     --white:#FFF;
     --black:#000;
     --gray:#555;

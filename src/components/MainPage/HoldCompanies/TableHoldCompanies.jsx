@@ -1,10 +1,11 @@
 import React from 'react';
 import {Table} from "react-bootstrap";
 import TableTrHoldCompanies from "./TableTrHoldCompanies";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const TableHoldCompanies = ({data}) => {
     return (
-        <Table striped bordered hover className={'TableHoldCompanies'}>
+        <Table striped bordered hover className={'TableHoldCompanies'} variant={getTheme(true)}>
             <thead>
                 <tr>
                     <th>#</th>

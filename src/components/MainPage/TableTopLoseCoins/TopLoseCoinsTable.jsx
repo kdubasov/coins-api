@@ -2,10 +2,11 @@ import React from 'react';
 import {GL_CH_PR_1H_PR, GL_CH_PR_24H_PR} from "../../../constants/ApiConstants";
 import TopLoseCoinsTr from "./TopLoseCoinsTr";
 import {Table} from "react-bootstrap";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const TopLoseCoinsTable = ({selectSort,data,sort}) => {
     return (
-        <Table striped bordered hover>
+        <Table striped bordered hover variant={getTheme(true)}>
             <thead>
             <tr>
                 <td>Название</td>

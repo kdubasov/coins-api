@@ -9,6 +9,7 @@ import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
 import PaginationButtons from "./PaginationButtons";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 
 //table with coins
@@ -59,7 +60,7 @@ const PaginateCoins = () => {
             {
                 //check result and show spinner or table with coins
                 Object.keys(data).length?
-                    <Table striped bordered hover>
+                    <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
                         <PaginateCoinsSort data={data} setDataSort={setDataSort} />
                         </thead>

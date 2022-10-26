@@ -3,6 +3,7 @@ import {Badge, Spinner, Table} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_ALL} from "../../../constants/ApiCommand";
 import PaginateCategoriesTr from "./PaginateCategoriesTr";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const PaginateCategories = () => {
 
@@ -27,7 +28,7 @@ const PaginateCategories = () => {
             {/*table categories*/}
             {
                 Object.values(data).length?
-                    <Table striped bordered hover>
+                    <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
                             <tr>
                                 <th>#</th>
