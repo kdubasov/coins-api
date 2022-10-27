@@ -13,6 +13,7 @@ import ProtectedAuthRoute from "./general-components/AuthComponents/ProtectedAut
 import UserProfile from "./general-components/AuthComponents/UserProfile/UserProfile";
 import Login from "./general-components/AuthComponents/LoginComponents/Login";
 import PhoneLogin from "./general-components/AuthComponents/LoginComponents/PhoneLogin";
+import Briefcase from "./general-components/Briefcase/Briefcase";
 
 const Router = () => {
 
@@ -43,6 +44,9 @@ const Router = () => {
                         />
                         <Route path="/login" element={<Login />} />
                         <Route path="/phoneLogin" element={<PhoneLogin />} />
+
+                        {/* (briefcase) save values routes*/}
+                        <Route path="/briefcase" element={<Briefcase />} />
                     </Routes>
             </UserAuthContextProvider>
         </div>

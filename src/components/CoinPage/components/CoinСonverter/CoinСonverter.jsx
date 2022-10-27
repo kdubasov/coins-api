@@ -5,7 +5,7 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 
 const CoinConverter = ({symbol,data}) => {
 
-    console.log(data,'CoinConverter');
+    // console.log(data,'CoinConverter');
 
     const [nowCoinValue,setNowCoinValue] = useState('');
     const [selectValue,setSelectValue] = useState('usd');
