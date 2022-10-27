@@ -11,14 +11,19 @@ import {
 import {Link} from "react-router-dom";
 import PaginateGraph from "./PaginateGraph";
 import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
+import PaginateCoinsBriefcaseButton from "./PaginateCoinsBriefcaseButton";
 
-const PaginateCoinsTr = ({elem}) => {
+const PaginateCoinsTr = ({elem,setShowAlert}) => {
 
     return (
         <tr>
 
             {/*id*/}
-            <td>{elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}</td>
+            <td>
+                {elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}
+                {/*add with check to BriefcaseDB button*/}
+                <PaginateCoinsBriefcaseButton elemId={elem['id']} setShowAlert={setShowAlert} />
+            </td>
 
             {/*img and name*/}
             <td>

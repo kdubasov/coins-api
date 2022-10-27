@@ -10,10 +10,14 @@ import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
 import PaginationButtons from "./PaginationButtons";
 import {getTheme} from "../../../functions/Theme/getTheme";
+import MessageAlert from "../../../general-components/Alerts/MessageAlert";
 
 
 //table with coins
 const PaginateCoins = () => {
+
+    // for show/hide alert
+    const [showAlert, setShowAlert] = useState({show:false,text:'',variant:''})
 
     //global data about main changes (ADD ERROR CHECK)
     const globalData = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
@@ -50,6 +54,9 @@ const PaginateCoins = () => {
     return (
         <div className="container">
 
+            {/*alert with text*/}
+            {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}
+
             <h3 className={'mb-0'}><Badge>Цены криптовалют.</Badge></h3>
             <p>
                 Ниже представлены все существующие на мировом рынке монеты,
@@ -68,7 +75,7 @@ const PaginateCoins = () => {
                         <tbody>
                         {
                             (dataSort ?? data).map(elem =>(
-                                <PaginateCoinsTr key={elem.id} elem={elem} />
+                                <PaginateCoinsTr key={elem.id} elem={elem} setShowAlert={setShowAlert} />
                             ))
                         }
                         </tbody>

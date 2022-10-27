@@ -45,7 +45,7 @@ const Router = () => {
                         <Route path="/login" element={<Login />} />
                         <Route path="/phoneLogin" element={<PhoneLogin />} />
 
-                        {/* (briefcase) save values routes*/}
+                        {/* (BriefcaseDB) save values routes*/}
                         <Route path="/briefcase" element={<Briefcase />} />
                     </Routes>
             </UserAuthContextProvider>

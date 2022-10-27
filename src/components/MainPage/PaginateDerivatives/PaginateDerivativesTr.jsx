@@ -33,7 +33,13 @@ const PaginateDerivativesTr = ({id,data}) => {
             <td>
                 {
                     data[GL_URL] &&
-                    <Link to={data[GL_URL]}>{data[GL_URL].slice(8,30)}</Link>
+                    <a
+                        href={data[GL_URL]}
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                    >
+                        {data[GL_URL].slice(8,30)}
+                    </a>
                 }
             </td>
         </tr>
