@@ -39,16 +39,18 @@ const SavedCoinsTable = ({setShowAlert}) => {
                 Boolean(data.length) ?
                     <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
-                        <tr>
-                            <td>#</td>
-                            <td>Название</td>
-                            <td>Акт. цена</td>
-                            <td>24ч</td>
-                            <td>7д</td>
-                            <td>Об. торг. 24ч</td>
-                            <td>Рын. кап-ция</td>
-                            <td>График 3д</td>
-                        </tr>
+                            <tr>
+                                <td>#</td>
+                                <td>Название</td>
+                                <td>Акт. цена</td>
+                                <td>24ч</td>
+                                <td>7д</td>
+                                <td>1мес</td>
+                                <td>Мин/Макс 24ч</td>
+                                <td>Об. торг. 24ч</td>
+                                <td>Рын. кап-ция</td>
+                                <td>График 3д</td>
+                            </tr>
                         </thead>
                         <tbody>
                         {

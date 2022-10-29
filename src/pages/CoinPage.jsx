@@ -5,7 +5,7 @@ import {GLOBAL_API_COIN_ONE_MAIN} from "../constants/ApiCommand";
 import MainData from "../components/CoinPage/MainData";
 import {Spinner} from "react-bootstrap";
 
-const CoinPage = () => {
+const CoinPage = ({setShowAlert}) => {
 
     //coin id from path
     const coindId = useLastWordPath();
@@ -18,7 +18,7 @@ const CoinPage = () => {
 
             {
                 Object.values(dataMain).length?
-                    <MainData dataMain={dataMain} /> :
+                    <MainData dataMain={dataMain} setShowAlert={setShowAlert} /> :
                     <Spinner animation={"border"} variant={"primary"} />
             }
 

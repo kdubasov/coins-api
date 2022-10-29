@@ -19,7 +19,7 @@ const TickersTableTr = ({data,ids}) => {
     return (
         <tr>
             <td>{ids + 1}</td>
-            <td className={'d-flex align-items-center'}>
+            <td>
                 <img width={25} src={data[GL_MKT][GL_LOGO]} alt={data[GL_MKT][GL_NAME]}/>
                 <Link className={'mx-2'} to={`/exchanges/${data[GL_MKT][GL_IDENT]}`}>
                     {data[GL_MKT][GL_NAME]} ({data[GL_MKT][GL_IDENT]})
@@ -35,13 +35,14 @@ const TickersTableTr = ({data,ids}) => {
                 </Link>
             </td>
             <td>{getNumRedAfterDoot(data[GL_EXC_TICK_SPR],4) + '%'}</td>
-            <td className={'d-flex justify-content-center'}>
+            <td>
                 <div
                     style={{
                         width:15,
                         height:15,
                         background:`${data[GL_EXH_TR_SC]}`,
                         borderRadius:10,
+                        margin:"auto",
                 }}
                 />
             </td>
@@ -49,7 +50,7 @@ const TickersTableTr = ({data,ids}) => {
                 {
                     Object.entries(data[GL_EXC_CONV_VOL]).map((elem,ids) => (
                         <p key={ids} className={"small m-0"}>
-                            <strong>{elem[0]}</strong>: {elem[1]}
+                            <strong>{elem[0]}</strong>: {elem[1] && elem[1].toLocaleString('RU')}
                         </p>
                     ))
                 }
@@ -75,9 +76,8 @@ const TickersTableTr = ({data,ids}) => {
             </td>
             <td>
                 {
-                    data[GL_LAST_TR]?
-                        Number(data[GL_LAST_TR].slice(8,10)) === Number(new Date().getDate()) ? 'Недавно' : 'Более дня назад'
-                        :'?'
+                    data[GL_LAST_TR] &&
+                    Number(data[GL_LAST_TR].slice(8,10)) === Number(new Date().getDate()) ? 'Недавно' : 'Более дня назад'
                 }
             </td>
         </tr>

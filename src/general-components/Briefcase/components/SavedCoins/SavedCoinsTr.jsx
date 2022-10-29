@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {
-    GL_CH_PR_24H_PR, GL_CH_PR_CN_7D,
-    GL_CUR_PRICE, GL_IMAGE, GL_MC_RANK,
+    GL_CH_PR_24H_PR, GL_CH_PR_CN_30D, GL_CH_PR_CN_7D,
+    GL_CUR_PRICE, GL_HIGH_24H, GL_IMAGE, GL_LOW_24H, GL_MC_RANK,
     GL_MD, GL_MD_SPL_7D, GL_MK, GL_MKCH_24H_PR, GL_NAME,
     GL_SYMBOL, GL_TT_VOL
 } from "../../../../constants/ApiConstants";
@@ -14,8 +14,7 @@ import {Badge} from "react-bootstrap";
 
 const SavedCoinsTr = ({elem,setShowAlert}) => {
 
-    console.log(elem,'SavedCoinsTr')
-
+    // console.log(elem,'SavedCoinsTr');
     return (
         <tr>
             {/*id*/}
@@ -43,6 +42,16 @@ const SavedCoinsTr = ({elem,setShowAlert}) => {
 
             {/*price change 7 days*/}
             <PaginateChangeTd value={elem[GL_MD][GL_CH_PR_CN_7D]} text={'%'} />
+
+            {/*price change 7 days*/}
+            <PaginateChangeTd value={elem[GL_MD][GL_CH_PR_CN_30D]} text={'%'} />
+
+            {/*min max price 24 hours*/}
+            <td>
+                {elem[GL_MD][GL_LOW_24H]['usd'] && elem[GL_MD][GL_LOW_24H]['usd']?.toLocaleString()}$
+                /
+                {elem[GL_MD][GL_HIGH_24H]['usd'] && elem[GL_MD][GL_HIGH_24H]['usd']?.toLocaleString()}$
+            </td>
 
             {/*Объем торгов за 24 часа*/}
             <td>{elem[GL_MD][GL_TT_VOL] && elem[GL_MD][GL_TT_VOL]['usd']?.toLocaleString()}$</td>

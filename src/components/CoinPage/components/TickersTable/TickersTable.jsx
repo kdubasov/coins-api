@@ -5,6 +5,7 @@ import {GL_TICKERS} from "../../../../constants/ApiConstants";
 import {Alert, Badge, Spinner, Table} from "react-bootstrap";
 import TickersTableTr from "./TickersTableTr";
 import TickersTableShowMore from "./TickersTableShowMore";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 const TickersTable = ({id}) => {
 
@@ -27,7 +28,7 @@ const TickersTable = ({id}) => {
             {
                 data?
                     <>
-                        <Table striped bordered hover>
+                        <Table striped bordered hover variant={getTheme(true)}>
                             <thead>
                             <tr>
                                 <th>#</th>

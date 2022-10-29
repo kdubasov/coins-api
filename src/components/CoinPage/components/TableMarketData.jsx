@@ -9,10 +9,11 @@ import {
     GL_VS_OBR
 } from "../../../constants/ApiConstants";
 import {Table} from "react-bootstrap";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const TableMarketData = ({data}) => {
     return (
-        <Table className={'mt-3 mb-3'} striped bordered hover>
+        <Table className={'mt-3 mb-3'} striped bordered hover variant={getTheme(true)}>
             <tbody>
             <tr>
                 <td>

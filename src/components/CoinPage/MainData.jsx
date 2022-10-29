@@ -16,10 +16,11 @@ import GeneralGraph from "./components/GeneralGraph/GeneralGraph";
 import DateInfo from "./components/DateInfo/DateInfo";
 import TickersTable from "./components/TickersTable/TickersTable";
 import CoinConverter from "./components/CoinСonverter/CoinСonverter";
+import MainButtons from "./components/MainButtons";
 
-const MainData = ({dataMain}) => {
+const MainData = ({dataMain,setShowAlert}) => {
 
-    // console.log(dataMain,'data for one coin all')
+    console.log(dataMain,'data for one coin all');
 
     return (
         <div className={`MainData coin`}>
@@ -28,16 +29,20 @@ const MainData = ({dataMain}) => {
                 <Badge>Номер #{dataMain[GL_MC_RANK] ?? '?'}</Badge>
             </h5>
 
+            <MainButtons coinId={dataMain['id']} setShowAlert={setShowAlert} />
+
             <h4 className={'mt-3 mb-3'}>
                 {/* name symbol logo act.price */}
-                <img width={50} style={{marginRight:5}} src={dataMain[GL_IMAGE]['large']} alt={dataMain[GL_NAME]}/>
+                <img width={50} style={{marginRight:5}} src={dataMain[GL_IMAGE]['large']} alt={dataMain[GL_NAME]} />
+                {/*символ и название*/}
                 ({dataMain[GL_SYMBOL].toUpperCase()}) {dataMain[GL_NAME]}
                 <br/>
                 <strong>
+                    Актуальная цена:
                     {
                         dataMain[GL_MD][GL_CUR_PRICE]["usd"]?
-                            dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString() + "$":
-                            'Нет информации о цене'
+                            ' ' + dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString() + "$":
+                            ' Нет информации о цене'
                     }
                 </strong>
             </h4>

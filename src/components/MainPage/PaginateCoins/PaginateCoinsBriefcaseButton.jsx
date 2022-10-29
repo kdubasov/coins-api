@@ -43,7 +43,7 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert}) => {
                 <Button
                     onClick={() => addCoinBriefcase(elemId)}
                     size={"sm"}
-                    style={{padding:'0 .4em',borderRadius:10,marginLeft:10}}
+                    style={{padding:'0 .4em',marginLeft:10}}
                     variant={"success"}
                 >+</Button>
             }
@@ -53,7 +53,7 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert}) => {
                     <Button
                         size={"sm"}
                         onClick={() => deleteCoinBriefcase(elemId)}
-                        style={{padding:'0 .4em',borderRadius:10,marginLeft:10}}
+                        style={{padding:'0 .4em',marginLeft:10}}
                         variant={"danger"}
                     >-</Button>
             }
