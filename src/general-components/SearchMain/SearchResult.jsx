@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Button} from "react-bootstrap";
 import SearchResultInner from "./SearchResultInner";
+import {GL_NAME} from "../../constants/ApiConstants";
 
 const SearchResult = ({show,setShowRes,query,data}) => {
 
@@ -24,7 +25,7 @@ const SearchResult = ({show,setShowRes,query,data}) => {
     };
 
     //для того чтобы находились элементы только с именами из запроса (для категорий и нфт)
-    const handleSortName = value => value?value[1].filter(elem => (elem.name?.toLowerCase())?.includes(query.toLowerCase())):false;
+    const handleSortName = value => value?value[1].filter(elem => (elem[GL_NAME]?.toLowerCase())?.includes(query.toLowerCase())):false;
 
     //for check result for all queries
     const getFalseRes = () => {

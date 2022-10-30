@@ -1,7 +1,7 @@
 import React from 'react';
 import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_GLOBAL_COMMAND} from "../../constants/ApiCommand";
-import {ListGroup, Spinner} from "react-bootstrap";
+import {Badge, ListGroup, Spinner} from "react-bootstrap";
 import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../constants/ApiConstants";
 
 const GeneralInfo = () => {
@@ -29,34 +29,48 @@ const GeneralInfo = () => {
 
     return (
         <div className={'GeneralInfo container mt-3 mb-3'}>
-            <ListGroup horizontal>
-                <ListGroup.Item>
-                    Кол-во монет:
-                    <strong> {data?data[GL_ACT_COINS].toLocaleString():SpinnerSmall}шт.</strong>
-                </ListGroup.Item>
+            {
+                data &&
+                <ListGroup horizontal>
+                    <ListGroup.Item>
+                        Кол-во монет:
+                        <strong> {data[GL_ACT_COINS] ? data[GL_ACT_COINS].toLocaleString() + 'шт.' : SpinnerSmall}</strong>
+                    </ListGroup.Item>
 
-                <ListGroup.Item>
-                    Кол-во бирж:
-                    <strong> {data?data[GL_MKTS]:SpinnerSmall} </strong>
-                </ListGroup.Item>
+                    <ListGroup.Item>
+                        Кол-во бирж:
+                        <strong> {data[GL_MKTS] ? data[GL_MKTS] : SpinnerSmall} </strong>
+                    </ListGroup.Item>
 
-                <ListGroup.Item>
-                    Изменение рынка за 24ч:
-                    <strong> {data?data[GL_CH_ALL_PR].toLocaleString():SpinnerSmall}%</strong>
-                </ListGroup.Item>
+                    <ListGroup.Item>
+                        Изменение рынка за 24ч:
+                        {
+                            data[GL_CH_ALL_PR] &&
+                            <Badge bg={String(data[GL_CH_ALL_PR]).startsWith('-') ? "danger" : "success"}>
+                                {String(data[GL_CH_ALL_PR]).startsWith('-') ? '' : '+'}
+                                {data[GL_CH_ALL_PR] ? data[GL_CH_ALL_PR].toLocaleString() + '%' : SpinnerSmall}
+                            </Badge>
+                        }
+                    </ListGroup.Item>
 
-                <ListGroup.Item>
-                    Доминирование
-                    <strong> {data?getMainCoin(data[GL_MK_PR],'coin'):SpinnerSmall} </strong>
-                    по рыночной капитализации:
-                    <strong> {data?getMainCoin(data[GL_MK_PR],'price').toLocaleString():SpinnerSmall}% </strong>
-                </ListGroup.Item>
+                    <ListGroup.Item>
+                        {
+                            Object.values(data[GL_MK_PR]).length ?
+                            <>
+                                Доминирование
+                                <strong> {getMainCoin(data[GL_MK_PR],'coin')} </strong>
+                                по рыночной капитализации:
+                                <strong> {getMainCoin(data[GL_MK_PR],'price').toLocaleString() + '%'} </strong>
+                            </> : SpinnerSmall
+                        }
+                    </ListGroup.Item>
 
-                <ListGroup.Item>
-                    Общая рыночная капитализация:
-                    <strong> {data?data[GL_TT_MK]['usd'].toLocaleString() + '$':SpinnerSmall} </strong>
-                </ListGroup.Item>
-            </ListGroup>
+                    <ListGroup.Item>
+                        Общая рыночная капитализация:
+                        <strong> {data[GL_TT_MK]['usd'] ? data[GL_TT_MK]['usd'].toLocaleString() + '$' : SpinnerSmall} </strong>
+                    </ListGroup.Item>
+                </ListGroup>
+            }
         </div>
     );
 };

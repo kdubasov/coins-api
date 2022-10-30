@@ -37,6 +37,7 @@ export const GL_MD_SPL_7D = 'sparkline_7d';
 export const GL_MD_SPL_IN_7D = 'sparkline_in_7d';
 // export const GL_PR_BTC = 'price_btc';
 export const GL_ASS_PL = 'asset_platform_id';
+export const GL_UPDATED = 'updated_at';
 
 //developer data for one coin
 export const GL_DEV_DATA = 'developer_data';

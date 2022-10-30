@@ -30,12 +30,13 @@ const ExchangesPaginate = () => {
                     <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
                         <tr>
-                            <th>Рейтинг доверия</th>
+                            <th>#</th>
                             <th>Биржа</th>
                             <th>Очки доверия</th>
                             <th>Об. торгов 24ч</th>
                             <th>Оф. сайт</th>
                             <th>Год осн.</th>
+                            <th>Страна осн.</th>
                         </tr>
                         </thead>
 
