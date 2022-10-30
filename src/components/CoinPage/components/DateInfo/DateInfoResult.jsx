@@ -2,6 +2,7 @@ import React from 'react';
 import {Alert, Table} from "react-bootstrap";
 import {GL_CUR_PRICE, GL_MK, GL_TT_VOL} from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 const DateInfoResult = ({data,date}) => {
 
@@ -9,7 +10,7 @@ const DateInfoResult = ({data,date}) => {
         <div className={'DateInfoResult mt-2'}>
             {
                 data?
-                    <Table striped bordered hover variant="dark">
+                    <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
                         <tr>
                             <th>Дата</th>

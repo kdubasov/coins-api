@@ -7,7 +7,7 @@ import PaginateCoinsSort from "../components/MainPage/PaginateCoins/PaginateCoin
 import PaginateCoinsTr from "../components/MainPage/PaginateCoins/PaginateCoinsTr";
 import {GL_NAME} from "../constants/ApiConstants";
 
-const CategoriesPage = () => {
+const CategoriesPage = ({setShowAlert}) => {
 
     //for sort data
     const [dataSort,setDataSort] = useState(null)
@@ -76,7 +76,7 @@ const CategoriesPage = () => {
                         <tbody>
                         {
                             (dataSort ?? data).map(elem =>(
-                                <PaginateCoinsTr key={elem.id} elem={elem} />
+                                <PaginateCoinsTr setShowAlert={setShowAlert} key={elem.id} elem={elem} />
                             ))
                         }
                         </tbody>

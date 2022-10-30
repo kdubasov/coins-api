@@ -20,7 +20,7 @@ import MainButtons from "./components/MainButtons";
 
 const MainData = ({dataMain,setShowAlert}) => {
 
-    console.log(dataMain,'data for one coin all');
+    // console.log(dataMain,'data for one coin all');
 
     return (
         <div className={`MainData coin`}>

@@ -18,6 +18,7 @@ const MainPage = () => {
 
     return (
         <>
+
             <GeneralInfo />
             <SearchInput />
 

@@ -24,7 +24,7 @@ const MyComponent = ({elem}) => {
             </td>
             <td>
                 {/*24h value*/}
-                {getNumRedAfterDoot(elem[GL_EXH_24H_VOL],2)}
+                {getNumRedAfterDoot(elem[GL_EXH_24H_VOL],2).toLocaleString('RU')}
                 (btc)
             </td>
             <td>

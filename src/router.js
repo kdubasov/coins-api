@@ -37,7 +37,7 @@ const Router = () => {
                         <Route path={`/`} element={<MainPage />} />
                         <Route path={'/coins/:coinId'} element={<CoinPage setShowAlert={setShowAlert} />} />
                         <Route path={'/nft/:nftId'} element={<NftPage />} />
-                        <Route path={'/categories/:categoryId'} element={<CategoriesPage />} />
+                        <Route path={'/categories/:categoryId'} element={<CategoriesPage  setShowAlert={setShowAlert} />} />
                         <Route path={'/exchanges/:exchangeId'} element={<ExchangesPage />} />
                         <Route path={'/derivatives/:exchangeId'} element={<DerivativePage />} />
 

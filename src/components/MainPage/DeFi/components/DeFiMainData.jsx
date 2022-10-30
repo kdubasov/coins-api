@@ -17,14 +17,16 @@ const DeFiMainData = () => {
     // console.log(data,'DeFi data');
 
     const getListItem = (text,apiConst,redact,sign) =>{
+
         return(
             <ListGroup.Item className={'p-3'}>
                 <Badge bg={"secondary"}>
                 <h6 className={`m-0`}>
                     {
+                        data[apiConst] &&
                         redact?
-                            getNumRedAfterDoot(data[apiConst],3) + (sign?sign:''):
-                            data[apiConst]
+                            getNumRedAfterDoot(data[apiConst],3).toLocaleString() + (sign && sign):
+                            data[apiConst].toLocaleString()
                     }
                 </h6>
                 </Badge>
