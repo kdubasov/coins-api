@@ -4,6 +4,7 @@ import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_COIN_ONE_MAIN} from "../constants/ApiCommand";
 import MainData from "../components/CoinPage/MainData";
 import {Spinner} from "react-bootstrap";
+import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
 
 const CoinPage = ({setShowAlert}) => {
 
@@ -11,14 +12,18 @@ const CoinPage = ({setShowAlert}) => {
     const coindId = useLastWordPath();
 
     //main data od coin
-    const dataMain = useApi(GLOBAL_API_COIN_ONE_MAIN(coindId)).data;
+    const dataMain = useApi(GLOBAL_API_COIN_ONE_MAIN(coindId));
+    // console.log(dataMain,'CoinPage');
 
     return (
         <div className={`CoinPage container pt-3 pb-3`}>
 
+            {/*проверяет ошибки запроса*/}
+            <ErrorGetInfoAlert data={dataMain} />
+
             {
-                Object.values(dataMain).length?
-                    <MainData dataMain={dataMain} setShowAlert={setShowAlert} /> :
+                Object.values(dataMain.data).length?
+                    <MainData dataMain={dataMain.data} setShowAlert={setShowAlert} /> :
                     <Spinner animation={"border"} variant={"primary"} />
             }
 

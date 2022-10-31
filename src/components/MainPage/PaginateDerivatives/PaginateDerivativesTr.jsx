@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 
 const PaginateDerivativesTr = ({id,data}) => {
 
-    console.log(data,'data for one Derivative');
+    // console.log(data,'data for one Derivative');
 
     return (
         <tr>

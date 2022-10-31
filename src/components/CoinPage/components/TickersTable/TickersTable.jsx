@@ -44,12 +44,12 @@ const TickersTable = ({id}) => {
                             </thead>
 
                             <tbody>
-                            {data.slice(0,(showMore?100:50)).map((elem,ids) => (
+                            {data.slice(0,(showMore?100:20)).map((elem,ids) => (
                                 <TickersTableTr key={ids} data={elem} ids={ids} />
                             ))}
                             </tbody>
                         </Table>
-                        {Object.values(data).length>=50 && <TickersTableShowMore showMore={showMore} setShowMore={setShowMore} />}
+                        {Object.values(data).length>=20 && <TickersTableShowMore showMore={showMore} setShowMore={setShowMore} />}
                     </>:
                     <Spinner animation={"border"} variant={"primary"} />
             }

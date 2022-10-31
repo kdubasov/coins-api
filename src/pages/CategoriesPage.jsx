@@ -6,11 +6,12 @@ import {Alert, Badge, Spinner, Table} from "react-bootstrap";
 import PaginateCoinsSort from "../components/MainPage/PaginateCoins/PaginateCoinsSort";
 import PaginateCoinsTr from "../components/MainPage/PaginateCoins/PaginateCoinsTr";
 import {GL_NAME} from "../constants/ApiConstants";
+import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
 
 const CategoriesPage = ({setShowAlert}) => {
 
     //for sort data
-    const [dataSort,setDataSort] = useState(null)
+    const [dataSort,setDataSort] = useState(null);
 
     //get category id and name
     const categoriesName = useLastWordPath();
@@ -36,7 +37,7 @@ const CategoriesPage = ({setShowAlert}) => {
     const data = useApi(
         GLOBAL_API_COINS_SORT_CATEGORIES_LIST(
             getIdAndName()?getIdAndName()['category_id']:'ethereum-ecosystem',100,1
-        )).data;
+        ));
 
     // console.log(getIdAndName())
     // console.log(data,'GLOBAL_API_COINS_SORT_CATEGORIES_LIST')
@@ -44,6 +45,9 @@ const CategoriesPage = ({setShowAlert}) => {
 
     return (
         <div className={`CategoriesPage container`}>
+
+            {/*проверяет ошибки запроса*/}
+            <ErrorGetInfoAlert data={data} />
 
             {
                 !getIdAndName() &&
@@ -67,15 +71,15 @@ const CategoriesPage = ({setShowAlert}) => {
             {/*TABLE FOR COINS*/}
             {
                 //check result and show spinner or table with coins
-                Object.keys(data).length && getIdAndName()?
+                Object.keys(data.data).length && getIdAndName()?
                     <Table striped bordered hover>
                         <thead>
-                            <PaginateCoinsSort data={data} setDataSort={setDataSort} />
+                            <PaginateCoinsSort data={data.data} setDataSort={setDataSort} />
                         </thead>
 
                         <tbody>
                         {
-                            (dataSort ?? data).map(elem =>(
+                            (dataSort ?? data.data).map(elem =>(
                                 <PaginateCoinsTr setShowAlert={setShowAlert} key={elem.id} elem={elem} />
                             ))
                         }

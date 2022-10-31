@@ -2,8 +2,8 @@ import React from 'react';
 import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import MainData from "../components/NftPage/MainData";
-import {Alert, Spinner} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Spinner} from "react-bootstrap";
+import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
 
 const NftPage = () => {
 
@@ -16,13 +16,10 @@ const NftPage = () => {
 
     return (
         <div className={`NftPage container pt-3`}>
-            {   //check error in data
-                data.error &&
-                <Alert variant={"danger"}>
-                    Ошибка получения данных,
-                    <Link to={'/'}>вернуться назад</Link>.
-                </Alert>
-            }
+
+            {/*проверяет ошибки запроса*/}
+            <ErrorGetInfoAlert data={data} />
+
             {   //show result or wait result
                 Object.values(data.data).length?
                     <MainData dataMain={data.data} /> :

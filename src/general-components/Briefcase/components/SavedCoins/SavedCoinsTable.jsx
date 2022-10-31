@@ -1,4 +1,4 @@
-import React, {useState,useLayoutEffect} from 'react';
+import React, {useState, useLayoutEffect} from 'react';
 import {Spinner, Table} from "react-bootstrap";
 import {useGetDBData} from "../../../../hooks/useGetDbData";
 import {useUserAuth} from "../../../../contexts/UserAuthContext";
