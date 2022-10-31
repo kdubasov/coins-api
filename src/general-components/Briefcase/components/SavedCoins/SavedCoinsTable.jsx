@@ -54,8 +54,8 @@ const SavedCoinsTable = ({setShowAlert}) => {
                         </thead>
                         <tbody>
                         {
-                            data.map(coin => (
-                                <SavedCoinsTr key={coin.id} elem={coin} setShowAlert={setShowAlert} />
+                            data.map((coin,ids) => (
+                                <SavedCoinsTr key={ids} elem={coin} setShowAlert={setShowAlert} />
                             ))
                         }
                         </tbody>
