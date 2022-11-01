@@ -1,11 +1,12 @@
 import React, {useState, useLayoutEffect} from 'react';
-import {Spinner, Table} from "react-bootstrap";
+import {Alert, Spinner, Table} from "react-bootstrap";
 import {useGetDBData} from "../../../../hooks/useGetDbData";
 import {useUserAuth} from "../../../../contexts/UserAuthContext";
 import {getTheme} from "../../../../functions/Theme/getTheme";
 import {GLOBAL_API_COIN_ONE_MAIN, GLOBAL_API_URL} from "../../../../constants/ApiCommand";
 import axios from "axios";
 import SavedCoinsTr from "./SavedCoinsTr";
+import {Link} from "react-router-dom";
 
 const SavedCoinsTable = ({setShowAlert}) => {
 
@@ -54,13 +55,21 @@ const SavedCoinsTable = ({setShowAlert}) => {
                         </thead>
                         <tbody>
                         {
-                            data.map((coin,ids) => (
+                            data
+                                .filter((v,i,a) => a.findIndex(t => (t.id === v.id)) === i)//удаляем повторяющиеся значения
+                                .map((coin,ids) => (
                                 <SavedCoinsTr key={ids} elem={coin} setShowAlert={setShowAlert} />
                             ))
                         }
                         </tbody>
                     </Table>:
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <Alert className={"d-flex w-50 p-2 justify-content-between align-items-center small"}>
+                        <span>
+                            Вы пока не добавили ни одной монеты в избранное.
+                            Для добавления монет вы должны вернуться <Link to={'/'}>на главную</Link>.
+                        </span>
+                        <Spinner animation={"border"} size={"sm"} variant={"primary"} />
+                    </Alert>
             }
         </>
     );

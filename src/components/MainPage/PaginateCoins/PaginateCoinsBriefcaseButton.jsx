@@ -55,7 +55,9 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert}) => {
                         onClick={() => deleteCoinBriefcase(elemId)}
                         style={{padding:'0 .4em',marginLeft:10}}
                         variant={"danger"}
-                    >-</Button>
+                    >
+                        -
+                    </Button>
             }
         </>
     );
