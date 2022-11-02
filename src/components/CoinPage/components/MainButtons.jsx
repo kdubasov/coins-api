@@ -4,6 +4,12 @@ import PaginateCoinsBriefcaseButton from "../../MainPage/PaginateCoins/PaginateC
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const MainButtons = ({setShowAlert,coinId}) => {
+
+    const handleCopy = () => {
+        setShowAlert({show:true,text:"Ссылка скопирована.",variant:"success"})
+        setTimeout(() => setShowAlert({show:false,text:"",variant:""}),3000)
+    }
+
     return (
         <ButtonGroup size={"sm"}>
             {/*add with check to BriefcaseDB button*/}
@@ -11,7 +17,7 @@ const MainButtons = ({setShowAlert,coinId}) => {
 
             {/*скопироавть ссылку*/}
             <CopyToClipboard text={window.location.href}>
-                <Button onClick={() => setShowAlert({show:true,text:"Ссылка скопирована.",variant:"success"})}>
+                <Button onClick={() => handleCopy()}>
                     Поделиться
                 </Button>
             </CopyToClipboard>

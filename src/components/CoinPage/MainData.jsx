@@ -17,6 +17,7 @@ import DateInfo from "./components/DateInfo/DateInfo";
 import TickersTable from "./components/TickersTable/TickersTable";
 import CoinConverter from "./components/CoinСonverter/CoinСonverter";
 import MainButtons from "./components/MainButtons";
+import TableMarketDataMore from "./components/TableMarketDataMore";
 
 const MainData = ({dataMain,setShowAlert}) => {
 
@@ -45,6 +46,12 @@ const MainData = ({dataMain,setShowAlert}) => {
                             ' Нет информации о цене'
                     }
                 </strong>
+                <i style={{fontSize:14,marginLeft:10}}>
+                    {
+                        dataMain[GL_MD][GL_CUR_PRICE]["btc"] &&
+                        dataMain[GL_MD][GL_CUR_PRICE]["btc"].toLocaleString() + 'BTC'
+                    }
+                </i>
             </h4>
 
             {/*description*/}
@@ -64,6 +71,9 @@ const MainData = ({dataMain,setShowAlert}) => {
 
             {/*change price table*/}
             <TableChangePrice data={dataMain[GL_MD]} />
+
+            {/*market-data table*/}
+            <TableMarketDataMore data={dataMain[GL_MD]} title={dataMain[GL_NAME]} />
 
             {/*date info about coin*/}
             <DateInfo id={dataMain.id} />

@@ -39,6 +39,14 @@ export const GL_MD_SPL_IN_7D = 'sparkline_in_7d';
 export const GL_ASS_PL = 'asset_platform_id';
 export const GL_UPDATED = 'updated_at';
 
+//market data atl ath
+export const GL_ATH = 'ath';
+export const GL_ATL = 'atl';
+export const GL_ATH_CH_PC = 'ath_change_percentage';
+export const GL_ATL_CH_PC = 'atl_change_percentage';
+export const GL_ATH_DATE = 'ath_date';
+export const GL_ATL_DATE = 'atl_date';
+
 //developer data for one coin
 export const GL_DEV_DATA = 'developer_data';
 export const GL_DEV_STARS = 'stars';
