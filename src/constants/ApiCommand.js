@@ -42,6 +42,7 @@ export const GLOBAL_API_DEFI = `/global/decentralized_finance_defi`;
 export const GLOBAL_API_NFTS_LIST_ALL = (sizePage,currentPage) =>{
     return `/nfts/list?order=h24_volume_native_desc&per_page=${sizePage}&page=${currentPage}`
 };
+export const GLOBAL_API_NFT_ONE = id => `/nfts/${id}`;
 
 //CATEGORIES LIST
 export const GLOBAL_API_CATEGORIES_LIST_ALL = `/coins/categories`;

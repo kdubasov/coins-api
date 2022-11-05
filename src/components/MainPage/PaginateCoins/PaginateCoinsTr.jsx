@@ -22,7 +22,7 @@ const PaginateCoinsTr = ({elem,setShowAlert}) => {
             <td>
                 {elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}
                 {/*add with check to BriefcaseDB button*/}
-                <PaginateCoinsBriefcaseButton elemId={elem['id']} setShowAlert={setShowAlert} />
+                <PaginateCoinsBriefcaseButton elemId={elem['id']} setShowAlert={setShowAlert} table={'coins'} title={'Монета'} />
             </td>
 
             {/*img and name*/}

@@ -4,14 +4,15 @@ import {useApi} from "../hooks/useApi";
 import MainData from "../components/NftPage/MainData";
 import {Spinner} from "react-bootstrap";
 import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
+import {GLOBAL_API_NFT_ONE} from "../constants/ApiCommand";
 
-const NftPage = () => {
+const NftPage = ({setShowAlert}) => {
 
     //nft id from path
     const nftId = useLastWordPath()
 
     //data for nft
-    const data = useApi(`/nfts/${nftId}`);
+    const data = useApi(GLOBAL_API_NFT_ONE(nftId));
     // console.log(data,`NFT ID DATA:${nftId}`)
 
     return (
@@ -22,7 +23,7 @@ const NftPage = () => {
 
             {   //show result or wait result
                 Object.values(data.data).length?
-                    <MainData dataMain={data.data} /> :
+                    <MainData dataMain={data.data} setShowAlert={setShowAlert} /> :
                     <Spinner animation={"border"} variant={"primary"} />
             }
         </div>

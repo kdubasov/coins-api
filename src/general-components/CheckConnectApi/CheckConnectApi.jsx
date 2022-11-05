@@ -11,7 +11,7 @@ const CheckConnectApi = () => {
     if (checkConnectAPI.error || !Object.values(checkConnectAPI.data)) {
         return (
             <Alert variant={'danger'} className={"w-75 mx-auto p-2 small"}>
-                Нет соединения с сервером, посестите нас позже.
+                Нет соединения с сервером, пожалуйста, посестите нас позже.
             </Alert>
         );
     }

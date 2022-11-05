@@ -12,7 +12,7 @@ import PaginateDerivatives from "../components/MainPage/PaginateDerivatives/Pagi
 import PaginateNft from "../components/MainPage/PaginateNft/PaginateNft";
 import HoldCompanies from "../components/MainPage/HoldCompanies/HoldCompanies";
 
-const MainPage = () => {
+const MainPage = ({setShowAlert}) => {
 
     const [navPaginate,setNavPaginate] = useState("coins");
 
@@ -28,7 +28,7 @@ const MainPage = () => {
             />
 
             {navPaginate === "coins" && <PaginateCoins />}
-            {navPaginate === "nft" && <PaginateNft />}
+            {navPaginate === "nft" && <PaginateNft setShowAlert={setShowAlert} />}
             {navPaginate === "defi" && <DeFi />}
             {navPaginate === "categories" && <PaginateCategories />}
             {navPaginate === "trendCoins" && <TrendCoins />}

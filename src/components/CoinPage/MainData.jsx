@@ -30,7 +30,8 @@ const MainData = ({dataMain,setShowAlert}) => {
                 <Badge>Номер #{dataMain[GL_MC_RANK] ?? '?'}</Badge>
             </h5>
 
-            <MainButtons coinId={dataMain['id']} setShowAlert={setShowAlert} />
+            {/*кнопка для добавление в избранное и поделиться*/}
+            <MainButtons coinId={dataMain['id']} setShowAlert={setShowAlert} table={'coins'} title={'Монета'} />
 
             <h4 className={'mt-3 mb-3'}>
                 {/* name symbol logo act.price */}

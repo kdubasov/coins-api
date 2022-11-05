@@ -7,8 +7,9 @@ import {
 } from "../../constants/ApiConstants";
 import {Badge, ListGroup} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import MainButtons from "../CoinPage/components/MainButtons";
 
-const MainData = ({dataMain}) => {
+const MainData = ({dataMain,setShowAlert}) => {
 
     // console.log(dataMain,'data for one nft');
 
@@ -22,6 +23,10 @@ const MainData = ({dataMain}) => {
 
     return (
         <div className={`MainData nft`}>
+
+            {/*кнопка для добавление в избранное и поделиться*/}
+            <MainButtons coinId={dataMain['id']} setShowAlert={setShowAlert} table={'nfts'} title={'Nft'} />
+
             <p className={'mt-3 mb-3 small d-flex align-items-center'}>
                 <img
                     width={100}

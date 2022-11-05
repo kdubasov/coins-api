@@ -5,8 +5,9 @@ import {Badge, ListGroup, Spinner} from "react-bootstrap";
 import {GL_NAME, GL_SYMBOL} from "../../../constants/ApiConstants";
 import {Link} from "react-router-dom";
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
+import PaginateCoinsBriefcaseButton from "../PaginateCoins/PaginateCoinsBriefcaseButton";
 
-const PaginateNft = () => {
+const PaginateNft = ({setShowAlert}) => {
 
 
     //for paginate (nfts)
@@ -32,13 +33,18 @@ const PaginateNft = () => {
                                 className="d-flex justify-content-between align-items-center"
                             >
                                 <div className="d-flex">
+                                    {/*add with check to BriefcaseDB button*/}
+                                    <PaginateCoinsBriefcaseButton elemId={nft['id']} setShowAlert={setShowAlert} table={'nfts'} title={'Nft'} />
+
                                     <div className="fw-bold mx-2">({nft[GL_SYMBOL]})</div>
+
                                     <Link to={`/nft/${nft["id"]}`}>
                                         {nft[GL_NAME]}
                                     </Link>
                                 </div>
 
-                                <Badge bg="primary" pill>
+
+                                <Badge bg="primary" pill className={"mx-1"}>
                                     #{(ids + 1) + (50 * (currentPage - 1))}
                                 </Badge>
                             </ListGroup.Item>

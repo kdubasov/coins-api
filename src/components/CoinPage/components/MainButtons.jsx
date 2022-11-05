@@ -3,7 +3,7 @@ import {Button, ButtonGroup} from "react-bootstrap";
 import PaginateCoinsBriefcaseButton from "../../MainPage/PaginateCoins/PaginateCoinsBriefcaseButton";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-const MainButtons = ({setShowAlert,coinId}) => {
+const MainButtons = ({setShowAlert,coinId,table,title}) => {
 
     const handleCopy = () => {
         setShowAlert({show:true,text:"Ссылка скопирована.",variant:"success"})
@@ -13,7 +13,7 @@ const MainButtons = ({setShowAlert,coinId}) => {
     return (
         <ButtonGroup size={"sm"}>
             {/*add with check to BriefcaseDB button*/}
-            <PaginateCoinsBriefcaseButton elemId={coinId} setShowAlert={setShowAlert} />
+            <PaginateCoinsBriefcaseButton elemId={coinId} setShowAlert={setShowAlert} table={table} title={title} />
 
             {/*скопироавть ссылку*/}
             <CopyToClipboard text={window.location.href}>
