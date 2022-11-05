@@ -6,7 +6,7 @@ import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import ExchangesPaginateTr from "./ExchangesPaginateTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
 
-const ExchangesPaginate = () => {
+const ExchangesPaginate = ({setShowAlert}) => {
 
     //all pages
     const exchangesAllIds = useApi(GLOBAL_API_EXCHANGES_LIST).data.length;
@@ -43,7 +43,7 @@ const ExchangesPaginate = () => {
                         <tbody>
                         {
                             data.map(elem =>(
-                               <ExchangesPaginateTr elem={elem} key={elem.id} />
+                               <ExchangesPaginateTr elem={elem} key={elem.id} setShowAlert={setShowAlert} />
                             ))
                         }
                         </tbody>

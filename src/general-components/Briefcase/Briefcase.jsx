@@ -3,6 +3,7 @@ import {Badge} from "react-bootstrap";
 import SavedCoinsTable from "./components/SavedCoins/SavedCoinsTable";
 import MessageAlert from "../Alerts/MessageAlert";
 import SavedNftsTable from "./components/SavedNfts/SavedNftsTable";
+import SavedExchangesTable from "./components/SavedExchanges/SavedExchangesTable";
 
 const Briefcase = () => {
 
@@ -27,6 +28,9 @@ const Briefcase = () => {
 
             {getBadge("Nft")}
             <SavedNftsTable setShowAlert={setShowAlert} />
+
+            {getBadge("Биржи")}
+            <SavedExchangesTable setShowAlert={setShowAlert} />
         </div>
     );
 };

@@ -1,28 +1,28 @@
 import React from 'react';
 import {
-    GL_COUNTR,
     GL_EXC_TR_SC_RANK,
     GL_EXC_YEAR,
     GL_EXH_24H_VOL,
-    GL_EXH_TR_SC, GL_IMAGE, GL_NAME,
-    GL_URL
-} from "../../../constants/ApiConstants";
+    GL_EXH_TR_SC,
+    GL_IMAGE,
+    GL_NAME, GL_URL
+} from "../../../../constants/ApiConstants";
+import PaginateCoinsBriefcaseButton from "../../../../components/MainPage/PaginateCoins/PaginateCoinsBriefcaseButton";
 import {Link} from "react-router-dom";
 import {ProgressBar} from "react-bootstrap";
-import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
-import PaginateCoinsBriefcaseButton from "../PaginateCoins/PaginateCoinsBriefcaseButton";
+import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 
-const ExchangesPaginate = ({elem,setShowAlert}) => {
+const SavedExchangesTr = ({elem,setShowAlert,elemId}) => {
 
-    // console.log(elem,'ExchangesPaginate');
+    // console.log(elemId);
 
     return (
-        <tr key={elem.id}>
+        <tr>
             <td>
                 #{elem[GL_EXC_TR_SC_RANK] && elem[GL_EXC_TR_SC_RANK]}
 
                 {/*add with check to BriefcaseDB button*/}
-                <PaginateCoinsBriefcaseButton elemId={elem['id']} setShowAlert={setShowAlert} table={'exchanges'} title={'Биржа'} />
+                <PaginateCoinsBriefcaseButton elemId={elemId.id} setShowAlert={setShowAlert} table={'exchanges'} title={'Биржа'} />
             </td>
             <td>
                 {/*name and logo img*/}
@@ -32,6 +32,13 @@ const ExchangesPaginate = ({elem,setShowAlert}) => {
                         <img width={35} src={elem[GL_IMAGE]} alt={elem[GL_NAME]}/>
                         <Link className={'mx-2'} to={`/exchanges/${elem.id}`}>{elem[GL_NAME]}</Link>
                     </>
+                }
+            </td>
+            <td>
+                {/*24h value*/}
+                {
+                    elem[GL_EXH_24H_VOL] &&
+                    getNumRedAfterDoot(elem[GL_EXH_24H_VOL],2).toLocaleString('RU') + '(btc)'
                 }
             </td>
             {/*рейтинг доверия*/}
@@ -46,11 +53,8 @@ const ExchangesPaginate = ({elem,setShowAlert}) => {
                 }
             </td>
             <td>
-                {/*24h value*/}
-                {
-                    elem[GL_EXH_24H_VOL] &&
-                    getNumRedAfterDoot(elem[GL_EXH_24H_VOL],2).toLocaleString('RU') + '(btc)'
-                }
+                {/*year*/}
+                {elem[GL_EXC_YEAR] && elem[GL_EXC_YEAR]}
             </td>
             <td>
                 {/*official website link*/}
@@ -64,16 +68,8 @@ const ExchangesPaginate = ({elem,setShowAlert}) => {
                     </a>
                 }
             </td>
-            <td>
-                {/*year*/}
-                {elem[GL_EXC_YEAR] && elem[GL_EXC_YEAR]}
-            </td>
-            <td>
-                {/*country*/}
-                {elem[GL_COUNTR] && elem[GL_COUNTR]}
-            </td>
         </tr>
     );
 };
 
-export default ExchangesPaginate;
+export default SavedExchangesTr;

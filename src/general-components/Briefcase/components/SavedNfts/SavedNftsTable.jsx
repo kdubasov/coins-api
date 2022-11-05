@@ -46,7 +46,7 @@ const SavedNftsTable = ({setShowAlert}) => {
                             <td>Мин. цена</td>
                             <td>Изм. мин. цены 24ч</td>
                             <td>Рын. кап.</td>
-                            <td>24-часовой объем</td>
+                            <td>Об. торг. 24ч</td>
                             <td>Валюта</td>
                             <td>Об. предложение</td>
                         </tr>
