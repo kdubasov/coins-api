@@ -28,7 +28,7 @@ const GeneralInfo = () => {
     }
 
     return (
-        <div className={'GeneralInfo container mt-3 mb-3'}>
+        <div className={'GeneralInfo container mt-3 mb-3 p-0'}>
             {
                 data &&
                 <ListGroup horizontal>

@@ -44,8 +44,11 @@ const Developers = ({data}) => {
                             {getListItem(data[GL_DEV_FORKS],'Форки')}
                         </ListGroup>
 
-                        {   //массив все равно будет но с нулями поэтому такая проверка
-                            (data[GL_COMM_GRAPH][0] !== 0 || data[GL_COMM_GRAPH][1] !== 0 || data[GL_COMM_GRAPH][2] !== 0) &&
+                        {   //массив все равно будет но с нулями или пустой поэтому такая проверка
+                            (
+                                (data[GL_COMM_GRAPH].length) &&
+                                (data[GL_COMM_GRAPH][0] !== 0 || data[GL_COMM_GRAPH][1] !== 0 || data[GL_COMM_GRAPH][2] !== 0)
+                            ) &&
                                 <DevGraph data={data[GL_COMM_GRAPH]} />
                         }
                     </>

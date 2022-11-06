@@ -1,15 +1,19 @@
 import React, {useState} from 'react';
-import {Badge, Button} from "react-bootstrap";
+import {Badge, Button, Form} from "react-bootstrap";
 import SavedCoinsTable from "./components/SavedCoins/SavedCoinsTable";
 import MessageAlert from "../Alerts/MessageAlert";
 import SavedNftsTable from "./components/SavedNfts/SavedNftsTable";
 import SavedExchangesTable from "./components/SavedExchanges/SavedExchangesTable";
 import {useUserAuth} from "../../contexts/UserAuthContext";
 import {deleteAllBriefcase} from "../../functions/BriefcaseDB/deleteAllBriefcase";
+import GeneralInfo from "../GeneralInfo/GeneralInfo";
 
 const Briefcase = () => {
 
     const { user } = useUserAuth();
+
+    //for show or hide general info block
+    const [hide,setHide] = useState(false);
 
     // for show/hide alert
     const [showAlert, setShowAlert] = useState({show:false,text:'',variant:''})
@@ -54,6 +58,19 @@ const Briefcase = () => {
 
             {getBadge("Биржи")}
             <SavedExchangesTable setShowAlert={setShowAlert} />
+
+            <br />
+            {getBadge("Основная информация")}
+            <Form.Check
+                type="switch"
+                label="Скрыть этот блок"
+                checked={hide}
+                onChange={() => setHide(!hide)}
+            />
+            {
+                !hide &&
+                <GeneralInfo />
+            }
         </div>
     );
 };
