@@ -14,7 +14,7 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 
 const SavedExchangesTr = ({elem,setShowAlert,elemId}) => {
 
-    // console.log(elemId);
+    console.log(elemId,'SavedExchangesTr');
 
     return (
         <tr>
@@ -30,7 +30,7 @@ const SavedExchangesTr = ({elem,setShowAlert,elemId}) => {
                     (elem[GL_NAME] && elem[GL_IMAGE]) &&
                     <>
                         <img width={35} src={elem[GL_IMAGE]} alt={elem[GL_NAME]}/>
-                        <Link className={'mx-2'} to={`/exchanges/${elem.id}`}>{elem[GL_NAME]}</Link>
+                        <Link className={'mx-2'} to={`/exchanges/${elemId.id}`}>{elem[GL_NAME]}</Link>
                     </>
                 }
             </td>

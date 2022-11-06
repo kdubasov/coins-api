@@ -6,7 +6,7 @@ import {GL_NAME} from "../../constants/ApiConstants";
 const SearchResult = ({show,setShowRes,query,data}) => {
 
     const [dataArrAll,setDataArrAll] = useState([])
-    // console.log(data)
+    // console.log(data,'SearchResult');
 
     //data определенной категории
     const dataArrSomeCateg = (value) =>//там массив в массве ['coins', Array(25)] поэтому берем [0]
@@ -25,15 +25,16 @@ const SearchResult = ({show,setShowRes,query,data}) => {
     };
 
     //для того чтобы находились элементы только с именами из запроса (для категорий и нфт)
-    const handleSortName = value => value?value[1].filter(elem => (elem[GL_NAME]?.toLowerCase())?.includes(query.toLowerCase())):false;
+    const handleSortName = value => value && value[1].filter(elem => (elem[GL_NAME]?.toLowerCase())?.includes(query.toLowerCase()));
 
     //for check result for all queries
     const getFalseRes = () => {
+
         return Boolean(
-            (coins && handleSortName(coins).length) ||
+            checkValue(coins) ||
             (nfts && handleSortName(nfts).length) ||
             (categories && handleSortName(categories).length) ||
-            (exchanges && handleSortName(exchanges).length)
+            checkValue(exchanges)
         )
     }
 
