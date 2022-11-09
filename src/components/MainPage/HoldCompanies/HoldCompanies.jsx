@@ -4,7 +4,7 @@ import {GLOBAL_API_HOLD_COMPANIES} from "../../../constants/ApiCommand";
 import {Alert, Badge, Form} from "react-bootstrap";
 import InfoHoldCompanies from "./InfoHoldCompanies";
 import TableHoldCompanies from "./TableHoldCompanies";
-import {GL_COMP} from "../../../constants/ApiConstants";
+import {GL_COMP, GL_HOLD_TT_VAL} from "../../../constants/ApiConstants";
 
 const HoldCompanies = () => {
 
@@ -55,7 +55,7 @@ const HoldCompanies = () => {
                             Object.values(data[GL_COMP]).length &&
                             <>
                                 <Badge className={'mb-2'}>Лучшие холдинговые компании данной монеты</Badge>
-                                <TableHoldCompanies data={data[GL_COMP]} />
+                                <TableHoldCompanies value={data[GL_HOLD_TT_VAL]} data={data[GL_COMP]} />
                             </>
                         }
                     </>:

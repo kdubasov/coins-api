@@ -1,13 +1,23 @@
 import React from 'react';
-import {Badge, Button} from "react-bootstrap";
+import {Badge, Button, Placeholder} from "react-bootstrap";
 
 const UserData = ({user,handleLogout}) => {
     return (
         <div className="box w-50 border p-3">
 
             {//photo
-                (user && user.photoURL) &&
-                <img src={user.photoURL} alt={user.email || user.phoneNumber}/>
+                (user && user.photoURL) ?
+                <img
+                    style={{height:100,width:100}}
+                    src={user.photoURL}
+                    alt={user.email || user.phoneNumber}
+                /> :
+                <Placeholder as="p" animation="glow">
+                    <Placeholder
+                        style={{height:100,width:100}}
+                        alt={user.email || user.phoneNumber}
+                    />
+                </Placeholder>
             }
 
             {/*email\phoneNumber and uid*/}

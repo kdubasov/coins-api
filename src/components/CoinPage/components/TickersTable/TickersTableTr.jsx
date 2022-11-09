@@ -68,9 +68,8 @@ const TickersTableTr = ({data,ids}) => {
                     rel={"noreferrer"}
                 >
                     {
-                        data[GL_EXC_TRD_URL]?
-                            data[GL_EXC_TRD_URL].slice(0,40) + '...':
-                            '?'
+                        data[GL_EXC_TRD_URL] &&
+                            data[GL_EXC_TRD_URL].slice(8,40) + '...'
                     }
                 </a>
             </td>

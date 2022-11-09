@@ -47,7 +47,7 @@ const DateInfo = ({id}) => {
                 ref={inpurRef}
                 type={'date'}
             />
-            <Button onClick={handleSendDate} size={'sm mt-1'}>Отправить</Button>
+            <Button onClick={handleSendDate} size={'sm mt-1'}>Показать информацию</Button>
 
             {/*blcok with search result*/}
             <DateInfoResult data={data[GL_MD]} date={date} />

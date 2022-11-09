@@ -11,6 +11,7 @@ import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
 import PaginateDerivatives from "../components/MainPage/PaginateDerivatives/PaginateDerivatives";
 import PaginateNft from "../components/MainPage/PaginateNft/PaginateNft";
 import HoldCompanies from "../components/MainPage/HoldCompanies/HoldCompanies";
+import FeedbackForm from "../general-components/FeedbackForm/FeedbackForm";
 
 const MainPage = ({setShowAlert}) => {
 
@@ -36,6 +37,8 @@ const MainPage = ({setShowAlert}) => {
             {navPaginate === "topLoseCoins" && <TopLoseCoins />}
             {navPaginate === "derivatives" && <PaginateDerivatives />}
             {navPaginate === "holdCompanies" && <HoldCompanies />}
+
+            <FeedbackForm />
         </>
     );
 };

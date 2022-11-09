@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {GL_CAT_TOP_3, GL_MK, GL_MKCH_24H, GL_NAME, GL_VOL_24H} from "../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
 import PaginateChangeTd from "../PaginateCoins/PaginateChangeTd";
+import {Spinner} from "react-bootstrap";
 
 const PaginateCategoriesTr = ({elem,ids}) => {
 
@@ -19,9 +20,15 @@ const PaginateCategoriesTr = ({elem,ids}) => {
             </td>
             {/*Топ монеты*/}
             <td>
-                <img width={25} src={elem[GL_CAT_TOP_3][0]} alt=""/>
-                <img width={25} className={'mx-2'} src={elem[GL_CAT_TOP_3][1]} alt=""/>
-                <img width={25} src={elem[GL_CAT_TOP_3][2]} alt=""/>
+                {
+                    Boolean(elem[GL_CAT_TOP_3].length) ?
+                        <>
+                            <img width={25} src={elem[GL_CAT_TOP_3][0]} alt=""/>
+                            <img width={25} className={'mx-2'} src={elem[GL_CAT_TOP_3][1]} alt=""/>
+                            <img width={25} src={elem[GL_CAT_TOP_3][2]} alt=""/>
+                        </>:
+                        <Spinner animation={"border"} variant={"primary"} />
+                }
             </td>
             {/*	Изм. 24ч*/}
             <PaginateChangeTd value={elem[GL_MKCH_24H]} text={'%'} />

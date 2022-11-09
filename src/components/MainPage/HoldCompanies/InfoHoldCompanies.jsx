@@ -9,11 +9,11 @@ const InfoHoldCompanies = ({info}) => {
         <ListGroup horizontal className={'InfoHoldCompanies text-center mb-5'}>
             <ListGroupItem>
                 <h4 className={'m-0 fw-bold'}>{info[GL_HOLD_MC_DOM] && info[GL_HOLD_MC_DOM] + '%'}</h4>
-                Доминирование на рынке
+                Доминирование холдинговых сбережений на рынке
             </ListGroupItem>
             <ListGroupItem>
                 <h4 className={'m-0 fw-bold'}>
-                    {info[GL_HOLD_TT] && getNumRedAfterDoot(info[GL_HOLD_TT],3).toLocaleString()}
+                    {info[GL_HOLD_TT] && getNumRedAfterDoot(info[GL_HOLD_TT],3).toLocaleString() + 'шт.'}
                 </h4>
                 Монет на удержании
             </ListGroupItem>
@@ -21,7 +21,7 @@ const InfoHoldCompanies = ({info}) => {
                 <h4 className={'m-0 fw-bold'}>
                     {info[GL_HOLD_TT_VAL] && getNumRedAfterDoot(info[GL_HOLD_TT_VAL],3).toLocaleString() + '$'}
                 </h4>
-                Общее количество активов
+                Общая сумма активов
             </ListGroupItem>
             <ListGroupItem>
                 <h4 className={'m-0 fw-bold'}>{info[GL_COMP] && info[GL_COMP].length}</h4>

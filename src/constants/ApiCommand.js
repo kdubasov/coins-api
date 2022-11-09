@@ -65,3 +65,6 @@ export const GLOBAL_API_DERIVATIVE_ONE = id => `/derivatives/exchanges/${id}?inc
 
 //companies holdings
 export const GLOBAL_API_HOLD_COMPANIES = id => `/companies/public_treasury/${id}`;
+
+// simple price
+export const GLOBAL_API_SIMPLE_PRICE = (id,curr) => `/simple/price?ids=${id}&vs_currencies=${curr}`;

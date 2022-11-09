@@ -45,7 +45,7 @@ const Developers = ({data}) => {
                         </ListGroup>
 
                         {   //массив все равно будет но с нулями или пустой поэтому такая проверка
-                            (
+                            Boolean(
                                 (data[GL_COMM_GRAPH].length) &&
                                 (data[GL_COMM_GRAPH][0] !== 0 || data[GL_COMM_GRAPH][1] !== 0 || data[GL_COMM_GRAPH][2] !== 0)
                             ) &&
