@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_HOLD_COMPANIES} from "../../../constants/ApiCommand";
-import {Alert, Badge, Form} from "react-bootstrap";
+import {Alert, Badge, Form, Spinner} from "react-bootstrap";
 import InfoHoldCompanies from "./InfoHoldCompanies";
 import TableHoldCompanies from "./TableHoldCompanies";
 import {GL_COMP, GL_HOLD_TT_VAL} from "../../../constants/ApiConstants";
@@ -59,7 +59,10 @@ const HoldCompanies = () => {
                             </>
                         }
                     </>:
-                    <Alert>Информация пока недоступна или еще не загрузилась.</Alert>
+                    <Alert className={"w-50 small p-2 d-flex justify-content-between align-items-center"}>
+                        Информация пока недоступна или еще не загрузилась.
+                        <Spinner animation={"border"} size={"sm"} variant={"primary"} />
+                    </Alert>
             }
 
         </div>

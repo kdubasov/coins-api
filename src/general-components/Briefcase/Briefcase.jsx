@@ -42,7 +42,7 @@ const Briefcase = () => {
             <header className={"w-100 d-flex justify-content-between align-items-center"}>
                 <h4><Badge>Избранное</Badge></h4>
 
-                <Button size={"sm"} variant={"danger"} onClick={deleteAllFromBriefcase}>
+                <Button size={"sm"} variant={"outline-danger"} onClick={deleteAllFromBriefcase}>
                     Очистить избранное
                 </Button>
             </header>
