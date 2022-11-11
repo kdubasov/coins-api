@@ -9,12 +9,20 @@ import {
 } from "../../../constants/ApiConstants";
 import {Link} from "react-router-dom";
 import {ProgressBar} from "react-bootstrap";
-import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
 import PaginateCoinsBriefcaseButton from "../PaginateCoins/PaginateCoinsBriefcaseButton";
 
-const ExchangesPaginate = ({elem,setShowAlert}) => {
+const ExchangesPaginate = ({elem,setShowAlert,btcPrice}) => {
 
     // console.log(elem,'ExchangesPaginate');
+    // console.log(Object.values(btcPrice)[0]['usd'])
+
+    //переводим цену из btc в usd
+    const getUsdValue = () => {
+        if (Object.values(btcPrice)[0] && Object.values(btcPrice)[0]['usd'] && elem[GL_EXH_24H_VOL]){
+            return (elem[GL_EXH_24H_VOL] * Object.values(btcPrice)[0]['usd']).toLocaleString("RU") + '$'
+        }
+        return false
+    }
 
     return (
         <tr key={elem.id}>
@@ -46,10 +54,10 @@ const ExchangesPaginate = ({elem,setShowAlert}) => {
                 }
             </td>
             <td>
-                {/*24h value*/}
                 {
-                    elem[GL_EXH_24H_VOL] &&
-                    getNumRedAfterDoot(elem[GL_EXH_24H_VOL],2).toLocaleString('RU') + '(btc)'
+                    getUsdValue() ?
+                        getUsdValue():
+                        elem[GL_EXH_24H_VOL] && elem[GL_EXH_24H_VOL].toLocaleString("RU") + "(btc)"
                 }
             </td>
             <td>

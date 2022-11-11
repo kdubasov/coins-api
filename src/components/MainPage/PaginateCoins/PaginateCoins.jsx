@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {
-    GLOBAL_API_COIN_LIST_ALL,
-    GLOBAL_API_GLOBAL_COMMAND
+    GLOBAL_API_COIN_LIST_ALL, GLOBAL_API_GLOBAL_COMMAND
 } from "../../../constants/ApiCommand";
 import {Badge, Spinner, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";

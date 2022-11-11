@@ -3,6 +3,7 @@ import {Container} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
 import UserData from "./UserData";
+import FeedbackForm from "../../FeedbackForm/FeedbackForm";
 
 const UserProfile = () => {
   const { logOut, user } = useUserAuth();
@@ -22,11 +23,10 @@ const UserProfile = () => {
 
         {
             user &&
-            <div className={'d-flex align-items-center justify-content-evenly'}>
-                {/*main data about userProfile*/}
-                <UserData user={user} handleLogout={handleLogout} />
-            </div>
+            <UserData user={user} handleLogout={handleLogout} />
         }
+
+        <FeedbackForm />
 
     </Container>
   );

@@ -31,21 +31,20 @@ const HoldCompanies = () => {
                         {/*select for coin with text*/}
                         <div className="box d-flex align-items-center my-5">
                             <h5 className={'m-0'}>
-                                <Badge bg={'secondary'} className={'fw-light'}>
-                                    Сейчас для отображения информации выбрана монета
+                                <Badge bg={'secondary'} className={'fw-light d-flex align-items-center'}>
+                                    <p className={"m-0"}>Сейчас для отображения информации выбрана монета</p>
+                                    <Form.Select
+                                        value={selectCoin}
+                                        onChange={e => setSelectCoin(e.target.value)}
+                                        className={'w-25 mx-2'}
+                                        size={"sm"}
+                                    >
+                                        {coinsArr.map(coin => (
+                                            <option value={coin} key={coin}>{coin}</option>
+                                        ))}
+                                    </Form.Select>
                                 </Badge>
                             </h5>
-
-                            <Form.Select
-                                value={selectCoin}
-                                onChange={e => setSelectCoin(e.target.value)}
-                                className={'w-25 mx-2'}
-                                size={"sm"}
-                            >
-                                {coinsArr.map(coin => (
-                                    <option value={coin} key={coin}>{coin}</option>
-                                ))}
-                            </Form.Select>
                         </div>
 
                         {/*main data of hold*/}

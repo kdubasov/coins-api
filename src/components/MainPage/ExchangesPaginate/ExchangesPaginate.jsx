@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Badge, Spinner, Table} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
-import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST} from "../../../constants/ApiCommand"
+import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST, GLOBAL_API_SIMPLE_PRICE} from "../../../constants/ApiCommand"
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import ExchangesPaginateTr from "./ExchangesPaginateTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
@@ -19,6 +19,8 @@ const ExchangesPaginate = ({setShowAlert}) => {
     const data = useApi(GLOBAL_API_EXCHANGES(sizePage,currentPage)).data;
     // console.log(data,'GLOBAL_API_EXCHANGES');
 
+    //цена btc в $
+    const btcPrice = useApi(GLOBAL_API_SIMPLE_PRICE('bitcoin','usd')).data;
 
     return (
         <div className={`ExchangesPaginate container`}>
@@ -43,7 +45,7 @@ const ExchangesPaginate = ({setShowAlert}) => {
                         <tbody>
                         {
                             data.map(elem =>(
-                               <ExchangesPaginateTr elem={elem} key={elem.id} setShowAlert={setShowAlert} />
+                               <ExchangesPaginateTr elem={elem} key={elem.id} setShowAlert={setShowAlert} btcPrice={btcPrice} />
                             ))
                         }
                         </tbody>

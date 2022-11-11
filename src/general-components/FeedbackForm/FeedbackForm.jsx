@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import {Alert, Badge, Button, Container, Form} from "react-bootstrap";
 import {addFormDataInDB} from "../../functions/FeedbackForm/addFormDataInDB";
+import {useUserAuth} from "../../contexts/UserAuthContext";
 
 const FeedbackForm = () => {
 
+    const { user } = useUserAuth();
+
     //data form
-    const [email,setEmail] = useState('');
+    const [email,setEmail] = useState((user && user.email) || '');
     const [message,setMessage] = useState('');
     const [cooperation,setCooperation] = useState(false);
 

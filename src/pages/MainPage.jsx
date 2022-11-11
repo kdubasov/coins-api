@@ -38,7 +38,10 @@ const MainPage = ({setShowAlert}) => {
             {navPaginate === "derivatives" && <PaginateDerivatives />}
             {navPaginate === "holdCompanies" && <HoldCompanies />}
 
-            <FeedbackForm />
+            {//форму отображаем только на главной
+                navPaginate === "coins" &&
+                <FeedbackForm />
+            }
         </>
     );
 };
