@@ -2,6 +2,7 @@ import React from 'react';
 import {Table} from "react-bootstrap";
 import TableTrHoldCompanies from "./TableTrHoldCompanies";
 import {getTheme} from "../../../functions/Theme/getTheme";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const TableHoldCompanies = ({data,value}) => {
     return (
@@ -9,12 +10,30 @@ const TableHoldCompanies = ({data,value}) => {
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Название и символ</th>
-                    <th>Кол-во активов</th>
-                    <th>Общ. стоимость</th>
-                    <th>От общ. предложения</th>
-                    <th>От суммы активов</th>
-                    <th>Страна</th>
+                    <th>
+                        {getLang() === 'rus' && "Название и символ"}
+                        {getLang() === 'eng' && "Name and symbol"}
+                    </th>
+                    <th>
+                        {getLang() === 'rus' && "Кол-во активов"}
+                        {getLang() === 'eng' && "Number of assets"}
+                    </th>
+                    <th>
+                        {getLang() === 'rus' && "Общая стоимость"}
+                        {getLang() === 'eng' && "Total cost"}
+                    </th>
+                    <th>
+                        {getLang() === 'rus' && "От общего предложения"}
+                        {getLang() === 'eng' && "From the general offer"}
+                    </th>
+                    <th>
+                        {getLang() === 'rus' && "От суммы активов"}
+                        {getLang() === 'eng' && "From the amount of assets"}
+                    </th>
+                    <th>
+                        {getLang() === 'rus' && "Страна"}
+                        {getLang() === 'eng' && "Country"}
+                    </th>
                 </tr>
             </thead>
 

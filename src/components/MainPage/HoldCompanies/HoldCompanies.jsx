@@ -72,13 +72,17 @@ const HoldCompanies = () => {
                         {//Table with companies
                             Object.values(data[GL_COMP]).length &&
                             <>
-                                <Badge className={'mb-2'}>Лучшие холдинговые компании данной монеты</Badge>
+                                <Badge className={'mb-2'}>
+                                    {getLang() === 'rus' && "Лучшие холдинговые компании для данной монеты"}
+                                    {getLang() === 'eng' && "Best holding companies for this coin"}
+                                </Badge>
                                 <TableHoldCompanies value={data[GL_HOLD_TT_VAL]} data={data[GL_COMP]} />
                             </>
                         }
                     </>:
                     <Alert className={"w-50 small p-2 d-flex justify-content-between align-items-center"}>
-                        Информация пока недоступна или еще не загрузилась.
+                        {getLang() === 'rus' && "Информация пока недоступна или еще не загрузилась."}
+                        {getLang() === 'eng' && "The information is not yet available or has not yet been loaded."}
                         <Spinner animation={"border"} size={"sm"} variant={"primary"} />
                     </Alert>
             }
