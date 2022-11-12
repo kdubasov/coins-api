@@ -5,6 +5,7 @@ import {Badge, ListGroup, Spinner} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {GL_MC_RANK, GL_NAME, GL_PR_BTC, GL_SYMBOL} from "../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const TrendCoins = () => {
 
@@ -17,10 +18,22 @@ const TrendCoins = () => {
 
     return (
         <div className={`TrendCoins container`}>
-            <h3 className={'m-0'}><Badge>Популярные монеты</Badge></h3>
+            <h3 className={'m-0'}>
+                <Badge>
+                    {getLang() === 'eng' && 'Popular coins'}
+                    {getLang() === 'rus' && 'Популярные монеты'}
+                </Badge>
+            </h3>
+
             <p className={'mb-3'}>
-                Топ 7 самых популярных монет за 24 часа по статистике CoinGecko.
-                (Отсортированы по популярности)
+                {
+                    getLang() === 'eng' &&
+                    "Top 7 most popular coins in 24 hours according to CoinGecko statistics. (sorted by popularity)"
+                }
+                {
+                    getLang() === 'rus' &&
+                    "Топ 7 самых популярных монет за 24 часа по статистике CoinGecko. (Отсортированы по популярности)"
+                }
             </p>
 
             {

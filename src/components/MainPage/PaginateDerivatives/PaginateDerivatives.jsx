@@ -3,6 +3,7 @@ import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_DERIVATIVES} from "../../../constants/ApiCommand";
 import {Badge, Spinner} from "react-bootstrap";
 import PaginateDerivativesTable from "./PaginateDerivativesTable";
+import {getLang} from "../../../functions/Lang/getLang";
 
 
 const PaginateDerivatives = () => {
@@ -13,11 +14,26 @@ const PaginateDerivatives = () => {
 
     return (
         <div className={`PaginateDerivatives container`}>
-            <h3 className={'m-0'}><Badge>Деривативы</Badge></h3>
+            <h3 className={'m-0'}>
+                <Badge>
+                    {getLang() === 'eng' && 'Derivatives'}
+                    {getLang() === 'rus' && 'Деривативы'}
+                </Badge>
+            </h3>
+
             <p>
-                Деривативы - производный финансовый инструмент, стоимость которого определяется ценой базового актива.
-                Обычно, в случае с криптовалютами, в качестве базового актива выступает Bitcoin,
-                однако деривативы могут быть и на другие цифровые валюты, такие как Ethereum, EOS и т.
+                {
+                    getLang() === 'rus' &&
+                    "Деривативы - производный финансовый инструмент, стоимость которого определяется ценой базового актива. " +
+                    "Обычно, в случае с криптовалютами, в качестве базового актива выступает Bitcoin, " +
+                    "однако деривативы могут быть и на другие цифровые валюты, такие как Ethereum, EOS и т."
+                }
+                {
+                    getLang() === 'eng' &&
+                    'Derivatives are a derivative financial instrument, the value of which is determined by the price of' +
+                    ' the underlying asset. Usually, in the case of cryptocurrencies, Bitcoin acts as the underlying asset,' +
+                    ' however, derivatives can also be for other digital currencies, such as Ethereum, EOS, etc.'
+                }
             </p>
 
             {

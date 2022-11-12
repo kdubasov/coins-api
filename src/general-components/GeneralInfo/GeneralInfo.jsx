@@ -3,6 +3,8 @@ import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_GLOBAL_COMMAND} from "../../constants/ApiCommand";
 import {Badge, ListGroup, Spinner} from "react-bootstrap";
 import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../constants/ApiConstants";
+import {getLang} from "../../functions/Lang/getLang";
+import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
 
 const GeneralInfo = () => {
 
@@ -33,22 +35,25 @@ const GeneralInfo = () => {
                 data &&
                 <ListGroup horizontal>
                     <ListGroup.Item>
-                        Кол-во монет:
-                        <strong> {data[GL_ACT_COINS] ? data[GL_ACT_COINS].toLocaleString() + 'шт.' : SpinnerSmall}</strong>
+                        {getLang() === 'rus' && 'Кол-во монет:'}
+                        {getLang() === 'eng' && 'Total coins:'}
+                        <strong> {data[GL_ACT_COINS] ? data[GL_ACT_COINS].toLocaleString("RU") + 'шт.' : SpinnerSmall}</strong>
                     </ListGroup.Item>
 
                     <ListGroup.Item>
-                        Кол-во бирж:
+                        {getLang() === 'rus' && 'Кол-во бирж:'}
+                        {getLang() === 'eng' && 'Total exchanges:'}
                         <strong> {data[GL_MKTS] ? data[GL_MKTS] : SpinnerSmall} </strong>
                     </ListGroup.Item>
 
                     <ListGroup.Item>
-                        Изменение рынка за 24ч:
+                        {getLang() === 'rus' && 'Изменение рынка за 24ч:'}
+                        {getLang() === 'eng' && 'Market change in 24h:'}
                         {
                             data[GL_CH_ALL_PR] &&
-                            <Badge bg={String(data[GL_CH_ALL_PR]).startsWith('-') ? "danger" : "success"}>
-                                {String(data[GL_CH_ALL_PR]).startsWith('-') ? '' : '+'}
-                                {data[GL_CH_ALL_PR] ? data[GL_CH_ALL_PR].toLocaleString() + '%' : SpinnerSmall}
+                            <Badge className={"px-3"} bg={String(data[GL_CH_ALL_PR]).startsWith('-') ? "danger" : "success"}>
+                                {!String(data[GL_CH_ALL_PR]).startsWith('-') && '+'}
+                                {getNumRedAfterDoot(data[GL_CH_ALL_PR],4) + '%'}
                             </Badge>
                         }
                     </ListGroup.Item>
@@ -57,17 +62,20 @@ const GeneralInfo = () => {
                         {
                             Object.values(data[GL_MK_PR]).length ?
                             <>
-                                Доминирование
-                                <strong> {getMainCoin(data[GL_MK_PR],'coin')} </strong>
-                                по рыночной капитализации:
-                                <strong> {getMainCoin(data[GL_MK_PR],'price').toLocaleString() + '%'} </strong>
+                                {getLang() === 'rus' && 'Доминирование'}
+                                {getLang() === 'eng' && 'Dominance'}
+                                <strong> {getMainCoin(data[GL_MK_PR],'coin').toUpperCase("RU")} </strong>
+                                {getLang() === 'rus' && 'по рыночной капитализации:'}
+                                {getLang() === 'eng' && 'by market capitalization:'}
+                                <strong> {getMainCoin(data[GL_MK_PR],'price').toLocaleString("RU") + '%'} </strong>
                             </> : SpinnerSmall
                         }
                     </ListGroup.Item>
 
                     <ListGroup.Item>
-                        Общая рыночная капитализация:
-                        <strong> {data[GL_TT_MK]['usd'] ? data[GL_TT_MK]['usd'].toLocaleString() + '$' : SpinnerSmall} </strong>
+                        {getLang() === 'rus' && 'Общая рыночная капитализация:'}
+                        {getLang() === 'eng' && 'Total market cap:'}
+                        <strong> {data[GL_TT_MK]['usd'] ? data[GL_TT_MK]['usd'].toLocaleString("RU") + '$' : SpinnerSmall} </strong>
                     </ListGroup.Item>
                 </ListGroup>
             }

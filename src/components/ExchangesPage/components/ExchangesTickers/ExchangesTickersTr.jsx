@@ -9,15 +9,17 @@ import {
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 import {Link} from "react-router-dom";
+import {Badge} from "react-bootstrap";
 
 const ExchangesTickersTr = ({tick,ids}) => {
 
-    // console.log(tick,'data for one tickers in exchanges')
+    // console.log(tick,'data for one ticker in exchanges')
     // console.log(Object.entries(tick[GL_EXC_CONV_VOL]))
 
     return (
         <tr>
             <td>{ids + 1}</td>
+            {/*Монета*/}
             <td>
                 <Link to={`/coins/${tick[FL_ECH_COIN_ID]}`}>
                     {tick[GL_EXC_BASE]}
@@ -27,6 +29,7 @@ const ExchangesTickersTr = ({tick,ids}) => {
                     {tick[GL_TRG]}
                 </Link>
             </td>
+            {/*Ссылка*/}
             <td>
                 <a
                     href={tick[GL_EXC_TRD_URL]}
@@ -39,6 +42,7 @@ const ExchangesTickersTr = ({tick,ids}) => {
                     }
                 </a>
             </td>
+            {/*Доверие*/}
             <td className={`d-flex justify-content-center align-content-center`}>
                 {
                     tick[GL_EXH_TR_SC]?
@@ -46,9 +50,11 @@ const ExchangesTickersTr = ({tick,ids}) => {
                         '-'
                 }
             </td>
+            {/*спред*/}
             <td>
                 {tick[GL_EXC_TICK_SPR]? getNumRedAfterDoot(tick[GL_EXC_TICK_SPR],3) + '%' : '-'}
             </td>
+            {/*об торгов 24h*/}
             <td>
                 {getNumRedAfterDoot(tick[GL_VOL],3) + ' ' + tick[GL_EXC_BASE]}
             </td>
@@ -56,7 +62,13 @@ const ExchangesTickersTr = ({tick,ids}) => {
                 {
                     Object.entries(tick[GL_EXC_CONV_VOL]).map((elem,ids) => (
                         <p key={ids} className={"small m-0"}>
-                            <strong>{elem[0]}</strong>: {getNumRedAfterDoot(elem[1],3)}
+                            <strong>{elem[0] && elem[0].toUpperCase()}</strong>:
+                            <Badge className={"mx-2"}>
+                                {
+                                    getNumRedAfterDoot(elem[1],3) &&
+                                    getNumRedAfterDoot(elem[1],3).toLocaleString("RU") + 'шт.'
+                                }
+                            </Badge>
                         </p>
                     ))
                 }

@@ -8,6 +8,7 @@ import {
     GL_TT_VOL,
     GL_MK, GL_MC_RANK
 } from "../../../constants/ApiConstants";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const PaginateCoinsSort = ({data,setDataSort}) => {
 
@@ -56,52 +57,63 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
             </th>
             <th>
                 <Button size={"sm"} disabled={true}>
-                    Название
+                    {getLang() === "rus" && "Название"}
+                    {getLang() === "eng" && "Name"}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CUR_PRICE,sortCheck[2],2)}>
-                    Акт. цена
+                    {getLang() === "rus" && "Акт. цена"}
+                    {getLang() === "eng" && "Act. price"}
                     {imgArrow(sortCheck[2])}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_1H_PR,sortCheck[3],3)}>
-                    1ч
+                    {getLang() === "rus" && "1ч"}
+                    {getLang() === "eng" && "1h"}
                     {imgArrow(sortCheck[3])}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_24H_PR,sortCheck[4],4)}>
-                    24ч
+                    {getLang() === "rus" && "24ч"}
+                    {getLang() === "eng" && "24h"}
                     {imgArrow(sortCheck[4])}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_7D_PR,sortCheck[5],5)}>
-                    7д
+                    {getLang() === "rus" && "7д"}
+                    {getLang() === "eng" && "7d"}
                     {imgArrow(sortCheck[5])}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} disabled={true}>
-                    Мин/Макс 24ч
+                    {getLang() === "rus" && "Мин/Макс 24ч"}
+                    {getLang() === "eng" && "Min/Max 24h"}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_TT_VOL,sortCheck[7],7)}>
-                    Об. торг. 24ч
+                    {getLang() === "rus" && "Объем торгов 24ч"}
+                    {getLang() === "eng" && "Trading volume 24h"}
                     {imgArrow(sortCheck[7])}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MK,sortCheck[8],8)}>
-                    Рын. кап-ция
+                    {getLang() === "rus" && "Рын. кап-ция"}
+                    {getLang() === "eng" && "Market cap"}
                     {imgArrow(sortCheck[8])}
                 </Button>
             </th>
             <th>
-                <Button size={"sm"} disabled={true}>График 3д</Button>
+                <Button size={"sm"} disabled={true}>
+                    {getLang() === "rus" && "График 3д"}
+                    {getLang() === "eng" && "Graph 3d"}
+                </Button>
             </th>
         </tr>
     );

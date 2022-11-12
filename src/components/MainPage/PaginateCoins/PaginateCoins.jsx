@@ -10,6 +10,7 @@ import PaginateCoinsSort from "./PaginateCoinsSort";
 import PaginationButtons from "./PaginationButtons";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import MessageAlert from "../../../general-components/Alerts/MessageAlert";
+import {getLang} from "../../../functions/Lang/getLang";
 
 
 //table with coins
@@ -56,10 +57,16 @@ const PaginateCoins = () => {
             {/*alert with text*/}
             {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}
 
-            <h3 className={'mb-0'}><Badge>Цены криптовалют.</Badge></h3>
+            <h4 className={'mb-0'}>
+                <Badge>
+                    {getLang() === 'eng' && 'Prices and basic information about cryptocurrency.'}
+                    {getLang() === 'rus' && 'Цены и основная информация о криптовалюте.'}
+                </Badge>
+            </h4>
+
             <p>
-                Ниже представлены все существующие на мировом рынке монеты,
-                ранжированныe по рыночной капитализации.
+                {getLang() === 'eng' && 'Below are all the coins that exist on the world market, ranked by market capitalization.'}
+                {getLang() === 'rus' && 'Ниже представлены все существующие на мировом рынке монеты, ранжированныe по рыночной капитализации.'}
             </p>
 
             {/*TABLE FOR COINS*/}

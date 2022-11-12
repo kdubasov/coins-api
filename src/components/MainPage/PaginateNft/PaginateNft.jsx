@@ -6,6 +6,7 @@ import {GL_NAME, GL_SYMBOL} from "../../../constants/ApiConstants";
 import {Link} from "react-router-dom";
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import PaginateCoinsBriefcaseButton from "../PaginateCoins/PaginateCoinsBriefcaseButton";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const PaginateNft = ({setShowAlert}) => {
 
@@ -21,8 +22,12 @@ const PaginateNft = ({setShowAlert}) => {
 
     return (
         <div className={`PaginateNft container`}>
-            <h3 className={'mb-0'}><Badge>НФТ</Badge></h3>
-            <p>На данной странице предоставлены все категории нфт</p>
+            <h3 className={'mb-0'}><Badge>NFT</Badge></h3>
+
+            <p>
+                {getLang() === 'rus' && 'На данной странице показан список всех nft. Для более подробной информации о nft вы можете перейти по ссылке из списка.'}
+                {getLang() === 'eng' && 'This page shows a list of all nft. For more details about nft you can follow the link from the list.'}
+            </p>
 
             <ListGroup className={`my-2`}>
                 {

@@ -41,9 +41,9 @@ const DeFiMainData = () => {
                 data ?
                 <>
                     <ListGroup horizontal>
-                        {getListItem('Доминирование DeFi на глобальном рынке',GL_DEFI_DOM,true,'%')}
-                        {getListItem('Рыночная капитализация ETH',GL_DEFI_ETH_MK,true,'$')}
-                        {getListItem('Объем торгов за 24 часа',GL_DEFI_MK,true,'$')}
+                        {getListItem('Defi Dominance (vs. Global)',GL_DEFI_DOM,true,'%')}
+                        {getListItem('Market capitalization of ETH',GL_DEFI_ETH_MK,true,'$')}
+                        {getListItem('DeFi Market capitalization',GL_DEFI_MK,true,'$')}
 
                         <ListGroup.Item className={'p-3'}>
                             <Badge bg={"secondary"}>
@@ -52,13 +52,13 @@ const DeFiMainData = () => {
                                     {' ' + getNumRedAfterDoot(data[GL_DEFI_TOP_COIN_DOM],3) + '%'}
                                 </h6>
                             </Badge>
-                            Доминирование
+                            Domination
                         </ListGroup.Item>
                     </ListGroup>
 
                     <ListGroup horizontal>
-                        {getListItem('Соотношение DeFi/ETH',GL_DEFI_ETH_RAT,true,'%')}
-                        {getListItem('Объем торгов за 24 часа',GL_DEFI_TR_24H,true,'$')}
+                        {getListItem('DeFi/ETH Ratio',GL_DEFI_ETH_RAT,true,'%')}
+                        {getListItem('Trading volume for 24 hours',GL_DEFI_TR_24H,true,'$')}
                     </ListGroup>
                 </>:
                 <Spinner animation={"border"} variant={"primary"} />

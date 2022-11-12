@@ -4,6 +4,7 @@ import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_ALL} from "../../../constants/ApiCommand";
 import PaginateCategoriesTr from "./PaginateCategoriesTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const PaginateCategories = () => {
 
@@ -17,11 +18,20 @@ const PaginateCategories = () => {
             {/*header*/}
             <header>
                 <h3 className={'m-0'}>
-                    <Badge>Категории</Badge>
+                    <Badge>
+                        {getLang() === 'rus' && "Категории"}
+                        {getLang() === 'eng' && "Categories"}
+                    </Badge>
                 </h3>
                 <p className={'m-0 mb-3'}>
-                    Рейтинг категорий криптовалют основан на рыночной капитализации.
-                    Примечание. Некоторые криптовалюты могут пересекаться в нескольких категориях.
+                    {
+                        getLang() === 'rus' &&
+                        "Рейтинг категорий криптовалют основан на рыночной капитализации. Криптовалюты могут пересекаться в нескольких категориях."
+                    }
+                    {
+                        getLang() === 'eng' &&
+                        "Cryptocurrency categories are ranked based on market capitalization. Cryptocurrencies can overlap in several categories."
+                    }
                 </p>
             </header>
 
@@ -32,11 +42,26 @@ const PaginateCategories = () => {
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Категория</th>
-                                <th>Топ монеты</th>
-                                <th>Изм. 24ч</th>
-                                <th>Рын. кап.</th>
-                                <th>Об. торгов 24ч</th>
+                                <th>
+                                    {getLang() === 'rus' && "Категория"}
+                                    {getLang() === 'eng' && "Category"}
+                                </th>
+                                <th>
+                                    {getLang() === 'rus' && "Топ монеты"}
+                                    {getLang() === 'eng' && "Top coins"}
+                                </th>
+                                <th>
+                                    {getLang() === 'rus' && "Изм. 24ч"}
+                                    {getLang() === 'eng' && "Change 24h"}
+                                </th>
+                                <th>
+                                    {getLang() === 'rus' && "Рын. кап."}
+                                    {getLang() === 'eng' && "Market cap"}
+                                </th>
+                                <th>
+                                    {getLang() === 'rus' && "Об. торгов 24ч"}
+                                    {getLang() === 'eng' && "Volume 24h"}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>

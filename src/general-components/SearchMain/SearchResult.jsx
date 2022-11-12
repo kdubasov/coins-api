@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Alert, Button} from "react-bootstrap";
 import SearchResultInner from "./SearchResultInner";
 import {GL_NAME} from "../../constants/ApiConstants";
+import {getLang} from "../../functions/Lang/getLang";
 
 const SearchResult = ({show,setShowRes,query,data}) => {
 
@@ -48,7 +49,13 @@ const SearchResult = ({show,setShowRes,query,data}) => {
             style={{display:`${show?'block':'none'}`}}
         >
             {/*кнопка для закрытия результатов поиска*/}
-            {show && <Button onClick={() =>setShowRes(false)} size={"sm"} className={'mb-1'}>Скрыть результаты поиска</Button>}
+            {
+                show &&
+                <Button onClick={() =>setShowRes(false)} size={"sm"} className={'mb-1'}>
+                    {getLang() === 'eng' && 'Hide search results'}
+                    {getLang() === 'rus' && 'Скрыть результаты поиска'}
+                </Button>
+            }
 
             <div className={'my-1 w-100 d-flex flex-wrap border'}>
                 {

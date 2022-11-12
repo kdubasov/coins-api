@@ -5,6 +5,7 @@ import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST, GLOBAL_API_SIMPLE_PRICE
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import ExchangesPaginateTr from "./ExchangesPaginateTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const ExchangesPaginate = ({setShowAlert}) => {
 
@@ -24,7 +25,17 @@ const ExchangesPaginate = ({setShowAlert}) => {
 
     return (
         <div className={`ExchangesPaginate container`}>
-            <h3><Badge>Список бирж</Badge></h3>
+            <h3 className={"m-0"}>
+                <Badge>
+                    {getLang() === 'rus' && "Биржи"}
+                    {getLang() === 'eng' && "Exchanges"}
+                </Badge>
+            </h3>
+
+            <p>
+                {getLang() === 'rus' && 'Список бирж отсортированных по объему торгов за 24 часа.'}
+                {getLang() === 'eng' && 'List of exchanges sorted by 24 hour trading volume.'}
+            </p>
 
             {
                 //check result and show spinner or table with coins
@@ -33,12 +44,30 @@ const ExchangesPaginate = ({setShowAlert}) => {
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Биржа</th>
-                            <th>Очки доверия</th>
-                            <th>Об. торгов 24ч</th>
-                            <th>Оф. сайт</th>
-                            <th>Год осн.</th>
-                            <th>Страна осн.</th>
+                            <th>
+                                {getLang() === 'rus' && "Название"}
+                                {getLang() === 'eng' && "Name"}
+                            </th>
+                            <th>
+                                {getLang() === 'rus' && "Очки доверия"}
+                                {getLang() === 'eng' && "Trust Points"}
+                            </th>
+                            <th>
+                                {getLang() === 'rus' && "Об. торгов 24ч"}
+                                {getLang() === 'eng' && "Volume 24h"}
+                            </th>
+                            <th>
+                                {getLang() === 'rus' && "Оф. сайт"}
+                                {getLang() === 'eng' && "Official website"}
+                            </th>
+                            <th>
+                                {getLang() === 'rus' && "Год основания"}
+                                {getLang() === 'eng' && "Year of foundation"}
+                            </th>
+                            <th>
+                                {getLang() === 'rus' && "Страна основания"}
+                                {getLang() === 'eng' && "Country of foundation"}
+                            </th>
                         </tr>
                         </thead>
 

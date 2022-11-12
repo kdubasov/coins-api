@@ -3,6 +3,7 @@ import {FormControl} from "react-bootstrap";
 import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_SEARCH} from "../../constants/ApiCommand";
 import SearchResult from "./SearchResult";
+import {getLang} from "../../functions/Lang/getLang";
 
 const SearchInput = () => {
 
@@ -24,7 +25,7 @@ const SearchInput = () => {
                 value={query}
                 onChange={event => setQuery(event.target.value)}
                 onFocus={() => setShowRes(true)}
-                placeholder="Поиск по сайту"
+                placeholder={getLang() === "rus" ? "Введите запрос" : "Enter a request"}
             />
 
             <SearchResult

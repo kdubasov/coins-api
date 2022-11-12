@@ -5,6 +5,7 @@ import {Alert, Badge, Form, Spinner} from "react-bootstrap";
 import InfoHoldCompanies from "./InfoHoldCompanies";
 import TableHoldCompanies from "./TableHoldCompanies";
 import {GL_COMP, GL_HOLD_TT_VAL} from "../../../constants/ApiConstants";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const HoldCompanies = () => {
 
@@ -16,13 +17,28 @@ const HoldCompanies = () => {
 
     return (
         <div className={'HoldCompanies container'}>
-            <h3><Badge>Холдинговые компании</Badge></h3>
+            <h3 className={"m-0"}>
+                <Badge>
+                    {getLang() === 'rus' && "Холдинговые компании"}
+                    {getLang() === 'eng' && "Holding companies"}
+                </Badge>
+            </h3>
+
             <p>
-                Холдинг - стратегия по покупке и хранению криптовалют.
-                Менее рискованная, но и потенциально менее прибыльная, чем трейдинг.
-                Холдом называют стратегию, при которой пользователь/компания покупает
-                криптовалюту и «забывает» про нее, то есть не торгует, а просто ждет
-                продолжительное время, пока его актив растет в цене.
+                {
+                    getLang() === 'rus' &&
+                    "Холдинг - стратегия по покупке и хранению криптовалют. Менее рискованная," +
+                    " но и потенциально менее прибыльная, чем трейдинг. Холдом называют стратегию," +
+                    " при которой пользователь/компания покупает криптовалюту и «забывает» про нее," +
+                    " то есть не торгует, а просто ждет продолжительное время, пока его актив растет в цене."
+                }
+                {
+                    getLang() === 'eng' &&
+                    "Holding is a strategy for buying and storing cryptocurrencies. Less risky, but also potentially" +
+                    " less profitable than trading. A hold is a strategy in which a user/company buys a cryptocurrency" +
+                    " and “forgets” about it, that is, does not trade, but simply waits for a long time until" +
+                    " its asset grows in price."
+                }
             </p>
 
             {//check data
@@ -32,7 +48,6 @@ const HoldCompanies = () => {
                         <div className="box d-flex align-items-center my-5">
                             <h5 className={'m-0'}>
                                 <Badge bg={'secondary'} className={'fw-light d-flex align-items-center'}>
-                                    <p className={"m-0"}>Сейчас для отображения информации выбрана монета</p>
                                     <Form.Select
                                         value={selectCoin}
                                         onChange={e => setSelectCoin(e.target.value)}
@@ -40,9 +55,13 @@ const HoldCompanies = () => {
                                         size={"sm"}
                                     >
                                         {coinsArr.map(coin => (
-                                            <option value={coin} key={coin}>{coin}</option>
+                                            <option value={coin} key={coin}>{coin.toUpperCase()}</option>
                                         ))}
                                     </Form.Select>
+                                    <p className={"m-0"}>
+                                        {getLang() === 'rus' && "выбран для отображения информации."}
+                                        {getLang() === 'eng' && "is currently selected for displaying information."}
+                                    </p>
                                 </Badge>
                             </h5>
                         </div>

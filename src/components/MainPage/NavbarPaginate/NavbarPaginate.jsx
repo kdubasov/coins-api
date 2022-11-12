@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, ButtonGroup} from "react-bootstrap";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const NavbarPaginate = ({navPaginate,setNavPaginate}) => {
 
@@ -22,15 +23,15 @@ const NavbarPaginate = ({navPaginate,setNavPaginate}) => {
     return (
         <div className={'NavbarPaginate container mb-3 mt-3 d-flex'}>
             <ButtonGroup size={"sm"}>
-                {getButton("Монеты","coins")}
-                {getButton("Категории","categories")}
+                {getButton(getLang() === 'eng' ? "Coins" : "Монеты","coins")}
+                {getButton(getLang() === 'eng' ? "Categories" : "Категории","categories")}
                 {getButton("NFT","nft")}
                 {getButton("DeFi","defi")}
-                {getButton("Деривативы","derivatives")}
-                {getButton("Топ монет","trendCoins")}
-                {getButton("Биржи","exchanges")}
-                {getButton("Лучшие/худшие монеты","topLoseCoins")}
-                {getButton("Холдинговые компании","holdCompanies")}
+                {getButton(getLang() === 'eng' ? "Derivatives" : "Деривативы","derivatives")}
+                {getButton(getLang() === 'eng' ? "Top coins" : "Топ монет","trendCoins")}
+                {getButton(getLang() === 'eng' ? "Exchanges" : "Биржи","exchanges")}
+                {getButton(getLang() === 'eng' ? "Best/worst coins" : "Лучшие/худшие монеты","topLoseCoins")}
+                {getButton(getLang() === 'eng' ? "Holding companies" : "Холдинговые компании","holdCompanies")}
             </ButtonGroup>
         </div>
     );
