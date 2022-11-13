@@ -6,6 +6,20 @@ import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../con
 import {getLang} from "../../functions/Lang/getLang";
 import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
 
+//для получения объекта с данными о самой популярной монетке
+export const getMainCoin = (data,returnValue) =>{
+    if (data){
+        let maxCoin = [];
+        for (let elem in data) {
+            if (!maxCoin.length || maxCoin[1]<data[elem]){
+                maxCoin = [elem,data[elem]]
+            }
+        }
+        return returnValue === 'coin'?maxCoin[0]:maxCoin[1]
+    }
+    return false
+}
+
 const GeneralInfo = () => {
 
     //data
@@ -14,20 +28,6 @@ const GeneralInfo = () => {
 
     //SPINNER!!!!!
     const SpinnerSmall = <Spinner animation="border" size="sm" />;
-
-    //для получения объекта с данными о самой популярной монетке
-    const getMainCoin = (data,returnValue) =>{
-        if (data){
-            let maxCoin = [];
-            for (let elem in data) {
-                if (!maxCoin.length || maxCoin[1]<data[elem]){
-                    maxCoin = [elem,data[elem]]
-                }
-            }
-            return returnValue === 'coin'?maxCoin[0]:maxCoin[1]
-        }
-        return false
-    }
 
     return (
         <div className={'GeneralInfo container mt-3 mb-3 p-0'}>

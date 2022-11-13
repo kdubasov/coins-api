@@ -1,12 +1,10 @@
 import React from 'react';
-import {Button, Container, Navbar, Form} from "react-bootstrap";
+import {Button, Container, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {useUserAuth} from "../../contexts/UserAuthContext";
 import {useNavigate} from "react-router-dom";
-import {setTheme} from "../../functions/Theme/setTheme";
 import {getTheme} from "../../functions/Theme/getTheme";
 import {getLang} from "../../functions/Lang/getLang";
-import {setLang} from "../../functions/Lang/setLang";
 
 const NavbarTop = () => {
 
@@ -31,27 +29,6 @@ const NavbarTop = () => {
                 <Link style={{fontSize:20}} to={'/'}>cryptoQuick</Link>
 
                 <div className={"d-flex align-items-center"}>
-
-                    {/*set theme*/}
-                    <Form.Check
-                        className={'text-primary m-0'}
-                        type="switch"
-                        label={getLang() === 'rus' ? "Светлая тема" : "Light Theme"}
-                        checked={getTheme()}
-                        onChange={() => setTheme()}
-                    />
-
-                    {/*set lang*/}
-                    <Form.Select
-                        size="sm"
-                        style={{width:70}}
-                        className={"mx-2"}
-                        value={getLang()}
-                        onChange={e => setLang(e.target.value)}
-                    >
-                        <option value={'eng'}>Eng</option>
-                        <option value={'rus'}>Rus</option>
-                    </Form.Select>
 
                     {/*briefcase link*/}
                     <Link className={'text-primary mx-3'} to={'/briefcase'}>

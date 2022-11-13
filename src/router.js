@@ -15,6 +15,7 @@ import Login from "./general-components/AuthComponents/LoginComponents/Login";
 import PhoneLogin from "./general-components/AuthComponents/LoginComponents/PhoneLogin";
 import Briefcase from "./general-components/Briefcase/Briefcase";
 import MessageAlert from "./general-components/Alerts/MessageAlert";
+import NavbarInfo from "./general-components/NavbarInfo/NavbarInfo";
 
 const Router = () => {
 
@@ -28,6 +29,7 @@ const Router = () => {
             {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}
 
             <UserAuthContextProvider>
+                <NavbarInfo />
                 <NavbarTop />
 
                 <CheckConnectApi />
