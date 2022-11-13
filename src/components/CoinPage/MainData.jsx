@@ -31,9 +31,9 @@ const MainData = ({dataMain,setShowAlert}) => {
     return (
         <div className={`MainData coin`}>
 
-            <h5 className={'mt-2 mb-2'}>
-                <Badge>Номер #{dataMain[GL_MC_RANK] ?? '?'}</Badge>
-            </h5>
+            <Badge bg={"dark"}>
+                Rank #{dataMain[GL_MC_RANK] ?? '?'}
+            </Badge>
 
             {/*кнопка для добавление в избранное и поделиться*/}
             <MainButtons coinId={dataMain['id']} setShowAlert={setShowAlert} table={'coins'} title={'Монета'} />
@@ -45,11 +45,9 @@ const MainData = ({dataMain,setShowAlert}) => {
                 ({dataMain[GL_SYMBOL].toUpperCase()}) {dataMain[GL_NAME]}
                 <br/>
                 <strong>
-                    Актуальная цена:
                     {
-                        dataMain[GL_MD][GL_CUR_PRICE]["usd"]?
-                            ' ' + dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString() + "$":
-                            ' Нет информации о цене'
+                        dataMain[GL_MD][GL_CUR_PRICE]["usd"] &&
+                            dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString() + "$"
                     }
                 </strong>
                 <i style={{fontSize:14,marginLeft:10}}>
@@ -61,13 +59,12 @@ const MainData = ({dataMain,setShowAlert}) => {
             </h4>
 
             {/*description*/}
-            <p className="small">
-                {
-                    dataMain[GL_DESCRIPT]['en']?
-                        dataMain[GL_DESCRIPT]['en'].slice(0,800) + ' ...':
-                        'Описание отсутствует'
-                }
-            </p>
+            {
+                dataMain[GL_DESCRIPT]['en'] &&
+                <p className="small">
+                    {dataMain[GL_DESCRIPT]['en'].slice(0,800) + '...'}
+                </p>
+            }
 
             {/*market-data table*/}
             <TableMarketData data={dataMain[GL_MD]} />

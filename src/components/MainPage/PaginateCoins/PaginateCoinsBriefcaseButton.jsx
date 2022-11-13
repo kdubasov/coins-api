@@ -7,12 +7,13 @@ import {Button} from "react-bootstrap";
 import {deleteFromBriefcase} from "../../../functions/BriefcaseDB/deleteFromBriefcase";
 
 
-const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title}) => {
+const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = false}) => {
 
     //elemId - id элемента
     //setShowAlert - меняем видисомть элемента
     //table - таблица для редактирования монет/нфт/бирж
     //title - заголовк для алерта
+    //text - отображать текст вместо + -
 
     const { user } = useUserAuth();
 
@@ -52,7 +53,9 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title}) => {
                         size={"sm"}
                         style={{padding:'0 .4em',marginLeft:10}}
                         variant={"success"}
-                    >+</Button>
+                    >
+                        {text ? "Добавить в избранное" : "+"}
+                    </Button>
             }
             {
                 Boolean(Object.keys(briefcaseDBData).length && Object.keys(briefcaseDBData).includes(elemId)) &&
@@ -63,7 +66,7 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title}) => {
                         style={{padding:'0 .4em',marginLeft:10}}
                         variant={"danger"}
                     >
-                        -
+                        {text ? "Удалить из избранного" : "+"}
                     </Button>
             }
         </>

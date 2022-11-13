@@ -31,7 +31,7 @@ const SavedNftsTr = ({elem,setShowAlert}) => {
             </td>
 
             {/*floor price*/}
-            <td>{elem[GL_FL_PR]['usd'] && elem[GL_FL_PR]['usd'].toLocaleString("RU")}</td>
+            <td>{elem[GL_FL_PR]['usd'] && elem[GL_FL_PR]['usd'].toLocaleString("RU") + '$'}</td>
 
             {/*price change 24 hours*/}
             <PaginateChangeTd value={elem[GL_NFT_PERSENT_24H]} text={'%'} />

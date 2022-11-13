@@ -13,7 +13,7 @@ const MainButtons = ({setShowAlert,coinId,table,title}) => {
     return (
         <ButtonGroup size={"sm"}>
             {/*add with check to BriefcaseDB button*/}
-            <PaginateCoinsBriefcaseButton elemId={coinId} setShowAlert={setShowAlert} table={table} title={title} />
+            <PaginateCoinsBriefcaseButton elemId={coinId} setShowAlert={setShowAlert} table={table} title={title} text={true} />
 
             {/*скопироавть ссылку*/}
             <CopyToClipboard text={window.location.href}>
