@@ -24,10 +24,23 @@ const DateInfoResult = ({data,date}) => {
                         <tr>
                             <td>{date}</td>
                             <td>
-                                {getNumRedAfterDoot(data[GL_CUR_PRICE]['usd']) + '$'}
+                                {
+                                    data[GL_CUR_PRICE]['usd'] &&
+                                        getNumRedAfterDoot(data[GL_CUR_PRICE]['usd']).toLocaleString("RU") + '$'
+                                }
                             </td>
-                            <td>{getNumRedAfterDoot(data[GL_MK]['usd']) + '$'}</td>
-                            <td>{getNumRedAfterDoot(data[GL_TT_VOL]['usd']) + '$'}</td>
+                            <td>
+                                {
+                                    data[GL_MK]['usd'] &&
+                                        getNumRedAfterDoot(data[GL_MK]['usd']).toLocaleString("RU") + '$'
+                                }
+                            </td>
+                            <td>
+                                {
+                                    data[GL_TT_VOL]['usd'] &&
+                                        getNumRedAfterDoot(data[GL_TT_VOL]['usd']).toLocaleString("RU") + '$'
+                                }
+                            </td>
                         </tr>
                         </tbody>
                     </Table>:

@@ -66,7 +66,7 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = fa
                         style={{padding:'0 .4em',marginLeft:10}}
                         variant={"danger"}
                     >
-                        {text ? "Удалить из избранного" : "+"}
+                        {text ? "Удалить из избранного" : "-"}
                     </Button>
             }
         </>

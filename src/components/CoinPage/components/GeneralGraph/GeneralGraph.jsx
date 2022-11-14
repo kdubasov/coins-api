@@ -110,7 +110,7 @@ const GeneralGraph = ({id}) => {
                     />
                     <Tooltip cursor={{ stroke: 'red', strokeWidth: 1, }} />
                     <XAxis dataKey="date" fontSize={12} />
-                    <Area dot={false} type="natural" strokeWidth={2} dataKey="value" fill="url(#gradient)" stroke="#0d6efd" strokeDasharray="4 2" />
+                    <Area dot={false} type="natural" strokeWidth={2} dataKey="value" fill="url(#gradient)" stroke="#0d6efd" />
                     <Brush height={15}/>
                 </AreaChart>
             </ResponsiveContainer>

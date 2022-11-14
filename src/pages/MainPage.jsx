@@ -19,8 +19,6 @@ const MainPage = ({setShowAlert}) => {
 
     return (
         <>
-
-            <GeneralInfo />
             <SearchInput />
 
             <NavbarPaginate
@@ -42,6 +40,8 @@ const MainPage = ({setShowAlert}) => {
                 navPaginate === "coins" &&
                 <FeedbackForm />
             }
+
+            <GeneralInfo />
         </>
     );
 };
