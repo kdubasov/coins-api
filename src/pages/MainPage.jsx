@@ -30,7 +30,7 @@ const MainPage = ({setShowAlert}) => {
             {navPaginate === "nft" && <PaginateNft setShowAlert={setShowAlert} />}
             {navPaginate === "defi" && <DeFi />}
             {navPaginate === "categories" && <PaginateCategories />}
-            {navPaginate === "trendCoins" && <TrendCoins />}
+            {navPaginate === "trendCoins" && <TrendCoins setShowAlert={setShowAlert} />}
             {navPaginate === "exchanges" && <ExchangesPaginate setShowAlert={setShowAlert} />}
             {navPaginate === "topLoseCoins" && <TopLoseCoins />}
             {navPaginate === "derivatives" && <PaginateDerivatives />}

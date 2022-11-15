@@ -6,8 +6,9 @@ import {Link} from "react-router-dom";
 import {GL_MC_RANK, GL_NAME, GL_PR_BTC, GL_SYMBOL} from "../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
 import {getLang} from "../../../functions/Lang/getLang";
+import TableBestCoins from "../../../general-components/TableBestCoins/TableBestCoins";
 
-const TrendCoins = () => {
+const TrendCoins = ({setShowAlert}) => {
 
     const data = useApi(GLOBAL_API_TOP_7_COINS).data;
     // console.log(data.coins,'TrendCoins data');
@@ -18,12 +19,12 @@ const TrendCoins = () => {
 
     return (
         <div className={`TrendCoins container`}>
-            <h3 className={'m-0'}>
+            <h4 className={'m-0'}>
                 <Badge>
                     {getLang() === 'eng' && 'Popular coins'}
                     {getLang() === 'rus' && 'Популярные монеты'}
                 </Badge>
-            </h3>
+            </h4>
 
             <p className={'mb-3'}>
                 {
@@ -73,6 +74,8 @@ const TrendCoins = () => {
                     )):
                     <Spinner animation={"border"} variant={"primary"} />
             }
+
+            <TableBestCoins setShowAlert={setShowAlert} />
         </div>
     );
 };
