@@ -16,7 +16,7 @@ const SavedCoinsTr = ({elem,setShowAlert}) => {
 
     // console.log(elem,'SavedCoinsTr');
     return (
-        <tr>
+        <tr className={"small"}>
             {/*id*/}
             <td>
                 {elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}

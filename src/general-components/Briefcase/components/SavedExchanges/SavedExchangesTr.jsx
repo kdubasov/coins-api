@@ -17,7 +17,7 @@ const SavedExchangesTr = ({elem,setShowAlert,elemId}) => {
     console.log(elemId,'SavedExchangesTr');
 
     return (
-        <tr>
+        <tr className={"small"}>
             <td>
                 #{elem[GL_EXC_TR_SC_RANK] && elem[GL_EXC_TR_SC_RANK]}
 

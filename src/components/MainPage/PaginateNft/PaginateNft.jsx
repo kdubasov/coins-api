@@ -22,7 +22,7 @@ const PaginateNft = ({setShowAlert}) => {
 
     return (
         <div className={`PaginateNft container`}>
-            <h3 className={'mb-0'}><Badge>NFT</Badge></h3>
+            <h4 className={'mb-0'}><Badge>NFT</Badge></h4>
 
             <p>
                 {getLang() === 'rus' && 'На данной странице показан список всех nft. Для более подробной информации о nft вы можете перейти по ссылке из списка.'}

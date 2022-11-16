@@ -15,7 +15,7 @@ const DerivativesTickersTr = ({ids,tick}) => {
     // console.log(tick,'DerivativesTickersTr');
 
     return (
-        <tr>
+        <tr className={"small"}>
             <td>{ids + 1}</td>
             <td>{tick[GL_SYMBOL]}</td>
             {/*Монеты*/}

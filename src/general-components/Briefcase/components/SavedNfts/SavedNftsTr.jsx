@@ -14,7 +14,7 @@ const SavedNftsTr = ({elem,setShowAlert}) => {
     // console.log(elem,'data in SavedNftsTr');
 
     return (
-        <tr>
+        <tr className={"small"}>
             {/*id*/}
             <td>
                 {elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}

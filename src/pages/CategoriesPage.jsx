@@ -57,9 +57,9 @@ const CategoriesPage = ({setShowAlert}) => {
                 </Alert>
             }
 
-            <h3 className={'mt-5 mb-0'}>
+            <h4 className={'mt-5 mb-0'}>
                 Категория: <Badge>{getIdAndName() && getIdAndName()[GL_NAME]}</Badge>
-            </h3>
+            </h4>
             <p className={`w-75 mb-4`}>
                 На данной странице показаны топ-100 монет категории
                 <Badge className={'mx-1'} bg={"secondary"}>

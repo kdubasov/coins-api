@@ -16,7 +16,7 @@ const TableMarketData = ({data}) => {
     return (
         <Table className={'mt-3 mb-3'} striped bordered hover variant={getTheme(true)}>
             <tbody>
-            <tr>
+            <tr className={"small"}>
                 <td>
                     Изменение цены за 24ч:
                     {
@@ -34,7 +34,7 @@ const TableMarketData = ({data}) => {
                     <strong> {data[GL_TT_VOL]["usd"] ? data[GL_TT_VOL]["usd"].toLocaleString() + '$' : '?'}</strong>
                 </td>
             </tr>
-            <tr>
+            <tr className={"small"}>
                 <td>
                     Всего в обращении:
                     <strong> {data[GL_VS_OBR] ? data[GL_VS_OBR].toLocaleString() : '?'}</strong>
@@ -44,7 +44,7 @@ const TableMarketData = ({data}) => {
                     <strong> {data[GL_FULL_VAL]["usd"] ? data[GL_FULL_VAL]["usd"].toLocaleString() + '$' : '?'}</strong>
                 </td>
             </tr>
-            <tr>
+            <tr className={"small"}>
                 <td>
                     Максимальный объем:
                     <strong> {data[GL_MAX_CNS] ? data[GL_MAX_CNS].toLocaleString() : '?'}</strong>
@@ -54,7 +54,7 @@ const TableMarketData = ({data}) => {
                     <strong> {data[GL_TT_CNS] ? data[GL_TT_CNS].toLocaleString() : '?'}</strong>
                 </td>
             </tr>
-            <tr>
+            <tr className={"small"}>
                 <td>
                     Мин/Макс (24ч):
                     {

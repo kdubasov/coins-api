@@ -40,7 +40,7 @@ const SavedNftsTable = ({setShowAlert}) => {
                 Boolean(data.length) ?
                     <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
-                        <tr>
+                        <tr className={"small"}>
                             <td>#</td>
                             <td>Название</td>
                             <td>Мин. цена</td>

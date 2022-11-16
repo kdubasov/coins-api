@@ -24,7 +24,7 @@ const ExchangesTickers = ({id,mainData}) => {
 
             <Table striped bordered hover>
                 <thead>
-                    <tr>
+                    <tr className={"small"}>
                         <th>#</th>
                         <th>Монета</th>
                         <th>Ссылка</th>

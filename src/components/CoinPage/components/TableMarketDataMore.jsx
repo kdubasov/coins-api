@@ -76,7 +76,7 @@ const TableMarketDataMore = ({data,title}) => {
 
             <Table striped bordered hover variant={getTheme(true)}>
                 <tbody>
-                    <tr>
+                    <tr className={"small"}>
                         <td>
                             Цена:
                             <strong>
@@ -101,7 +101,7 @@ const TableMarketDataMore = ({data,title}) => {
                         </td>
                     </tr>
 
-                    <tr>
+                    <tr className={"small"}>
                         <td>
                             Рыночная капитализация:
                             <strong>
@@ -127,7 +127,7 @@ const TableMarketDataMore = ({data,title}) => {
                         </td>
                     </tr>
 
-                    <tr>
+                    <tr className={"small"}>
                         <td>
                             Объем торгов:
                             <strong>
@@ -142,7 +142,7 @@ const TableMarketDataMore = ({data,title}) => {
                         </td>
                     </tr>
 
-                    <tr>
+                    <tr className={"small"}>
                         <td>
                             Абсолютный максимум:
                             {getAthAtlBlock(GL_ATH,GL_ATH_CH_PC,GL_ATH_DATE)}

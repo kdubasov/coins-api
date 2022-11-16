@@ -14,7 +14,7 @@ const PaginateDerivativesTr = ({id,data}) => {
     // console.log(data,'data for one Derivative');
 
     return (
-        <tr>
+        <tr className={"small"}>
             <td>#{id}</td>
             {/*name link and logo*/}
             <td className={'d-flex align-items-center'}>

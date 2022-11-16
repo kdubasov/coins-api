@@ -13,7 +13,7 @@ const DerivativesTickers = ({data}) => {
 
             <Table striped bordered hover variant={getTheme(true)}>
                 <thead>
-                <tr>
+                <tr className={"small"}>
                     <th>#</th>
                     <th>Символ</th>
                     <th>Монеты</th>

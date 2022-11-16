@@ -10,7 +10,7 @@ import {Badge} from "react-bootstrap";
 
 const TopLoseCoinsTr = ({selectSort,elem}) => {
     return (
-        <tr>
+        <tr className={"small"}>
             {/*img and name*/}
             <td>
                 <Link to={`/coins/${elem.id}`}>

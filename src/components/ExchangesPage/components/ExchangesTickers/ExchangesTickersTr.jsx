@@ -17,7 +17,7 @@ const ExchangesTickersTr = ({tick,ids}) => {
     // console.log(Object.entries(tick[GL_EXC_CONV_VOL]))
 
     return (
-        <tr>
+        <tr className={"small"}>
             <td>{ids + 1}</td>
             {/*Монета*/}
             <td>

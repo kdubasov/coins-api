@@ -9,7 +9,7 @@ const PaginateDerivativesTable = ({data}) => {
     return (
         <Table striped bordered hover variant={getTheme(true)}>
             <thead>
-            <tr>
+            <tr className={"small"}>
                 <th>#</th>
                 <th>
                     {getLang() === 'rus' && 'Название'}

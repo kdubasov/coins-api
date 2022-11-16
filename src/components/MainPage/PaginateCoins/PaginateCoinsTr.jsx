@@ -16,7 +16,7 @@ import PaginateChangeTd from "./PaginateChangeTd";
 const PaginateCoinsTr = ({elem,setShowAlert}) => {
 
     return (
-        <tr>
+        <tr className={"small"}>
 
             {/*id*/}
             <td>

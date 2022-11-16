@@ -8,7 +8,7 @@ const TableHoldCompanies = ({data,value}) => {
     return (
         <Table striped bordered hover className={'TableHoldCompanies'} variant={getTheme(true)}>
             <thead>
-                <tr>
+                <tr className={"small"}>
                     <th>#</th>
                     <th>
                         {getLang() === 'rus' && "Название и символ"}

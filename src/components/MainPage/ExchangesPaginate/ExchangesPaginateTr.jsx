@@ -25,7 +25,7 @@ const ExchangesPaginate = ({elem,setShowAlert,btcPrice}) => {
     }
 
     return (
-        <tr key={elem.id}>
+        <tr className={"small"} key={elem.id}>
             <td>
                 #{elem[GL_EXC_TR_SC_RANK] && elem[GL_EXC_TR_SC_RANK]}
 

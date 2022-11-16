@@ -17,7 +17,7 @@ const TickersTableTr = ({data,ids}) => {
     // console.log(data,'TickersTableTr')
 
     return (
-        <tr>
+        <tr className={"small"}>
             <td>{ids + 1}</td>
             <td>
                 <img width={25} src={data[GL_MKT][GL_LOGO]} alt={data[GL_MKT][GL_NAME]}/>

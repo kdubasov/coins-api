@@ -51,7 +51,7 @@ const SavedExchangesTable = ({setShowAlert}) => {
                 (Boolean(data.length) && Boolean(allExchangesList.length)) ?
                     <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
-                        <tr>
+                        <tr className={"small"}>
                             <td>#</td>
                             <td>Название</td>
                             <td>Об. торг. 24ч</td>

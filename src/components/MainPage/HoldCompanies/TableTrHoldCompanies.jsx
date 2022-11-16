@@ -14,7 +14,7 @@ const TableTrHoldCompanies = ({elem,id,value}) => {
     // console.log(value,'TableTrHoldCompanies value');
 
     return (
-        <tr>
+        <tr className={"small"}>
             <td>#{id}</td>
             {/*name and sybmol*/}
             <td>

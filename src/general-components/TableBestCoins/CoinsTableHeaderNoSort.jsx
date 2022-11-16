@@ -3,7 +3,7 @@ import {getLang} from "../../functions/Lang/getLang";
 
 const CoinsTableHeaderNoSort = () => {
     return (
-        <tr>
+        <tr className={"small"}>
             <th>
                 #
             </th>

@@ -5,12 +5,15 @@ import {getGraphDate} from "../getGraphDate";
 //set data in database
 export const addFormDataInDB = (email,message,cooperation) =>{
 
-    const dbURL = `/forms/feedbackForm/${Date.now() + '-' + getGraphDate(Date.now())}`
+    const date = Date.now();
+
+    const dbURL = `/forms/feedbackForm/${date + '-' + getGraphDate(date)}`
 
     return set(ref(realtimeDB,dbURL),{
         email: email,
-        message:message,
-        date:getGraphDate(Date.now()),
-        cooperation:cooperation,
+        message: message,
+        date: getGraphDate(date),
+        id: date + '-' + getGraphDate(date),
+        cooperation: cooperation,
     })
 }

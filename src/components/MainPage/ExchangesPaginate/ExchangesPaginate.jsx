@@ -25,12 +25,12 @@ const ExchangesPaginate = ({setShowAlert}) => {
 
     return (
         <div className={`ExchangesPaginate container`}>
-            <h3 className={"m-0"}>
+            <h4 className={"m-0"}>
                 <Badge>
                     {getLang() === 'rus' && "Биржи"}
                     {getLang() === 'eng' && "Exchanges"}
                 </Badge>
-            </h3>
+            </h4>
 
             <p>
                 {getLang() === 'rus' && 'Список бирж отсортированных по объему торгов за 24 часа.'}
@@ -42,7 +42,7 @@ const ExchangesPaginate = ({setShowAlert}) => {
                 Object.keys(data).length?
                     <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
-                        <tr>
+                        <tr className={"small"}>
                             <th>#</th>
                             <th>
                                 {getLang() === 'rus' && "Название"}

@@ -9,7 +9,7 @@ const TopLoseCoinsTable = ({selectSort,data,sort}) => {
     return (
         <Table striped bordered hover variant={getTheme(true)}>
             <thead>
-            <tr>
+            <tr className={"small"}>
                 <td>
                     {getLang() === 'rus' && "Название"}
                     {getLang() === 'eng' && "Name"}

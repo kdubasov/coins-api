@@ -12,7 +12,7 @@ const DateInfoResult = ({data,date}) => {
                 data?
                     <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
-                        <tr>
+                        <tr className={"small"}>
                             <th>Дата</th>
                             <th>Цена</th>
                             <th>Рыночная капит.</th>
@@ -21,7 +21,7 @@ const DateInfoResult = ({data,date}) => {
                         </thead>
 
                         <tbody>
-                        <tr>
+                        <tr className={"small"}>
                             <td>{date}</td>
                             <td>
                                 {

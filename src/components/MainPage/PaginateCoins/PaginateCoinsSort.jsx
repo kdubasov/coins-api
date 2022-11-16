@@ -48,7 +48,7 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
     }
 
     return (
-        <tr>
+        <tr className={"small"}>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MC_RANK,sortCheck[0],0)}>
                     #

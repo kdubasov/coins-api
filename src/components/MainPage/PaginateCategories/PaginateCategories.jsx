@@ -17,12 +17,12 @@ const PaginateCategories = () => {
 
             {/*header*/}
             <header>
-                <h3 className={'m-0'}>
+                <h4 className={'m-0'}>
                     <Badge>
                         {getLang() === 'rus' && "Категории"}
                         {getLang() === 'eng' && "Categories"}
                     </Badge>
-                </h3>
+                </h4>
                 <p className={'m-0 mb-3'}>
                     {
                         getLang() === 'rus' &&
@@ -40,7 +40,7 @@ const PaginateCategories = () => {
                 Object.values(data).length?
                     <Table striped bordered hover variant={getTheme(true)}>
                         <thead>
-                            <tr>
+                            <tr className={"small"}>
                                 <th>#</th>
                                 <th>
                                     {getLang() === 'rus' && "Категория"}

@@ -17,12 +17,12 @@ const HoldCompanies = () => {
 
     return (
         <div className={'HoldCompanies container'}>
-            <h3 className={"m-0"}>
+            <h4 className={"m-0"}>
                 <Badge>
                     {getLang() === 'rus' && "Холдинговые компании"}
                     {getLang() === 'eng' && "Holding companies"}
                 </Badge>
-            </h3>
+            </h4>
 
             <p>
                 {

@@ -16,6 +16,8 @@ import PhoneLogin from "./general-components/AuthComponents/LoginComponents/Phon
 import Briefcase from "./general-components/Briefcase/Briefcase";
 import MessageAlert from "./general-components/Alerts/MessageAlert";
 import NavbarInfo from "./general-components/NavbarInfo/NavbarInfo";
+import AdminPage from "./pages/AdminPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const Router = () => {
 
@@ -64,6 +66,19 @@ const Router = () => {
                                 </ProtectedAuthRoute>
                         }
                         />
+
+                        {/*admin page*/}
+                        <Route
+                            path="/admin"
+                            element={
+                                <ProtectedAuthRoute>
+                                    <AdminPage setShowAlert={setShowAlert} />
+                                </ProtectedAuthRoute>
+                            }
+                        />
+
+                        {/*404 page*/}
+                        <Route path={"*"} element={<NotFoundPage />} />
                     </Routes>
             </UserAuthContextProvider>
         </div>

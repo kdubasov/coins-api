@@ -22,7 +22,7 @@ const MainData = ({data}) => {
                 <div className="box d-flex align-items-center">
                     <img width={75} style={{borderRadius:5}} src={data[GL_IMAGE]} alt={data[GL_NAME]}/>
                     <div className={'mx-2 d-flex align-items-center flex-wrap'}>
-                        <h3 className={'m-0 w-100'}><Badge>{data[GL_NAME]}</Badge></h3>
+                        <h4 className={'m-0 w-100'}><Badge>{data[GL_NAME]}</Badge></h4>
                         <p className="small m-0">
                             {data[GL_EXC_CENTR]?'Centralized':'Not centralized'}
                         </p>

@@ -35,7 +35,7 @@ const TableChangePrice = ({data}) => {
     return (
         <Table className={'mt-3 mb-3'} striped bordered hover variant={getTheme(true)}>
             <thead>
-            <tr>
+            <tr className={"small"}>
                 <th>1 час</th>
                 <th>24 часа</th>
                 <th>7 дней</th>
@@ -47,7 +47,7 @@ const TableChangePrice = ({data}) => {
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr className={"small"}>
                 {tdValue(GL_CH_PR_CN_1H,'usd')}
                 {tdValue(GL_CH_PR_CN_24H)}
                 {tdValue(GL_CH_PR_CN_7D)}

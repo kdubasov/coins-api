@@ -14,12 +14,12 @@ const PaginateDerivatives = () => {
 
     return (
         <div className={`PaginateDerivatives container`}>
-            <h3 className={'m-0'}>
+            <h4 className={'m-0'}>
                 <Badge>
                     {getLang() === 'eng' && 'Derivatives'}
                     {getLang() === 'rus' && 'Деривативы'}
                 </Badge>
-            </h3>
+            </h4>
 
             <p>
                 {

@@ -30,12 +30,12 @@ const TopLoseCoins = () => {
 
     return (
         <div className={'TopLoseCoins container'}>
-            <h3 className={'m-0'}>
+            <h4 className={'m-0'}>
                 <Badge>
                     {getLang() === 'rus' && 'Топ лучших/худших монет.'}
                     {getLang() === 'eng' && 'Top best/worst coins.'}
                 </Badge>
-            </h3>
+            </h4>
 
             <p className={'mb-4'}>
                 {getLang() === 'rus' && 'Рейтинг популярных монет, которые максимально выросли/упали в цене за определенный промежуток времени.'}

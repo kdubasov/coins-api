@@ -10,7 +10,7 @@ const PaginateCategoriesTr = ({elem,ids}) => {
     // console.log(elem,'PaginateCategoriesTr');
 
     return (
-        <tr>
+        <tr className={"small"}>
             <td>{ids + 1}</td>
             {/*Категория*/}
             <td>
