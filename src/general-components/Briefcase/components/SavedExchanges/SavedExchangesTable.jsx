@@ -13,6 +13,7 @@ import {
 import SavedExchangesTr from "./SavedExchangesTr";
 import {useApi} from "../../../../hooks/useApi";
 import {GL_NAME} from "../../../../constants/ApiConstants";
+import {getLang} from "../../../../functions/Lang/getLang";
 
 const SavedExchangesTable = ({setShowAlert}) => {
 
@@ -75,7 +76,7 @@ const SavedExchangesTable = ({setShowAlert}) => {
                         }
                         </tbody>
                     </Table>:
-                    <AlertNoValue value={"биржи"} />
+                    <AlertNoValue value={getLang() === "eng" ? "exchanges" : "биржи"} />
             }
         </>
     );

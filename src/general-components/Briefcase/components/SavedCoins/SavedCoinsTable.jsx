@@ -7,6 +7,7 @@ import {GLOBAL_API_COIN_ONE_MAIN, GLOBAL_API_URL} from "../../../../constants/Ap
 import axios from "axios";
 import SavedCoinsTr from "./SavedCoinsTr";
 import AlertNoValue from "../AlertNoValue";
+import {getLang} from "../../../../functions/Lang/getLang";
 
 const SavedCoinsTable = ({setShowAlert}) => {
 
@@ -63,7 +64,7 @@ const SavedCoinsTable = ({setShowAlert}) => {
                         }
                         </tbody>
                     </Table>:
-                    <AlertNoValue value={"монеты"} />
+                    <AlertNoValue value={getLang() === "eng" ? "coins" : "монеты"} />
             }
         </>
     );
