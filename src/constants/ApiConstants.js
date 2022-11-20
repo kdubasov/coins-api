@@ -90,6 +90,7 @@ export const GL_DEFI_TR_24H = 'trading_volume_24h';
 export const GL_NFT_OWN = 'number_of_unique_addresses';
 export const GL_NFT_NAT_CUR = 'native_currency';
 export const GL_NFT_PERSENT_24H = 'floor_price_in_usd_24h_percentage_change';
+export const GL_THUMB = 'thumb';
 
 //categories
 export const GL_CAT_TOP_3 = 'top_3_coins';
