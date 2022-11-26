@@ -1,8 +1,11 @@
 import React from 'react';
-import {Button, ButtonGroup} from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 import {getLang} from "../../../functions/Lang/getLang";
 
-const NavbarPaginate = ({navPaginate,setNavPaginate}) => {
+//css
+import './NavbarPaginate.css';
+
+const NavbarPaginate = ({navPaginate,setNavPaginate,theme}) => {
 
     const handleSet = value =>{
         setNavPaginate(value)
@@ -11,7 +14,8 @@ const NavbarPaginate = ({navPaginate,setNavPaginate}) => {
     const getButton = (text,value) =>{
         return(
             <Button
-                variant={"outline-primary"}
+                className={`but-${theme}`}
+                size={"sm"}
                 disabled={value === navPaginate}
                 onClick={() =>handleSet(value)}
             >
@@ -21,19 +25,17 @@ const NavbarPaginate = ({navPaginate,setNavPaginate}) => {
     }
 
     return (
-        <div className={'NavbarPaginate container mb-3 mt-3 d-flex'}>
-            <ButtonGroup size={"sm"}>
-                {getButton(getLang() === 'eng' ? "Coins" : "Монеты", "coins")}
-                {getButton(getLang() === 'eng' ? "Categories" : "Категории", "categories")}
-                {getButton("NFT", "nft")}
-                {getButton("DeFi", "defi")}
-                {getButton(getLang() === 'eng' ? "Derivatives" : "Деривативы","derivatives")}
-                {getButton(getLang() === 'eng' ? "Popular coins" : "Популярные монеты", "trendCoins")}
-                {getButton(getLang() === 'eng' ? "Exchanges" : "Биржи", "exchanges")}
-                {getButton(getLang() === 'eng' ? "Best/worst coins" : "Лучшие/худшие монеты", "topLoseCoins")}
-                {getButton(getLang() === 'eng' ? "Holding companies" : "Холдинговые компании", "holdCompanies")}
-            </ButtonGroup>
-        </div>
+        <Container className={'NavbarPaginate'}>
+            {getButton(getLang() === 'eng' ? "Coins" : "Монеты", "coins")}
+            {getButton(getLang() === 'eng' ? "Categories" : "Категории", "categories")}
+            {getButton("NFT", "nft")}
+            {getButton("DeFi", "defi")}
+            {getButton(getLang() === 'eng' ? "Derivatives" : "Деривативы","derivatives")}
+            {getButton(getLang() === 'eng' ? "Popular coins" : "Популярные монеты", "trendCoins")}
+            {getButton(getLang() === 'eng' ? "Exchanges" : "Биржи", "exchanges")}
+            {getButton(getLang() === 'eng' ? "Best/worst coins" : "Лучшие/худшие монеты", "topLoseCoins")}
+            {getButton(getLang() === 'eng' ? "Holding companies" : "Холдинговые компании", "holdCompanies")}
+        </Container>
     );
 };
 

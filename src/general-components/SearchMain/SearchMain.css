@@ -42,13 +42,14 @@ input.search-input.light:hover::placeholder{
     width: calc(300px + 1em);
     max-height: 60vh;
     overflow: auto;
-    padding: .5em;
+    padding: .75em;
     border-radius: 5px;
     position: absolute;
     right: 0;
     top: 2.3em;
     z-index: 10;
     background: var(--bg-search-input-dark);
+    border: 1px solid var(--blue-main-op50);
 }
 .SearchResult::-webkit-scrollbar {
     width: 0;
@@ -94,7 +95,7 @@ input.search-input.light:hover::placeholder{
 }
 .SearchResultInner .list-group-item:hover{
     width: 95%;
-    opacity: .5;
+    opacity: .75;
 }
 .SearchResultInner .list-group-item img{
     width: 20px;

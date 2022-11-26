@@ -1,0 +1,9 @@
+.container.NavbarPaginate{
+    margin: 1.5em auto !important;
+    display: flex;
+}
+
+.NavbarPaginate button{
+    padding: .4em 1em !important;
+    margin: .5em .5em .5em 0;
+}

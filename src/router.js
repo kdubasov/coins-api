@@ -41,7 +41,7 @@ const Router = () => {
 
                 {/*auth provider*/}
                     <Routes>
-                        <Route path={`/`} element={<MainPage setShowAlert={setShowAlert} />} />
+                        <Route path={`/`} element={<MainPage theme={theme} setShowAlert={setShowAlert} />} />
                         <Route path={'/coins/:coinId'} element={<CoinPage setShowAlert={setShowAlert} />} />
                         <Route path={'/nft/:nftId'} element={<NftPage setShowAlert={setShowAlert} />} />
                         <Route path={'/categories/:categoryId'} element={<CategoriesPage  setShowAlert={setShowAlert} />} />

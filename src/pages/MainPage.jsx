@@ -11,15 +11,19 @@ import PaginateDerivatives from "../components/MainPage/PaginateDerivatives/Pagi
 import PaginateNft from "../components/MainPage/PaginateNft/PaginateNft";
 import HoldCompanies from "../components/MainPage/HoldCompanies/HoldCompanies";
 import FeedbackForm from "../general-components/FeedbackForm/FeedbackForm";
+import BannerTop from "../static-components/MainPage/BannerTop/BannerTop";
 
-const MainPage = ({setShowAlert}) => {
+const MainPage = ({setShowAlert,theme}) => {
 
     const [navPaginate,setNavPaginate] = useState("coins");
 
     return (
         <>
 
+            <BannerTop theme={theme} />
+
             <NavbarPaginate
+                theme={theme}
                 navPaginate={navPaginate}
                 setNavPaginate={setNavPaginate}
             />

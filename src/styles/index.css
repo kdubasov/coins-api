@@ -9,6 +9,7 @@
 :root{
     /*interest colors*/
     --blue-main:#326CF4;
+    --blue-main-op50: rgba(50, 108, 244, 0.50);
 
     /*dark theme*/
     --dark-bg: #1A1A1A;
@@ -28,7 +29,7 @@
 
 /*containers*/
 .container{
-    margin:auto !important;
+    margin:auto;
 }
 
 /*основной родителтский контейнер*/
