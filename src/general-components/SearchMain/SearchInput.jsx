@@ -5,7 +5,10 @@ import {GLOBAL_API_SEARCH} from "../../constants/ApiCommand";
 import SearchResult from "./SearchResult";
 import {getLang} from "../../functions/Lang/getLang";
 
-const SearchInput = () => {
+//css
+import "./SearchMain.css";
+
+const SearchInput = ({theme}) => {
 
     //запрос
     const [query,setQuery] = useState('')
@@ -17,18 +20,19 @@ const SearchInput = () => {
     // console.log(data,'SEARCH DATA')
 
     return (
-        <div className={`SearchInput container`}>
+        <div className={`SearchInput-container`}>
 
             <FormControl
-                className="mb-1 mt-3"
-                // size={"sm"}
+                className={`search-input ${theme}`}
+                size={"sm"}
                 value={query}
                 onChange={event => setQuery(event.target.value)}
                 onFocus={() => setShowRes(true)}
-                placeholder={getLang() === "rus" ? "Введите запрос" : "Enter a request"}
+                placeholder={getLang() === "rus" ? "Поиск по сайту" : "Search..."}
             />
 
             <SearchResult
+                theme={theme}
                 show={showRes}
                 setShowRes={setShowRes}
                 query={query}

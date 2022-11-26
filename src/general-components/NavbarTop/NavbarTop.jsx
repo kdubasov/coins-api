@@ -3,10 +3,13 @@ import {Button, Container, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {useUserAuth} from "../../contexts/UserAuthContext";
 import {useNavigate} from "react-router-dom";
-import {getTheme} from "../../functions/Theme/getTheme";
 import {getLang} from "../../functions/Lang/getLang";
 
-const NavbarTop = () => {
+// css
+import "./NavbarTop.css";
+import SearchInput from "../SearchMain/SearchInput";
+
+const NavbarTop = ({theme}) => {
 
     //user data for check login
     const { user, logOut } = useUserAuth();
@@ -24,33 +27,40 @@ const NavbarTop = () => {
 
 
     return (
-        <Navbar bg={getTheme()?'light':'dark'} variant={getTheme()?'light':'dark'} className="mb-3 small">
+        <Navbar className={`NavbarTop ${theme}`}>
             <Container>
-                <Link style={{fontSize:20}} to={'/'}>cryptoQuick</Link>
+
+                <Link to={'/'}>
+                    <img className={"logo"} src={`/images/NavbarTop/${theme}.svg`} alt=""/>
+                </Link>
 
                 <div className={"d-flex align-items-center"}>
 
                     {/*briefcase link*/}
-                    <Link className={'text-primary mx-3'} to={'/briefcase'}>
+                    <Link className={'small briefcase-link'} to={'/briefcase'}>
                         {getLang() === 'rus' ? 'Избранное' : 'Favorites'}
                     </Link>
 
                     {//check user is logged or not
                         user ?
-                            <div className={'d-flex justify-content-between align-items-center'}>
-                                <Link className={'text-primary mx-3'} to={'/userProfile'}>
+                            <div className={"login-container"}>
+                                <Link className={'small'} to={'/userProfile'}>
                                     {getLang() === 'rus' ? 'Аккаунт' : 'Account'}
                                 </Link>
                                 <Button size={"sm"} onClick={handleLogout} variant={"primary"}>
                                     {getLang() === 'rus' ? 'Выйти' : 'Sign out'}
                                 </Button>
                             </div>:
-                            <Link className={"mx-3"} to={'/login'}>
-                                <Button size={"sm"} variant={'light'}>
+
+                            <Link className={'small'} to={'/login'}>
+                                <Button size={"sm"} variant={'primary'}>
                                     {getLang() === 'rus' ? 'Вход' : 'Sign in'}
                                 </Button>
                             </Link>
                     }
+
+                    {/*general search*/}
+                    <SearchInput theme={theme} />
                 </div>
             </Container>
         </Navbar>

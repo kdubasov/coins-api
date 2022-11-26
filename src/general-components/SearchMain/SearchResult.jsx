@@ -4,7 +4,7 @@ import SearchResultInner from "./SearchResultInner";
 import {GL_NAME} from "../../constants/ApiConstants";
 import {getLang} from "../../functions/Lang/getLang";
 
-const SearchResult = ({show,setShowRes,query,data}) => {
+const SearchResult = ({show,setShowRes,query,data,theme}) => {
 
     const [dataArrAll,setDataArrAll] = useState([])
     // console.log(data,'SearchResult');
@@ -45,28 +45,31 @@ const SearchResult = ({show,setShowRes,query,data}) => {
 
     return (
         <div
-            className={`SearchResult`}
+            className={`SearchResult ${theme}`}
             style={{display:`${show?'block':'none'}`}}
         >
             {/*кнопка для закрытия результатов поиска*/}
             {
                 show &&
-                <Button onClick={() =>setShowRes(false)} size={"sm"} className={'mb-1'}>
+                <Button onClick={() =>setShowRes(false)} size={"sm"} className={'w-100 mb-2'}>
                     {getLang() === 'eng' && 'Hide search results'}
                     {getLang() === 'rus' && 'Скрыть результаты поиска'}
                 </Button>
             }
 
-            <div className={'my-1 w-100 d-flex flex-wrap border'}>
+            <div className={'search-inner-container'}>
                 {
                     getFalseRes()?
                     <>
-                        {(coins ? checkValue(coins) : false) && <SearchResultInner coins={coins} handleSortName={handleSortName} />}
-                        {(nfts ? checkValue(nfts) : false)  && <SearchResultInner nfts={nfts} handleSortName={handleSortName} />}
-                        {(exchanges ? checkValue(exchanges) : false)  && <SearchResultInner exchanges={exchanges} handleSortName={handleSortName} />}
-                        {(categories ? checkValue(categories) : false)  && <SearchResultInner categories={categories} handleSortName={handleSortName} />}
+                        {(coins ? checkValue(coins) : false) && <SearchResultInner setShowRes={setShowRes} coins={coins} handleSortName={handleSortName} theme={theme} />}
+                        {(nfts ? checkValue(nfts) : false)  && <SearchResultInner setShowRes={setShowRes} nfts={nfts} handleSortName={handleSortName} theme={theme}  />}
+                        {(exchanges ? checkValue(exchanges) : false)  && <SearchResultInner setShowRes={setShowRes} exchanges={exchanges} handleSortName={handleSortName} theme={theme}  />}
+                        {(categories ? checkValue(categories) : false)  && <SearchResultInner setShowRes={setShowRes} categories={categories} handleSortName={handleSortName} theme={theme}  />}
                     </>:
-                    <Alert className={"w-100 m-3 p-2 small"}>По вашему запросу результатов поиска нет</Alert>
+                    <Alert variant={"danger"} className={"w-100 mt-1 mb-0 p-2 small"}>
+                        {getLang() === "eng" && "There are no search results for your query."}
+                        {getLang() === "rus" && "По вашему запросу результатов поиска нет."}
+                    </Alert>
                 }
             </div>
         </div>

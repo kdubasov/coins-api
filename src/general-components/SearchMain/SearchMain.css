@@ -1,0 +1,110 @@
+.SearchInput-container{
+    position: relative;
+    padding-left: 1em;
+}
+/*main input for search*/
+input.search-input{
+    min-width: 200px;
+    border: none !important;
+}
+
+/*dark*/
+input.search-input.dark{
+    color: var(--white);
+    background: var(--bg-search-input-dark);
+}
+input.search-input.dark::placeholder{
+    transition: .3s;
+    color: var(--white);
+    opacity: .5;
+    font-weight: 300;
+}
+/*light*/
+input.search-input.light{
+    color: var(--text-dark);
+    background: var(--bg-search-input-light);
+}
+input.search-input.light::placeholder{
+    transition: .3s;
+    color: var(--text-dark);
+    opacity: .5;
+    font-weight: 300;
+}
+/*hover placeholder*/
+input.search-input.dark:hover::placeholder,
+input.search-input.light:hover::placeholder{
+    opacity: .75;
+}
+
+/*----------------------------------------------------------------*/
+/*SearchResult*/
+.SearchResult{
+    width: calc(300px + 1em);
+    max-height: 60vh;
+    overflow: auto;
+    padding: .5em;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 2.3em;
+    z-index: 10;
+    background: var(--bg-search-input-dark);
+}
+.SearchResult::-webkit-scrollbar {
+    width: 0;
+}
+.SearchResult.dark{
+    background: var(--bg-search-input-dark);
+}
+.SearchResult.light{
+    background: var(--bg-search-input-light);
+}
+
+/*----------------------------------------------------------------*/
+/*SearchResultInner*/
+.SearchResultInner{
+    margin-bottom: 1em;
+}
+.SearchResultInner.dark{
+    color: var(--white);
+}
+.SearchResultInner.light{
+    color: var(--text-dark);
+}
+
+/*title for category in search*/
+.SearchResultInner p.small.show-value{
+    color: inherit;
+    width: 50%;
+    margin: 0 0 .5em 0;
+}
+.SearchResultInner.dark p.small.show-value{
+    border-bottom: 1px solid var(--bg-search-input-light);
+}
+.SearchResultInner.light p.small.show-value{
+    border-bottom: 1px solid var(--bg-search-input-dark);
+}
+
+/*list group item*/
+.SearchResultInner .list-group-item{
+    font-weight: 300;
+    font-size: 12px;
+    color: inherit;
+    transition: .15s;
+}
+.SearchResultInner .list-group-item:hover{
+    width: 95%;
+    opacity: .5;
+}
+.SearchResultInner .list-group-item img{
+    width: 20px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.SearchResultInner.light .list-group-item{
+    background: var(--white);
+}
+.SearchResultInner.dark .list-group-item{
+    border: 1px solid var(--bg-search-input-dark);
+    background: var(--dark-bg);
+}

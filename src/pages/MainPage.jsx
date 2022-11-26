@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import PaginateCoins from "../components/MainPage/PaginateCoins/PaginateCoins";
-import SearchInput from "../general-components/SearchMain/SearchInput";
 import NavbarPaginate from "../components/MainPage/NavbarPaginate/NavbarPaginate";
 import DeFi from "../components/MainPage/DeFi/DeFi";
 import PaginateCategories from "../components/MainPage/PaginateCategories/PaginateCategories";
@@ -19,7 +18,6 @@ const MainPage = ({setShowAlert}) => {
 
     return (
         <>
-            <SearchInput />
 
             <NavbarPaginate
                 navPaginate={navPaginate}

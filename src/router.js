@@ -18,21 +18,24 @@ import MessageAlert from "./general-components/Alerts/MessageAlert";
 import NavbarInfo from "./general-components/NavbarInfo/NavbarInfo";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import {getTheme} from "./functions/Theme/getTheme";
 
 const Router = () => {
+
+    const theme = getTheme(true);
 
     // for show/hide alert
     const [showAlert, setShowAlert] = useState({show:false,text:'',variant:''})
 
     return (
-        <div className={"general-container"}>
+        <div className={`general-container ${theme}`}>
 
             {/*alert with text*/}
             {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}
 
             <UserAuthContextProvider>
-                <NavbarInfo />
-                <NavbarTop />
+                <NavbarInfo theme={theme} />
+                <NavbarTop theme={theme} />
 
                 <CheckConnectApi />
 

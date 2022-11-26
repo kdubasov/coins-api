@@ -26,7 +26,8 @@ const MainData = ({dataMain,setShowAlert}) => {
     // console.log(dataMain,'data for one coin all');
 
     //цена монетки в btc
-    const btcPrice = useApi(GLOBAL_API_SIMPLE_PRICE(dataMain['id'],'btc')).data;
+    const btcPrice = useApi(GLOBAL_API_SIMPLE_PRICE(dataMain['id'],'btc')).data[dataMain['id']];
+    // console.log(btcPrice)
 
     return (
         <div className={`MainData coin`}>
@@ -51,10 +52,7 @@ const MainData = ({dataMain,setShowAlert}) => {
                     }
                 </strong>
                 <i style={{fontSize:14,marginLeft:10}}>
-                    {
-                        Object.values(btcPrice).length &&
-                        Object.values(btcPrice[dataMain['id']])  + 'BTC'
-                    }
+                    {btcPrice && btcPrice['btc']  + 'BTC'}
                 </i>
             </h4>
 

@@ -7,23 +7,44 @@
 }
 
 :root{
-    --dark:#2c3034;
-    --light: #f8f8f8;
-    --white:#FFF;
-    --black:#000;
-    --gray:#555;
+    /*interest colors*/
+    --blue-main:#326CF4;
+
+    /*dark theme*/
+    --dark-bg: #1A1A1A;
+    --border-nav-dark:#373737;
+    --bg-search-input-dark: #282828;
+
+    /*light theme*/
+    --text-dark: #1A1B27;
+    --border-nav-light: #DCDCDC;
+    --bg-search-input-light: #EFEFEF;
+
+    /*other colors*/
+    --white: #FFF;
+    --black: #000;
+    --gray: #555;
 }
 
-.SearchResult{
-    display: block;
-    width: 100%;
-    min-height: 50vh;
-    background: var(--gray);
-    border-radius: 1em;
-    z-index: 10;
-    position: absolute;
-}
-
+/*containers*/
 .container{
     margin:auto !important;
+}
+
+/*основной родителтский контейнер*/
+.general-container.dark,
+.container.dark{
+    color: var(--white);
+    background: var(--dark-bg);
+}
+.general-container.light,
+.container.light{
+    color: var(--text-dark);
+    background: var(--white);
+}
+
+/*text*/
+p.small, a.small, button.small{
+    font-size: 13px !important;
+    font-weight: 300;
 }

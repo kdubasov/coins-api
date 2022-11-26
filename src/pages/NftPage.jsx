@@ -5,6 +5,7 @@ import MainData from "../components/NftPage/MainData";
 import {Spinner} from "react-bootstrap";
 import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
 import {GLOBAL_API_NFT_ONE} from "../constants/ApiCommand";
+import TableBestCoins from "../general-components/TableBestCoins/TableBestCoins";
 
 const NftPage = ({setShowAlert}) => {
 
@@ -26,6 +27,8 @@ const NftPage = ({setShowAlert}) => {
                     <MainData dataMain={data.data} setShowAlert={setShowAlert} /> :
                     <Spinner animation={"border"} variant={"primary"} />
             }
+
+            <TableBestCoins setShowAlert={setShowAlert} />
         </div>
     );
 };

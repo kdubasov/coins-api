@@ -1,8 +1,15 @@
 import React from 'react';
-import {Badge, ListGroup} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {ListGroup} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
 
-const SearchResultInner = ({nfts,coins,exchanges,categories,handleSortName}) => {
+const SearchResultInner = ({setShowRes,nfts,coins,exchanges,categories,handleSortName,theme}) => {
+
+    const navigate = useNavigate();
+
+    const handleNavigate = url => {
+        navigate(url);
+        setShowRes(false);
+    }
 
     // console.log(nfts,'nfts')
     // console.log(coins,'coins')
@@ -10,98 +17,93 @@ const SearchResultInner = ({nfts,coins,exchanges,categories,handleSortName}) => 
     // console.log(categories,'categories')
 
     //для показа не более 10 рез-ов по результатам сортировки по именам
-    const handleSortMaxName = value => value?value.length>10?value.filter((elem,ids) => ids<10):value:false;
+    const handleSortMaxName = value => value?value.length > 5 ? value.filter((elem,ids) => ids < 5) : value : false;
 
     //сортировка для показа не более 10 резульаттов
-    const handleFilterMax = value => value?value[1].length>10?value[1].filter((elem,ids) => ids<10):value[1]:false;
+    const handleFilterMax = value => value?value[1].length > 5 ? value[1].filter((elem,ids) => ids < 5) : value[1] : false;
 
     //check value for show
     const checkValueWithoutName = arr => {
         return Boolean(handleSortName(arr).length)
     }
 
+    //проверяем картинку
+    const getImage = elem => {
+        if (elem['thumb'] && elem['thumb'] !== 'missing_thumb.png'){
+            return (
+                <img
+                    src={elem['thumb']}
+                    alt={elem.name}
+                />
+            )
+        }else return false;
+    }
+
     return (
-        <div className={'w-50 p-2'}>
+        <div className={`SearchResultInner ${theme}`}>
             {/*title for category in search*/}
-            <h5>
-                <Badge bg={"secondary"} className={"fw-light p-1 px-3"}>
-                    {(nfts && checkValueWithoutName(nfts)) && nfts[0]}
-                    {(categories && checkValueWithoutName(categories)) && categories[0]}
-                    {coins && coins[0]}
-                    {exchanges && exchanges[0]}
-                </Badge>
-            </h5>
+            <p className={"show-value small"}>
+                {(nfts && checkValueWithoutName(nfts)) && nfts[0].toUpperCase()}
+                {(categories && checkValueWithoutName(categories)) && categories[0].toUpperCase()}
+                {coins && coins[0].toUpperCase()}
+                {exchanges && exchanges[0].toUpperCase()}
+            </p>
 
             <ListGroup className={'small'}>
 
                 {//coins
                     coins && handleFilterMax(coins).map(elem =>(
-                        <Link
+                        <ListGroup.Item
+                            action
                             key={elem.id}
-                            to={nfts?`/nft/${elem.id}`:`/coins/${elem.id}`}
-                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                            onClick={() => handleNavigate(`/coins/${elem.id}`)}
                         >
-                            <ListGroup.Item action>
-                                <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
-                                <strong>({elem.symbol})</strong> {elem.name}
-                            </ListGroup.Item>
-                        </Link>
-                        ))
+                            {/*image*/}
+                            {getImage(elem)}
+                            {/*name*/}
+                            <strong>({elem.symbol})</strong> {elem.name}
+                        </ListGroup.Item>
+                    ))
                 }
 
                 {//nfts
                     nfts && handleSortMaxName(handleSortName(nfts)).map(elem =>(
-                        <Link
+                        <ListGroup.Item
+                            action
                             key={elem.id}
-                            to={nfts?`/nft/${elem.id}`:`/coins/${elem.id}`}
-                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                            onClick={() => handleNavigate(`/nft/${elem.id}`)}
                         >
-                            <ListGroup.Item action>
-                                <img src={elem['thumb']} style={{marginRight:5}} alt=""/>
-                                <strong>({elem.symbol})</strong> {elem.name}
-                            </ListGroup.Item>
-                        </Link>
+                            {/*image*/}
+                            {getImage(elem)}
+                            <strong>({elem.symbol})</strong> {elem.name}
+                        </ListGroup.Item>
                     ))
                 }
 
                 {//exchanges
                     exchanges && handleFilterMax(exchanges).map(elem =>(
-                        <Link
+                        <ListGroup.Item
+                            action
                             key={elem.id}
-                            to={`/exchanges/${(elem.id)}`}
-                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                            onClick={() => handleNavigate(`/exchanges/${(elem.id)}`)}
                         >
-                            <ListGroup.Item action>
-                                <img
-                                    src={
-                                        elem['thumb']==='missing_thumb.png'?//если картинки нет там файл missing_thumb.png
-                                            '/images/general-svg/quest.svg':elem['thumb']
-                                    }
-                                    style={{marginRight:5,maxWidth:25}}
-                                    alt={elem.name}
-                                />
-                                {elem.name}
-                            </ListGroup.Item>
-                        </Link>
+                            {/*image*/}
+                            {getImage(elem)}
+                            {elem.name}
+                        </ListGroup.Item>
                     ))
                 }
 
                 {//categories
                     categories && handleSortMaxName(handleSortName(categories)).map(elem =>(
-                        <Link
+                        <ListGroup.Item
+                            action
                             key={elem.id}
-                            to={`/categories/${(elem.name).replace(/[\s/]/g, '')}`}//пробелы и слеши реплейсим
-                            style={{textDecoration:"none",borderRadius:'.5em'}}
+                            //пробелы и слеши реплейсим
+                            onClick={() => handleNavigate(`/categories/${(elem.name).replace(/[\s/]/g, '')}`)}
                         >
-                            <ListGroup.Item action>
-                                <img
-                                    style={{marginRight:5,maxWidth:25}}
-                                    src='/images/general-svg/folder.svg'
-                                    alt={elem.name}
-                                />
-                                {elem.name}
-                            </ListGroup.Item>
-                        </Link>
+                            {elem.name}
+                        </ListGroup.Item>
                     ))
                 }
             </ListGroup>

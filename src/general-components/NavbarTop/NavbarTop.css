@@ -1,0 +1,47 @@
+.NavbarTop{
+
+}
+
+/*set border and color*/
+.NavbarTop.dark{
+    border-top: 1px solid var(--border-nav-dark);
+    border-bottom: 1px solid var(--border-nav-dark);
+    color: var(--white);
+}
+
+.NavbarTop.light{
+    border-top: 1px solid var(--border-nav-light);
+    border-bottom: 1px solid var(--border-nav-light);
+    color: var(--text-dark);
+}
+
+/*logo*/
+.NavbarTop img.logo:hover{
+    transition: .3s;
+    opacity: .5;
+}
+
+/*links*/
+.NavbarTop a{
+    color: inherit !important;
+    text-decoration: none;
+    transition: .3s;
+}
+.NavbarTop a:hover,
+.NavbarTop a:active{
+    opacity: .5;
+}
+
+/*briefcase-link*/
+.briefcase-link{
+    margin-right: 1em;
+}
+
+/*container for login user buttons links*/
+.login-container{
+    display: flex;
+    align-items: center;
+}
+.login-container a{
+    margin-right: 1em;
+}
