@@ -18,13 +18,11 @@ const HoldCompanies = () => {
     return (
         <div className={'HoldCompanies container'}>
             <h4 className={"m-0"}>
-                <Badge>
-                    {getLang() === 'rus' && "Холдинговые компании"}
-                    {getLang() === 'eng' && "Holding companies"}
-                </Badge>
+                {getLang() === 'rus' && "Холдинговые компании"}
+                {getLang() === 'eng' && "Holding companies"}
             </h4>
 
-            <p>
+            <p className={"mb-3 small"}>
                 {
                     getLang() === 'rus' &&
                     "Холдинг - стратегия по покупке и хранению криптовалют. Менее рискованная," +

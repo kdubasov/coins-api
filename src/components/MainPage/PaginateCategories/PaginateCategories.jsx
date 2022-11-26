@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, Spinner, Table} from "react-bootstrap";
+import {Spinner, Table} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_ALL} from "../../../constants/ApiCommand";
 import PaginateCategoriesTr from "./PaginateCategoriesTr";
@@ -18,12 +18,10 @@ const PaginateCategories = () => {
             {/*header*/}
             <header>
                 <h4 className={'m-0'}>
-                    <Badge>
-                        {getLang() === 'rus' && "Категории"}
-                        {getLang() === 'eng' && "Categories"}
-                    </Badge>
+                    {getLang() === 'rus' && "Категории"}
+                    {getLang() === 'eng' && "Categories"}
                 </h4>
-                <p className={'m-0 mb-3'}>
+                <p className={'m-0 mb-3 small'}>
                     {
                         getLang() === 'rus' &&
                         "Рейтинг категорий криптовалют основан на рыночной капитализации. Криптовалюты могут пересекаться в нескольких категориях."

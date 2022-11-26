@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Spinner} from "react-bootstrap";
+import {Spinner} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_COIN_LIST_ALL} from "../../../constants/ApiCommand";
 import TopLoseCoinsTable from "./TopLoseCoinsTable";
@@ -31,13 +31,11 @@ const TopLoseCoins = () => {
     return (
         <div className={'TopLoseCoins container'}>
             <h4 className={'m-0'}>
-                <Badge>
-                    {getLang() === 'rus' && 'Топ лучших/худших монет.'}
-                    {getLang() === 'eng' && 'Top best/worst coins.'}
-                </Badge>
+                {getLang() === 'rus' && 'Топ лучших/худших монет.'}
+                {getLang() === 'eng' && 'Top best/worst coins.'}
             </h4>
 
-            <p className={'mb-4'}>
+            <p className={'mb-3 small'}>
                 {getLang() === 'rus' && 'Рейтинг популярных монет, которые максимально выросли/упали в цене за определенный промежуток времени.'}
                 {getLang() === 'eng' && 'Rating of popular coins that have increased/decreased in price as much as possible over a certain period of time.'}
             </p>

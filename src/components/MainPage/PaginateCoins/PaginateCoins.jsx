@@ -3,7 +3,7 @@ import {useApi} from "../../../hooks/useApi";
 import {
     GLOBAL_API_COIN_LIST_ALL, GLOBAL_API_GLOBAL_COMMAND
 } from "../../../constants/ApiCommand";
-import {Badge, Spinner, Table} from "react-bootstrap";
+import {Spinner, Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
@@ -58,13 +58,11 @@ const PaginateCoins = () => {
             {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}
 
             <h4 className={'mb-0'}>
-                <Badge>
-                    {getLang() === 'eng' && 'Prices and basic information about cryptocurrency.'}
-                    {getLang() === 'rus' && 'Цены и основная информация о криптовалюте.'}
-                </Badge>
+                {getLang() === 'eng' && 'Prices and basic information about cryptocurrency.'}
+                {getLang() === 'rus' && 'Цены и основная информация о криптовалюте.'}
             </h4>
 
-            <p>
+            <p className={"small"}>
                 {getLang() === 'eng' && 'Below are all the coins that exist on the world market, ranked by market capitalization.'}
                 {getLang() === 'rus' && 'Ниже представлены все существующие на мировом рынке монеты, ранжированныe по рыночной капитализации.'}
             </p>

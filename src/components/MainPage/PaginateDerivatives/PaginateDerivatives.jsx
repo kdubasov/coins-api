@@ -1,7 +1,7 @@
 import React from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_DERIVATIVES} from "../../../constants/ApiCommand";
-import {Badge, Spinner} from "react-bootstrap";
+import {Spinner} from "react-bootstrap";
 import PaginateDerivativesTable from "./PaginateDerivativesTable";
 import {getLang} from "../../../functions/Lang/getLang";
 
@@ -15,13 +15,11 @@ const PaginateDerivatives = () => {
     return (
         <div className={`PaginateDerivatives container`}>
             <h4 className={'m-0'}>
-                <Badge>
-                    {getLang() === 'eng' && 'Derivatives'}
-                    {getLang() === 'rus' && 'Деривативы'}
-                </Badge>
+                {getLang() === 'eng' && 'Derivatives'}
+                {getLang() === 'rus' && 'Деривативы'}
             </h4>
 
-            <p>
+            <p className={"small mb-3"}>
                 {
                     getLang() === 'rus' &&
                     "Деривативы - производный финансовый инструмент, стоимость которого определяется ценой базового актива. " +

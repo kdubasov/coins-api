@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Spinner, Table} from "react-bootstrap";
+import {Spinner, Table} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST, GLOBAL_API_SIMPLE_PRICE} from "../../../constants/ApiCommand"
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
@@ -26,13 +26,11 @@ const ExchangesPaginate = ({setShowAlert}) => {
     return (
         <div className={`ExchangesPaginate container`}>
             <h4 className={"m-0"}>
-                <Badge>
-                    {getLang() === 'rus' && "Биржи"}
-                    {getLang() === 'eng' && "Exchanges"}
-                </Badge>
+                {getLang() === 'rus' && "Биржи"}
+                {getLang() === 'eng' && "Exchanges"}
             </h4>
 
-            <p>
+            <p className={"small mb-3"}>
                 {getLang() === 'rus' && 'Список бирж отсортированных по объему торгов за 24 часа.'}
                 {getLang() === 'eng' && 'List of exchanges sorted by 24 hour trading volume.'}
             </p>

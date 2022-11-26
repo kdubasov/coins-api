@@ -63,8 +63,8 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CUR_PRICE,sortCheck[2],2)}>
-                    {getLang() === "rus" && "Акт. цена"}
-                    {getLang() === "eng" && "Act. price"}
+                    {getLang() === "rus" && "Цена"}
+                    {getLang() === "eng" && "Price"}
                     {imgArrow(sortCheck[2])}
                 </Button>
             </th>
@@ -97,15 +97,15 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_TT_VOL,sortCheck[7],7)}>
-                    {getLang() === "rus" && "Объем торгов 24ч"}
-                    {getLang() === "eng" && "Trading volume 24h"}
+                    {getLang() === "rus" && "Объем 24ч"}
+                    {getLang() === "eng" && "Volume 24h"}
                     {imgArrow(sortCheck[7])}
                 </Button>
             </th>
             <th>
                 <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MK,sortCheck[8],8)}>
                     {getLang() === "rus" && "Рын. кап-ция"}
-                    {getLang() === "eng" && "Market cap"}
+                    {getLang() === "eng" && "Mkt cap"}
                     {imgArrow(sortCheck[8])}
                 </Button>
             </th>

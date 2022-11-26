@@ -5,6 +5,13 @@
     border-radius: .25em;
 }
 
+.BannerTop-inner{
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: right !important;
+    background-image: url("/public/images/static-components/BannerTop/banner-bg.png") !important;
+}
+
 /*bg*/
 .BannerTop-inner.light{
     color: var(--text-dark);
@@ -12,7 +19,7 @@
 }
 .BannerTop-inner.dark{
     color: var(--white);
-    background: var(--bg-search-input-dark) !important;
+    background: var(--bg-search-input-dark);
 }
 
 /*text conatainer*/

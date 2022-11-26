@@ -20,13 +20,11 @@ const TrendCoins = ({setShowAlert}) => {
     return (
         <div className={`TrendCoins container`}>
             <h4 className={'m-0'}>
-                <Badge>
-                    {getLang() === 'eng' && 'Popular coins'}
-                    {getLang() === 'rus' && 'Популярные монеты'}
-                </Badge>
+                {getLang() === 'eng' && 'Popular coins'}
+                {getLang() === 'rus' && 'Популярные монеты'}
             </h4>
 
-            <p className={'mb-3'}>
+            <p className={'mb-3 small'}>
                 {
                     getLang() === 'eng' &&
                     "Top 7 most popular coins in 24 hours according to CoinGecko statistics. (sorted by popularity)"
