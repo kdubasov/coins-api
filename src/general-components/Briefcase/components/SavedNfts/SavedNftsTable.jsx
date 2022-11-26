@@ -23,6 +23,9 @@ const SavedNftsTable = ({setShowAlert}) => {
     // console.log(Object.keys(briefcaseDBData),'briefcaseDBData');
 
     useLayoutEffect(() => {
+
+        // console.log(data);
+
         if (Object.keys(briefcaseDBData).length){
             setData([])
             for (let elem of Object.keys(briefcaseDBData)){
@@ -38,10 +41,10 @@ const SavedNftsTable = ({setShowAlert}) => {
         <>
             {
                 Boolean(data.length) ?
-                    <Table striped bordered hover variant={getTheme(true)}>
+                    <Table className={getTheme(true)}>
                         <thead>
                         <tr className={"small"}>
-                            <td>#</td>
+                            <td />
                             <td>Название</td>
                             <td>Мин. цена</td>
                             <td>Изм. мин. цены 24ч</td>

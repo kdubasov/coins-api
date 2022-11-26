@@ -15,6 +15,7 @@ import {Badge} from "react-bootstrap";
 const SavedCoinsTr = ({elem,setShowAlert}) => {
 
     // console.log(elem,'SavedCoinsTr');
+
     return (
         <tr className={"small"}>
             {/*id*/}

@@ -21,6 +21,8 @@ const SavedExchangesTr = ({elem,setShowAlert,elemId}) => {
             <td>
                 #{elem[GL_EXC_TR_SC_RANK] && elem[GL_EXC_TR_SC_RANK]}
 
+                <br />
+
                 {/*add with check to BriefcaseDB button*/}
                 <PaginateCoinsBriefcaseButton elemId={elemId.id} setShowAlert={setShowAlert} table={'exchanges'} title={'Биржа'} />
             </td>
@@ -29,7 +31,7 @@ const SavedExchangesTr = ({elem,setShowAlert,elemId}) => {
                 {
                     (elem[GL_NAME] && elem[GL_IMAGE]) &&
                     <>
-                        <img width={35} src={elem[GL_IMAGE]} alt={elem[GL_NAME]}/>
+                        <img width={25} src={elem[GL_IMAGE]} alt={elem[GL_NAME]}/>
                         <Link className={'mx-2'} to={`/exchanges/${elemId.id}`}>{elem[GL_NAME]}</Link>
                     </>
                 }

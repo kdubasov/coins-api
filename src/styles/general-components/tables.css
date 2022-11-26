@@ -12,7 +12,7 @@ table.light{
 
 /*thead*/
 table thead tr td{
-    padding: .75em 0 !important;
+    padding: .75em .25em !important;
 }
 table.light thead tr, table.light thead th{
     background: var(--bg-search-input-light);
@@ -42,7 +42,7 @@ table.light tr:hover td{
 
 /*td*/
 table tbody tr td{
-    padding: .5em 0;
+    padding: .5em .25em !important;
     vertical-align: middle;
 }
 table tbody tr td.graph{

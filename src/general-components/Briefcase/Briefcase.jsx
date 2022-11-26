@@ -43,9 +43,8 @@ const Briefcase = () => {
         return (
             <Button
                 size={"sm"}
-                className={margin && "mx-2"}
+                className={`but-dark ${margin && "mx-2"}`}
                 onClick={() => setSelectValue(value)}
-                variant={"outline-primary"}
                 disabled={selectValue === value}
             >
                 {text}
@@ -57,7 +56,7 @@ const Briefcase = () => {
         <div className={'Briefcase container'}>
 
             <header className={"w-100 d-flex justify-content-between align-items-center"}>
-                <h4><Badge>Избранное</Badge></h4>
+                <h4 className={"mt-4"}>Избранное</h4>
 
                 <Button size={"sm"} variant={"outline-danger"} onClick={deleteAllFromBriefcase}>
                     Очистить избранное
