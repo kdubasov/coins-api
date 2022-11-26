@@ -1,0 +1,34 @@
+/*синяя кнопка*/
+button.btn-primary{
+    background: var(--blue-main);
+    border: var(--blue-main);
+    padding: .25em .75em;
+}
+
+/*темная кнопка*/
+button.but-dark{
+    color: var(--border-nav-light);
+    background: var(--bg-search-input-dark);
+}
+button.but-light{
+    color: var(--text-dark);
+    background: var(--bg-search-input-light);
+}
+
+/*прозрачная кнопка (hover синяя)*/
+button.but-no-redact,
+button.but-no-redact:disabled{
+    padding: 0 .5em;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+button.but-no-redact.light{
+    color: var(--text-dark);
+}
+button.but-no-redact:hover,
+button.but-no-redact:active,
+button.but-no-redact:focus{
+    background: var(--blue-main);
+    border: var(--blue-main);
+}

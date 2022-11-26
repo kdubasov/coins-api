@@ -30,7 +30,7 @@ const PaginateGraph = ({data}) => {
 
     return (
         <div className={`PaginateGraph`}>
-            <ResponsiveContainer width="100%" height={30}>
+            <ResponsiveContainer width="100%" height={50}>
                 <LineChart data={dataState}>
                     <YAxis
                         hide={true}

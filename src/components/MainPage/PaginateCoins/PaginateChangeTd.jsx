@@ -5,11 +5,17 @@ import {Badge} from "react-bootstrap";
 const PaginateChangeTd = ({value,text}) => {
     return (
         <td>
-            <Badge bg={String(value).startsWith('-')?"danger":"success"} pill>
-                {!String(value).startsWith('-') && '+'}
-                {value ? getNumRedAfterDoot(value,3) : '?'}
-                {text}
-            </Badge>
+            {
+                value &&
+                <Badge
+                    bg={String(value).startsWith('-')?"danger":"success"}
+                    pill
+                >
+                    {!String(value).startsWith('-') && '+'}
+                    {value ? getNumRedAfterDoot(value,3) : '?'}
+                    {text}
+                </Badge>
+            }
         </td>
     );
 };

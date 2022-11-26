@@ -13,28 +13,35 @@ import PaginateGraph from "./PaginateGraph";
 import PaginateCoinsBriefcaseButton from "./PaginateCoinsBriefcaseButton";
 import PaginateChangeTd from "./PaginateChangeTd";
 
-const PaginateCoinsTr = ({elem,setShowAlert}) => {
+const PaginateCoinsTr = ({elem,setShowAlert,theme}) => {
 
     return (
-        <tr className={"small"}>
+        <tr className={`small ${theme}`}>
 
             {/*id*/}
             <td>
-                {elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}
+                <p className={"small m-0 opacity-50"}>
+                    {elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}
+                </p>
                 {/*add with check to BriefcaseDB button*/}
-                <PaginateCoinsBriefcaseButton elemId={elem['id']} setShowAlert={setShowAlert} table={'coins'} title={'Монета'} />
+                <PaginateCoinsBriefcaseButton
+                    elemId={elem['id']}
+                    setShowAlert={setShowAlert}
+                    table={'coins'}
+                    title={'Монета'}
+                />
             </td>
 
             {/*img and name*/}
             <td>
-                <Link style={{color:"inherit"}} to={`/coins/${elem.id}`}>
-                <img style={{width:25,marginRight:5}} src={elem[GL_IMAGE]} alt={elem[GL_NAME]}/>
-                {elem[GL_SYMBOL] && elem[GL_SYMBOL].toUpperCase()} ({elem[GL_NAME] && elem[GL_NAME]})
+                <Link className={"d-flex align-items-center"} to={`/coins/${elem.id}`}>
+                    <img style={{width:25, marginRight:5}} src={elem[GL_IMAGE]} alt={elem[GL_NAME]}/>
+                    {elem[GL_SYMBOL] && elem[GL_SYMBOL].toUpperCase()} ({elem[GL_NAME] && elem[GL_NAME]})
                 </Link>
             </td>
 
             {/*current price*/}
-            <td>{elem[GL_CUR_PRICE] && elem[GL_CUR_PRICE].toLocaleString() + '$'}</td>
+            <td>{elem[GL_CUR_PRICE] && elem[GL_CUR_PRICE]?.toLocaleString("RU") + '$'}</td>
 
             {/*price change 1 hour*/}
             <PaginateChangeTd value={elem[GL_CH_PR_1H_PR]} text={'%'} />
@@ -47,19 +54,20 @@ const PaginateCoinsTr = ({elem,setShowAlert}) => {
 
             {/*min max price 24 hours*/}
             <td>
-                {elem[GL_LOW_24H] && elem[GL_LOW_24H].toLocaleString()}$
-                /
-                {elem[GL_HIGH_24H] && elem[GL_HIGH_24H].toLocaleString()}$
+                {(
+                    elem[GL_LOW_24H] && elem[GL_HIGH_24H] &&
+                    elem[GL_LOW_24H].toLocaleString("RU") + '$ / ' + elem[GL_HIGH_24H].toLocaleString("RU") + '$'
+                )}
             </td>
 
             {/*Объем торгов за 24 часа*/}
-            <td>{elem[GL_TT_VOL] && elem[GL_TT_VOL].toLocaleString()}$</td>
+            <td>{Boolean(elem[GL_TT_VOL]) && elem[GL_TT_VOL].toLocaleString("RU") + '$'}</td>
 
             {/*Рыночная кап-ция*/}
-            <td>{elem[GL_MK] && elem[GL_MK].toLocaleString()}$</td>
+            <td>{elem[GL_MK] && elem[GL_MK].toLocaleString("RU") + '$'}</td>
 
             {/*График*/}
-            <td width={180}>
+            <td width={180} className={"td-graph"}>
                 <PaginateGraph data={elem[GL_MD_SPL_IN_7D]["price"]} />
             </td>
         </tr>

@@ -3,7 +3,7 @@ import {useApi} from "../../../hooks/useApi";
 import {
     GLOBAL_API_COIN_LIST_ALL, GLOBAL_API_GLOBAL_COMMAND
 } from "../../../constants/ApiCommand";
-import {Spinner, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
@@ -11,10 +11,13 @@ import PaginationButtons from "./PaginationButtons";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import MessageAlert from "../../../general-components/Alerts/MessageAlert";
 import {getLang} from "../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 
 //table with coins
 const PaginateCoins = () => {
+
+    const theme = getTheme(true);
 
     // for show/hide alert
     const [showAlert, setShowAlert] = useState({show:false,text:'',variant:''})
@@ -39,9 +42,6 @@ const PaginateCoins = () => {
 
 
     useEffect(() =>{
-
-        // console.log(dataSort)
-
         //for set paginate pages count
         if (globalData){
             const dataSort = Math.ceil(globalData[GL_ACT_COINS]/sizePage)
@@ -57,12 +57,12 @@ const PaginateCoins = () => {
             {/*alert with text*/}
             {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}
 
-            <h4 className={'mb-0'}>
+            <h4 className={'m-0'}>
                 {getLang() === 'eng' && 'Prices and basic information about cryptocurrency.'}
                 {getLang() === 'rus' && 'Цены и основная информация о криптовалюте.'}
             </h4>
 
-            <p className={"small"}>
+            <p className={"small mb-3"}>
                 {getLang() === 'eng' && 'Below are all the coins that exist on the world market, ranked by market capitalization.'}
                 {getLang() === 'rus' && 'Ниже представлены все существующие на мировом рынке монеты, ранжированныe по рыночной капитализации.'}
             </p>
@@ -71,21 +71,21 @@ const PaginateCoins = () => {
             {
                 //check result and show spinner or table with coins
                 Object.keys(data).length?
-                    <Table striped bordered hover variant={getTheme(true)}>
+                    <Table className={theme}>
                         <thead>
-                        <PaginateCoinsSort data={data} setDataSort={setDataSort} />
+                            <PaginateCoinsSort data={data} setDataSort={setDataSort} />
                         </thead>
 
                         <tbody>
                         {
                             (dataSort ?? data).map(elem =>(
-                                <PaginateCoinsTr key={elem.id} elem={elem} setShowAlert={setShowAlert} />
+                                <PaginateCoinsTr key={elem.id} elem={elem} setShowAlert={setShowAlert} theme={theme} />
                             ))
                         }
                         </tbody>
                     </Table>
                     :
-                    <Spinner animation={"border"} variant={"primary"} className={'mb-3'} />
+                    <SpinnerAlert />
             }
 
             {/*PAGINATION*/}

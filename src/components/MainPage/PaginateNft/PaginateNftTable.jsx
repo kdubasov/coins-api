@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_SEARCH} from "../../../constants/ApiCommand";
-import {Spinner, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import PaginateNftTr from "./PaginateNftTr";
 import {getLang} from "../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 const PaginateNftTable = ({setShowAlert}) => {
 
@@ -22,9 +23,9 @@ const PaginateNftTable = ({setShowAlert}) => {
     if (Object.values(dataSearch).length && dataSearch.nfts.length){
         return (
             <div>
-                <Table striped bordered hover variant={getTheme(true)}>
+                <Table className={getTheme(true)}>
                     <thead>
-                        <tr>
+                        <tr className={"small"}>
                             <th>#</th>
                             <th>{getLang() === "eng" ? 'Image' : 'Картинка'}</th>
                             <th>{getLang() === "eng" ? 'Link, title and symbol' : 'Ссылка, название и символ'}</th>
@@ -50,7 +51,7 @@ const PaginateNftTable = ({setShowAlert}) => {
         );
     }else {
         return (
-            <Spinner animation={"border"} variant={"primary"} />
+            <SpinnerAlert />
         )
     }
 };

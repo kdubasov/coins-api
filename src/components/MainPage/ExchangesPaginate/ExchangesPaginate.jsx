@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import {Spinner, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST, GLOBAL_API_SIMPLE_PRICE} from "../../../constants/ApiCommand"
 import PaginationButtons from "../PaginateCoins/PaginationButtons";
 import ExchangesPaginateTr from "./ExchangesPaginateTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import {getLang} from "../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 const ExchangesPaginate = ({setShowAlert}) => {
 
@@ -38,7 +39,7 @@ const ExchangesPaginate = ({setShowAlert}) => {
             {
                 //check result and show spinner or table with coins
                 Object.keys(data).length?
-                    <Table striped bordered hover variant={getTheme(true)}>
+                    <Table className={getTheme(true)}>
                         <thead>
                         <tr className={"small"}>
                             <th>#</th>
@@ -78,7 +79,7 @@ const ExchangesPaginate = ({setShowAlert}) => {
                         </tbody>
                     </Table>
                     :
-                    <Spinner animation={"border"} variant={"primary"} className={'mb-3'} />
+                    <SpinnerAlert />
             }
 
             {/*PAGINATION*/}

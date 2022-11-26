@@ -47,7 +47,11 @@ const NavbarInfo = ({theme}) => {
                     </strong>
                     {
                         data[GL_CH_ALL_PR] &&
-                        <Badge className={"mx-1 fw-light"} bg={String(data[GL_CH_ALL_PR]).startsWith('-') ? "danger" : "success"}>
+                        <Badge
+                            className={"mx-1 fw-light"}
+                            bg={String(data[GL_CH_ALL_PR]).startsWith('-') ? "danger" : "success"}
+                            pill
+                        >
                             {!String(data[GL_CH_ALL_PR]).startsWith('-') && '+'}
                             {getNumRedAfterDoot(data[GL_CH_ALL_PR],3) + '% (24h)'}
                         </Badge>

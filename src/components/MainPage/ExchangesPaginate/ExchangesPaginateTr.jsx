@@ -29,6 +29,8 @@ const ExchangesPaginate = ({elem,setShowAlert,btcPrice}) => {
             <td>
                 #{elem[GL_EXC_TR_SC_RANK] && elem[GL_EXC_TR_SC_RANK]}
 
+                <br />
+
                 {/*add with check to BriefcaseDB button*/}
                 <PaginateCoinsBriefcaseButton elemId={elem['id']} setShowAlert={setShowAlert} table={'exchanges'} title={'Биржа'} />
             </td>
@@ -37,7 +39,7 @@ const ExchangesPaginate = ({elem,setShowAlert,btcPrice}) => {
                 {
                     (elem[GL_NAME] && elem[GL_IMAGE]) &&
                     <>
-                        <img width={35} src={elem[GL_IMAGE]} alt={elem[GL_NAME]}/>
+                        <img width={25} src={elem[GL_IMAGE]} alt={elem[GL_NAME]} />
                         <Link className={'mx-2'} to={`/exchanges/${elem.id}`}>{elem[GL_NAME]}</Link>
                     </>
                 }

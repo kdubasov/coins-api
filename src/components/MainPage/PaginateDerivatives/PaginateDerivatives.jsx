@@ -1,9 +1,9 @@
 import React from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_DERIVATIVES} from "../../../constants/ApiCommand";
-import {Spinner} from "react-bootstrap";
 import PaginateDerivativesTable from "./PaginateDerivativesTable";
 import {getLang} from "../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 
 const PaginateDerivatives = () => {
@@ -37,7 +37,7 @@ const PaginateDerivatives = () => {
             {
                 Object.values(data).length?
                     <PaginateDerivativesTable data={data} />:
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <SpinnerAlert />
             }
         </div>
     );

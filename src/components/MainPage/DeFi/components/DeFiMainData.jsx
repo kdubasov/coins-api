@@ -1,7 +1,7 @@
 import React from 'react';
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_DEFI} from "../../../../constants/ApiCommand";
-import {Badge, ListGroup, Spinner} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {
     GL_DEFI_DOM,
     GL_DEFI_ETH_MK, GL_DEFI_ETH_RAT, GL_DEFI_MK,
@@ -9,6 +9,7 @@ import {
     GL_DEFI_TOP_COIN_NAME, GL_DEFI_TR_24H
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
+import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert";
 
 
 const DeFiMainData = () => {
@@ -61,7 +62,7 @@ const DeFiMainData = () => {
                         {getListItem('Trading volume for 24 hours',GL_DEFI_TR_24H,true,'$')}
                     </ListGroup>
                 </>:
-                <Spinner animation={"border"} variant={"primary"} />
+                <SpinnerAlert />
             }
         </div>
     );

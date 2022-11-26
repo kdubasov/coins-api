@@ -33,6 +33,9 @@
 }
 
 /*основной родителтский контейнер*/
+.general-container{
+    min-height: 100vh;
+}
 .general-container.dark,
 .container.dark{
     color: var(--white);

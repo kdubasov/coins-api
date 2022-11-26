@@ -11,7 +11,7 @@ const PaginateCategoriesTr = ({elem,ids}) => {
 
     return (
         <tr className={"small"}>
-            <td>{ids + 1}</td>
+            <td>#{ids + 1}</td>
             {/*Категория*/}
             <td>
                 <Link to={`/categories/${elem[GL_NAME].replace(/[\s/]/g, '')}`}>

@@ -3,8 +3,8 @@ import {useUserAuth} from "../../../contexts/UserAuthContext";
 import {useNavigate} from "react-router-dom";
 import {addInBriefcase} from "../../../functions/BriefcaseDB/addInBriefcase";
 import {useGetDBData} from "../../../hooks/useGetDbData";
-import {Button} from "react-bootstrap";
 import {deleteFromBriefcase} from "../../../functions/BriefcaseDB/deleteFromBriefcase";
+import {Button} from "react-bootstrap";
 
 
 const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = false}) => {
@@ -45,29 +45,32 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = fa
 
     return (
         <>
-            {
-                Boolean(!Object.keys(briefcaseDBData).length || !Object.keys(briefcaseDBData).includes(elemId)) &&
-                //add button
-                    <Button
-                        onClick={() => addCoinBriefcase(elemId)}
-                        size={"sm"}
-                        style={{padding:'0 .4em',marginLeft:10}}
-                        variant={"success"}
-                    >
-                        {text ? "Добавить в избранное" : "+"}
-                    </Button>
+            {//add button
+                Boolean(!Object.keys(briefcaseDBData).length || !Object.keys(briefcaseDBData).includes(elemId)) ?
+                    text ?//проверяем нужна кнопка с текстом или без
+                        <Button variant={"success"}>Добавить в избранное</Button>:
+                        <img
+                            width={18}
+                            src="/images/BriefcaseButton/not-added.svg"
+                            alt="add"
+                            onClick={() => addCoinBriefcase(elemId)}
+                            style={{cursor:"pointer"}}
+                        />:
+                false
             }
-            {
-                Boolean(Object.keys(briefcaseDBData).length && Object.keys(briefcaseDBData).includes(elemId)) &&
-                    // delete button
-                    <Button
-                        size={"sm"}
-                        onClick={() => deleteCoinBriefcase(elemId)}
-                        style={{padding:'0 .4em',marginLeft:10}}
-                        variant={"danger"}
-                    >
-                        {text ? "Удалить из избранного" : "-"}
-                    </Button>
+
+            {// delete button
+                Boolean(Object.keys(briefcaseDBData).length && Object.keys(briefcaseDBData).includes(elemId)) ?
+                    text ?//проверяем нужна кнопка с текстом или без
+                        <Button variant={"danger"}>Удалить из избранноего</Button>:
+                        <img
+                            width={18}
+                            src="/images/BriefcaseButton/added.svg"
+                            alt="delete"
+                            onClick={() => deleteCoinBriefcase(elemId)}
+                            style={{cursor:"pointer"}}
+                        />:
+                false
             }
         </>
     );

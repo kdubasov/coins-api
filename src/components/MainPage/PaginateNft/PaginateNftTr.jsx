@@ -13,13 +13,20 @@ const PaginateNftTr = ({id,data,setShowAlert,sizePage,currentPage}) => {
             <td>
                 #{(id + 1) + (sizePage * (currentPage - 1))}
 
+                <br />
+
                 {/*add with check to BriefcaseDB button*/}
                 <PaginateCoinsBriefcaseButton elemId={data['id']} setShowAlert={setShowAlert} table={'nfts'} title={'Nft'} />
             </td>
 
             {/*img*/}
             <td>
-                <img src={data[GL_THUMB]} alt={data[GL_NAME] && data[GL_NAME]} height={40}/>
+                <img
+                    src={data[GL_THUMB]}
+                    alt={data[GL_NAME] && data[GL_NAME]}
+                    height={40}
+                    style={{borderRadius:3}}
+                />
             </td>
 
             {/*title*/}

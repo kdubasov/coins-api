@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_HOLD_COMPANIES} from "../../../constants/ApiCommand";
-import {Alert, Badge, Form, Spinner} from "react-bootstrap";
+import {Badge, Form} from "react-bootstrap";
 import InfoHoldCompanies from "./InfoHoldCompanies";
 import TableHoldCompanies from "./TableHoldCompanies";
 import {GL_COMP, GL_HOLD_TT_VAL} from "../../../constants/ApiConstants";
 import {getLang} from "../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 const HoldCompanies = () => {
 
@@ -70,19 +71,15 @@ const HoldCompanies = () => {
                         {//Table with companies
                             Object.values(data[GL_COMP]).length &&
                             <>
-                                <Badge className={'mb-2'}>
+                                <h4 className={'mb-2'}>
                                     {getLang() === 'rus' && "Лучшие холдинговые компании для данной монеты"}
                                     {getLang() === 'eng' && "Best holding companies for this coin"}
-                                </Badge>
+                                </h4>
                                 <TableHoldCompanies value={data[GL_HOLD_TT_VAL]} data={data[GL_COMP]} />
                             </>
                         }
                     </>:
-                    <Alert className={"w-50 small p-2 d-flex justify-content-between align-items-center"}>
-                        {getLang() === 'rus' && "Информация пока недоступна или еще не загрузилась."}
-                        {getLang() === 'eng' && "The information is not yet available or has not yet been loaded."}
-                        <Spinner animation={"border"} size={"sm"} variant={"primary"} />
-                    </Alert>
+                    <SpinnerAlert />
             }
 
         </div>

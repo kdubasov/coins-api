@@ -39,7 +39,7 @@ const SavedCoinsTable = ({setShowAlert}) => {
         <>
             {
                 Boolean(data.length) ?
-                    <Table striped bordered hover variant={getTheme(true)}>
+                    <Table className={getTheme(true)}>
                         <thead>
                             <tr className={"small"}>
                                 <td>#</td>

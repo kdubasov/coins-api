@@ -6,7 +6,7 @@ import {getLang} from "../../../functions/Lang/getLang";
 
 const TableHoldCompanies = ({data,value}) => {
     return (
-        <Table striped bordered hover className={'TableHoldCompanies'} variant={getTheme(true)}>
+        <Table className={`TableHoldCompanies ${getTheme(true)}`}>
             <thead>
                 <tr className={"small"}>
                     <th>#</th>

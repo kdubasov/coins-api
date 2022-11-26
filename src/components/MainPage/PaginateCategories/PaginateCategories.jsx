@@ -1,10 +1,11 @@
 import React from 'react';
-import {Spinner, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_ALL} from "../../../constants/ApiCommand";
 import PaginateCategoriesTr from "./PaginateCategoriesTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import {getLang} from "../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 const PaginateCategories = () => {
 
@@ -36,7 +37,7 @@ const PaginateCategories = () => {
             {/*table categories*/}
             {
                 Object.values(data).length?
-                    <Table striped bordered hover variant={getTheme(true)}>
+                    <Table className={getTheme(true)}>
                         <thead>
                             <tr className={"small"}>
                                 <th>#</th>
@@ -70,7 +71,7 @@ const PaginateCategories = () => {
                             }
                         </tbody>
                     </Table>:
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <SpinnerAlert />
             }
         </div>
     );

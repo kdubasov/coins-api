@@ -20,6 +20,9 @@ const SavedCoinsTr = ({elem,setShowAlert}) => {
             {/*id*/}
             <td>
                 {elem[GL_MC_RANK] && '#' + elem[GL_MC_RANK]}
+
+                <br />
+
                 {/*add with check to BriefcaseDB button*/}
                 <PaginateCoinsBriefcaseButton elemId={elem['id']} setShowAlert={setShowAlert} table={'coins'} title={'Монета'} />
             </td>

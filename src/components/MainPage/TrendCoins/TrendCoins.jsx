@@ -1,12 +1,13 @@
 import React from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_SIMPLE_PRICE, GLOBAL_API_TOP_7_COINS} from "../../../constants/ApiCommand";
-import {Badge, ListGroup, Spinner} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {GL_MC_RANK, GL_NAME, GL_PR_BTC, GL_SYMBOL} from "../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
 import {getLang} from "../../../functions/Lang/getLang";
 import TableBestCoins from "../../../general-components/TableBestCoins/TableBestCoins";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 const TrendCoins = ({setShowAlert}) => {
 
@@ -70,7 +71,7 @@ const TrendCoins = ({setShowAlert}) => {
                             </div>
                         ))
                     )):
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <SpinnerAlert />
             }
 
             <TableBestCoins setShowAlert={setShowAlert} />

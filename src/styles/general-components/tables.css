@@ -1,0 +1,50 @@
+/*table*/
+table, table tr, table tr td{
+    border: none;
+}
+
+table.dark{
+    color: var(--white);
+}
+table.light{
+    color: var(--text-dark);
+}
+
+/*thead*/
+table thead tr td{
+    padding: .75em 0 !important;
+}
+table.light thead tr, table.light thead th{
+    background: var(--bg-search-input-light);
+    border-top: 1px solid var(--border-nav-light);
+}
+table.dark thead tr, table.dark thead th{
+    background: var(--bg-search-input-dark);
+    border-top: 1px solid var(--border-nav-dark);
+}
+
+/*tr*/
+table.dark tr{
+    border-bottom: 1px solid var(--border-nav-dark);
+}
+table.dark tr:hover td{
+    color: var(--white);
+    background: var(--bg-search-input-dark);
+}
+
+table.light tr{
+    border-bottom: 1px solid var(--border-nav-light);
+}
+table.light tr:hover td{
+    color: var(--text-dark);
+    background: var(--bg-search-input-light);
+}
+
+/*td*/
+table tbody tr td{
+    padding: .5em 0;
+    vertical-align: middle;
+}
+table tbody tr td.graph{
+    padding: 0;
+}

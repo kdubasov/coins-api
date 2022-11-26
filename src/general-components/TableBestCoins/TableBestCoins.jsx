@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Button, Table} from "react-bootstrap";
+import {Button, Table} from "react-bootstrap";
 import {getTheme} from "../../functions/Theme/getTheme";
 import PaginateCoinsTr from "../../components/MainPage/PaginateCoins/PaginateCoinsTr";
 import {useApi} from "../../hooks/useApi";
@@ -28,14 +28,12 @@ const TableBestCoins = ({setShowAlert}) => {
     return (
         <div className={"TableBestCoins"}>
 
-            <h4 className={'m-0 mb-1 mt-4'}>
-                <Badge>
-                    {getLang() === 'eng' && 'Top 10 coins by trading volume in 24 hours'}
-                    {getLang() === 'rus' && 'Топ 10 монет по объему торгов за 24 часа'}
-                </Badge>
+            <h4 className={'m-0 mb-2 mt-5'}>
+                {getLang() === 'eng' && 'Top 10 coins by trading volume in 24 hours'}
+                {getLang() === 'rus' && 'Топ 10 монет по объему торгов за 24 часа'}
             </h4>
 
-            <Table striped bordered hover variant={getTheme(true)}>
+            <Table className={getTheme(true)}>
                 <thead>
                     <CoinsTableHeaderNoSort />
                 </thead>

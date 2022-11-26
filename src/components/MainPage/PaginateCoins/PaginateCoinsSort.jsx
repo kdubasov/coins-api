@@ -9,8 +9,11 @@ import {
     GL_MK, GL_MC_RANK
 } from "../../../constants/ApiConstants";
 import {getLang} from "../../../functions/Lang/getLang";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const PaginateCoinsSort = ({data,setDataSort}) => {
+
+    const theme = getTheme(true);
 
     const [sortCheck,setSortCheck] = useState([false,false,false,false,false,false,false,false,false])
 
@@ -36,12 +39,11 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
             <img
                 style={
                     active?
-                        {transform: 'rotate(180deg)',transition:'.3s',marginLeft:5}
-                        :
+                        {transform: 'rotate(180deg)',transition:'.3s',marginLeft:5} :
                         {transition:'.3s',marginLeft:5}
                 }
-                width={12}
-                src="/images/general-svg/arrow.svg"
+                width={8}
+                src={`/images/general-svg/arrow-${theme}.svg`}
                 alt="arrow"
             />
         )
@@ -49,72 +51,99 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
 
     return (
         <tr className={"small"}>
-            <th>
-                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MC_RANK,sortCheck[0],0)}>
-                    #
-                    {imgArrow(sortCheck[0])}
+            <td>
+                <Button
+                    className={`but-no-redact ${theme}`}
+                    size={"sm"}
+                    onClick={() => sortCoinsNumsData(GL_MC_RANK,sortCheck[0],0)}
+                >
+                    #{imgArrow(sortCheck[0])}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} disabled={true}>
+            </td>
+            <td>
+                <Button className={`but-no-redact ${theme}`} size={"sm"} disabled>
                     {getLang() === "rus" && "Название"}
                     {getLang() === "eng" && "Name"}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CUR_PRICE,sortCheck[2],2)}>
+            </td>
+            <td>
+                <Button
+                    size={"sm"}
+                    onClick={() => sortCoinsNumsData(GL_CUR_PRICE,sortCheck[2],2)}
+                    className={`but-no-redact ${theme}`}
+                >
                     {getLang() === "rus" && "Цена"}
                     {getLang() === "eng" && "Price"}
                     {imgArrow(sortCheck[2])}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_1H_PR,sortCheck[3],3)}>
+            </td>
+            <td>
+                <Button
+                    size={"sm"}
+                    onClick={() => sortCoinsNumsData(GL_CH_PR_1H_PR,sortCheck[3],3)}
+                    className={`but-no-redact ${theme}`}
+                >
                     {getLang() === "rus" && "1ч"}
                     {getLang() === "eng" && "1h"}
                     {imgArrow(sortCheck[3])}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_24H_PR,sortCheck[4],4)}>
+            </td>
+            <td>
+                <Button
+                    className={`but-no-redact ${theme}`}
+                    size={"sm"}
+                    onClick={() => sortCoinsNumsData(GL_CH_PR_24H_PR,sortCheck[4],4)}
+                >
                     {getLang() === "rus" && "24ч"}
                     {getLang() === "eng" && "24h"}
                     {imgArrow(sortCheck[4])}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_CH_PR_7D_PR,sortCheck[5],5)}>
+            </td>
+            <td>
+                <Button
+                    size={"sm"}
+                    onClick={() => sortCoinsNumsData(GL_CH_PR_7D_PR,sortCheck[5],5)}
+                    className={`but-no-redact ${theme}`}
+                >
                     {getLang() === "rus" && "7д"}
                     {getLang() === "eng" && "7d"}
                     {imgArrow(sortCheck[5])}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} disabled={true}>
+            </td>
+            <td>
+                <Button className={`but-no-redact ${theme}`} size={"sm"} disabled={true}>
                     {getLang() === "rus" && "Мин/Макс 24ч"}
                     {getLang() === "eng" && "Min/Max 24h"}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_TT_VOL,sortCheck[7],7)}>
+            </td>
+            <td>
+                <Button
+                    size={"sm"}
+                    onClick={() => sortCoinsNumsData(GL_TT_VOL,sortCheck[7],7)}
+                    className={`but-no-redact ${theme}`}
+                >
                     {getLang() === "rus" && "Объем 24ч"}
                     {getLang() === "eng" && "Volume 24h"}
                     {imgArrow(sortCheck[7])}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} onClick={() => sortCoinsNumsData(GL_MK,sortCheck[8],8)}>
+            </td>
+            <td>
+                <Button
+                    size={"sm"}
+                    onClick={() => sortCoinsNumsData(GL_MK,sortCheck[8],8)}
+                    className={`but-no-redact ${theme}`}
+                >
                     {getLang() === "rus" && "Рын. кап-ция"}
                     {getLang() === "eng" && "Mkt cap"}
                     {imgArrow(sortCheck[8])}
                 </Button>
-            </th>
-            <th>
-                <Button size={"sm"} disabled={true}>
+            </td>
+            <td>
+                <Button className={`but-no-redact ${theme}`} size={"sm"} disabled={true}>
                     {getLang() === "rus" && "График 3д"}
                     {getLang() === "eng" && "Graph 3d"}
                 </Button>
-            </th>
+            </td>
         </tr>
     );
 };

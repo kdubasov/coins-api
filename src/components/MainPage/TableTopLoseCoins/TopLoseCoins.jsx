@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {Spinner} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_COIN_LIST_ALL} from "../../../constants/ApiCommand";
 import TopLoseCoinsTable from "./TopLoseCoinsTable";
 import {Form} from "react-bootstrap";
 import {GL_CH_PR_1H_PR, GL_CH_PR_24H_PR, GL_CH_PR_7D_PR} from "../../../constants/ApiConstants";
 import {getLang} from "../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
 const TopLoseCoins = () => {
 
@@ -57,7 +57,7 @@ const TopLoseCoins = () => {
                 Object.keys(data).length?
                     <div className={"w-100 d-flex justify-content-between"}>
                         <div style={{width:"calc(50% - .3em)"}}>
-                            <h6 className={"m-0"}>
+                            <h6 className={"mb-1"}>
                                 {getLang() === 'rus' && 'Список валют, наиболее выросших в цене.'}
                                 {getLang() === 'eng' && 'List of currencies that appreciated the most.'}
                             </h6>
@@ -65,7 +65,7 @@ const TopLoseCoins = () => {
                         </div>
 
                         <div style={{width:"calc(50% - .3em)"}}>
-                            <h6 className={"m-0"}>
+                            <h6 className={"mb-1"}>
                                 {getLang() === 'rus' && 'Список валют, наиболее упавших в цене.'}
                                 {getLang() === 'eng' && 'List of currencies that have fallen the most in value.'}
                             </h6>
@@ -73,7 +73,7 @@ const TopLoseCoins = () => {
                         </div>
                     </div>
                     :
-                    <Spinner animation={"border"} variant={"primary"} className={'mb-3'} />
+                    <SpinnerAlert />
             }
         </div>
     );
