@@ -7,7 +7,7 @@ import {Table} from "react-bootstrap";
 import PaginateCoinsTr from "./PaginateCoinsTr";
 import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
-import PaginationButtons from "./PaginationButtons";
+import PaginationButtons from "../../../general-components/PaginationButtons/PaginationButtons";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import MessageAlert from "../../../general-components/Alerts/MessageAlert";
 import {getLang} from "../../../functions/Lang/getLang";
@@ -33,7 +33,7 @@ const PaginateCoins = () => {
     //all paginate pages count
     const [allPages,setAllPages] = useState(10000/sizePage);
 
-    //data (ADD ERROR CHECK)
+    //main data about coins from api
     const data = useApi(GLOBAL_API_COIN_LIST_ALL(sizePage,currentPage)).data;
     // console.log(data,'Data for coins (PaginateCoins)');
 

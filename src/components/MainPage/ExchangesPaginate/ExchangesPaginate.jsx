@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Table} from "react-bootstrap";
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES, GLOBAL_API_EXCHANGES_LIST, GLOBAL_API_SIMPLE_PRICE} from "../../../constants/ApiCommand"
-import PaginationButtons from "../PaginateCoins/PaginationButtons";
+import PaginationButtons from "../../../general-components/PaginationButtons/PaginationButtons";
 import ExchangesPaginateTr from "./ExchangesPaginateTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import {getLang} from "../../../functions/Lang/getLang";

@@ -23,7 +23,10 @@
 
     /*other colors*/
     --white: #FFF;
+    --white-op-75: rgba(255, 255, 255, 0.75);
+    --white-op-50: rgba(255, 255, 255, 0.5);
     --black: #000;
+    --black-op-50: rgba(0, 0, 0, 0.5);
     --gray: #555;
 }
 

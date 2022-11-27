@@ -1,10 +1,15 @@
 import React from 'react';
 import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_GLOBAL_COMMAND} from "../../constants/ApiCommand";
-import {Badge, ListGroup, Spinner} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../constants/ApiConstants";
 import {getLang} from "../../functions/Lang/getLang";
 import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
+
+//css
+import "./GeneralInfo.css";
+import {getTheme} from "../../functions/Theme/getTheme";
+import GeneralInfoTopCoin from "./GeneralInfoTopCoin";
 
 //для получения объекта с данными о самой популярной монетке
 export const getMainCoin = (data,returnValue) =>{
@@ -26,24 +31,30 @@ const GeneralInfo = () => {
     const data = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
     // console.log(data,"GLOBAL DATA IN GeneralInfo.jsx");
 
-    //SPINNER!!!!!
-    const SpinnerSmall = <Spinner animation="border" size="sm" />;
-
     return (
-        <div className={'GeneralInfo container mt-3 mb-3 p-0'}>
+        <div className={`GeneralInfo ${getTheme(true)}`}>
+
+            <h5>
+                {getLang() === "eng" && "Basic information about the cryptocurrency market"}
+                {getLang() === "rus" && "Основная информация о криптовалютном рынке"}
+            </h5>
             {
                 data &&
-                <ListGroup horizontal>
+                <ListGroup className={"small"}>
                     <ListGroup.Item>
                         {getLang() === 'rus' && 'Кол-во монет:'}
                         {getLang() === 'eng' && 'Total coins:'}
-                        <strong> {data[GL_ACT_COINS] ? data[GL_ACT_COINS].toLocaleString("RU") + 'шт.' : SpinnerSmall}</strong>
+                        <Badge className={"mx-2"}>
+                            {data[GL_ACT_COINS] && data[GL_ACT_COINS].toLocaleString("RU")}
+                        </Badge>
                     </ListGroup.Item>
 
                     <ListGroup.Item>
                         {getLang() === 'rus' && 'Кол-во бирж:'}
                         {getLang() === 'eng' && 'Total exchanges:'}
-                        <strong> {data[GL_MKTS] ? data[GL_MKTS] : SpinnerSmall} </strong>
+                        <Badge className={"mx-2"}>
+                            {data[GL_MKTS] && data[GL_MKTS]}
+                        </Badge>
                     </ListGroup.Item>
 
                     <ListGroup.Item>
@@ -51,7 +62,7 @@ const GeneralInfo = () => {
                         {getLang() === 'eng' && 'Market change in 24h:'}
                         {
                             data[GL_CH_ALL_PR] &&
-                            <Badge className={"px-3"} bg={String(data[GL_CH_ALL_PR]).startsWith('-') ? "danger" : "success"}>
+                            <Badge className={"mx-2"} bg={String(data[GL_CH_ALL_PR]).startsWith('-') ? "danger" : "success"}>
                                 {!String(data[GL_CH_ALL_PR]).startsWith('-') && '+'}
                                 {getNumRedAfterDoot(data[GL_CH_ALL_PR],4) + '%'}
                             </Badge>
@@ -60,23 +71,32 @@ const GeneralInfo = () => {
 
                     <ListGroup.Item>
                         {
-                            Object.values(data[GL_MK_PR]).length ?
+                            Object.values(data[GL_MK_PR]).length &&
                             <>
                                 {getLang() === 'rus' && 'Доминирование'}
                                 {getLang() === 'eng' && 'Dominance'}
-                                <strong> {getMainCoin(data[GL_MK_PR],'coin').toUpperCase("RU")} </strong>
+                                <Badge className={"mx-2"}>
+                                    {getMainCoin(data[GL_MK_PR],'coin').toUpperCase("RU")}
+                                </Badge>
                                 {getLang() === 'rus' && 'по рыночной капитализации:'}
                                 {getLang() === 'eng' && 'by market capitalization:'}
-                                <strong> {getMainCoin(data[GL_MK_PR],'price').toLocaleString("RU") + '%'} </strong>
-                            </> : SpinnerSmall
+                                <Badge className={"mx-2"}>
+                                    {getMainCoin(data[GL_MK_PR],'price').toLocaleString("RU") + '%'}
+                                </Badge>
+                            </>
                         }
                     </ListGroup.Item>
 
                     <ListGroup.Item>
                         {getLang() === 'rus' && 'Общая рыночная капитализация:'}
                         {getLang() === 'eng' && 'Total market cap:'}
-                        <strong> {data[GL_TT_MK]['usd'] ? data[GL_TT_MK]['usd'].toLocaleString("RU") + '$' : SpinnerSmall} </strong>
+                        <Badge className={"mx-2"}>
+                            {data[GL_TT_MK]['usd'] && data[GL_TT_MK]['usd'].toLocaleString("RU") + '$'}
+                        </Badge>
                     </ListGroup.Item>
+
+                    {/*data about best coin*/}
+                    <GeneralInfoTopCoin />
                 </ListGroup>
             }
         </div>

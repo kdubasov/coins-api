@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
-import {Alert, Badge, Button, Container, Form} from "react-bootstrap";
+import {Alert, Button, Container, Form} from "react-bootstrap";
 import {addFormDataInDB} from "../../functions/FeedbackForm/addFormDataInDB";
 import {useUserAuth} from "../../contexts/UserAuthContext";
 import {getLang} from "../../functions/Lang/getLang";
 
-const FeedbackForm = () => {
+//css
+import "./FeedbackForm.css";
+import {getTheme} from "../../functions/Theme/getTheme";
+import GeneralInfo from "../GeneralInfo/GeneralInfo";
+
+const FeedbackForm = ({showInfo}) => {
+
+    const theme = getTheme(true);
 
     const { user } = useUserAuth();
 
@@ -20,23 +27,21 @@ const FeedbackForm = () => {
     const handleSend = (event) => {
         event.preventDefault();
         addFormDataInDB(email,message,cooperation)
-            .then(() => setSendMess({err: false, message: "Форма успешно отправлена."}))
-            .catch(() => setSendMess({err: true, message: "Ошибка отправки формы."}))
-            .finally(setTimeout(() => setSendMess({err:false,message:false}),5000))
+            .then(() => setSendMess({err: false, message: "The form has been submitted SUCCESSFULLY."}))
+            .catch(() => setSendMess({err: true, message: "Form submission ERROR."}))
+            .finally(setTimeout(() => setSendMess({err:false,message:false}),1000 * 10))
         setEmail('')
         setMessage('')
         setCooperation(false)
     }
 
     return (
-        <Container className={"my-2"}>
+        <Container className={`FeedbackForm ${theme}`}>
 
-            <Form onSubmit={handleSend} className={"w-50 p-3 border"} style={{borderRadius:10}}>
+            <Form onSubmit={handleSend} className={"small"}>
                 <h5>
-                    <Badge>
-                        {getLang() === 'rus' && "Вы можете задать нам свои вопросы"}
-                        {getLang() === 'eng' && "You can ask us your questions"}
-                    </Badge>
+                    {getLang() === 'rus' && "Вы можете задать нам свои вопросы"}
+                    {getLang() === 'eng' && "You can ask us your questions"}
                 </h5>
 
                 <Form.Group className="mb-3">
@@ -61,6 +66,7 @@ const FeedbackForm = () => {
                         {getLang() === 'eng' && "Enter your message"}
                     </Form.Label>
                     <Form.Control
+                        rows={3}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         size={"sm"}
@@ -74,7 +80,6 @@ const FeedbackForm = () => {
                 </Form.Group>
 
                 <Form.Check
-                    className={"mb-3 small"}
                     type="checkbox"
                     label={
                         getLang() === "rus" ?
@@ -93,10 +98,13 @@ const FeedbackForm = () => {
                     {sendMess.message}
                 </Alert>
 
-                <Button size={"sm"} variant="outline-primary" type="submit">
+                <Button size={"sm"} variant="primary" type="submit" className={"w-100"}>
                     {getLang() === "rus" ? "Отправить" : "Send"}
                 </Button>
             </Form>
+
+            {/*главная информация*/}
+            {showInfo && <GeneralInfo />}
         </Container>
     );
 };

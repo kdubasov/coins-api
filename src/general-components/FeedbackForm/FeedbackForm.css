@@ -1,0 +1,71 @@
+/*container*/
+.FeedbackForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1em 0 2em;
+}
+
+/*form*/
+.FeedbackForm form{
+    width: calc(50% - 1em);
+    padding: 1.5em;
+    border-radius: .5em;
+}
+/*dark/light form*/
+.FeedbackForm.dark form{
+    color: var(--white);
+    background: var(--bg-search-input-dark);
+}
+.FeedbackForm.light form{
+    color: var(--text-dark);
+    background: var(--bg-search-input-light);
+}
+
+/*inputs*/
+.FeedbackForm form input[type="email"],
+.FeedbackForm form textarea,
+.FeedbackForm form input[type="email"]:focus,
+.FeedbackForm form textarea:focus{
+    background:none;
+    padding: .5em;
+    resize: none;
+}
+
+.FeedbackForm form label{
+    margin: 0 0 .25em 0;
+}
+
+/*dark*/
+.FeedbackForm.dark form input[type="email"],
+.FeedbackForm.dark form textarea{
+    color: var(--white);
+    border:1px solid var(--white-op-50) !important;
+}
+.FeedbackForm.dark form input[type="email"]::placeholder,
+.FeedbackForm.dark form textarea::placeholder{
+    font-weight: 200;
+    color: var(--white-op-50);
+}
+
+/*light*/
+.FeedbackForm.light form input::placeholder,
+.FeedbackForm.light form textarea::placeholder{
+    font-weight: 200;
+}
+
+/*checkbox*/
+.FeedbackForm form .form-check{
+    margin: 1.2em 0 1em;
+}
+.FeedbackForm form .form-check label{
+    opacity: .75;
+    font-weight: 200;
+}
+.FeedbackForm.dark form input[type="checkbox"]:default{
+    border: 1px solid var(--white-op-50);
+}
+.FeedbackForm.light form input[type="checkbox"]:default{
+    border: 1px solid var(--black-op-50);
+    background: none;
+}

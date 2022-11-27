@@ -1,0 +1,32 @@
+.PaginationButtons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*links*/
+.PaginationButtons .pagination .page-link{
+    padding: .4em .8em;
+    background: none;
+}
+.PaginationButtons .pagination.dark .page-link{
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+.PaginationButtons .pagination.light .page-link{
+    color: var(--text-dark);
+    border: 1px solid var(--text-dark);
+}
+
+/*item active*/
+.PaginationButtons .pagination .page-item.active .page-link{
+    background: var(--blue-main);
+}
+.PaginationButtons .pagination.light .page-item.active .page-link,
+.PaginationButtons .pagination .page-item:hover .page-link{
+    color: var(--white);
+    background: var(--blue-main);
+}
+.PaginationButtons .pagination .page-item.disabled .page-link{
+    opacity: .5;
+}

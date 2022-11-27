@@ -1,0 +1,53 @@
+.GeneralInfo{
+    color: var(--white);
+    width: calc(50% - 1em);
+}
+.GeneralInfo.light{
+    color: var(--text-dark);
+}
+
+.GeneralInfo .list-group .list-group-item{
+    display: flex;
+    align-items: center;
+    color: inherit;
+    background: none;
+    border-color: var(--white-op-50);
+    font-weight: 200;
+}
+.GeneralInfo.light .list-group .list-group-item{
+    border-color: var(--black-op-50);
+}
+
+/*best coin*/
+.best-coin{
+    display: flex;
+    flex-wrap: wrap;
+}
+.best-coin header{
+    width: 100%;
+    padding: .5em 0;
+    display: flex;
+}
+/*left and right containers*/
+.best-coin header .left,
+.best-coin header .right{
+    display: flex;
+    align-items: flex-start;
+}
+
+/*left*/
+/*logo img*/
+.best-coin header .left img{
+    width: 50px;
+    margin-right: .5em;
+}
+.best-coin header .left a{
+    font-weight: 500;
+    margin: 0;
+}
+
+/*right*/
+.best-coin header .right{
+    margin-left: 2em;
+    flex-direction: column;
+}

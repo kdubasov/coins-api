@@ -6,7 +6,6 @@ import PaginateCategories from "../components/MainPage/PaginateCategories/Pagina
 import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
 import ExchangesPaginate from "../components/MainPage/ExchangesPaginate/ExchangesPaginate";
 import TopLoseCoins from "../components/MainPage/TableTopLoseCoins/TopLoseCoins";
-import GeneralInfo from "../general-components/GeneralInfo/GeneralInfo";
 import PaginateDerivatives from "../components/MainPage/PaginateDerivatives/PaginateDerivatives";
 import PaginateNft from "../components/MainPage/PaginateNft/PaginateNft";
 import HoldCompanies from "../components/MainPage/HoldCompanies/HoldCompanies";
@@ -40,10 +39,7 @@ const MainPage = ({setShowAlert,theme}) => {
 
             {//форму и generalInfo отображаем только на главной
                 navPaginate === "coins" &&
-                <>
-                    <FeedbackForm />
-                    <GeneralInfo />
-                </>
+                <FeedbackForm showInfo={true} />
             }
         </>
     );

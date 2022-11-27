@@ -3,7 +3,7 @@ import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_SEARCH} from "../../../constants/ApiCommand";
 import {Table} from "react-bootstrap";
 import {getTheme} from "../../../functions/Theme/getTheme";
-import PaginationButtons from "../PaginateCoins/PaginationButtons";
+import PaginationButtons from "../../../general-components/PaginationButtons/PaginationButtons";
 import PaginateNftTr from "./PaginateNftTr";
 import {getLang} from "../../../functions/Lang/getLang";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
