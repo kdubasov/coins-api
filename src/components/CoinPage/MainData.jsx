@@ -16,7 +16,7 @@ import GeneralGraph from "./components/GeneralGraph/GeneralGraph";
 import DateInfo from "./components/DateInfo/DateInfo";
 import TickersTable from "./components/TickersTable/TickersTable";
 import CoinConverter from "./components/CoinСonverter/CoinСonverter";
-import MainButtons from "./components/MainButtons";
+import MainButtons from "./components/MainButtons/MainButtons";
 import TableMarketDataMore from "./components/TableMarketDataMore";
 import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_SIMPLE_PRICE} from "../../constants/ApiCommand";

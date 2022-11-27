@@ -11,11 +11,11 @@
     align-items: center;
     color: inherit;
     background: none;
-    border-color: var(--white-op-50);
-    font-weight: 200;
+    border-color: var(--border-nav-dark);
+    font-weight: 300;
 }
 .GeneralInfo.light .list-group .list-group-item{
-    border-color: var(--black-op-50);
+    border-color: var(--border-nav-light);
 }
 
 /*best coin*/

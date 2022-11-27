@@ -1,0 +1,6 @@
+.MainButtons.dark{
+    border: 1px solid var(--border-nav-dark);
+}
+.MainButtons.light{
+    border: 1px solid var(--border-nav-light);
+}

@@ -5,6 +5,8 @@ import {addInBriefcase} from "../../../functions/BriefcaseDB/addInBriefcase";
 import {useGetDBData} from "../../../hooks/useGetDbData";
 import {deleteFromBriefcase} from "../../../functions/BriefcaseDB/deleteFromBriefcase";
 import {Button} from "react-bootstrap";
+import {getLang} from "../../../functions/Lang/getLang";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 
 const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = false}) => {
@@ -14,6 +16,8 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = fa
     //table - таблица для редактирования монет/нфт/бирж
     //title - заголовк для алерта
     //text - отображать текст вместо + -
+
+    const theme = getTheme(true);
 
     const { user } = useUserAuth();
 
@@ -48,7 +52,10 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = fa
             {//add button
                 Boolean(!Object.keys(briefcaseDBData).length || !Object.keys(briefcaseDBData).includes(elemId)) ?
                     text ?//проверяем нужна кнопка с текстом или без
-                        <Button variant={"success"}>Добавить в избранное</Button>:
+                        <Button className={`but-${theme}`} onClick={() => addCoinBriefcase(elemId)}>
+                            {getLang() === "eng" && "Add in favorites"}
+                            {getLang() === "rus" && "Добавить в избранное"}
+                        </Button>:
                         <img
                             width={18}
                             src="/images/BriefcaseButton/not-added.svg"
@@ -62,7 +69,10 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = fa
             {// delete button
                 Boolean(Object.keys(briefcaseDBData).length && Object.keys(briefcaseDBData).includes(elemId)) ?
                     text ?//проверяем нужна кнопка с текстом или без
-                        <Button variant={"danger"}>Удалить из избранноего</Button>:
+                        <Button className={`but-${theme}`}  onClick={() => deleteCoinBriefcase(elemId)}>
+                            {getLang() === "eng" && "Delete from favorites"}
+                            {getLang() === "rus" && "Удалить из избранного"}
+                        </Button>:
                         <img
                             width={18}
                             src="/images/BriefcaseButton/added.svg"

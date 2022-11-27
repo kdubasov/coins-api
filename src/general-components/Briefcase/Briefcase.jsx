@@ -8,6 +8,7 @@ import {useUserAuth} from "../../contexts/UserAuthContext";
 import {deleteAllBriefcase} from "../../functions/BriefcaseDB/deleteAllBriefcase";
 import GeneralInfo from "../GeneralInfo/GeneralInfo";
 import {getLang} from "../../functions/Lang/getLang";
+import {getTheme} from "../../functions/Theme/getTheme";
 
 const Briefcase = () => {
 
@@ -34,7 +35,7 @@ const Briefcase = () => {
         return (
             <Button
                 size={"sm"}
-                className={`but-dark ${margin && "mx-2"}`}
+                className={`but-dark but-${getTheme(true)} ${margin && "mx-2"}`}
                 onClick={() => setSelectValue(value)}
                 disabled={selectValue === value}
             >

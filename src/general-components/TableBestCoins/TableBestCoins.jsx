@@ -26,7 +26,7 @@ const TableBestCoins = ({setShowAlert}) => {
 
     if (Object.keys(data).length)
     return (
-        <div className={"TableBestCoins"}>
+        <div className={"TableBestCoins pb-4"}>
 
             <h4 className={'m-0 mb-2 mt-5'}>
                 {getLang() === 'eng' && 'Top 10 coins by trading volume in 24 hours'}

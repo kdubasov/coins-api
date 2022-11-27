@@ -1,76 +1,71 @@
 import React from 'react';
 import {
-    GL_DESCRIPT, GL_FL_PR, GL_IMAGE,
-    GL_MK, GL_NAME, GL_NFT_PERSENT_24H,
-    GL_NFT_NAT_CUR, GL_NFT_OWN, GL_TT_CNS,
-    GL_VOL_24H
+    GL_DESCRIPT, GL_IMAGE,
+    GL_NAME, GL_NFT_PERSENT_24H,
 } from "../../constants/ApiConstants";
-import {Badge, ListGroup} from "react-bootstrap";
-import {Link} from "react-router-dom";
-import MainButtons from "../CoinPage/components/MainButtons";
+import {Badge} from "react-bootstrap";
+import MainButtons from "../CoinPage/components/MainButtons/MainButtons";
+
+// css
+import "./NftPage.css";
+import {getLang} from "../../functions/Lang/getLang";
+import MarketDataNft from "./MarketDataNft";
 
 const MainData = ({dataMain,setShowAlert}) => {
 
     // console.log(dataMain,'data for one nft');
 
-    const getListItem = (title,value) => {
-        return (
-            <ListGroup.Item>
-                {title}: <strong>{value || '?'}</strong>
-            </ListGroup.Item>
-        )
-    }
-
     return (
         <div className={`MainData nft`}>
 
             {/*кнопка для добавление в избранное и поделиться*/}
-            <MainButtons coinId={dataMain['id']} setShowAlert={setShowAlert} table={'nfts'} title={'Nft'} />
+            <div className={"w-100 my-2"}>
+                <MainButtons coinId={dataMain['id']} setShowAlert={setShowAlert} table={'nfts'} title={'Nft'} />
+            </div>
 
-            <p className={'mt-3 mb-3 small d-flex align-items-center'}>
-                <img
-                    width={100}
-                    style={{marginRight:15,borderRadius:5}}
-                    src={dataMain[GL_IMAGE]['large'] || dataMain[GL_IMAGE]['small']}
-                    alt={dataMain[GL_NAME]}
-                />
-                <span className={'d-flex flex-column'}>
-                    <Badge style={{fontSize:18}}>{dataMain[GL_NAME]}</Badge>
+            <header>
+
+                <div className={"top-content"}>
+                    <img
+                        className={"logo"}
+                        src={dataMain[GL_IMAGE]['large'] || dataMain[GL_IMAGE]['small']}
+                        alt={dataMain[GL_NAME]}
+                    />
+
+                    <span className={'text-container'}>
+                        <h4>{dataMain[GL_NAME]?.toUpperCase()}</h4>
+                        {
+                            dataMain[GL_NFT_PERSENT_24H] &&
+                            <Badge bg={String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-')?"danger":"success"}>
+                                {!String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-') && '+'}
+                                {dataMain[GL_NFT_PERSENT_24H].toLocaleString("RU") + '% (24ч)'}
+                            </Badge>
+                        }
+                    </span>
+                </div>
+
+                {/*description*/}
+                <p className="small">
                     {
-                        dataMain[GL_NFT_PERSENT_24H] &&
-                        <span
-                            style={String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-')?{color:'red'}:{color:'green'}}
-                            className={'m-0 fw-bold'}
-                        >
-                            {String(dataMain[GL_NFT_PERSENT_24H]).startsWith('-')?'':'+'}
-                            {dataMain[GL_NFT_PERSENT_24H] + '% (24ч)'}
-                        </span>
+                        dataMain[GL_DESCRIPT] ||
+                        (getLang() === "eng" ? "Описание отсутствует" : "No description")
                     }
-                </span>
-            </p>
-            {/*description*/}
-            <p className="small">
-                {dataMain[GL_DESCRIPT] || 'Описание отсутствует'}
-            </p>
-
-            <ListGroup>
-                {getListItem('24-часовой объем',dataMain[GL_VOL_24H]['usd']+'$')}
-                {getListItem('Рыночная капитализация',dataMain[GL_MK]['usd']+'$')}
-                {getListItem('Минимальная цена',dataMain[GL_FL_PR]['usd']+'$')}
-                {getListItem('Общее предложение',dataMain[GL_TT_CNS])}
-                {getListItem('Владельцы',dataMain[GL_NFT_OWN])}
-
-                {/*with link to coin*/}
-                <ListGroup.Item>
-                    Валюта:
+                    <br /><br />
                     {
-                        dataMain[GL_NFT_NAT_CUR]?
-                            <Link className={'mx-1'} to={`/coins/${dataMain[GL_NFT_NAT_CUR]}`}>
-                                <Badge>{dataMain[GL_NFT_NAT_CUR]}</Badge>
-                            </Link>:'?'
+                        getLang() === "eng" &&
+                        "We provide a limited amount of information about NFT, " +
+                        "you can find more information in other sources, thank you for your understanding."
                     }
-                </ListGroup.Item>
-            </ListGroup>
+                    {
+                        getLang() === "rus" &&
+                        "Мы предоставляем ограниченное количество информации о NFT, вы можете найти более " +
+                        "подробную информацию в других источниках, спасибо за понимание."
+                    }
+                </p>
+            </header>
+
+            {/*block with market data*/}
+            <MarketDataNft dataMain={dataMain} />
 
         </div>
     );

@@ -37,7 +37,7 @@ const Login = () => {
                   {
                       getLang() === "eng" &&
                       "After authorization, you will be taken to your personal account." +
-                      "You can also add coins, nft and exchanges to your favorites and" +
+                      " You can also add coins, nft and exchanges to your favorites and" +
                       " track their changes right in your personal account. Authorization" +
                       " takes less than a minute, we tried to make it as convenient as possible for users."
                   }

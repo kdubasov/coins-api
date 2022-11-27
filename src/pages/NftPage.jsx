@@ -2,10 +2,10 @@ import React from 'react';
 import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import MainData from "../components/NftPage/MainData";
-import {Spinner} from "react-bootstrap";
 import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
 import {GLOBAL_API_NFT_ONE} from "../constants/ApiCommand";
 import TableBestCoins from "../general-components/TableBestCoins/TableBestCoins";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
 
 const NftPage = ({setShowAlert}) => {
 
@@ -25,7 +25,7 @@ const NftPage = ({setShowAlert}) => {
             {   //show result or wait result
                 Object.values(data.data).length?
                     <MainData dataMain={data.data} setShowAlert={setShowAlert} /> :
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <SpinnerAlert />
             }
 
             <TableBestCoins setShowAlert={setShowAlert} />
