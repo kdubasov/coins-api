@@ -1,8 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 import GoogleButton from "react-google-button";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
+
+//css
+import "./Login.css";
+import {getTheme} from "../../../functions/Theme/getTheme";
+import {getLang} from "../../../functions/Lang/getLang";
 
 const Login = () => {
 
@@ -20,23 +25,48 @@ const Login = () => {
   };
 
   return (
-      <div className="p-4 box border w-50 mx-auto">
+      <Container className="Login">
 
-        <GoogleButton
-            className="w-100 g-btn"
-            type="dark"
-            onClick={handleGoogleSignIn}
-        />
+          <div className="text-container w-100">
+              <h4>
+                  {getLang() === "eng" && "Authorization"}
+                  {getLang() === "rus" && "Авторизация"}
+              </h4>
 
-        <hr/>
+              <p>
+                  {
+                      getLang() === "eng" &&
+                      "After authorization, you will be taken to your personal account." +
+                      " You can also add coins, nft and exchanges to your favorites and" +
+                      " track their changes right in your personal account. Authorization" +
+                      " takes less than a minute, we tried to make it as convenient as possible for users."
+                  }
 
-        <Link to="/phoneLogin">
-            <Button variant="success" className={'w-100 p-2'}>
-              Вход по номеру телефона и смс
-            </Button>
-        </Link>
+                  {
+                      getLang() === "rus" &&
+                      "После авторизации вы попадете в личный кабинет. Также вы сможете добавлять монеты," +
+                      " nft и биржи в избранное и отслеживать их изменения прямо в личном кабинете." +
+                      " Авторизация занимает менее минуты, мы старались сделать ее максимально удобной" +
+                      " для пользователей."
+                  }
+              </p>
+          </div>
 
-      </div>
+          <div className="buttons-container">
+              <GoogleButton
+                  type={getTheme(true) === "dark" ? "light" : "dark"}
+                  onClick={handleGoogleSignIn}
+              />
+
+              <Link to="/phoneLogin">
+                  <Button variant="primary">
+                      {getLang() === "eng" && "Phone login"}
+                      {getLang() === "rus" && "Вход по номеру телефона"}
+                  </Button>
+              </Link>
+          </div>
+
+      </Container>
   );
 };
 

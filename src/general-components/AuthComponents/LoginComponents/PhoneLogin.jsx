@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {Form, Alert, Badge} from "react-bootstrap";
+import {Form, Alert, Container} from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
+import {getLang} from "../../../functions/Lang/getLang";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const PhoneLogin = () => {
   const [error, setError] = useState("");
@@ -42,56 +44,87 @@ const PhoneLogin = () => {
   };
 
   return (
-      <div className="p-4 box w-50 border mx-auto">
-        <h5 className={'mb-3'}>
-          <Badge className={'fw-light'}>
-            Войти/создать аккаунт по номеру телефона
-          </Badge>
-        </h5>
+      <Container className="Login phone">
 
-        {error && <Alert variant="danger">{error}</Alert>}
+        <div className="text-container w-100">
+          <h4>
+            {getLang() === "eng" && "Phone authorization"}
+            {getLang() === "rus" && "Авторизация по номеру телефона"}
+          </h4>
+
+          <p>
+            {
+                getLang() === "eng" &&
+                "After you enter your phone number you will receive an SMS with a code. " +
+                "You must enter this code in the input field, then you will be directed " +
+                "to your personal account."
+            }
+            {
+                getLang() === "rus" &&
+                "После того как вы введете ваш номер телефона вам придет смс с кодом. " +
+                "Вы должны ввести этот код в поле ввода, затем вы будете направлены в ваш личный кабинет."
+            }
+          </p>
+        </div>
+
+        <div className={"w-100"}>
+          {error && <Alert className={"alert-phone-error"} variant="danger">{error}</Alert>}
+        </div>
 
         <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+
+          <div className={`phone-input-block ${getTheme(true)}`}>
             <PhoneInput
-              defaultCountry="RU"
-              value={number}
-              onChange={setNumber}
-              placeholder="Введите номер телефона"
+                defaultCountry={getLang() === "eng" ? "US" : "RU"}
+                value={number}
+                onChange={setNumber}
+                placeholder={getLang() === "eng" ? "Enter phone number" : "Введите номер телефона"}
             />
-            <div id="recaptcha-container"></div>
-          </Form.Group>
-
-          <div>
-            <Link to="/login">
-              <Button size={"sm"} variant="danger">Назад</Button>
-            </Link>
-
-            <Button size={"sm"} type="submit" className={'mx-2'}>
-              Получить код
-            </Button>
           </div>
+
+            <div id="recaptcha-container" className={"mb-3"} />
+
+            <div className={'buttons-container'}>
+              <Link to="/login">
+                <Button variant="secondary" className={"m-0"}>
+                  {getLang() === "eng" && "Back"}
+                  {getLang() === "rus" && "Назад"}
+                </Button>
+              </Link>
+
+              <Button style={{height:"auto"}} variant={"primary"} type="submit">
+                {getLang() === "eng" && "Send"}
+                {getLang() === "rus" && "Получить код"}
+              </Button>
+            </div>
         </Form>
 
         <Form onSubmit={verifyOtp} style={{ display: flag ? "block" : "none" }}>
-          <Form.Group className="mb-3" controlId="formBasicOtp">
-            <Form.Control
+
+          <input
+              className={`otp-input ${getTheme(true)} mb-3`}
+              style={{marginLeft:0}}
               type="otp"
-              placeholder="Enter OTP"
+              placeholder={getLang() === "eng" ? "Enter OTP" : "Введите код"}
               onChange={(e) => setOtp(e.target.value)}
-            />
-          </Form.Group>
-          <div className="button-right">
+          />
+
+          <div className="buttons-container">
             <Link to="/login">
-              <Button variant="secondary">Отменить</Button>
+              <Button className={"m-0"} variant="secondary">
+                {getLang() === "eng" && "Cancel"}
+                {getLang() === "rus" && "Отменить"}
+              </Button>
             </Link>
-            &nbsp;
-            <Button type="submit" variant="primary">
-              Подтвердить
+
+            <Button type="submit" variant="primary" style={{height:"auto"}}>
+              {getLang() === "eng" && "Confirm"}
+              {getLang() === "rus" && "Подтвердить"}
             </Button>
           </div>
+
         </Form>
-      </div>
+      </Container>
   );
 };
 

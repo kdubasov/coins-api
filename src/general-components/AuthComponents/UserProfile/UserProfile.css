@@ -1,0 +1,61 @@
+.UserProfile{
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    padding-top: .25em;
+    border-left: 1px solid var(--blue-main);
+}
+.UserProfile h4{
+    margin-left: calc(var(--bs-gutter-x) * .5);
+}
+
+.UserData{
+    width: calc(50% - 1em);
+    margin-left: calc(var(--bs-gutter-x) * .5);
+    padding: 1em;
+    border-radius: .5em;
+}
+/*dark/light*/
+.UserData.dark{
+    background: var(--bg-search-input-dark);
+}
+.UserData.light{
+    background: var(--bg-search-input-light);
+}
+
+/*header*/
+.UserData header{
+    display: flex;
+    margin-bottom: 1em;
+}
+/*img*/
+.UserData header img.user-photo,
+.UserData header span.placeholder{
+    width: 100px;
+    height: auto;
+    border-radius: .5em;
+}
+/*text*/
+.UserData header .text-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+}
+.UserData header .text-container h5{
+    font-weight: 200;
+}
+.UserData header .text-container h5 strong{
+    font-weight: 500;
+}
+.UserData header .text-container p.small{
+    margin: 0;
+    opacity: .75;
+}
+
+/*buttons*/
+.UserData .buttons-container{
+    display: flex;
+    justify-content: space-between;
+}
+.UserData .buttons-container button{
+    width: calc(50% - .5em);
+}

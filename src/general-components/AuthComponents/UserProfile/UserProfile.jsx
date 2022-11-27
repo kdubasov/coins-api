@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
 import UserData from "./UserData";
 import FeedbackForm from "../../FeedbackForm/FeedbackForm";
+import {getLang} from "../../../functions/Lang/getLang";
+
+//css
+import "./UserProfile.css";
 
 const UserProfile = () => {
   const { logOut, user } = useUserAuth();
@@ -19,14 +23,20 @@ const UserProfile = () => {
   };
 
   return (
-    <Container className={'border p-3'}>
+    <Container className={'UserProfile'}>
+
+      <h4 className={"my-4"}>
+        {getLang() === "eng" && "User profile"}
+        {getLang() === "rus" && "Личный кабинет"}
+      </h4>
 
         {
             user &&
             <UserData user={user} handleLogout={handleLogout} />
         }
 
-        <FeedbackForm />
+        {/*форма обртаной связи*/}
+        <FeedbackForm showInfo={false} />
 
     </Container>
   );

@@ -1,0 +1,78 @@
+.Login{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    min-height: 80vh;
+}
+
+/*text*/
+.Login .text-container{
+    margin-bottom: 1em;
+}
+.Login .text-container h4{
+    margin-bottom: 0;
+}
+.Login .text-container p{
+    font-weight: 200;
+}
+/*buttons*/
+.Login .buttons-container{
+    display: flex;
+    align-content: center;
+}
+.Login .buttons-container button{
+    min-width: 120px;
+    height: 100%;
+    border-radius: .1em;
+}
+.Login .buttons-container button:last-child{
+    margin-left: 1em;
+}
+
+/*phone input*/
+.phone-input-block,
+.otp-input{
+    margin-bottom: 1em;
+    padding: 1em 2em;
+    border-radius: .25em;
+}
+.phone-input-block input,
+.otp-input{
+    font-weight: 600;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    margin-left: 1em;
+}
+.phone-input-block input::placeholder,
+.otp-input::placeholder {
+    font-weight: 200;
+}
+.phone-input-block input:active,
+.phone-input-block input:focus,
+.otp-input{
+    outline: none;
+}
+/*dark/light*/
+.phone-input-block.dark,
+.otp-input{
+    background: var(--bg-search-input-dark);
+}
+.phone-input-block.light,
+.otp-input.light{
+    background: var(--bg-search-input-light) ;
+}
+.phone-input-block.dark input,
+.otp-input.dark{
+    color: var(--white);
+}
+.phone-input-block.light input,
+.otp-input{
+    color: var(--text-dark);
+}
+
+/*alert errors*/
+.alert-phone-error{
+    width: 30%;
+    padding: .5em !important;
+}

@@ -19,5 +19,17 @@
     <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
     <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
     <!--recharts connect end-->
+
+    <!--theme set bg-->
+    <script>
+      const body = document.querySelector("body");
+      const theme = window.localStorage.getItem('theme');
+      if (theme !== "light") {
+        body.style.backgroundColor = "#1A1A1A";
+      }else {
+        body.style.backgroundColor = "#FFFFFF";
+      }
+    </script>
+
   </body>
 </html>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Button, Form} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import SavedCoinsTable from "./components/SavedCoins/SavedCoinsTable";
 import MessageAlert from "../Alerts/MessageAlert";
 import SavedNftsTable from "./components/SavedNfts/SavedNftsTable";
@@ -13,21 +13,12 @@ const Briefcase = () => {
 
     const { user } = useUserAuth();
 
-    //for show or hide general info block
-    const [hide,setHide] = useState(false);
-
     //для отображения определенной таблицы
     const [selectValue,setSelectValue] = useState("coins");
 
     // for show/hide alert
     const [showAlert, setShowAlert] = useState({show:false,text:'',variant:''})
 
-    //заголовк таблицы
-    const getBadge = text => {
-        return (
-            <h5><Badge bg={"secondary"} className={"fw-light"}>{text}</Badge></h5>
-        )
-    }
 
     //delete all data from user briefcase
     const deleteAllFromBriefcase = () =>{
@@ -56,10 +47,14 @@ const Briefcase = () => {
         <div className={'Briefcase container'}>
 
             <header className={"w-100 d-flex justify-content-between align-items-center"}>
-                <h4 className={"mt-4"}>Избранное</h4>
+                <h4 className={"mt-4"}>
+                    {getLang() === "eng" && "Favorites"}
+                    {getLang() === "rus" && "Избранное"}
+                </h4>
 
                 <Button size={"sm"} variant={"outline-danger"} onClick={deleteAllFromBriefcase}>
-                    Очистить избранное
+                    {getLang() === "eng" && "Delete all"}
+                    {getLang() === "rus" && "Очистить избранное"}
                 </Button>
             </header>
 
@@ -77,21 +72,10 @@ const Briefcase = () => {
             {selectValue === "nft" && <SavedNftsTable setShowAlert={setShowAlert} />}
             {selectValue === "exchanges" && <SavedExchangesTable setShowAlert={setShowAlert} />}
 
-            <div className="mt-5 d-flex align-items-center">
-                {getBadge(getLang() === "eng" ? "Basic information" : "Основная информация")}
 
-                <Form.Check
-                    className={"mx-2"}
-                    type="switch"
-                    label={getLang() === "eng" ? "Hide this block" : "Скрыть этот блок"}
-                    checked={hide}
-                    onChange={() => setHide(!hide)}
-                />
-            </div>
-            {
-                !hide &&
-                <GeneralInfo />
-            }
+            <hr className={"mt-4 mb-3"}/>
+            {/*блок с основной информацией о монетах*/}
+            <GeneralInfo />
         </div>
     );
 };
