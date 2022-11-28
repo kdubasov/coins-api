@@ -32,11 +32,13 @@ const TrendCoins = ({setShowAlert}) => {
             <p className={'mb-3 small'}>
                 {
                     getLang() === 'eng' &&
-                    "Top 7 most popular coins in 24 hours according to CoinGecko statistics. (sorted by popularity)"
+                    `Top ${data?.coins?.length} most popular coins in 24 hours according to ` +
+                    "CoinGecko statistics. (sorted by popularity)"
                 }
                 {
                     getLang() === 'rus' &&
-                    "Топ 7 самых популярных монет за 24 часа по статистике CoinGecko. (Отсортированы по популярности)"
+                    `Топ ${data?.coins?.length} самых популярных монет за 24 часа по статистике CoinGecko.` +
+                    "(Отсортированы по популярности)"
                 }
             </p>
 

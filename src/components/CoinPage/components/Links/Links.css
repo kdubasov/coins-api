@@ -1,0 +1,37 @@
+.Links{
+    /*background: rgba(255, 0, 0, 0.1);*/
+}
+.Links p{
+    margin: 0;
+}
+/*links a dark/light and badges*/
+.Links.light a,
+.Links.light .badge{
+    color: var(--text-dark);
+    background: var(--bg-search-input-light) !important;
+}
+.Links.dark .badge{
+    background: var(--bg-search-input-dark) !important;
+}
+
+/*item*/
+.Links .list-group .list-group-item{
+    background: none;
+    border: none;
+    padding: .5em 1em .5em 0;
+    border-radius: 0;
+}
+.Links .list-group .list-group-item:first-child{
+    width: 120px;
+    opacity: .75;
+    font-weight: 300;
+}
+.Links.light .list-group .list-group-item:first-child p.small{
+    font-weight: 400;
+}
+.Links.dark .list-group .list-group-item{
+    color: var(--white);
+}
+.Links.light .list-group .list-group-item{
+    color: var(--text-dark);
+}

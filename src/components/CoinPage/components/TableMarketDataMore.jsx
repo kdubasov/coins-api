@@ -74,7 +74,7 @@ const TableMarketDataMore = ({data,title}) => {
                 <Badge>Статистика цены {title}</Badge>
             </h4>
 
-            <Table striped bordered hover variant={getTheme(true)}>
+            <Table className={getTheme(true)}>
                 <tbody>
                     <tr className={"small"}>
                         <td>

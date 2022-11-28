@@ -1,0 +1,22 @@
+.MainData.coin .top-block{
+    width: 100%;
+    padding: 1em 0 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.MainData.coin.dark .top-block{
+    border-bottom: 1px solid var(--bg-search-input-dark);
+}
+.MainData.coin.light .top-block{
+    border-bottom: 1px solid var(--bg-search-input-light);
+}
+
+.MainData.coin .top-block .left{
+    width: calc(75% - 2em);
+    display: flex;
+    flex-direction: column;
+}
+.MainData.coin .top-block .right{
+    width: calc(25% - 2em);
+}

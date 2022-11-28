@@ -72,8 +72,8 @@ const HoldCompanies = () => {
                             Object.values(data[GL_COMP]).length &&
                             <>
                                 <h4 className={'mb-2'}>
-                                    {getLang() === 'rus' && "Лучшие холдинговые компании для данной монеты"}
-                                    {getLang() === 'eng' && "Best holding companies for this coin"}
+                                    {getLang() === 'rus' && `Лучшие холдинговые компании ${selectCoin.toUpperCase()}`}
+                                    {getLang() === 'eng' && `Best holding companies for ${selectCoin.toUpperCase()}`}
                                 </h4>
                                 <TableHoldCompanies value={data[GL_HOLD_TT_VAL]} data={data[GL_COMP]} />
                             </>

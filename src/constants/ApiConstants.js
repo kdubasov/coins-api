@@ -66,6 +66,7 @@ export const GL_LINK_REDDIT = 'subreddit_url';
 export const GL_LINK_REPOS = 'repos_url'
 export const GL_LINK_GITHUB = 'github';
 export const GL_CHATS = 'chat_url';
+export const GL_TWIT_NAME = 'twitter_screen_name';
 
 // for table change price in coin page
 export const GL_CH_PR_CN_1H = 'price_change_percentage_1h_in_currency';

@@ -29,7 +29,7 @@ const GeneralInfo = () => {
 
     //data
     const data = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
-    // console.log(data,"GLOBAL DATA IN GeneralInfo.jsx");
+    // console.log(data,"GLOBAL DATA IN DefaultInfo.jsx");
 
     return (
         <div className={`GeneralInfo ${getTheme(true)}`}>

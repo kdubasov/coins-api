@@ -15,13 +15,15 @@ const TableTrHoldCompanies = ({elem,id,value}) => {
 
     return (
         <tr className={"small"}>
-            <td>#{id}</td>
+            <td className={"opacity-50"}>#{id}</td>
             {/*name and sybmol*/}
             <td>
                 <strong style={{color:"#326CF4"}}>
                     {elem[GL_NAME] + ' '}
                 </strong>
-                ({elem[GL_SYMBOL]})
+                <p className={"m-0 opacity-50"}>
+                    ({elem[GL_SYMBOL]})
+                </p>
             </td>
             {/*общее количество активов*/}
             <td>{elem[GL_HOLD_TT] && elem[GL_HOLD_TT].toLocaleString()}</td>

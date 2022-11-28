@@ -28,7 +28,7 @@ const TickersTable = ({id}) => {
             {
                 data?
                     <>
-                        <Table striped bordered hover variant={getTheme(true)}>
+                        <Table className={getTheme(true)}>
                             <thead>
                             <tr className={"small"}>
                                 <th>#</th>

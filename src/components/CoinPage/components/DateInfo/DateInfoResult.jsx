@@ -10,7 +10,7 @@ const DateInfoResult = ({data,date}) => {
         <div className={'DateInfoResult mt-2'}>
             {
                 data?
-                    <Table striped bordered hover variant={getTheme(true)}>
+                    <Table className={getTheme(true)}>
                         <thead>
                         <tr className={"small"}>
                             <th>Дата</th>

@@ -33,7 +33,7 @@ const TableChangePrice = ({data}) => {
     }
 
     return (
-        <Table className={'mt-3 mb-3'} striped bordered hover variant={getTheme(true)}>
+        <Table className={`mt-3 mb-3 ${getTheme(true)}`}>
             <thead>
             <tr className={"small"}>
                 <th>1 час</th>

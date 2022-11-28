@@ -1,0 +1,35 @@
+.TableMarketData{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*inner block*/
+.TableMarketData .inner{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: calc(33% - .5em);
+    margin: .25em .5em .25em 0;
+    padding: 1em 1.5em;
+    border-radius: .25em;
+}
+.TableMarketData.dark .inner{
+    background: var(--bg-search-input-dark);
+}
+.TableMarketData.light .inner{
+    background: var(--bg-search-input-light);
+}
+/*inner block elems*/
+.TableMarketData .inner p.small{
+    margin: 0;
+    opacity: .75;
+    font-weight: 300;
+}
+.TableMarketData.light .inner p.small{
+    font-weight: 400;
+}
+.TableMarketData .inner h6{
+    margin: 0;
+    font-weight: 700;
+}

@@ -1,0 +1,61 @@
+/*container for block*/
+.DefaultInfo{
+    width: 100%;
+}
+
+/*badge with rank*/
+.DefaultInfo .coin-rank {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.DefaultInfo header{
+    display: flex;
+    align-items: center;
+}
+/*name*/
+.DefaultInfo .name-block{
+    margin-right: 3em;
+    padding: 1em 0 1.5em;
+    display: flex;
+    align-items: center;
+}
+.DefaultInfo .name-block img{
+    width: 40px;
+    border-radius: .25em;
+    margin-right: .5em;
+}
+.DefaultInfo .name-block h3,
+.DefaultInfo .price-block h3{
+    font-weight: 700;
+    margin: 0;
+}
+/*price*/
+.DefaultInfo .price-block{
+    display: flex;
+    align-items: flex-end;
+}
+.DefaultInfo .price-block p.small{
+    margin: 0 0 0 .5em;
+    opacity: .75;
+    font-weight: 300;
+}
+
+/*min-max progress bar*/
+.DefaultInfo .min-max-block{
+    padding: 1em 0;
+}
+.DefaultInfo .min-max-block .progress{
+    height: 10px;
+}
+/*dark*/
+.DefaultInfo.dark .min-max-block .progress{
+    background: #5A5E6A;
+}
+.DefaultInfo .min-max-block .progress-bar{
+    background: linear-gradient(90deg, #326CF4 0%, #FF62F0 100%);
+}
+.DefaultInfo .min-max-block footer{
+    display: flex;
+    justify-content: space-between;
+}

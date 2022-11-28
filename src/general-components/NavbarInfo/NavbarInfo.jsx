@@ -17,7 +17,7 @@ const NavbarInfo = ({theme}) => {
 
     //data
     const data = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
-    // console.log(data,"GLOBAL DATA IN GeneralInfo.jsx");
+    // console.log(data,"GLOBAL DATA IN DefaultInfo.jsx");
 
     //SPINNER!!!!!
     const SpinnerSmall = <Spinner animation="border" size="sm" variant={"primary"} />;
