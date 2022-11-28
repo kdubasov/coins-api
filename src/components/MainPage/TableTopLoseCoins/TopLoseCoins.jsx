@@ -7,6 +7,10 @@ import {GL_CH_PR_1H_PR, GL_CH_PR_24H_PR, GL_CH_PR_7D_PR} from "../../../constant
 import {getLang} from "../../../functions/Lang/getLang";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
+//css
+import "./TopLoseCoins.css";
+import {getTheme} from "../../../functions/Theme/getTheme";
+
 const TopLoseCoins = () => {
 
     //general data
@@ -29,7 +33,7 @@ const TopLoseCoins = () => {
     }
 
     return (
-        <div className={'TopLoseCoins container'}>
+        <div className={`TopLoseCoins ${getTheme(true)} container`}>
             <h4 className={'m-0'}>
                 {getLang() === 'rus' && 'Топ лучших/худших монет.'}
                 {getLang() === 'eng' && 'Top best/worst coins.'}
@@ -43,7 +47,6 @@ const TopLoseCoins = () => {
             {/*выбираем по какому времени сортировать таблицы*/}
             <Form.Select
                 size={"sm"}
-                className={'w-25 mb-4'}
                 value={selectSort}
                 onChange={e => setSelectSort(e.target.value)}
             >
@@ -56,16 +59,16 @@ const TopLoseCoins = () => {
                 //check result and show spinner or table with coins
                 Object.keys(data).length?
                     <div className={"w-100 d-flex justify-content-between"}>
-                        <div style={{width:"calc(50% - .3em)"}}>
-                            <h6 className={"mb-1"}>
+                        <div className={"container-table"}>
+                            <h6 className={"top"}>
                                 {getLang() === 'rus' && 'Список валют, наиболее выросших в цене.'}
                                 {getLang() === 'eng' && 'List of currencies that appreciated the most.'}
                             </h6>
                             <TopLoseCoinsTable selectSort={selectSort} data={data} sort={'min'} />
                         </div>
 
-                        <div style={{width:"calc(50% - .3em)"}}>
-                            <h6 className={"mb-1"}>
+                        <div className={"container-table"}>
+                            <h6 className={"lose"}>
                                 {getLang() === 'rus' && 'Список валют, наиболее упавших в цене.'}
                                 {getLang() === 'eng' && 'List of currencies that have fallen the most in value.'}
                             </h6>

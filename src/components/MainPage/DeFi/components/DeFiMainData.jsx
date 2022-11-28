@@ -1,7 +1,6 @@
 import React from 'react';
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_DEFI} from "../../../../constants/ApiCommand";
-import {Badge, ListGroup} from "react-bootstrap";
 import {
     GL_DEFI_DOM,
     GL_DEFI_ETH_MK, GL_DEFI_ETH_RAT, GL_DEFI_MK,
@@ -10,6 +9,7 @@ import {
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 
 const DeFiMainData = () => {
@@ -20,47 +20,39 @@ const DeFiMainData = () => {
     const getListItem = (text,apiConst,redact,sign) =>{
 
         return(
-            <ListGroup.Item className={'p-3'}>
-                <Badge bg={"secondary"}>
-                <h6 className={`m-0`}>
+            <div className={"inner"}>
+                <h4 className={`m-0`}>
                     {
                         data[apiConst] &&
                         redact?
                             getNumRedAfterDoot(data[apiConst],3).toLocaleString() + (sign && sign):
                             data[apiConst].toLocaleString()
                     }
-                </h6>
-                </Badge>
+                </h4>
                 <p>{text}</p>
-            </ListGroup.Item>
+            </div>
         )
     }
 
     return (
-        <div className={`DeFiMainData`}>
+        <div className={`DeFiMainData ${getTheme(true)}`}>
             {
                 data ?
                 <>
-                    <ListGroup horizontal>
-                        {getListItem('Defi Dominance (vs. Global)',GL_DEFI_DOM,true,'%')}
-                        {getListItem('Market capitalization of ETH',GL_DEFI_ETH_MK,true,'$')}
-                        {getListItem('DeFi Market capitalization',GL_DEFI_MK,true,'$')}
+                    {getListItem('Defi Dominance (vs. Global)',GL_DEFI_DOM,true,'%')}
+                    {getListItem('Market capitalization of ETH',GL_DEFI_ETH_MK,true,'$')}
+                    {getListItem('DeFi Market capitalization',GL_DEFI_MK,true,'$')}
 
-                        <ListGroup.Item className={'p-3'}>
-                            <Badge bg={"secondary"}>
-                                <h6 className={'m-0'}>
-                                    {data[GL_DEFI_TOP_COIN_NAME]} :
-                                    {' ' + getNumRedAfterDoot(data[GL_DEFI_TOP_COIN_DOM],3) + '%'}
-                                </h6>
-                            </Badge>
-                            Domination
-                        </ListGroup.Item>
-                    </ListGroup>
+                    <div className={'inner'}>
+                        <h4 className={'m-0'}>
+                            {data[GL_DEFI_TOP_COIN_NAME]} :
+                            {' ' + getNumRedAfterDoot(data[GL_DEFI_TOP_COIN_DOM],3) + '%'}
+                        </h4>
+                        <p>Domination</p>
+                    </div>
 
-                    <ListGroup horizontal>
-                        {getListItem('DeFi/ETH Ratio',GL_DEFI_ETH_RAT,true,'%')}
-                        {getListItem('Trading volume for 24 hours',GL_DEFI_TR_24H,true,'$')}
-                    </ListGroup>
+                    {getListItem('DeFi/ETH Ratio',GL_DEFI_ETH_RAT,true,'%')}
+                    {getListItem('Trading volume for 24 hours',GL_DEFI_TR_24H,true,'$')}
                 </>:
                 <SpinnerAlert />
             }

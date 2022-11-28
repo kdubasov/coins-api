@@ -18,7 +18,9 @@ const TableTrHoldCompanies = ({elem,id,value}) => {
             <td>#{id}</td>
             {/*name and sybmol*/}
             <td>
-                <strong>{elem[GL_NAME] + ' '}</strong>
+                <strong style={{color:"#326CF4"}}>
+                    {elem[GL_NAME] + ' '}
+                </strong>
                 ({elem[GL_SYMBOL]})
             </td>
             {/*общее количество активов*/}

@@ -1,0 +1,71 @@
+/*container for trend coins*/
+.TrendCoins .trend-coins-container{
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/*inner block container*/
+.TrendCoins .trend-coins-container .inner .left{
+    display: flex;
+    align-items: center;
+}
+.TrendCoins .trend-coins-container .inner{
+    position:relative;
+    width: calc(25% - 1em);
+    margin: .5em 0;
+    padding: 2em 1em;
+    display: flex;
+    justify-content: space-between;
+    border-radius: .25em;
+}
+/*for best coin*/
+.TrendCoins .trend-coins-container .inner.first{
+    width: calc(50% - .75em);
+}
+.TrendCoins .inner.first .span-best{
+    font-size: 80px;
+    font-weight: 800;
+    opacity: .15;
+    margin: 0;
+}
+/*dark light*/
+.TrendCoins.dark .trend-coins-container .inner{
+    background: var(--bg-search-input-dark);
+}
+.TrendCoins.light .trend-coins-container .inner{
+    background: var(--bg-search-input-light);
+}
+
+/*img*/
+.TrendCoins .trend-coins-container .inner img{
+    width: auto;
+    height: 80px;
+    border-radius: .25em;
+}
+
+/*content*/
+.TrendCoins .trend-coins-container .inner .content{
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.TrendCoins .trend-coins-container .inner .content a{
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+}
+.TrendCoins .trend-coins-container .inner .content h6{
+    margin: 0;
+    opacity: .5;
+    font-weight: 300;
+}
+
+/*badge rank*/
+.TrendCoins .trend-coins-container .inner .badge.rank{
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    font-size: 16px;
+}

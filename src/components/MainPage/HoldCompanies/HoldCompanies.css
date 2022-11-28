@@ -1,0 +1,43 @@
+.HoldCompanies h5.select-value{
+    display: flex;
+    align-items: center;
+}
+.HoldCompanies h5.select-value select{
+    width: 120px;
+    margin: 2em 5px;
+    font-weight: 700;
+}
+
+/*info block*/
+.InfoHoldCompanies{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.InfoHoldCompanies .inner{
+    width: calc(25% - .5em);
+    padding: 1.5em 1em;
+    border-radius: .25em;
+    border-bottom: .25em solid var(--blue-main);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+/*dark/light*/
+.InfoHoldCompanies.dark .inner{
+    background: var(--bg-search-input-dark);
+}
+.InfoHoldCompanies.light .inner{
+    background: var(--bg-search-input-light);
+}
+.InfoHoldCompanies .inner h4{
+    width: 100%;
+    margin: 0;
+    font-weight: 800;
+}
+.InfoHoldCompanies .inner p{
+    margin: 0;
+    opacity: .5;
+    font-weight: 300;
+}

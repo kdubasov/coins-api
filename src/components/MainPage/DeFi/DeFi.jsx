@@ -2,6 +2,10 @@ import React from 'react';
 import DeFiMainData from "./components/DeFiMainData";
 import {getLang} from "../../../functions/Lang/getLang";
 
+//css
+import "./DeFi.css";
+import FeedbackForm from "../../../general-components/FeedbackForm/FeedbackForm";
+
 const DeFi = () => {
 
     return (
@@ -19,7 +23,11 @@ const DeFi = () => {
                     " которые построены поверх распределенных сетей без централизованных посредников."
                 }
             </p>
+
+            {/*defi data*/}
             <DeFiMainData />
+            {/*feedback form with main data*/}
+            <FeedbackForm showInfo={true} />
         </div>
     );
 };

@@ -1,13 +1,17 @@
 import React from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_SIMPLE_PRICE, GLOBAL_API_TOP_7_COINS} from "../../../constants/ApiCommand";
-import {Badge, ListGroup} from "react-bootstrap";
+import {Badge, Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {GL_MC_RANK, GL_NAME, GL_PR_BTC, GL_SYMBOL} from "../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
 import {getLang} from "../../../functions/Lang/getLang";
 import TableBestCoins from "../../../general-components/TableBestCoins/TableBestCoins";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+
+//css
+import "./TrendCoins.css";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 const TrendCoins = ({setShowAlert}) => {
 
@@ -19,7 +23,7 @@ const TrendCoins = ({setShowAlert}) => {
     // console.log(btcPrice)
 
     return (
-        <div className={`TrendCoins container`}>
+        <Container className={`TrendCoins ${getTheme(true)}`}>
             <h4 className={'m-0'}>
                 {getLang() === 'eng' && 'Popular coins'}
                 {getLang() === 'rus' && 'Популярные монеты'}
@@ -36,46 +40,52 @@ const TrendCoins = ({setShowAlert}) => {
                 }
             </p>
 
-            {
-                data.coins?
-                    data.coins.map((coinObject) => (
-                        Object.values(coinObject).map(coin =>(
-                            <div key={coin.id}>
-                                <ListGroup className={`my-2 w-100`}>
-                                    <ListGroup.Item className={`d-flex justify-content-between align-items-center`}>
-                                        <div className={`d-flex align-items-center`}>
-                                            <img width={30} src={coin.small} alt={coin[GL_NAME]}/>
-                                            <p className="small m-0 mx-2">
-                                                ({coin[GL_SYMBOL]})
-                                                <Link
-                                                    className={`mx-2 fw-bold`}
-                                                    to={`/coins/${coin.id}`}
-                                                >
-                                                    {coin[GL_NAME]}
-                                                </Link>
-                                            </p>
-                                            <Badge bg={"secondary"} className={"fw-normal"}>
-                                                Акт.цена:
+            <div className="trend-coins-container">
+                {
+                    data.coins?
+                        data.coins.map((coinObject,ids) => (
+                            Object.values(coinObject).map(coin =>(
+                                <div className={`inner ${!ids && 'first'}`} key={coin.id}>
+
+                                    <Badge className={"rank"}>
+                                        #{coin[GL_MC_RANK]}
+                                    </Badge>
+
+                                    <div className={"left"}>
+                                        <img width={30} src={coin['large'] || coin['small']} alt={coin[GL_NAME]}/>
+
+                                        <div className={"content"}>
+
+                                            <Link to={`/coins/${coin.id}`}>
+                                                ({coin[GL_SYMBOL]}) {coin[GL_NAME]}
+                                            </Link>
+
+                                            <h6>
+                                                {getLang() === "eng" && "Act. price: "}
+                                                {getLang() === "rus" && "Акт. цена: "}
                                                 {
                                                     (btcPrice !== [] && btcPrice && Object.values(btcPrice).length) &&
-                                                    ' ' + getNumRedAfterDoot(coin[GL_PR_BTC] * btcPrice['bitcoin']['usd'],5) + '$'
+                                                    getNumRedAfterDoot(coin[GL_PR_BTC] * btcPrice['bitcoin']['usd'],5) + '$'
                                                 }
-                                            </Badge>
+                                            </h6>
                                         </div>
+                                    </div>
 
-                                        <Badge>
-                                            Rank #{coin[GL_MC_RANK]}
-                                        </Badge>
-                                    </ListGroup.Item>
-                                </ListGroup>
-                            </div>
-                        ))
-                    )):
-                    <SpinnerAlert />
-            }
+                                    {
+                                        !ids &&
+                                        <span className={"span-best"}>
+                                            1ST
+                                        </span>
+                                    }
+                                </div>
+                            ))
+                        )):
+                        <SpinnerAlert />
+                }
+            </div>
 
             <TableBestCoins setShowAlert={setShowAlert} />
-        </div>
+        </Container>
     );
 };
 

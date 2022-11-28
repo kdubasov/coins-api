@@ -32,7 +32,7 @@ const PaginateNftTr = ({id,data,setShowAlert,sizePage,currentPage}) => {
             {/*title*/}
             <td>
                 <div className={"d-flex align-items-end"}>
-                    <Link to={`/nft/${data['id']}`} className={"text-white"}>
+                    <Link to={`/nft/${data['id']}`}>
                         {data[GL_NAME]}
                     </Link>
                     <p className={"m-0 mx-2 small opacity-50"}>({data[GL_SYMBOL]})</p>

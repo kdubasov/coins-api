@@ -1,0 +1,33 @@
+.DeFiMainData{
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/*inner block*/
+.DeFiMainData .inner{
+    width: calc(33% - .5em);
+    margin: 1em 0;
+    padding: 2.5em 1em;
+    border-radius: .25em;
+    border-bottom: .25em solid var(--blue-main);
+}
+/*dark/white*/
+.DeFiMainData.dark .inner{
+    background: var(--bg-search-input-dark);
+}
+.DeFiMainData.light .inner{
+    background: var(--bg-search-input-light);
+}
+/*inner text*/
+.DeFiMainData .inner p{
+    margin: 0;
+    opacity: .5;
+    font-weight: 300;
+}
+.DeFiMainData .inner h4{
+    margin: 0;
+    font-weight: 800;
+}

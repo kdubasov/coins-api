@@ -1,0 +1,25 @@
+/*table coin*/
+.TopLoseCoins .container-table{
+    width: calc(50% - .25em);
+}
+
+.TopLoseCoins select{
+    width: 150px;
+    margin-bottom: 1.3em;
+}
+.TopLoseCoins.dark select{
+    opacity: .75;
+    border: 1px solid var(--bg-search-input-dark);
+}
+.TopLoseCoins.light select{
+    border: 1px solid var(--border-nav-light);
+}
+
+.TopLoseCoins .container-table h6.top{
+    border-left: 3px solid var(--bs-green);
+    padding: .5em 0 .5em .5em;
+}
+.TopLoseCoins .container-table h6.lose{
+    border-left: 3px solid var(--bs-red);
+    padding: .5em 0 .5em .5em;
+}

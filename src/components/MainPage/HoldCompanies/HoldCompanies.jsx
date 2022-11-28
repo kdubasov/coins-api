@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_HOLD_COMPANIES} from "../../../constants/ApiCommand";
-import {Badge, Form} from "react-bootstrap";
+import {Container, Form} from "react-bootstrap";
 import InfoHoldCompanies from "./InfoHoldCompanies";
 import TableHoldCompanies from "./TableHoldCompanies";
 import {GL_COMP, GL_HOLD_TT_VAL} from "../../../constants/ApiConstants";
 import {getLang} from "../../../functions/Lang/getLang";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import {getTheme} from "../../../functions/Theme/getTheme";
+
+//css
+import "./HoldCompanies.css";
 
 const HoldCompanies = () => {
 
@@ -17,7 +21,7 @@ const HoldCompanies = () => {
     // console.log(data,'HoldCompanies');
 
     return (
-        <div className={'HoldCompanies container'}>
+        <Container className={`HoldCompanies ${getTheme(true)}`}>
             <h4 className={"m-0"}>
                 {getLang() === 'rus' && "Холдинговые компании"}
                 {getLang() === 'eng' && "Holding companies"}
@@ -44,26 +48,22 @@ const HoldCompanies = () => {
                 Object.values(data).length?
                     <>
                         {/*select for coin with text*/}
-                        <div className="box d-flex align-items-center my-5">
-                            <h5 className={'m-0'}>
-                                <Badge bg={'secondary'} className={'fw-light d-flex align-items-center'}>
-                                    <Form.Select
-                                        value={selectCoin}
-                                        onChange={e => setSelectCoin(e.target.value)}
-                                        className={'w-25 mx-2'}
-                                        size={"sm"}
-                                    >
-                                        {coinsArr.map(coin => (
-                                            <option value={coin} key={coin}>{coin.toUpperCase()}</option>
-                                        ))}
-                                    </Form.Select>
-                                    <p className={"m-0"}>
-                                        {getLang() === 'rus' && "выбран для отображения информации."}
-                                        {getLang() === 'eng' && "is currently selected for displaying information."}
-                                    </p>
-                                </Badge>
-                            </h5>
-                        </div>
+                        <h5 className={"select-value"}>
+                            <Form.Select
+                                value={selectCoin}
+                                onChange={e => setSelectCoin(e.target.value)}
+                                size={"sm"}
+                            >
+                                {coinsArr.map(coin => (
+                                    <option value={coin} key={coin}>{coin.toUpperCase()}</option>
+                                ))}
+                            </Form.Select>
+
+                            <p className={"m-0"}>
+                                {getLang() === 'rus' && "выбран для отображения информации."}
+                                {getLang() === 'eng' && "is currently selected for displaying information."}
+                            </p>
+                        </h5>
 
                         {/*main data of hold*/}
                         <InfoHoldCompanies info={data} />
@@ -82,7 +82,7 @@ const HoldCompanies = () => {
                     <SpinnerAlert />
             }
 
-        </div>
+        </Container>
     );
 };
 
