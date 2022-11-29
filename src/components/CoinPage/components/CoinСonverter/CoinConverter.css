@@ -1,0 +1,36 @@
+.CoinConverter{
+    width: 100%;
+    max-width: 700px;
+    margin: 2em 0 3em;
+}
+
+/*inputs converter*/
+.CoinConverter .converter-container{
+    display: flex;
+    justify-content: space-between;
+}
+.CoinConverter .converter-container .input-group{
+    width: calc(50% - 1.5em);
+}
+
+.CoinConverter .converter-container .input-group-text,
+.CoinConverter .converter-container .form-control,
+.CoinConverter .converter-container select{
+    padding: 1em;
+    background: none;
+}
+
+/*delete arrow from select*/
+.CoinConverter .converter-container select{
+    appearance: none;
+    overflow: hidden;
+    background: url('/public/images/general-svg/arrow-dark.svg') no-repeat 80%;
+}
+.CoinConverter.light{
+    background: url('/public/images/general-svg/arrow-light.svg') no-repeat 80%;
+}
+
+.CoinConverter .converter-container .input-group-text,
+.CoinConverter .converter-container select{
+    font-weight: 700;
+}

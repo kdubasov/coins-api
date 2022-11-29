@@ -5,9 +5,6 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {getLang} from "../../../../functions/Lang/getLang";
 import {getTheme} from "../../../../functions/Theme/getTheme";
 
-//css
-import "./MainButtons.css";
-
 const MainButtons = ({setShowAlert,coinId,table,title}) => {
 
     const theme = getTheme(true);
@@ -30,7 +27,7 @@ const MainButtons = ({setShowAlert,coinId,table,title}) => {
 
             {/*скопироавть ссылку*/}
             <CopyToClipboard text={window.location.href}>
-                <Button className={`but-${theme}`} onClick={() => handleCopy()}>
+                <Button className={`but-${theme} border`} onClick={() => handleCopy()}>
                     {getLang() === "eng" && "Copy link"}
                     {getLang() === "rus" && "Поделиться"}
                 </Button>

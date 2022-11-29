@@ -1,0 +1,47 @@
+.GeneralGraph{
+    margin: 2.5em 0 3em;
+}
+
+/*text header*/
+.GeneralGraph h4{
+    margin: 0 0 .15em 0;
+    font-weight: 700;
+}
+.GeneralGraph p.small{
+    font-weight: 400;
+}
+.GeneralGraph p.small strong{
+    color: var(--blue-main);
+    font-weight: 900;
+}
+
+/*sort header*/
+header{
+    padding: 1.25em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*graph*/
+
+/*tooltip dark*/
+.graph-coin.dark .recharts-default-tooltip{
+    background: var(--dark-bg) !important;
+    border: 1px solid var(--white-op-25) !important;
+    border-radius: .25em;
+}
+.graph-coin p.recharts-tooltip-label{
+    font-weight: 700;
+    color: var(--white);
+}
+/*tooltip light*/
+.graph-coin.light .recharts-default-tooltip{
+    background: var(--white) !important;
+    border: 1px solid var(--black-op-25) !important;
+    border-radius: .25em;
+}
+.graph-coin.light p.recharts-tooltip-label{
+    font-weight: 700;
+    color: var(--text-dark);
+}

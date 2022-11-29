@@ -10,9 +10,25 @@ button.but-dark{
     color: var(--border-nav-light);
     background: var(--bg-search-input-dark);
 }
+button.but-dark.border{
+    background: none;
+    border: 1px solid var(--white-op-25) !important;
+}
+/*light*/
 button.but-light{
     color: var(--text-dark);
     background: var(--bg-search-input-light);
+}
+button.but-light.border{
+    background: none;
+    border: 1px solid var(--black-op-25) !important;
+}
+/*disabled bg*/
+button.but-dark.border:disabled,
+button.but-light.border:disabled,
+button.but-dark.border:hover,
+button.but-light.border:hover{
+    background: var(--blue-main) !important;
 }
 
 /*прозрачная кнопка (hover синяя)*/

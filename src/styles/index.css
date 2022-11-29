@@ -25,9 +25,12 @@
     --white: #FFF;
     --white-op-75: rgba(255, 255, 255, 0.75);
     --white-op-50: rgba(255, 255, 255, 0.5);
+    --white-op-25: rgba(255, 255, 255, 0.25);
+    --white-op-15: rgba(255, 255, 255, 0.15);
     --black: #000;
     --black-op-50: rgba(0, 0, 0, 0.5);
     --black-op-25: rgba(0, 0, 0, 0.25);
+    --black-op-15: rgba(0, 0, 0, 0.15);
     --gray: #555;
 }
 

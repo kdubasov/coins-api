@@ -3,8 +3,8 @@ import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_COIN_ONE_MAIN} from "../constants/ApiCommand";
 import MainData from "../components/CoinPage/MainData";
-import {Spinner} from "react-bootstrap";
 import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
 
 const CoinPage = ({setShowAlert}) => {
 
@@ -24,7 +24,7 @@ const CoinPage = ({setShowAlert}) => {
             {
                 Object.values(dataMain.data).length?
                     <MainData dataMain={dataMain.data} setShowAlert={setShowAlert} /> :
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <SpinnerAlert />
             }
 
         </div>

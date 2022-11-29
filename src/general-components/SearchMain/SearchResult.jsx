@@ -30,7 +30,6 @@ const SearchResult = ({show,setShowRes,query,data,theme}) => {
 
     //for check result for all queries
     const getFalseRes = () => {
-
         return Boolean(
             checkValue(coins) ||
             (nfts && handleSortName(nfts).length) ||

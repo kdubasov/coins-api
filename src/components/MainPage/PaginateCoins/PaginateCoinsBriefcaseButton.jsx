@@ -52,7 +52,7 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = fa
             {//add button
                 Boolean(!Object.keys(briefcaseDBData).length || !Object.keys(briefcaseDBData).includes(elemId)) ?
                     text ?//проверяем нужна кнопка с текстом или без
-                        <Button className={`but-${theme}`} onClick={() => addCoinBriefcase(elemId)}>
+                        <Button className={`but-${theme} border`} onClick={() => addCoinBriefcase(elemId)}>
                             {getLang() === "eng" && "Add in favorites"}
                             {getLang() === "rus" && "Добавить в избранное"}
                         </Button>:
@@ -69,7 +69,7 @@ const PaginateCoinsBriefcaseButton = ({elemId,setShowAlert,table,title,text = fa
             {// delete button
                 Boolean(Object.keys(briefcaseDBData).length && Object.keys(briefcaseDBData).includes(elemId)) ?
                     text ?//проверяем нужна кнопка с текстом или без
-                        <Button className={`but-${theme}`}  onClick={() => deleteCoinBriefcase(elemId)}>
+                        <Button className={`but-${theme} border`}  onClick={() => deleteCoinBriefcase(elemId)}>
                             {getLang() === "eng" && "Delete from favorites"}
                             {getLang() === "rus" && "Удалить из избранного"}
                         </Button>:

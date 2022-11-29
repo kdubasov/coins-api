@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 import {Button, ButtonGroup} from "react-bootstrap";
+import {getTheme} from "../../../../functions/Theme/getTheme";
+import {getLang} from "../../../../functions/Lang/getLang";
 
 const GeneralGraphHeader = ({
     setTimeInterval,getObjectGraph,timeInterval,
     dataVolumes,dataPrices,dataMarketCaps
 }) => {
+
+    //theme
+    const theme = getTheme(true);
 
     //for disable button with select data
     const [selectData,setSelectData] = useState(1);
@@ -16,23 +21,69 @@ const GeneralGraphHeader = ({
     }
 
     return (
-        <header className={'my-3 w-100 d-flex justify-content-between'}>
+        <header className={`GeneralGraphHeader`}>
             <ButtonGroup size={"sm"}>
-                <Button disabled={selectData === 1} onClick={() => handleChangeData(1,dataPrices)}>Цена</Button>
-                <Button disabled={selectData === 2} onClick={() => handleChangeData(2,dataMarketCaps)}>Рын. кап.</Button>
-                <Button disabled={selectData === 3} onClick={() => handleChangeData(3,dataVolumes)}>Об. торгов.</Button>
+                <Button className={`but-${theme} border`} disabled={selectData === 1} onClick={() => handleChangeData(1,dataPrices)}>
+                    {getLang() === "eng" && "Price"}
+                    {getLang() === "rus" && "Цена"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={selectData === 2} onClick={() => handleChangeData(2,dataMarketCaps)}>
+                    {getLang() === "eng" && "Market cap"}
+                    {getLang() === "rus" && "Рын. кап."}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={selectData === 3} onClick={() => handleChangeData(3,dataVolumes)}>
+                    {getLang() === "eng" && "Volume"}
+                    {getLang() === "rus" && "Об. торгов."}
+                </Button>
             </ButtonGroup>
 
             <ButtonGroup size={"sm"}>
-                <Button disabled={timeInterval===1/24} onClick={() => setTimeInterval(1/24)}>1h</Button>
-                <Button disabled={timeInterval===6/24} onClick={() => setTimeInterval(6/24)}>6h</Button>
-                <Button disabled={timeInterval===12/24} onClick={() => setTimeInterval(12/24)}>12h</Button>
-                <Button disabled={timeInterval===24/24} onClick={() => setTimeInterval(24/24)}>24h</Button>
-                <Button disabled={timeInterval===7} onClick={() => setTimeInterval(7)}>7d</Button>
-                <Button disabled={timeInterval===30} onClick={() => setTimeInterval(30)}>30d</Button>
-                <Button disabled={timeInterval===180} onClick={() => setTimeInterval(180)}>6m</Button>
-                <Button disabled={timeInterval===365} onClick={() => setTimeInterval(365)}>1y</Button>
-                <Button disabled={timeInterval==='max'} onClick={() => setTimeInterval('max')}>Max</Button>
+                <Button className={`but-${theme} border`} disabled={timeInterval===1/24} onClick={() => setTimeInterval(1/24)}>
+                    {getLang() === "eng" && "1h"}
+                    {getLang() === "rus" && "1ч"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval===6/24} onClick={() => setTimeInterval(6/24)}>
+                    {getLang() === "eng" && "6h"}
+                    {getLang() === "rus" && "6ч"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval===12/24} onClick={() => setTimeInterval(12/24)}>
+                    {getLang() === "eng" && "12h"}
+                    {getLang() === "rus" && "12ч"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval===24/24} onClick={() => setTimeInterval(24/24)}>
+                    {getLang() === "eng" && "24h"}
+                    {getLang() === "rus" && "24ч"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval===7} onClick={() => setTimeInterval(7)}>
+                    {getLang() === "eng" && "7d"}
+                    {getLang() === "rus" && "7дн"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval===30} onClick={() => setTimeInterval(30)}>
+                    {getLang() === "eng" && "30d"}
+                    {getLang() === "rus" && "30дн"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval===180} onClick={() => setTimeInterval(180)}>
+                    {getLang() === "eng" && "6m"}
+                    {getLang() === "rus" && "6мес"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval===365} onClick={() => setTimeInterval(365)}>
+                    {getLang() === "eng" && "1y"}
+                    {getLang() === "rus" && "1год"}
+                </Button>
+
+                <Button className={`but-${theme} border`} disabled={timeInterval==='max'} onClick={() => setTimeInterval('max')}>
+                    {getLang() === "eng" && "Max"}
+                    {getLang() === "rus" && "Максимум"}
+                </Button>
             </ButtonGroup>
         </header>
     );

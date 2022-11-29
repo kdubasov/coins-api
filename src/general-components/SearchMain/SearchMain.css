@@ -78,6 +78,7 @@ input.search-input.light:hover::placeholder{
     color: inherit;
     width: 50%;
     margin: 0 0 .5em 0;
+    font-weight: 500;
 }
 .SearchResultInner.dark p.small.show-value{
     border-bottom: 1px solid var(--bg-search-input-light);
