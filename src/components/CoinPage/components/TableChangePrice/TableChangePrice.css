@@ -1,0 +1,35 @@
+.TableChangePrice{
+    width: 100%;
+    margin: 1em 0 5em;
+}
+
+.TableChangePrice h4{
+    margin: 0 0 .25em 0;
+}
+
+/*container for blocks*/
+.TableChangePrice .blocks-container{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+/*inner blocks styles*/
+.TableChangePrice .inner{
+    width: calc((100% / 8) - .5em);
+    padding: 1em;
+    border-radius: .25em;
+    background: var(--bg-search-input-dark);
+}
+.TableChangePrice.light .inner{
+    background: var(--bg-search-input-light);
+}
+.TableChangePrice .inner p.small{
+    margin: 0;
+    font-weight: 500;
+    opacity: .75;
+}
+.TableChangePrice .inner h5{
+    font-weight: 700;
+}

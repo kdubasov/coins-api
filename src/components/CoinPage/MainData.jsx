@@ -5,14 +5,14 @@ import {
     GL_NAME, GL_SYMBOL
 } from "../../constants/ApiConstants";
 import TableMarketData from "./components/TableMarketData/TableMarketData";
-import TableChangePrice from "./components/TableChangePrice";
+import TableChangePrice from "./components/TableChangePrice/TableChangePrice";
 import Links from "./components/Links/Links";
 import Developers from "./components/Developers/Developers";
 import GeneralGraph from "./components/GeneralGraph/GeneralGraph";
 import DateInfo from "./components/DateInfo/DateInfo";
 import TickersTable from "./components/TickersTable/TickersTable";
 import CoinConverter from "./components/CoinСonverter/CoinСonverter";
-import TableMarketDataMore from "./components/TableMarketDataMore";
+import PriceStatistic from "./components/PriceStatistic/PriceStatistic";
 import DefaultInfo from "./components/DefaultInfo/DefaultInfo";
 import {getTheme} from "../../functions/Theme/getTheme";
 
@@ -55,7 +55,7 @@ const MainData = ({dataMain,setShowAlert}) => {
             <TableChangePrice data={dataMain[GL_MD]} />
 
             {/*market-data table*/}
-            <TableMarketDataMore data={dataMain[GL_MD]} title={dataMain[GL_NAME]} />
+            <PriceStatistic data={dataMain[GL_MD]} title={dataMain[GL_NAME]} />
 
             {/*date info about coin*/}
             <DateInfo id={dataMain.id} />

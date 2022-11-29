@@ -1,33 +1,62 @@
 .CoinConverter{
     width: 100%;
     max-width: 700px;
-    margin: 2em 0 3em;
+    margin: 4em 0 5em;
 }
 
 /*inputs converter*/
 .CoinConverter .converter-container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .CoinConverter .converter-container .input-group{
     width: calc(50% - 1.5em);
 }
 
+/*input font-size*/
+.CoinConverter .converter-container .form-control{
+    font-size: 1.4em;
+    font-weight: 800;
+}
+/*placeholder colors*/
+.CoinConverter.dark .form-control::placeholder{
+    font-weight: 500;
+    color: var(--white-op-15);
+}
+.CoinConverter.light .form-control::placeholder{
+    font-weight: 500;
+    color: var(--black-op-15);
+}
+
+/*inputs styles*/
 .CoinConverter .converter-container .input-group-text,
 .CoinConverter .converter-container .form-control,
 .CoinConverter .converter-container select{
-    padding: 1em;
+    padding: .5em 1em;
     background: none;
+    color: var(--white);
+    border: 1px solid var(--white-op-15);
+}
+.CoinConverter.light .converter-container .input-group-text,
+.CoinConverter.light .converter-container .form-control,
+.CoinConverter.light .converter-container select{
+    color: var(--text-dark);
+    border: 1px solid var(--black-op-15);
 }
 
-/*delete arrow from select*/
+/*delete arrow from select and add image arrow*/
 .CoinConverter .converter-container select{
     appearance: none;
     overflow: hidden;
     background: url('/public/images/general-svg/arrow-dark.svg') no-repeat 80%;
 }
-.CoinConverter.light{
+.CoinConverter.light .converter-container select{
     background: url('/public/images/general-svg/arrow-light.svg') no-repeat 80%;
+}
+/*options*/
+.CoinConverter.dark .converter-container select option{
+    background: var(--dark-bg);
 }
 
 .CoinConverter .converter-container .input-group-text,

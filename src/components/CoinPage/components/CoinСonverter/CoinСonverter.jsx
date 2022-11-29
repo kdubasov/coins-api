@@ -46,6 +46,7 @@ const CoinConverter = ({symbol,data}) => {
                             />
                         </InputGroup>
 
+                        <img src={`/images/CoinConverter/arrow-circle-${getTheme(true)}.svg`} alt=""/>
 
                         <InputGroup>
                             <Form.Select className={'w-25'} value={selectValue} onChange={e => setSelectValue(e.target.value)}>
