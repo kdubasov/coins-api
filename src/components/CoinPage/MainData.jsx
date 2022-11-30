@@ -48,23 +48,26 @@ const MainData = ({dataMain,setShowAlert}) => {
                 symbol={dataMain[GL_SYMBOL].toUpperCase()}
             />
 
-            {/*converter*/}
-            <CoinConverter symbol={dataMain[GL_SYMBOL].toUpperCase()} data={dataMain[GL_MD][GL_CUR_PRICE]} />
-
             {/*change price table*/}
             <TableChangePrice data={dataMain[GL_MD]} />
 
-            {/*market-data table*/}
-            <PriceStatistic data={dataMain[GL_MD]} title={dataMain[GL_NAME]} />
+            <div className="center-block">
+                {/*market-data table*/}
+                <PriceStatistic data={dataMain[GL_MD]} title={dataMain[GL_NAME]} />
 
-            {/*date info about coin*/}
-            <DateInfo id={dataMain.id} />
+                <div className="right">
+                    {/*converter*/}
+                    <CoinConverter symbol={dataMain[GL_SYMBOL].toUpperCase()} data={dataMain[GL_MD][GL_CUR_PRICE]} />
+                    {/*date info about coin*/}
+                    <DateInfo id={dataMain.id} name={dataMain[GL_NAME]} />
+                </div>
+            </div>
 
             {/*Developers data*/}
             <Developers data={dataMain[GL_DEV_DATA]} />
 
             {/*tickers*/}
-            <TickersTable id={dataMain.id} />
+            <TickersTable id={dataMain.id} name={dataMain[GL_NAME]} />
 
         </div>
     );

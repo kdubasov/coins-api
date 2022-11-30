@@ -13,7 +13,7 @@ import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 import "./TrendCoins.css";
 import {getTheme} from "../../../functions/Theme/getTheme";
 
-const TrendCoins = ({setShowAlert}) => {
+const TrendCoins = ({setShowAlert,showBestCoins = true}) => {
 
     const data = useApi(GLOBAL_API_TOP_7_COINS).data;
     // console.log(data.coins,'TrendCoins data');
@@ -86,7 +86,10 @@ const TrendCoins = ({setShowAlert}) => {
                 }
             </div>
 
-            <TableBestCoins setShowAlert={setShowAlert} />
+            {
+                showBestCoins &&
+                <TableBestCoins setShowAlert={setShowAlert} />
+            }
         </Container>
     );
 };

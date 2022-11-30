@@ -1,3 +1,4 @@
+/*top block*/
 .MainData.coin .top-block{
     width: 100%;
     padding: 1em 0 2em;
@@ -19,4 +20,15 @@
 }
 .MainData.coin .top-block .right{
     width: calc(25% - 2em);
+}
+
+/*center block*/
+.MainData.coin .center-block{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5em;
+}
+.MainData.coin .center-block .right{
+    width: 70%;
+    padding-left: 2em;
 }

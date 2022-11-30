@@ -1,0 +1,37 @@
+.Developers{
+    margin: 3em 0;
+}
+
+.Developers .dev-blocks-container{
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+/*inner block*/
+.Developers .dev-blocks-container .inner{
+    width: calc(20% - .25em);
+    padding: 1.5em 1em;
+    border-radius: .25em;
+    background: var(--bg-search-input-dark);
+}
+.Developers.light .dev-blocks-container .inner{
+    background: var(--bg-search-input-light);
+}
+
+.Developers .dev-blocks-container .inner h5,
+.Developers .dev-blocks-container .inner p.small{
+    margin: 0;
+    font-weight: 700;
+}
+.Developers .dev-blocks-container .inner p.small{
+    opacity: .5;
+    font-weight: 500;
+}
+
+/*graph*/
+.Developers .DevGraph{
+    margin-top: 1em;
+}

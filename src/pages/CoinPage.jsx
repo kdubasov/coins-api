@@ -5,6 +5,7 @@ import {GLOBAL_API_COIN_ONE_MAIN} from "../constants/ApiCommand";
 import MainData from "../components/CoinPage/MainData";
 import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
 import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
+import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
 
 const CoinPage = ({setShowAlert}) => {
 
@@ -26,6 +27,9 @@ const CoinPage = ({setShowAlert}) => {
                     <MainData dataMain={dataMain.data} setShowAlert={setShowAlert} /> :
                     <SpinnerAlert />
             }
+
+            <br/><br/><br/>
+            <TrendCoins setShowAlert={setShowAlert} showBestCoins={false} />
 
         </div>
     );

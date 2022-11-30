@@ -13,7 +13,7 @@
 
 /*blocks container*/
 .PriceStatistic .cont-blocks-ps{
-    padding: 1em 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
 }
@@ -24,6 +24,9 @@
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid var(--white-op-15);
+}
+.PriceStatistic .cont-blocks-ps .inner:last-child{
+    border-bottom: none;
 }
 .PriceStatistic.light .cont-blocks-ps .inner{
     border-bottom: 1px solid var(--black-op-15);

@@ -1,0 +1,70 @@
+.DateInfo{
+    padding: 2em 0;
+}
+
+/*text top*/
+.DateInfo h4{
+    margin-bottom: 0;
+}
+.DateInfo p{
+    margin-bottom: 2em;
+}
+
+.DateInfo .form-control{
+    padding: .5em 1em;
+    font-size: 1.4em;
+    font-weight: 800;
+}
+/*placeholder colors*/
+.DateInfo.dark .form-control{
+    font-weight: 500;
+    color: var(--white-op-15);
+}
+.DateInfo.light .form-control{
+    font-weight: 500;
+    color: var(--black-op-15);
+}
+/*inputs styles*/
+.DateInfo .form-control,
+.DateInfo .form-control:focus{
+    width: 30%;
+    min-width: 200px;
+    padding: .5em 1em;
+    background: none;
+    color: var(--white);
+    border: 1px solid var(--white-op-15);
+}
+.DateInfo.light .form-control{
+    color: var(--text-dark);
+    border: 1px solid var(--black-op-15);
+}
+
+/*DateInfoResult*/
+.DateInfoResult{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.DateInfoResult .inner{
+    width: calc(50% - .25em);
+    margin: .25em 0;
+    padding: 1.5em 1em;
+    border-radius: .25em;
+    background: var(--bg-search-input-dark);
+    display: flex;
+    flex-direction: column;
+}
+.DateInfoResult.light .inner{
+    background: var(--bg-search-input-light);
+}
+.DateInfoResult .inner p.small,
+.DateInfoResult .inner h5{
+    font-weight: 500;
+    margin: 0;
+}
+.DateInfoResult .inner p.small{
+    opacity: .5;
+}

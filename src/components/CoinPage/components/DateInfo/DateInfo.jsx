@@ -1,11 +1,16 @@
 import React, {useRef, useState} from 'react';
-import {Badge, Button, FormControl} from "react-bootstrap";
+import {Alert, FormControl} from "react-bootstrap";
 import DateInfoResult from "./DateInfoResult";
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_COINS_HISTORY} from "../../../../constants/ApiCommand";
 import {GL_MD} from "../../../../constants/ApiConstants";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
-const DateInfo = ({id}) => {
+//css
+import "./DateInfo.css";
+import {getLang} from "../../../../functions/Lang/getLang";
+
+const DateInfo = ({id,name}) => {
 
     //get date with format what we need
     const getDate = (reverse = false) => {
@@ -36,21 +41,33 @@ const DateInfo = ({id}) => {
     // console.log(data)
 
     return (
-        <div className={`DateInfo p-3 my-3 border`}>
+        <div className={`DateInfo ${getTheme(true)}`}>
             <h4>
-                <Badge>Узнать основную информацю о монете за любую дату</Badge>
+                {getLang() === "eng" && `${name} USD (Historical Data)`}
+                {getLang() === "rus" && `${name} USD (Исторические данные)`}
             </h4>
+            <p className="small">
+                {getLang() === "rus" && "Поиск основной информации о монете за любую дату."}
+                {getLang() === "eng" && "Search for basic information about a coin for any date."}
+            </p>
 
             {/*input with button*/}
             <FormControl
                 max={getDate('reverse')}
                 ref={inpurRef}
                 type={'date'}
+                onChange={handleSendDate}
             />
-            <Button onClick={handleSendDate} size={'sm mt-1'}>Показать информацию</Button>
 
             {/*blcok with search result*/}
-            <DateInfoResult data={data[GL_MD]} date={date} />
+            {
+                (data[GL_MD] && Object.values(data[GL_MD]).length) ?
+                    <DateInfoResult data={data[GL_MD]} date={date} />:
+                    <Alert className={"mt-2 p-2 small"}>
+                        {getLang() === "eng" && `No information found for ${date}, please try another date.`}
+                        {getLang() === "rus" && `Информация за ${date} не найдена, попробуйте другую дату.`}
+                    </Alert>
+            }
         </div>
     );
 };

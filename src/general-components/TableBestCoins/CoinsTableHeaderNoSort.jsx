@@ -24,8 +24,8 @@ const CoinsTableHeaderNoSort = () => {
                 {getLang() === "eng" && "24h"}
             </th>
             <th>
-                {getLang() === "rus" && "7д"}
-                {getLang() === "eng" && "7d"}
+                {getLang() === "rus" && "7 Дней"}
+                {getLang() === "eng" && "7 Days"}
             </th>
             <th>
                 {getLang() === "rus" && "Мин/Макс 24ч"}

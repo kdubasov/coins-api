@@ -140,8 +140,8 @@ const PaginateCoinsSort = ({data,setDataSort}) => {
             </td>
             <td>
                 <Button className={`but-no-redact ${theme}`} size={"sm"} disabled={true}>
-                    {getLang() === "rus" && "График 3д"}
-                    {getLang() === "eng" && "Graph 3d"}
+                    {getLang() === "rus" && "График 3 дня"}
+                    {getLang() === "eng" && "Graph 3 Days"}
                 </Button>
             </td>
         </tr>
