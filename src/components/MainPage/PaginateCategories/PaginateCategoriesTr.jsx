@@ -33,9 +33,9 @@ const PaginateCategoriesTr = ({elem,ids}) => {
             {/*	Изм. 24ч*/}
             <PaginateChangeTd value={elem[GL_MKCH_24H]} text={'%'} />
             {/*Рын. кап.*/}
-            <td>{getNumRedAfterDoot(elem[GL_MK]).toLocaleString()}$</td>
+            <td>{Number(getNumRedAfterDoot(elem[GL_MK])).toLocaleString()}$</td>
             {/*Об. торгов 24ч*/}
-            <td>{getNumRedAfterDoot(elem[GL_VOL_24H]).toLocaleString()}$</td>
+            <td>{Number(getNumRedAfterDoot(elem[GL_VOL_24H])).toLocaleString()}$</td>
         </tr>
     );
 };

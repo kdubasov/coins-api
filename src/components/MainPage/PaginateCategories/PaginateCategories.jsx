@@ -7,6 +7,9 @@ import {getTheme} from "../../../functions/Theme/getTheme";
 import {getLang} from "../../../functions/Lang/getLang";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
 
+//css
+import "./PaginateCategories.css";
+
 const PaginateCategories = () => {
 
     const data = useApi(GLOBAL_API_CATEGORIES_LIST_ALL).data;

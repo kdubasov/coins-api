@@ -1,0 +1,28 @@
+.CategoriesDataList{
+    width: 100%;
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+.CategoriesDataList .inner{
+    width: calc(33% - .5em);
+    padding: 1.5em 1em;
+    border-radius: .25em;
+    background: var(--bg-search-input-dark);
+}
+.CategoriesDataList.light .inner{
+    background: var(--bg-search-input-light);
+}
+
+/*text*/
+.CategoriesDataList .inner p.small{
+    margin: 0;
+    opacity: .5;
+    font-weight: 500;
+}
+.CategoriesDataList .inner h5{
+    margin: 0;
+    font-weight: 700;
+}

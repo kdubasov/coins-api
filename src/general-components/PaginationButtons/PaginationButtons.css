@@ -11,11 +11,11 @@
 }
 .PaginationButtons .pagination.dark .page-link{
     color: var(--white);
-    border: 1px solid var(--white);
+    border: 1px solid var(--white-op-25);
 }
 .PaginationButtons .pagination.light .page-link{
     color: var(--text-dark);
-    border: 1px solid var(--text-dark);
+    border: 1px solid var(--black-op-25);
 }
 
 /*item active*/

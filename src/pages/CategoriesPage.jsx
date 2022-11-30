@@ -2,11 +2,19 @@ import React, {useState} from 'react';
 import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_IDS, GLOBAL_API_COINS_SORT_CATEGORIES_LIST} from "../constants/ApiCommand";
-import {Alert, Badge, Spinner, Table} from "react-bootstrap";
+import {Alert, Table} from "react-bootstrap";
 import PaginateCoinsSort from "../components/MainPage/PaginateCoins/PaginateCoinsSort";
 import PaginateCoinsTr from "../components/MainPage/PaginateCoins/PaginateCoinsTr";
 import {GL_NAME} from "../constants/ApiConstants";
 import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
+import {getTheme} from "../functions/Theme/getTheme";
+import {getLang} from "../functions/Lang/getLang";
+
+//css
+import "../components/CategoriesPage/CategoriesPage.css";
+import CategoriesDataList from "../components/CategoriesPage/CategoriesDataList/CategoriesDataList";
+
 
 const CategoriesPage = ({setShowAlert}) => {
 
@@ -51,42 +59,79 @@ const CategoriesPage = ({setShowAlert}) => {
 
             {
                 !getIdAndName() &&
-                <Alert className={'my-3 small'}>
-                    Информация о данной категории не найдена,
-                    попробуйте позже или сообщите о проблеме в поддержку
+                <Alert className={'my-3 small p-2'}>
+                    {
+                        getLang() === "rus" &&
+                        "Информация о данной категории не найдена, " +
+                        "попробуйте позже или сообщите о проблеме в поддержку."
+                    }
+                    {
+                        getLang() === "eng" &&
+                        "No information found for this category. " +
+                        "Try again later or report the problem to support."
+                    }
                 </Alert>
             }
 
-            <h4 className={'mt-5 mb-0'}>
-                Категория: <Badge>{getIdAndName() && getIdAndName()[GL_NAME]}</Badge>
-            </h4>
-            <p className={`w-75 mb-4`}>
-                На данной странице показаны топ-100 монет категории
-                <Badge className={'mx-1'} bg={"secondary"}>
-                    {getIdAndName() && getIdAndName()[GL_NAME]}
-                </Badge>.
-                Если катеория содержит менее ста монет, то отображаются все монеты данной категории.
-            </p>
+            {
+                getIdAndName() &&
+                <>
+                    <h4 className={'mt-5 mb-0'}>
+                        {getLang() === "eng" && "Category: "}
+                        {getLang() === "rus" && "Категория: "}
+                        <strong>
+                            {getIdAndName() && getIdAndName()[GL_NAME]}
+                        </strong>
+                    </h4>
+
+                    <p className={`small mb-4`}>
+                        {getLang() === "eng" && "This page shows the top 100 coins of the category"}
+                        {getLang() === "rus" && "На данной странице показаны топ-100 монет категории"}
+                        <strong className={"mx-1"}>
+                            {getIdAndName() && getIdAndName()[GL_NAME]}
+                        </strong>.<br />
+                        {
+                            getLang() === "eng" &&
+                            "If the category contains less than one hundred coins, then all coins of this category are displayed."
+                        }
+                        {
+                            getLang() === "rus" &&
+                            "Если катеория содержит менее ста монет, то отображаются все монеты данной категории."
+                        }
+                    </p>
+                </>
+            }
+
+            {
+                (getIdAndName() && getIdAndName()[GL_NAME]) &&
+                <CategoriesDataList name={getIdAndName()[GL_NAME]} />
+            }
 
             {/*TABLE FOR COINS*/}
             {
                 //check result and show spinner or table with coins
                 Object.keys(data.data).length && getIdAndName()?
-                    <Table striped bordered hover>
-                        <thead>
+                    <>
+                        <h4>
+                            {getLang() === "eng" && "Top coins for this category."}
+                            {getLang() === "rus" && "Лучшие монеты данной категории."}
+                        </h4>
+                        <Table className={getTheme(true)}>
+                            <thead>
                             <PaginateCoinsSort data={data.data} setDataSort={setDataSort} />
-                        </thead>
+                            </thead>
 
-                        <tbody>
-                        {
-                            (dataSort ?? data.data).map(elem =>(
-                                <PaginateCoinsTr setShowAlert={setShowAlert} key={elem.id} elem={elem} />
-                            ))
-                        }
-                        </tbody>
-                    </Table>
+                            <tbody>
+                            {
+                                (dataSort ?? data.data).map(elem =>(
+                                    <PaginateCoinsTr setShowAlert={setShowAlert} key={elem.id} elem={elem} />
+                                ))
+                            }
+                            </tbody>
+                        </Table>
+                    </>
                     :
-                    <Spinner animation={"border"} className={'mb-3'} variant={"primary"} />
+                    <SpinnerAlert />
             }
 
         </div>

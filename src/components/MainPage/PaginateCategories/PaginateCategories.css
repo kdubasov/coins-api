@@ -1,0 +1,9 @@
+/*top text*/
+.Categories header{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Categories header p.small{
+    width: 100%;
+}
