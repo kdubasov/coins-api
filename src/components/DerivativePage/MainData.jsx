@@ -8,41 +8,58 @@ import {
     GL_PER_PAIRS,
     GL_URL
 } from "../../constants/ApiConstants";
-import {ListGroup, ListGroupItem} from "react-bootstrap";
+import {getLang} from "../../functions/Lang/getLang";
+
+//css
+import "./MainDataDerivatives.css";
+import {getTheme} from "../../functions/Theme/getTheme";
 
 const MainData = ({data}) => {
 
-    // console.log(data,'for derivative')
+    // console.log(data,'for derivative');
 
-    const getListGroupItem = (text,value,priceValue = false) => {
+    const getInnerBlock = (text,value,priceValue = false) => {
         if(data[value] || data[value] === 0){
             return (
-                <ListGroupItem>
-                    <h5 className={'m-0 fw-bold'}>{data[value]}{priceValue}</h5>
-                    <p className={'small m-0'}>{text}</p>
-                </ListGroupItem>
+                <div className={"inner"}>
+                    <h5 className={'m-0'}>
+                        {Number(data[value]).toLocaleString("RU")}
+                        {priceValue}
+                    </h5>
+                    <p className={'m-0 small'}>{text}</p>
+                </div>
             )
         }
         return false
     }
 
     return (
-        <div className={'w-100 p-3 mt-4 border'}>
-            <div className={'w-100 d-flex justify-content-between align-items-center'}>
-                <span className={'d-flex align-items-center'}>
-                    <img width={50} src={data[GL_IMAGE]} alt={data[GL_NAME]} style={{borderRadius:'.25em'}}/>
-                    <p className={'m-0 mx-2'}>{data[GL_NAME]}</p>
+        <div className={`MainData derivatives ${getTheme(true)}`}>
+            <header>
+                <span className={'logo-cont'}>
+                    <img className={"logo"} src={data[GL_IMAGE]} alt={data[GL_NAME]} />
+                    <h4>{data[GL_NAME]}</h4>
                 </span>
-                <a href={data[GL_URL]} target={"_blank"} rel={"noreferrer"}>Перейти на оф.сайт</a>
-            </div>
 
-            <ListGroup className={'mt-3'} horizontal>
-                {getListGroupItem('Объем торгов за 24 часа',GL_DEFI_TR_24H_BTC,'(btc)')}
-                {getListGroupItem('Бессрочные контракты',GL_FUT_PAIRS,)}
-                {getListGroupItem('Сумма открытых позиций за 24 часа',GL_OP_INT_BTC,'(btc)')}
-                {getListGroupItem('Пары',GL_PER_PAIRS,)}
-                {getListGroupItem('Год основания',GL_EXC_YEAR,)}
-            </ListGroup>
+                <h5 className={"m-0"}>
+                    <a href={data[GL_URL]} target={"_blank"} rel={"noreferrer"}>
+                        {getLang() === "eng" && "Go official website"}
+                        {getLang() === "rus" && "Перейти на оф.сайт"}
+                    </a>
+                </h5>
+            </header>
+
+            <div className={'deriv-blocks-container'}>
+                {getInnerBlock(getLang() === "eng" ? '24h Volume' : 'Объем трогов 24ч',GL_DEFI_TR_24H_BTC,'BTC')}
+                {getInnerBlock(getLang() === "eng" ? 'Perpetual Contracts' : 'Бессрочные контракты',GL_FUT_PAIRS,)}
+                {getInnerBlock(
+                    getLang() === "eng" ? 'Amount of open positions in 24 hours' : 'Сумма открытых позиций за 24 часа',
+                    GL_OP_INT_BTC,
+                    'BTC'
+                )}
+                {getInnerBlock(getLang() === "eng" ? 'Pairs' : 'Пары',GL_PER_PAIRS,)}
+                {getInnerBlock(getLang() === "eng" ? 'Year of foundation' : 'Год основания',GL_EXC_YEAR,)}
+            </div>
         </div>
     );
 };

@@ -1,0 +1,11 @@
+.ExchangesGraph{
+    width: 100%;
+    padding: 3em 0;
+}
+
+.ExchangesGraph h5{
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

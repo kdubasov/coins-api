@@ -3,10 +3,10 @@ import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_DERIVATIVE_ONE} from "../constants/ApiCommand";
 import ExchangesGraph from "../components/ExchangesPage/components/ExchangesGraph/ExchangesGraph";
-import {Spinner} from "react-bootstrap";
 import MainData from "../components/DerivativePage/MainData";
 import DerivativesTickers from "../components/DerivativePage/components/DerivativesTickers/DerivativesTickers";
 import {GL_TICKERS} from "../constants/ApiConstants";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
 
 const DerivativePage = () => {
 
@@ -28,7 +28,7 @@ const DerivativePage = () => {
                             <DerivativesTickers data={mainData[GL_TICKERS]} />
                         }
                     </>:
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <SpinnerAlert />
             }
         </div>
     );

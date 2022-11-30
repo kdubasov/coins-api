@@ -1,27 +1,36 @@
 import React from 'react';
-import {Form} from "react-bootstrap";
+import {Button, ButtonGroup} from "react-bootstrap";
+import {getLang} from "../../../../functions/Lang/getLang";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 const ExchangesGraphSelect = ({daysShow,setDaysShow}) => {
 
     //array with data what we can check in graph
     const daysArr = [
-        {num:1,text:'1 день'},
-        {num:7,text:'1 неделя'},
-        {num:14,text:'2 недели'},
-        {num:30,text:'1 месяц'},
-        {num:60,text:'2 месяца'},
-        {num:150,text:'150 дней'},
-        {num:365,text:'1 год'},
+        {num:1,text:getLang() === "rus" ? "1 день" : "1 day"},
+        {num:7,text:getLang() === "rus" ? "1нед" : "1 week"},
+        {num:14,text:getLang() === "rus" ? "2нед" : "2 weeks"},
+        {num:30,text:getLang() === "rus" ? "1мес" : "1 mon"},
+        {num:60,text:getLang() === "rus" ? "2мес" : "2 mons"},
+        {num:150,text:getLang() === "rus" ? "150дн" : "150 days"},
+        {num:365,text:getLang() === "rus" ? "1 год" : "1 year"},
         ];
 
     return (
-        <Form.Select value={daysShow} onChange={e => setDaysShow(e.target.value)} size={"sm"} className={'mx-2 w-25'}>
+        <ButtonGroup size={"sm"}>
             {
-                daysArr.map(day => (
-                    <option key={day.num} value={day.num}>{day.text}</option>
+                daysArr.map(elem => (
+                    <Button
+                        disabled={daysShow === elem.num}
+                        key={elem.num}
+                        onClick={() => setDaysShow(elem.num)}
+                        className={`but-${getTheme(true)} border`}
+                    >
+                        {elem.text}
+                    </Button>
                 ))
             }
-        </Form.Select>
+        </ButtonGroup>
     );
 };
 

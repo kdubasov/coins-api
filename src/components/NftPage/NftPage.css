@@ -6,7 +6,10 @@
 
 .MainData.nft header{
     width: calc(60% - 1em);
-    margin: 1em 0 1em;
+    /*margin: 1em 0 1em;*/
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .MainData.nft header .top-content{
@@ -49,7 +52,7 @@
 .nft-market-data .inner{
     width: calc(50% - 10px);
     margin: 5px;
-    padding: 2em 1em;
+    padding: 1.5em 1em;
     border-radius: .5em;
     display: flex;
     align-content: center;

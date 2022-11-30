@@ -1,0 +1,52 @@
+.MainData.derivatives{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*header*/
+.MainData.derivatives header{
+    width: 100%;
+    padding: 3em 0;
+    display: flex;
+    justify-content: space-between;
+}
+.MainData.derivatives header .logo-cont{
+    display: flex;
+    align-items: center;
+}
+.MainData.derivatives header .logo-cont h4{
+    font-weight: 700;
+    margin: 0 0 0 .5em;
+}
+.MainData.derivatives header .logo-cont img{
+    width: 80px;
+    border-radius: .25em;
+}
+
+/*deriv-blocks-container*/
+.deriv-blocks-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 1em;
+}
+.deriv-blocks-container .inner{
+    width: calc(20% - .5em);
+    padding: 1.5em 1em;
+    border-radius: .25em;
+    background: var(--bg-search-input-dark);
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.derivatives.light .deriv-blocks-container .inner{
+    background: var(--bg-search-input-light);
+}
+.deriv-blocks-container .inner p.small{
+    width: 100%;
+    font-weight: 500;
+    opacity: .5;
+}
+.deriv-blocks-container .inner h5{
+    font-weight: 700;
+}

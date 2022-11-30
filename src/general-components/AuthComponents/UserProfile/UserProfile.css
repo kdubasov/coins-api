@@ -26,6 +26,7 @@
 .UserData header{
     display: flex;
     margin-bottom: 1em;
+    justify-content: flex-start;
 }
 /*img*/
 .UserData header img.user-photo,

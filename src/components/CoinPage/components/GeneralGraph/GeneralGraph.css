@@ -26,21 +26,25 @@ header{
 /*graph*/
 
 /*tooltip dark*/
+.ExchangesGraph .recharts-default-tooltip,
 .graph-coin.dark .recharts-default-tooltip{
     background: var(--dark-bg) !important;
     border: 1px solid var(--white-op-25) !important;
     border-radius: .25em;
 }
+.ExchangesGraph p.recharts-tooltip-label,
 .graph-coin p.recharts-tooltip-label{
     font-weight: 700;
     color: var(--white);
 }
 /*tooltip light*/
+.ExchangesGraph.light .recharts-default-tooltip,
 .graph-coin.light .recharts-default-tooltip{
     background: var(--white) !important;
     border: 1px solid var(--black-op-25) !important;
     border-radius: .25em;
 }
+.ExchangesGraph.light p.recharts-tooltip-label,
 .graph-coin.light p.recharts-tooltip-label{
     font-weight: 700;
     color: var(--text-dark);

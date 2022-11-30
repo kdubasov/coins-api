@@ -2,8 +2,10 @@ import React from 'react';
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES_ID_TICKERS} from "../../../../constants/ApiCommand";
 import {GL_TICKERS} from "../../../../constants/ApiConstants";
-import {Badge, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import ExchangesTickersTr from "./ExchangesTickersTr";
+import {getLang} from "../../../../functions/Lang/getLang";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 
 const ExchangesTickers = ({id,mainData}) => {
@@ -20,19 +22,22 @@ const ExchangesTickers = ({id,mainData}) => {
     return (
         <div className={`ExchangesCoins`}>
 
-            <h4><Badge>Рынки</Badge></h4>
+            <h4>
+                {getLang() === "rus" && "Рынки"}
+                {getLang() === "eng" && "Markets"}
+            </h4>
 
-            <Table striped bordered hover>
+            <Table className={getTheme(true)}>
                 <thead>
                     <tr className={"small"}>
                         <th>#</th>
-                        <th>Монета</th>
-                        <th>Ссылка</th>
-                        <th>Доверие</th>
-                        <th>Спред</th>
-                        <th>Объем торгов за 24 часа</th>
-                        <th>Преобразованный объем</th>
-                        <th>Последняя сделка</th>
+                        <th>{getLang() === "eng" ? "Coins" : "Монеты"}</th>
+                        <th>{getLang() === "eng" ? "Link" : "Ссылка"}</th>
+                        <th>{getLang() === "eng" ? "Confidence" : "Доверие"}</th>
+                        <th>{getLang() === "eng" ? "Spread" : "Спред"}</th>
+                        <th>{getLang() === "eng" ? "24h Volume" : "Объем торгов за 24 часа"}</th>
+                        <th>{getLang() === "eng" ? "Converted volume" : "Преобразованный объем"}</th>
+                        <th>{getLang() === "eng" ? "Last trade" : "Последняя сделка"}</th>
                     </tr>
                 </thead>
 

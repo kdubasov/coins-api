@@ -9,7 +9,7 @@ import {
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 import {Link} from "react-router-dom";
-import {Badge} from "react-bootstrap";
+import {getLang} from "../../../../functions/Lang/getLang";
 
 const ExchangesTickersTr = ({tick,ids}) => {
 
@@ -18,7 +18,7 @@ const ExchangesTickersTr = ({tick,ids}) => {
 
     return (
         <tr className={"small"}>
-            <td>{ids + 1}</td>
+            <td>#{ids + 1}</td>
             {/*Монета*/}
             <td>
                 <Link to={`/coins/${tick[FL_ECH_COIN_ID]}`}>
@@ -43,41 +43,49 @@ const ExchangesTickersTr = ({tick,ids}) => {
                 </a>
             </td>
             {/*Доверие*/}
-            <td className={`d-flex justify-content-center align-content-center`}>
+            <td>
                 {
-                    tick[GL_EXH_TR_SC]?
-                        <div style={{width:15,height:15,borderRadius:15,background:tick[GL_EXH_TR_SC]}} />:
-                        '-'
+                    tick[GL_EXH_TR_SC] &&
+                    <div
+                        style={{
+                            width:25,
+                            height:25,
+                            background:`${tick[GL_EXH_TR_SC]}`,
+                            borderRadius:5,
+                            margin:"auto",
+                        }}
+                    />
                 }
             </td>
             {/*спред*/}
             <td>
-                {tick[GL_EXC_TICK_SPR]? getNumRedAfterDoot(tick[GL_EXC_TICK_SPR],3) + '%' : '-'}
+                {tick[GL_EXC_TICK_SPR] && getNumRedAfterDoot(tick[GL_EXC_TICK_SPR],3) + '%'}
             </td>
             {/*об торгов 24h*/}
             <td>
-                {getNumRedAfterDoot(tick[GL_VOL],3) + ' ' + tick[GL_EXC_BASE]}
+                {Number(getNumRedAfterDoot(tick[GL_VOL],3)).toLocaleString("RU") + ' ' + tick[GL_EXC_BASE]}
             </td>
             <td>
                 {
                     Object.entries(tick[GL_EXC_CONV_VOL]).map((elem,ids) => (
                         <p key={ids} className={"small m-0"}>
-                            <strong>{elem[0] && elem[0].toUpperCase()}</strong>:
-                            <Badge className={"mx-2"}>
+                            {elem[0] && elem[0].toUpperCase()}:
+                            <strong className={"mx-2"}>
                                 {
                                     getNumRedAfterDoot(elem[1],3) &&
-                                    getNumRedAfterDoot(elem[1],3).toLocaleString("RU") + 'шт.'
+                                    getNumRedAfterDoot(elem[1],3).toLocaleString("RU")
                                 }
-                            </Badge>
+                            </strong>
                         </p>
                     ))
                 }
             </td>
             <td>
                 {
-                    tick[GL_LAST_TR]?
-                        Number(tick[GL_LAST_TR].slice(8,10)) === Number(new Date().getDate()) ? 'Недавно' : 'Более дня назад'
-                        :'?'
+                    tick[GL_LAST_TR] &&
+                    Number(tick[GL_LAST_TR].slice(8,10)) === Number(new Date().getDate()) ?
+                        (getLang() === "rus" ? 'Недавно' : 'Recently') :
+                        (getLang() === "rus" ? 'Более дня назад' : 'Over a day ago')
                 }
             </td>
         </tr>

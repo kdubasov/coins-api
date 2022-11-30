@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_ALL} from "../../../constants/ApiCommand";
 import {GL_MK, GL_MKCH_24H, GL_NAME, GL_VOL_24H} from "../../../constants/ApiConstants";
-
-//css
-import "./CategoriesDataList.css";
 import {getLang} from "../../../functions/Lang/getLang";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import {Badge} from "react-bootstrap";
+
+//css
+import "./CategoriesDataList.css";
 
 const CategoriesDataList = ({name}) => {
 

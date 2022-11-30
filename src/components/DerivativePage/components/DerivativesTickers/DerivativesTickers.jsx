@@ -1,7 +1,8 @@
 import React from 'react';
-import {Badge, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import DerivativesTickersTr from "./DerivativesTickersTr";
 import {getTheme} from "../../../../functions/Theme/getTheme";
+import {getLang} from "../../../../functions/Lang/getLang";
 
 const DerivativesTickers = ({data}) => {
 
@@ -9,23 +10,22 @@ const DerivativesTickers = ({data}) => {
 
     return (
         <div className={`DerivativesTickers`}>
-            <h4><Badge>Рынки</Badge></h4>
+            <h4>{getLang() === "eng" ? "Markets" : "Рынки"}</h4>
 
-            <Table striped bordered hover variant={getTheme(true)}>
+            <Table className={getTheme(true)}>
                 <thead>
                 <tr className={"small"}>
                     <th>#</th>
-                    <th>Символ</th>
-                    <th>Монеты</th>
-                    <th>Цена</th>
-                    <th>Индексная цена</th>
-                    <th>24ч</th>
-                    <th>Об. торгов 24ч</th>
-                    <th>Спред</th>
-                    <th>Базис</th>
-                    <th>Ставка финансирования</th>
-                    <th>Сумма открытых позиций </th>
-                    <th>Ссылка</th>
+                    {/*<th>Символ</th>*/}
+                    <th>{getLang() === "eng" ? "Coins" : "Монеты"}</th>
+                    <th>{getLang() === "eng" ? "Price" : "Цена"}</th>
+                    <th>{getLang() === "eng" ? "Change 24h" : "Изм. 24ч"}</th>
+                    <th>{getLang() === "eng" ? "Volume 24h" : "Об. торгов 24ч"}</th>
+                    <th>{getLang() === "eng" ? "Spread" : "Спред"}</th>
+                    <th>{getLang() === "eng" ? "Basis" : "Базис"}</th>
+                    <th>{getLang() === "eng" ? "Funding rate" : "Ставка финансирования"}</th>
+                    <th>{getLang() === "eng" ? "Amount of open positions" : "Сумма открытых позиций"}</th>
+                    <th>{getLang() === "eng" ? "Link" : "Ссылка"}</th>
                 </tr>
                 </thead>
                 <tbody>
