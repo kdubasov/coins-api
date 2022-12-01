@@ -18,20 +18,23 @@ const DeFiMainData = () => {
     // console.log(data,'DeFi data');
 
     const getListItem = (text,apiConst,redact,sign) =>{
-
-        return(
-            <div className={"inner"}>
-                <h4 className={`m-0`}>
-                    {
-                        data[apiConst] &&
-                        redact?
-                            getNumRedAfterDoot(data[apiConst],3).toLocaleString() + (sign && sign):
-                            data[apiConst].toLocaleString()
-                    }
-                </h4>
-                <p>{text}</p>
-            </div>
-        )
+        if (data[apiConst]){
+            return(
+                <div className={"inner"}>
+                    <h4 className={`m-0`}>
+                        {
+                            data[apiConst] &&
+                            redact?
+                                Number(getNumRedAfterDoot(data[apiConst],3)).toLocaleString() + (sign && sign):
+                                data[apiConst].toLocaleString()
+                        }
+                    </h4>
+                    <p>{text}</p>
+                </div>
+            )
+        }else {
+            return false;
+        }
     }
 
     return (

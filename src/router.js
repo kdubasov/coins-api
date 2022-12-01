@@ -45,7 +45,7 @@ const Router = () => {
                         <Route path={'/coins/:coinId'} element={<CoinPage setShowAlert={setShowAlert} />} />
                         <Route path={'/nft/:nftId'} element={<NftPage setShowAlert={setShowAlert} />} />
                         <Route path={'/categories/:categoryId'} element={<CategoriesPage  setShowAlert={setShowAlert} />} />
-                        <Route path={'/exchanges/:exchangeId'} element={<ExchangesPage />} />
+                        <Route path={'/exchanges/:exchangeId'} element={<ExchangesPage setShowAlert={setShowAlert} />} />
                         <Route path={'/derivatives/:exchangeId'} element={<DerivativePage />} />
 
                         {/*auth routs*/}

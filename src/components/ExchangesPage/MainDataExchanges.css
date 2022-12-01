@@ -1,0 +1,35 @@
+.MainData.exchanges header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*left block in header*/
+.exchanges header .left{
+    display: flex;
+    align-items: center;
+}
+.exchanges header .left img{
+    width: 80px;
+    margin-right: .75em;
+    border-radius: .25em;
+}
+.exchanges header .left h3{
+    font-weight: 700;
+}
+.exchanges.dark header .left .badge{
+    background: var(--bg-search-input-dark) !important;
+}
+.exchanges.light header .left .badge{
+    color: var(--text-dark);
+    background: var(--bg-search-input-light) !important;
+}
+
+/*right*/
+.exchanges header .right{
+    display: flex;
+    flex-direction: column;
+}
+.exchanges header .right button{
+    margin-bottom: .5em;
+}

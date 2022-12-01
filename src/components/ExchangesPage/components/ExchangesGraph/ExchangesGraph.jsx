@@ -14,8 +14,10 @@ import {getTheme} from "../../../../functions/Theme/getTheme";
 
 const ExchangesGraph = ({id}) => {
 
+    //sort grapg object
     const [dataObjGraph,setDataObjGraph] = useState([]);
 
+    //how day show
     const [daysShow,setDaysShow] = useState(7);
 
     const data = useApi(GlOBAL_API_EXCHANGES_ID_GRAPH(id,daysShow)).data;
@@ -28,7 +30,7 @@ const ExchangesGraph = ({id}) => {
         for (let elem in data){
             newArr.push({
                 date:getGraphDate(data[elem][0]),
-                value:getNumRedAfterDoot(data[elem][1],3),
+                value:Number(getNumRedAfterDoot(data[elem][1],3)),
             })
         }
         setDataObjGraph(newArr)

@@ -1,0 +1,26 @@
+.ExchangesListInfo{
+    width: 100%;
+    margin: 2em 0 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.ExchangesListInfo .inner{
+    width: calc(20% - .5em);
+    padding: 1.5em 1em;
+    border-radius: .25em;
+    background: var(--bg-search-input-dark);
+}
+.ExchangesListInfo.light .inner{
+    background: var(--bg-search-input-light);
+}
+
+/*text*/
+.ExchangesListInfo .inner h5{
+    font-weight: 700;
+    margin: 0;
+}
+.ExchangesListInfo .inner p.small{
+    margin: 0;
+    font-weight: 500;
+    opacity: .5;
+}

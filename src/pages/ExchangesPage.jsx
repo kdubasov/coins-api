@@ -7,9 +7,9 @@ import {GLOBAL_API_EXCHANGES_ID_DATA} from "../constants/ApiCommand";
 import {Spinner} from "react-bootstrap";
 import ExchangesGraph from "../components/ExchangesPage/components/ExchangesGraph/ExchangesGraph";
 
-const ExchangesPage = () => {
+const ExchangesPage = ({setShowAlert}) => {
 
-    const exchangeId = useLastWordPath()
+    const exchangeId = useLastWordPath();
 
     //data on element mainData
     const mainData = useApi(GLOBAL_API_EXCHANGES_ID_DATA(exchangeId)).data;
@@ -20,7 +20,7 @@ const ExchangesPage = () => {
             {
                 Object.values(mainData).length?
                     <>
-                        <MainData data={mainData} />
+                        <MainData id={exchangeId} data={mainData} setShowAlert={setShowAlert} />
                         <ExchangesGraph id={exchangeId} />
                         <ExchangesTickers id={exchangeId} mainData={mainData} />
                     </>:
