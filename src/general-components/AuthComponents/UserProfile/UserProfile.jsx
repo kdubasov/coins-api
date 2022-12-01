@@ -25,7 +25,7 @@ const UserProfile = () => {
   return (
     <Container className={'UserProfile'}>
 
-      <h4 className={"my-4"}>
+      <h4 className={"my-4 fw-bolder"}>
         {getLang() === "eng" && "User profile"}
         {getLang() === "rus" && "Личный кабинет"}
       </h4>

@@ -45,7 +45,7 @@ const ExchangesListInfo = ({data}) => {
             </div>
 
             <div className={"inner"}>
-                <h5>{data[GL_EXH_TR_SC] ? data[GL_EXH_TR_SC] : '-'}</h5>
+                <h5>{data[GL_EXH_TR_SC] ? data[GL_EXH_TR_SC] + "/10" : '-'}</h5>
                 <p className="small">
                     {getLang() === "rus" && "Очки доверия"}
                     {getLang() === "eng" && "Trust score"}

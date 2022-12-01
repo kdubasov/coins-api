@@ -19,6 +19,7 @@ import NavbarInfo from "./general-components/NavbarInfo/NavbarInfo";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import {getTheme} from "./functions/Theme/getTheme";
+import FooterBottom from "./general-components/FooterBottom/FooterBottom";
 
 const Router = () => {
 
@@ -83,6 +84,8 @@ const Router = () => {
                         {/*404 page*/}
                         <Route path={"*"} element={<NotFoundPage />} />
                     </Routes>
+
+                <FooterBottom />
             </UserAuthContextProvider>
         </div>
     );

@@ -1,0 +1,64 @@
+/*Container top*/
+.FooterBottom .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3em 0;
+}
+
+/*left*/
+.FooterBottom .container .left{
+    width: calc(25% - 1em);
+}
+.FooterBottom .container .left img{
+    margin-bottom: .25em;
+}
+.FooterBottom .container .left p.small,
+.FooterBottom .container.bottom p.small{
+    font-weight: 500;
+    opacity: .5;
+    margin: 0;
+}
+
+/*Container bottom*/
+.FooterBottom .container .right .links{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: .25em;
+}
+.FooterBottom .container .right a{
+    margin: 0;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
+.FooterBottom .container .right .badge{
+    background: var(--dark-bg) !important;
+}
+.FooterBottom.light .container .right .badge{
+    background: var(--white) !important;
+}
+.FooterBottom .container .right .badge.gecko{
+    background: var(--blue-main) !important;
+}
+
+/*conatiner top*/
+.Disclaimer{
+    font-weight: 400;
+    margin-top: 3em;
+    padding: 1.5em 0;
+    background: var(--bg-search-input-dark);
+}
+.Disclaimer.light{
+    background: var(--bg-search-input-light);
+}
+.Disclaimer h4{
+    font-weight: 900;
+    margin: 0;
+    color: var(--blue-main);
+}
+.Disclaimer h4 small{
+    font-weight: 400;
+    font-size: 15px;
+}
