@@ -7,7 +7,7 @@ import {GL_MC_RANK, GL_NAME, GL_PR_BTC, GL_SYMBOL} from "../../../constants/ApiC
 import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
 import {getLang} from "../../../functions/Lang/getLang";
 import TableBestCoins from "../../../general-components/TableBestCoins/TableBestCoins";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 //css
 import "./TrendCoins.css";

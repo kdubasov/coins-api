@@ -5,7 +5,7 @@ import TopLoseCoinsTable from "./TopLoseCoinsTable";
 import {Form} from "react-bootstrap";
 import {GL_CH_PR_1H_PR, GL_CH_PR_24H_PR, GL_CH_PR_7D_PR} from "../../../constants/ApiConstants";
 import {getLang} from "../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 //css
 import "./TopLoseCoins.css";

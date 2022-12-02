@@ -69,3 +69,17 @@
     border: 1px solid var(--black-op-50);
     background: none;
 }
+
+/*alert*/
+.FeedbackForm .alert{
+    text-align: center;
+    margin: 1em 0 2em;
+    color: var(--white) !important;
+    border: none !important;
+}
+.FeedbackForm .alert.alert-success{
+    background: var(--bs-green) !important;
+}
+.FeedbackForm .alert.alert-danger{
+    background: var(--bs-red) !important;
+}

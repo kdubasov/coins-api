@@ -12,6 +12,7 @@ import HoldCompanies from "../components/MainPage/HoldCompanies/HoldCompanies";
 import FeedbackForm from "../general-components/FeedbackForm/FeedbackForm";
 import BannerTop from "../static-components/MainPage/BannerTop/BannerTop";
 
+
 const MainPage = ({setShowAlert,theme}) => {
 
     const [navPaginate,setNavPaginate] = useState("coins");
@@ -19,6 +20,7 @@ const MainPage = ({setShowAlert,theme}) => {
     return (
         <>
 
+            {/*static banner*/}
             <BannerTop theme={theme} />
 
             <NavbarPaginate

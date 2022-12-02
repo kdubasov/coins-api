@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_CATEGORIES_LIST_IDS, GLOBAL_API_COINS_SORT_CATEGORIES_LIST} from "../constants/ApiCommand";
-import {Alert, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import PaginateCoinsSort from "../components/MainPage/PaginateCoins/PaginateCoinsSort";
 import PaginateCoinsTr from "../components/MainPage/PaginateCoins/PaginateCoinsTr";
 import {GL_NAME} from "../constants/ApiConstants";
-import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
-import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
+import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert/ErrorGetInfoAlert";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 import {getTheme} from "../functions/Theme/getTheme";
 import {getLang} from "../functions/Lang/getLang";
 
@@ -56,22 +56,6 @@ const CategoriesPage = ({setShowAlert}) => {
 
             {/*проверяет ошибки запроса*/}
             <ErrorGetInfoAlert data={data} />
-
-            {
-                !getIdAndName() &&
-                <Alert className={'my-3 small p-2'}>
-                    {
-                        getLang() === "rus" &&
-                        "Информация о данной категории не найдена, " +
-                        "попробуйте позже или сообщите о проблеме в поддержку."
-                    }
-                    {
-                        getLang() === "eng" &&
-                        "No information found for this category. " +
-                        "Try again later or report the problem to support."
-                    }
-                </Alert>
-            }
 
             {
                 getIdAndName() &&

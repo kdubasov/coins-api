@@ -8,7 +8,7 @@ import {
     GL_DEFI_TOP_COIN_NAME, GL_DEFI_TR_24H
 } from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
-import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 import {getTheme} from "../../../../functions/Theme/getTheme";
 
 

@@ -1,0 +1,17 @@
+.MessageAlert{
+    width: 300px;
+    position: fixed !important;
+    bottom: 0;
+    left: 10px;
+    z-index: 100;
+    color: var(--white) !important;
+}
+.MessageAlert.alert-success{
+    background: var(--bs-green) !important;
+}
+.MessageAlert.alert-danger{
+    background: var(--bs-red) !important;
+}
+.MessageAlert{
+    border: 1px solid var(--white) !important;
+}

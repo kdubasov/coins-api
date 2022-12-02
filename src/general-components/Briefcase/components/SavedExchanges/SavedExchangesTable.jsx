@@ -1,7 +1,7 @@
 import React, {useLayoutEffect, useState} from 'react';
 import {Table} from "react-bootstrap";
 import {getTheme} from "../../../../functions/Theme/getTheme";
-import AlertNoValue from "../AlertNoValue";
+import AlertNoValue from "../AlertNoValue/AlertNoValue";
 import {useUserAuth} from "../../../../contexts/UserAuthContext";
 import {useGetDBData} from "../../../../hooks/useGetDbData";
 import axios from "axios";

@@ -5,7 +5,7 @@ import axios from "axios";
 import {GLOBAL_API_NFT_ONE, GLOBAL_API_URL} from "../../../../constants/ApiCommand";
 import {Table} from "react-bootstrap";
 import {getTheme} from "../../../../functions/Theme/getTheme";
-import AlertNoValue from "../AlertNoValue";
+import AlertNoValue from "../AlertNoValue/AlertNoValue";
 import SavedNftsTr from "./SavedNftsTr";
 
 const SavedNftsTable = ({setShowAlert}) => {

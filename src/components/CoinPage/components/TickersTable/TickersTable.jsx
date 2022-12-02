@@ -10,7 +10,7 @@ import {getTheme} from "../../../../functions/Theme/getTheme";
 //css
 import "./TickersTable.css";
 import {getLang} from "../../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 const TickersTable = ({id,name = false}) => {
 

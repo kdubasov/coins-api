@@ -16,7 +16,7 @@
 }
 
 /*sort header*/
-header{
+.GeneralGraph header{
     padding: 1.25em 0;
     display: flex;
     justify-content: space-between;

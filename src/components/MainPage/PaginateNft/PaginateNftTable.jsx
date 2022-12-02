@@ -6,7 +6,7 @@ import {getTheme} from "../../../functions/Theme/getTheme";
 import PaginationButtons from "../../../general-components/PaginationButtons/PaginationButtons";
 import PaginateNftTr from "./PaginateNftTr";
 import {getLang} from "../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 const PaginateNftTable = ({setShowAlert}) => {
 

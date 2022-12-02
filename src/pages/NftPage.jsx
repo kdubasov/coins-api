@@ -2,10 +2,10 @@ import React from 'react';
 import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import MainData from "../components/NftPage/MainData";
-import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
+import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert/ErrorGetInfoAlert";
 import {GLOBAL_API_NFT_ONE} from "../constants/ApiCommand";
 import TableBestCoins from "../general-components/TableBestCoins/TableBestCoins";
-import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 const NftPage = ({setShowAlert}) => {
 

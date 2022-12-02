@@ -91,7 +91,7 @@ const FeedbackForm = ({showInfo}) => {
                 />
 
                 <Alert
-                    className={"my-2 small p-2"}
+                    className={"small p-2"}
                     variant={sendMess.err ? "danger" : "success"}
                     hidden={!sendMess.message}
                 >

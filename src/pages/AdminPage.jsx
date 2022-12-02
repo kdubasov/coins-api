@@ -1,8 +1,9 @@
 import React from 'react';
-import {Badge, Spinner} from "react-bootstrap";
+import {Badge} from "react-bootstrap";
 import {Navigate} from "react-router-dom";
 import {useUserAuth} from "../contexts/UserAuthContext";
 import FeedbackTable from "../components/AdminPage/FeedbackMessages/FeedbackTable";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 const AdminPage = ({setShowAlert}) => {
 
@@ -20,7 +21,7 @@ const AdminPage = ({setShowAlert}) => {
         }
         return <Navigate to="/notFoundPage" />;
     }
-    return <Spinner className={"m-3"} animation={"border"} variant={"primary"} />;
+    return <SpinnerAlert />;
 };
 
 export default AdminPage;

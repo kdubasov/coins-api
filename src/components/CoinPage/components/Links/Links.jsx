@@ -25,7 +25,7 @@ const Links = ({data}) => {
             return(
                 <a rel={"noreferrer"} target={"_blank"} href={url}>
                     <Badge bg={getTheme(true)}>
-                        {url.slice(8,url.length)}
+                        {url.slice(8,30)}
                     </Badge>
                 </a>
             )

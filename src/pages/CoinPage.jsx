@@ -3,8 +3,8 @@ import {useLastWordPath} from "../hooks/useLastWordPath";
 import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_COIN_ONE_MAIN} from "../constants/ApiCommand";
 import MainData from "../components/CoinPage/MainData";
-import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert";
-import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
+import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert/ErrorGetInfoAlert";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
 
 const CoinPage = ({setShowAlert}) => {

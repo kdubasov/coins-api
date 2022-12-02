@@ -6,7 +6,7 @@ import CoinPage from "./pages/CoinPage";
 import NftPage from "./pages/NftPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ExchangesPage from "./pages/ExchangesPage";
-import CheckConnectApi from "./general-components/CheckConnectApi/CheckConnectApi";
+import CheckConnectApi from "./general-components/Alerts/CheckConnectApi";
 import DerivativePage from "./pages/DerivativePage";
 import {UserAuthContextProvider} from "./contexts/UserAuthContext";
 import ProtectedAuthRoute from "./general-components/AuthComponents/ProtectedAuthRoute";
@@ -14,7 +14,7 @@ import UserProfile from "./general-components/AuthComponents/UserProfile/UserPro
 import Login from "./general-components/AuthComponents/LoginComponents/Login";
 import PhoneLogin from "./general-components/AuthComponents/LoginComponents/PhoneLogin";
 import Briefcase from "./general-components/Briefcase/Briefcase";
-import MessageAlert from "./general-components/Alerts/MessageAlert";
+import MessageAlert from "./general-components/Alerts/MessageAlert/MessageAlert";
 import NavbarInfo from "./general-components/NavbarInfo/NavbarInfo";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";

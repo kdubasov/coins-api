@@ -4,8 +4,8 @@ import MainData from "../components/ExchangesPage/MainData";
 import ExchangesTickers from "../components/ExchangesPage/components/ExchangesTickers/ExchangesTickers";
 import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_EXCHANGES_ID_DATA} from "../constants/ApiCommand";
-import {Spinner} from "react-bootstrap";
 import ExchangesGraph from "../components/ExchangesPage/components/ExchangesGraph/ExchangesGraph";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 const ExchangesPage = ({setShowAlert}) => {
 
@@ -24,7 +24,7 @@ const ExchangesPage = ({setShowAlert}) => {
                         <ExchangesGraph id={exchangeId} />
                         <ExchangesTickers id={exchangeId} mainData={mainData} />
                     </>:
-                    <Spinner animation={"border"} variant={"primary"} />
+                    <SpinnerAlert />
             }
         </div>
     );

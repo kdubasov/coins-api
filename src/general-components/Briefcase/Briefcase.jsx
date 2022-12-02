@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button} from "react-bootstrap";
 import SavedCoinsTable from "./components/SavedCoins/SavedCoinsTable";
-import MessageAlert from "../Alerts/MessageAlert";
+import MessageAlert from "../Alerts/MessageAlert/MessageAlert";
 import SavedNftsTable from "./components/SavedNfts/SavedNftsTable";
 import SavedExchangesTable from "./components/SavedExchanges/SavedExchangesTable";
 import {useUserAuth} from "../../contexts/UserAuthContext";
@@ -47,13 +47,13 @@ const Briefcase = () => {
     return (
         <div className={'Briefcase container'}>
 
-            <header className={"w-100 d-flex justify-content-between align-items-center"}>
-                <h4 className={"mt-4"}>
+            <header className={"w-100 p-0 pt-5 d-flex justify-content-between align-items-center"}>
+                <h4 className={"m-0"}>
                     {getLang() === "eng" && "Favorites"}
                     {getLang() === "rus" && "Избранное"}
                 </h4>
 
-                <Button size={"sm"} variant={"outline-danger"} onClick={deleteAllFromBriefcase}>
+                <Button size={"sm"} variant={"danger"} onClick={deleteAllFromBriefcase}>
                     {getLang() === "eng" && "Delete all"}
                     {getLang() === "rus" && "Очистить избранное"}
                 </Button>

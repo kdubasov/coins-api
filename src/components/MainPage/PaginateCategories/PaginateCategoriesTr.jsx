@@ -27,7 +27,7 @@ const PaginateCategoriesTr = ({elem,ids}) => {
                             <img width={25} className={'mx-2'} src={elem[GL_CAT_TOP_3][1]} alt=""/>
                             <img width={25} src={elem[GL_CAT_TOP_3][2]} alt=""/>
                         </>:
-                        <Spinner animation={"border"} variant={"primary"} />
+                        <Spinner size={"sm"} animation={"border"} variant={"primary"} />
                 }
             </td>
             {/*	Изм. 24ч*/}

@@ -34,12 +34,14 @@
     color: inherit;
 }
 .FooterBottom .container .right .badge{
-    background: var(--dark-bg) !important;
+    background: var(--bg-search-input-dark) !important;
 }
 .FooterBottom.light .container .right .badge{
-    background: var(--white) !important;
+    color: var(--text-dark);
+    background: var(--bg-search-input-light) !important;
 }
 .FooterBottom .container .right .badge.gecko{
+    color: var(--white);
     background: var(--blue-main) !important;
 }
 

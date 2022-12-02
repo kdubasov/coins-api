@@ -6,7 +6,7 @@ import InfoHoldCompanies from "./InfoHoldCompanies";
 import TableHoldCompanies from "./TableHoldCompanies";
 import {GL_COMP, GL_HOLD_TT_VAL} from "../../../constants/ApiConstants";
 import {getLang} from "../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 import {getTheme} from "../../../functions/Theme/getTheme";
 
 //css

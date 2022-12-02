@@ -1,10 +1,14 @@
 import React from 'react';
 import {Alert} from "react-bootstrap";
-import {getLang} from "../../../functions/Lang/getLang";
+import {getLang} from "../../../../functions/Lang/getLang";
+
+//css
+import "./AlertNoValue.css";
 
 const AlertNoValue = ({value}) => {
+
     return (
-        <Alert className={"d-flex w-50 p-2 justify-content-between align-items-center small"}>
+        <Alert className={"AlertNoValue small"}>
             <span>
                 {
                     getLang() === "eng" ?

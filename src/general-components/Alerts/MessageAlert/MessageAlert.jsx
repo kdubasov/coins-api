@@ -1,10 +1,14 @@
 import React from 'react';
 import {Alert} from "react-bootstrap";
 
+//css
+import "./MessageAlert.css";
+import {getTheme} from "../../../functions/Theme/getTheme";
+
 const MessageAlert = ({text,variant}) => {
 
     return (
-        <Alert style={{position:'fixed',left:15,bottom:0,zIndex:100}} variant={variant} className={"p-2 small"}>
+        <Alert  variant={variant} className={`MessageAlert small ${getTheme(true)}`}>
             {text}
         </Alert>
     );

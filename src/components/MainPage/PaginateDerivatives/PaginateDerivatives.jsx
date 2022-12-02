@@ -3,7 +3,7 @@ import {useApi} from "../../../hooks/useApi";
 import {GLOBAL_API_DERIVATIVES} from "../../../constants/ApiCommand";
 import PaginateDerivativesTable from "./PaginateDerivativesTable";
 import {getLang} from "../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 
 const PaginateDerivatives = () => {

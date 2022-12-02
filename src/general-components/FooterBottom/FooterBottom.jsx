@@ -73,27 +73,29 @@ const FooterBottom = () => {
 
                     <div className="right">
                         <div className="links">
-                            <Badge bg={"primary"} className={"gecko"}>
-                                <a className={"small"} href="https://www.coingecko.com/" rel={"noreferrer"} target={"_blank"}>
-                                    CoinGecko
-                                </a>
-                            </Badge>
-
-                            <Badge className={"mx-2"}>
+                            <Badge>
                                 <a className={"small"} href="https://github.com/kdubasov" rel={"noreferrer"} target={"_blank"}>
                                     kdubasov
                                 </a>
                             </Badge>
 
-                            <Badge>
+                            <Badge className={"mx-2"}>
                                 <a className={"small"} href="https://github.com/pokemzed" rel={"noreferrer"} target={"_blank"}>
                                     michael
+                                </a>
+                            </Badge>
+
+                            <Badge bg={"primary"} className={"gecko"}>
+                                <a className={"small"} href="https://www.coingecko.com/" rel={"noreferrer"} target={"_blank"}>
+                                    CoinGecko
                                 </a>
                             </Badge>
                         </div>
 
                         <p className="small">
-                            © {new Date().getFullYear()} cryptoQuick. All Rights Reserved.
+                            © {new Date().getFullYear()} cryptoQuick.
+                            {getLang() === "eng" && " All Rights Reserved."}
+                            {getLang() === "rus" && " Все права защищены."}
                         </p>
                     </div>
                 </Container>

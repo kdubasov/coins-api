@@ -6,7 +6,7 @@ import ExchangesGraph from "../components/ExchangesPage/components/ExchangesGrap
 import MainData from "../components/DerivativePage/MainData";
 import DerivativesTickers from "../components/DerivativePage/components/DerivativesTickers/DerivativesTickers";
 import {GL_TICKERS} from "../constants/ApiConstants";
-import SpinnerAlert from "../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 const DerivativePage = () => {
 

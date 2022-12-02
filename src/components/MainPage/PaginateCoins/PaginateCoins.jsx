@@ -9,9 +9,9 @@ import {GL_ACT_COINS} from "../../../constants/ApiConstants";
 import PaginateCoinsSort from "./PaginateCoinsSort";
 import PaginationButtons from "../../../general-components/PaginationButtons/PaginationButtons";
 import {getTheme} from "../../../functions/Theme/getTheme";
-import MessageAlert from "../../../general-components/Alerts/MessageAlert";
+import MessageAlert from "../../../general-components/Alerts/MessageAlert/MessageAlert";
 import {getLang} from "../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 
 //table with coins

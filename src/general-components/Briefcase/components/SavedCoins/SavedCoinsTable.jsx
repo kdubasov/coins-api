@@ -6,7 +6,7 @@ import {getTheme} from "../../../../functions/Theme/getTheme";
 import {GLOBAL_API_COIN_ONE_MAIN, GLOBAL_API_URL} from "../../../../constants/ApiCommand";
 import axios from "axios";
 import SavedCoinsTr from "./SavedCoinsTr";
-import AlertNoValue from "../AlertNoValue";
+import AlertNoValue from "../AlertNoValue/AlertNoValue";
 import {getLang} from "../../../../functions/Lang/getLang";
 
 const SavedCoinsTable = ({setShowAlert}) => {

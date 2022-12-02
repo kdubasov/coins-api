@@ -6,7 +6,7 @@ import PaginationButtons from "../../../general-components/PaginationButtons/Pag
 import ExchangesPaginateTr from "./ExchangesPaginateTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import {getLang} from "../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 const ExchangesPaginate = ({setShowAlert}) => {
 

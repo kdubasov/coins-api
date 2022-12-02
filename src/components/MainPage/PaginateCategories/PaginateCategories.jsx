@@ -5,7 +5,7 @@ import {GLOBAL_API_CATEGORIES_LIST_ALL} from "../../../constants/ApiCommand";
 import PaginateCategoriesTr from "./PaginateCategoriesTr";
 import {getTheme} from "../../../functions/Theme/getTheme";
 import {getLang} from "../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert";
+import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 //css
 import "./PaginateCategories.css";
