@@ -21,6 +21,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import {getTheme} from "./functions/Theme/getTheme";
 import FooterBottom from "./general-components/FooterBottom/FooterBottom";
 import ButtonToTop from "./general-components/ButtonToTop/ButtonToTop";
+import ScrollToTop from "./functions/ScrollToTop";
 
 const Router = () => {
 
@@ -28,6 +29,9 @@ const Router = () => {
 
     // for show/hide alert
     const [showAlert, setShowAlert] = useState({show:false,text:'',variant:''})
+
+    //для того чтобы страница поднималась к верху после перехода по ссылке
+    ScrollToTop()
 
     return (
         <div className={`general-container ${theme}`}>
