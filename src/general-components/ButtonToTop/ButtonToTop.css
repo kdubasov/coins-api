@@ -1,0 +1,12 @@
+.ButtonToTop{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 200;
+}
+.ButtonToTop.but-dark{
+    border: 1px solid var(--white-op-50) !important;
+}
+.ButtonToTop.but-light{
+    border: 1px solid var(--black-op-50) !important;
+}

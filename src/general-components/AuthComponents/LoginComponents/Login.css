@@ -73,6 +73,11 @@
 
 /*alert errors*/
 .alert-phone-error{
-    width: 30%;
+    width:auto;
+    max-width: 500px;
     padding: .5em !important;
+    background: var(--bs-red) !important;
+    border:none !important;
+    color: var(--white) !important;
+    text-align: center;
 }

@@ -21,12 +21,18 @@ const PaginateNftTr = ({id,data,setShowAlert,sizePage,currentPage}) => {
 
             {/*img*/}
             <td>
-                <img
-                    src={data[GL_THUMB]}
-                    alt={data[GL_NAME] && data[GL_NAME]}
-                    height={40}
-                    style={{borderRadius:3}}
-                />
+                {
+                    data[GL_THUMB] !== "missing_thumb.png" ?
+                        <img
+                            src={data[GL_THUMB]}
+                            alt={data[GL_NAME] && data[GL_NAME]}
+                            height={40}
+                            style={{borderRadius:3}}
+                        />:
+                        <p className="m-0 small">
+                            No image
+                        </p>
+                }
             </td>
 
             {/*title*/}

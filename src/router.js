@@ -20,6 +20,7 @@ import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import {getTheme} from "./functions/Theme/getTheme";
 import FooterBottom from "./general-components/FooterBottom/FooterBottom";
+import ButtonToTop from "./general-components/ButtonToTop/ButtonToTop";
 
 const Router = () => {
 
@@ -30,6 +31,9 @@ const Router = () => {
 
     return (
         <div className={`general-container ${theme}`}>
+
+            {/*кнопка к верху*/}
+            <ButtonToTop />
 
             {/*alert with text*/}
             {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}

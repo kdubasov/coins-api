@@ -4,6 +4,7 @@
     box-sizing: border-box;
     position: relative;
     text-decoration: none;
+    user-select: none;
 }
 
 :root{

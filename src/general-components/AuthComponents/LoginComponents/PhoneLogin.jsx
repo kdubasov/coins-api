@@ -86,7 +86,7 @@ const PhoneLogin = () => {
 
             <div className={'buttons-container'}>
               <Link to="/login">
-                <Button variant="secondary" className={"m-0"}>
+                <Button className={`m-0 but-${getTheme(true)}`}>
                   {getLang() === "eng" && "Back"}
                   {getLang() === "rus" && "Назад"}
                 </Button>
@@ -111,7 +111,7 @@ const PhoneLogin = () => {
 
           <div className="buttons-container">
             <Link to="/login">
-              <Button className={"m-0"} variant="secondary">
+              <Button className={`m-0 but-${getTheme(true)}`}>
                 {getLang() === "eng" && "Cancel"}
                 {getLang() === "rus" && "Отменить"}
               </Button>
