@@ -87,7 +87,7 @@ const NavbarTop = ({theme}) => {
                 show={showOffCanvas}
                 handleClose={() => setShowOffCanvas(false)}
                 user={user}
-                handleLogout={handleLogout()}
+                handleLogout={handleLogout}
             />
         </>
     );

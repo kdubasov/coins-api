@@ -1,0 +1,13 @@
+@media screen and (max-width: 991px){
+    .PaginationButtons .pagination .page-item{
+    }
+    .PaginationButtons .pagination .page-link{
+        vertical-align: middle;
+        padding: .2em .6em;
+    }
+}
+@media screen and (max-width: 500px){
+    .PaginationButtons .pagination .page-link{
+        font-size: 12px;
+    }
+}

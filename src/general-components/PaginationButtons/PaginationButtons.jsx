@@ -1,9 +1,10 @@
 import React from 'react';
 import {Pagination} from "react-bootstrap";
+import {getTheme} from "../../functions/Theme/getTheme";
 
 // css
 import "./PaginationButtons.css";
-import {getTheme} from "../../functions/Theme/getTheme";
+import "./PaginationButtonsMedia.css";
 
 const PaginationButtons = ({currentPage,setCurrentPage,allPages}) => {
 

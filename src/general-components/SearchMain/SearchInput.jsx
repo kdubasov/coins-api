@@ -7,6 +7,7 @@ import {getLang} from "../../functions/Lang/getLang";
 
 //css
 import "./SearchMain.css";
+import "./SearchMainMedia.css";
 
 const SearchInput = ({theme}) => {
 

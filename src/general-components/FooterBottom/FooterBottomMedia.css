@@ -1,0 +1,26 @@
+@media screen and (max-width: 991px){
+    .FooterBottom .container{
+        padding: 2em 1em;
+    }
+    .FooterBottom .container .left{
+        width: calc(40% - 1em);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .FooterBottom .container .left{
+        width: calc(50% - 1em);
+    }
+}
+
+@media screen and (max-width: 470px){
+    .FooterBottom .container{
+        flex-wrap: wrap;
+    }
+    .FooterBottom .container .left{
+        width: 100%;
+    }
+    .FooterBottom .container .right{
+        margin-top: 2em;
+    }
+}

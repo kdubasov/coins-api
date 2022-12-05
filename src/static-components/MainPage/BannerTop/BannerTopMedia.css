@@ -1,0 +1,27 @@
+@media screen and (max-width: 991px) {
+    .BannerTop-inner{
+        margin-top: 2em !important;
+        padding: 2em 1em !important;
+    }
+    .BannerTop-inner{
+        background-image: url("/public/images/static-components/BannerTop/banner-bg-opac.png") !important;
+    }
+    /*text conatainer*/
+    .BannerTop-inner h4{
+        font-weight: 700 !important;
+        margin-bottom: .5em !important;
+    }
+    .BannerTop-inner .text-container{
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .BannerTop-inner{
+        padding: 1.5em 1em !important;
+    }
+    .BannerTop-inner button,
+    .BannerTop-inner a{
+        display: none;
+    }
+}

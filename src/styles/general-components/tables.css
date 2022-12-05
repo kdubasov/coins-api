@@ -48,3 +48,21 @@ table tbody tr td{
 table tbody tr td.graph{
     padding: 0;
 }
+
+/*media*/
+table{
+    min-width: 900px;
+}
+
+/*---------------------------------------------------------*/
+/*media*/
+@media screen and (max-width: 991px){
+    table tbody tr td{
+        padding: .25em .25em !important;
+    }
+}
+@media screen and (max-width: 500px){
+    table tbody tr td{
+        padding: .10em .25em !important;
+    }
+}

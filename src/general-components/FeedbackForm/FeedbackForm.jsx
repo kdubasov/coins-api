@@ -3,11 +3,12 @@ import {Alert, Button, Container, Form} from "react-bootstrap";
 import {addFormDataInDB} from "../../functions/FeedbackForm/addFormDataInDB";
 import {useUserAuth} from "../../contexts/UserAuthContext";
 import {getLang} from "../../functions/Lang/getLang";
+import {getTheme} from "../../functions/Theme/getTheme";
+import GeneralInfo from "../GeneralInfo/GeneralInfo";
 
 //css
 import "./FeedbackForm.css";
-import {getTheme} from "../../functions/Theme/getTheme";
-import GeneralInfo from "../GeneralInfo/GeneralInfo";
+import "./FeedbackFormMedia.css";
 
 const FeedbackForm = ({showInfo}) => {
 

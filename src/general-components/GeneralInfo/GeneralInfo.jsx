@@ -5,11 +5,13 @@ import {Badge, ListGroup} from "react-bootstrap";
 import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../constants/ApiConstants";
 import {getLang} from "../../functions/Lang/getLang";
 import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
+import {getTheme} from "../../functions/Theme/getTheme";
+import GeneralInfoTopCoin from "./GeneralInfoTopCoin";
 
 //css
 import "./GeneralInfo.css";
-import {getTheme} from "../../functions/Theme/getTheme";
-import GeneralInfoTopCoin from "./GeneralInfoTopCoin";
+import "./GeneralInfoMedia.css";
+
 
 //для получения объекта с данными о самой популярной монетке
 export const getMainCoin = (data,returnValue) =>{
@@ -78,8 +80,8 @@ const GeneralInfo = () => {
                                 <Badge className={"mx-2"}>
                                     {getMainCoin(data[GL_MK_PR],'coin').toUpperCase("RU")}
                                 </Badge>
-                                {getLang() === 'rus' && 'по рыночной капитализации:'}
-                                {getLang() === 'eng' && 'by market capitalization:'}
+                                {getLang() === 'rus' && 'по рын. кап:'}
+                                {getLang() === 'eng' && 'by mkt cap:'}
                                 <Badge className={"mx-2"}>
                                     {getMainCoin(data[GL_MK_PR],'price').toLocaleString("RU") + '%'}
                                 </Badge>

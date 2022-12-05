@@ -1,9 +1,17 @@
 .container.NavbarPaginate{
     margin: 1.5em auto !important;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .NavbarPaginate button{
     padding: .4em 1em !important;
-    margin: .5em .5em .5em 0;
+    margin: .15em .5em .5em 0;
+}
+
+
+@media screen and (max-width: 991px){
+    .container.NavbarPaginate{
+        margin: 1em auto .75em !important;
+    }
 }

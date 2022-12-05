@@ -1,4 +1,8 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
 *{
+    font-family: 'Nunito Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,6 +43,7 @@
 /*containers*/
 .container{
     margin:auto;
+    overflow-x: auto !important;
 }
 
 /*основной родителтский контейнер*/
@@ -57,23 +62,42 @@
 }
 
 /*text*/
-p.small, a.small, button.btn-sm{
+p.small, a.small, button.btn-sm, tr.small,
+input.small, .list-group.small, .alert.small{
     font-size: 13px !important;
     font-weight: 300;
 }
 @media screen and (max-width: 991px){
-    p.small, a.small, button.btn-sm{
+    p.small, a.small, button.btn-sm, tr.small,
+    input.small, .list-group.small, .alert.small{
         font-size: 12px !important;
     }
+    h4{font-size: 21px !important;}
+    h5{font-size: 19px !important;}
+}
+@media screen and (max-width: 500px){
+    p.small, a.small, button.btn-sm, tr.small,
+    input.small, .list-group.small, .alert.small{
+        font-size: 11px !important;
+    }
+    h4{font-size: 18px !important;}
+    h5{font-size: 16px !important;}
 }
 
 /*полоса прокрутки*/
 *::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
+    height: 5px;
+    width: 5px;
     background-color: rgba(0, 0, 0, 0);
 }
 *::-webkit-scrollbar-thumb {
     background-color: var(--blue-main-op50);
     border-radius: .25em;
+}
+
+.general-container.dark *::-webkit-scrollbar-thumb{
+    background-color: var(--bg-search-input-dark);
+}
+.general-container.light *::-webkit-scrollbar-thumb{
+    background-color: var(--bg-search-input-light);
 }

@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+    .GeneralInfo{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .best-coin header .left img{
+        width: 30px;
+    }
+}

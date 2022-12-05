@@ -5,5 +5,5 @@ export const setTheme = () => {
     }else {
         window?.localStorage.setItem('theme', 'dark');
     }
-    // window.location.reload();
+    window.location.reload();
 }

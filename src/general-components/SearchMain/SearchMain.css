@@ -1,6 +1,7 @@
 .SearchInput-container{
     position: relative;
     padding-left: 1em;
+    overflow: visible !important;
 }
 /*main input for search*/
 input.search-input{

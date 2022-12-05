@@ -1,0 +1,19 @@
+/*контейнер для инпута в мобильной версии*/
+.container.search-mobile{
+    display: none;
+    margin-top: 1em;
+    margin-bottom: -1em;
+    overflow: visible !important;
+}
+.container.search-mobile .SearchInput-container{
+    padding: 0 !important;
+}
+
+@media screen and (max-width: 991px) {
+    .container.search-mobile{
+        display: block;
+    }
+    .SearchResult{
+        width: 100%;
+    }
+}

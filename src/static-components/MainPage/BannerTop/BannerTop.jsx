@@ -1,11 +1,12 @@
 import React from 'react';
 import {Button, Container} from "react-bootstrap";
 import {getLang} from "../../../functions/Lang/getLang";
+import {Link} from "react-router-dom";
+import {useUserAuth} from "../../../contexts/UserAuthContext";
 
 //css
 import './BannerTop.css';
-import {Link} from "react-router-dom";
-import {useUserAuth} from "../../../contexts/UserAuthContext";
+import './BannerTopMedia.css';
 
 const BannerTop = ({theme}) => {
 

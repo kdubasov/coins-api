@@ -2,7 +2,7 @@
     /*cкрвыаем ту которая сверху*/
     .nav-info-top{display: none;}
 
-    .NavbarInfo, .NavbarInfo .info-block{
+    .NavbarInfo, .NavbarInfo .info-block, .NavbarInfo.container{
         padding: 0;
         flex-wrap: wrap;
     }
@@ -36,4 +36,7 @@
 
 @media screen and (max-width: 350px) {
     .NavbarInfo .badge{display: none;}
+    .NavbarInfo .theme-lang{
+        width: 75%;
+    }
 }

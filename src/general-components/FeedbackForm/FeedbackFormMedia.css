@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+    .FeedbackForm{
+        flex-wrap: wrap;
+    }
+    .FeedbackForm form{
+        width: 100%;
+        margin: 2em 0 1.5em;
+    }
+
+    /*text font-size*/
+    .FeedbackForm.dark form input[type="email"],
+    .FeedbackForm.dark form textarea,
+    .FeedbackForm.dark form input[type="email"]::placeholder,
+    .FeedbackForm.dark form textarea::placeholder,
+    .FeedbackForm form label{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 500px) {
+    /*text font-size*/
+    .FeedbackForm.dark form input[type="email"],
+    .FeedbackForm.dark form textarea,
+    .FeedbackForm.dark form input[type="email"]::placeholder,
+    .FeedbackForm.dark form textarea::placeholder,
+    .FeedbackForm form label{
+        font-size: 12px;
+    }
+}

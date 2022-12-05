@@ -21,7 +21,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import {getTheme} from "./functions/Theme/getTheme";
 import FooterBottom from "./general-components/FooterBottom/FooterBottom";
 import ButtonToTop from "./general-components/ButtonToTop/ButtonToTop";
-import ScrollToTop from "./functions/ScrollToTop";
+import ScrollToTop from "./hooks/ScrollToTop";
+import SearchInput from "./general-components/SearchMain/SearchInput";
 
 const Router = () => {
 
@@ -31,7 +32,7 @@ const Router = () => {
     const [showAlert, setShowAlert] = useState({show:false,text:'',variant:''})
 
     //для того чтобы страница поднималась к верху после перехода по ссылке
-    ScrollToTop()
+    ScrollToTop();
 
     return (
         <div className={`general-container ${theme}`}>
@@ -49,11 +50,17 @@ const Router = () => {
 
                 <NavbarTop theme={theme} />
 
+                {/*general search*/}
+                <div className="container search-mobile">
+                    <SearchInput theme={theme} />
+                </div>
+
+                {/*проверяем коннект с апи*/}
                 <CheckConnectApi />
 
                 {/*auth provider*/}
                     <Routes>
-                        <Route path={`/`} element={<MainPage theme={theme} setShowAlert={setShowAlert} />} />
+                        <Route path={'/'} element={<MainPage theme={theme} setShowAlert={setShowAlert} />} />
                         <Route path={'/coins/:coinId'} element={<CoinPage setShowAlert={setShowAlert} />} />
                         <Route path={'/nft/:nftId'} element={<NftPage setShowAlert={setShowAlert} />} />
                         <Route path={'/categories/:categoryId'} element={<CategoriesPage  setShowAlert={setShowAlert} />} />

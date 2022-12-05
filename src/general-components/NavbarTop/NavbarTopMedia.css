@@ -11,5 +11,6 @@
 }
 
 @media screen and (max-width: 350px){
+    .NavbarTop .logo{width: 120px;}
     .briefcase-link{display: none;}
 }
