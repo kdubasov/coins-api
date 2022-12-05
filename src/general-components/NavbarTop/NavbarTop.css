@@ -34,7 +34,10 @@
 
 /*briefcase-link*/
 .briefcase-link{
-    margin-right: 1em;
+    color: inherit;
+    text-decoration: none;
+    margin: 0 1em;
+    padding: 0;
 }
 
 /*container for login user buttons links*/
@@ -44,4 +47,15 @@
 }
 .login-container a{
     margin-right: 1em;
+}
+
+/*open menu button*/
+.NavbarTop img.open-menu{
+    display: none;
+    margin-right: 1em;
+    transition: .3s;
+    cursor: pointer;
+}
+.NavbarTop img.open-menu:hover{
+    opacity: .5;
 }

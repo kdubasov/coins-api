@@ -57,7 +57,7 @@
 }
 .Disclaimer h4{
     font-weight: 900;
-    margin: 0;
+    margin: 0 0 .5em 0;
     color: var(--blue-main);
 }
 .Disclaimer h4 small{

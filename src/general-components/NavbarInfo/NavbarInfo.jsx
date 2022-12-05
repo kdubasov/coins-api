@@ -3,7 +3,7 @@ import {useApi} from "../../hooks/useApi";
 import {GLOBAL_API_GLOBAL_COMMAND} from "../../constants/ApiCommand";
 import {getLang} from "../../functions/Lang/getLang";
 import {GL_ACT_COINS, GL_CH_ALL_PR, GL_MK_PR, GL_MKTS, GL_TT_MK} from "../../constants/ApiConstants";
-import {Badge, Container, Form, Spinner} from "react-bootstrap";
+import {Badge, Container, Form} from "react-bootstrap";
 import {getNumRedAfterDoot} from "../../functions/getNumRedAfterDoot";
 import {getMainCoin} from "../GeneralInfo/GeneralInfo";
 import {getTheme} from "../../functions/Theme/getTheme";
@@ -12,15 +12,13 @@ import {setLang} from "../../functions/Lang/setLang";
 
 //css
 import './NavbarInfo.css';
+import './NavbarInfoMedia.css';
 
 const NavbarInfo = ({theme}) => {
 
     //data
     const data = useApi(GLOBAL_API_GLOBAL_COMMAND).data.data;
     // console.log(data,"GLOBAL DATA IN DefaultInfo.jsx");
-
-    //SPINNER!!!!!
-    const SpinnerSmall = <Spinner animation="border" size="sm" variant={"primary"} />;
 
     if(data && Object.values(data).length)
     return (
@@ -30,20 +28,20 @@ const NavbarInfo = ({theme}) => {
                 <p className={"small"}>
                     {getLang() === 'rus' && 'Монет:'}
                     {getLang() === 'eng' && 'Coins:'}
-                    <strong> {data[GL_ACT_COINS] ? data[GL_ACT_COINS].toLocaleString("RU") : SpinnerSmall}</strong>
+                    <strong> {data[GL_ACT_COINS] && data[GL_ACT_COINS].toLocaleString("RU")}</strong>
                 </p>
 
                 <p className={"small"}>
                     {getLang() === 'rus' && 'Бирж:'}
                     {getLang() === 'eng' && 'Exchanges:'}
-                    <strong> {data[GL_MKTS] ? data[GL_MKTS] : SpinnerSmall} </strong>
+                    <strong> {data[GL_MKTS] && data[GL_MKTS]} </strong>
                 </p>
 
                 <p className={"small d-flex align-items-center"}>
                     {getLang() === 'rus' && 'Рын. кап:'}
                     {getLang() === 'eng' && 'Market cap:'}
                     <strong className={"mx-1"}>
-                        {data[GL_TT_MK]['usd'] ? data[GL_TT_MK]['usd'].toLocaleString("RU") + '$' : SpinnerSmall}
+                        {data[GL_TT_MK]['usd'] && data[GL_TT_MK]['usd'].toLocaleString("RU") + '$'}
                     </strong>
                     {
                         data[GL_CH_ALL_PR] &&
@@ -60,13 +58,13 @@ const NavbarInfo = ({theme}) => {
 
                 <p className={"small"}>
                     {
-                        Object.values(data[GL_MK_PR]).length ?
+                        Object.values(data[GL_MK_PR]).length &&
                             <>
                                 {getLang() === 'rus' && 'Доминирование'}
                                 {getLang() === 'eng' && 'Dominance'}
                                 <strong style={{marginLeft:5}}>{getMainCoin(data[GL_MK_PR],'coin').toUpperCase("RU") + ":"}</strong>
                                 <strong>{getMainCoin(data[GL_MK_PR],'price').toLocaleString("RU") + '%'}</strong>
-                            </> : SpinnerSmall
+                            </>
                     }
                 </p>
             </div>

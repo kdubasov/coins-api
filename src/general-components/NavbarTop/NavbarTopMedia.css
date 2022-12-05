@@ -1,0 +1,15 @@
+@media screen and (max-width: 991px){
+    .NavbarTop .search-container{
+        display: none;
+    }
+    .NavbarTop .logo{
+        width: 135px;
+    }
+    .NavbarTop img.open-menu{
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .briefcase-link{display: none;}
+}

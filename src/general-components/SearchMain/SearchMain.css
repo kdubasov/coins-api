@@ -4,6 +4,7 @@
 }
 /*main input for search*/
 input.search-input{
+    width: 100% !important;
     min-width: 200px;
     border: none !important;
 }
@@ -59,6 +60,16 @@ input.search-input.light:hover::placeholder{
 }
 .SearchResult.light{
     background: var(--bg-search-input-light);
+}
+
+/*alert with no-res info*/
+.SearchResult .no-res{
+    padding: .5em;
+    text-align: center;
+    background: var(--bs-red) !important;
+    border: none !important;
+    color: var(--white) !important;
+    margin: .25em 0;
 }
 
 /*----------------------------------------------------------------*/

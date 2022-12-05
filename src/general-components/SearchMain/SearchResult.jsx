@@ -65,7 +65,7 @@ const SearchResult = ({show,setShowRes,query,data,theme}) => {
                         {(exchanges ? checkValue(exchanges) : false)  && <SearchResultInner setShowRes={setShowRes} exchanges={exchanges} handleSortName={handleSortName} theme={theme}  />}
                         {(categories ? checkValue(categories) : false)  && <SearchResultInner setShowRes={setShowRes} categories={categories} handleSortName={handleSortName} theme={theme}  />}
                     </>:
-                    <Alert variant={"danger"} className={"w-100 mt-1 mb-0 p-2 small"}>
+                    <Alert variant={"danger"} className={"no-res small"}>
                         {getLang() === "eng" && "There are no search results for your query."}
                         {getLang() === "rus" && "По вашему запросу результатов поиска нет."}
                     </Alert>

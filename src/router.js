@@ -43,7 +43,10 @@ const Router = () => {
             {showAlert.show && <MessageAlert text={showAlert.text} variant={showAlert.variant} />}
 
             <UserAuthContextProvider>
-                <NavbarInfo theme={theme} />
+                <div className={"nav-info-top"}>
+                    <NavbarInfo theme={theme} />
+                </div>
+
                 <NavbarTop theme={theme} />
 
                 <CheckConnectApi />

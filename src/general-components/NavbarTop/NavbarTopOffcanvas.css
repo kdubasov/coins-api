@@ -1,0 +1,8 @@
+.offcanvas.dark {
+    color: var(--white);
+    background: var(--dark-bg);
+}
+.offcanvas.light {
+    color: var(--text-dark);
+    background: var(--white);
+}
