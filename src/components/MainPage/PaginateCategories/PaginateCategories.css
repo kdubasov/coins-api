@@ -7,3 +7,10 @@
 .Categories header p.small{
     width: 100%;
 }
+
+.categories-table{
+    min-width: 700px;
+}
+.categories-table td.coins-logos img{
+    width: 25px;
+}

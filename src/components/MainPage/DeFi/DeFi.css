@@ -1,6 +1,6 @@
 .DeFiMainData{
     width: 100%;
-    padding: 1em 0;
+    padding: 2em 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -9,7 +9,7 @@
 /*inner block*/
 .DeFiMainData .inner{
     width: calc(33% - .5em);
-    margin: 1em 0;
+    margin: .5em 0;
     padding: 2.5em 1em;
     border-radius: .25em;
     border-bottom: .25em solid var(--blue-main);

@@ -8,6 +8,9 @@ import {getLang} from "../../functions/Lang/getLang";
 import {GL_TT_VOL} from "../../constants/ApiConstants";
 import CoinsTableHeaderNoSort from "./CoinsTableHeaderNoSort";
 
+//css
+import "./TableBestCoins.css";
+
 const TableBestCoins = ({setShowAlert}) => {
 
     const [showCoins,setShowCoins] = useState(10);

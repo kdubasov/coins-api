@@ -1,0 +1,69 @@
+@media screen and (max-width: 991px){
+    .TrendCoins .trend-coins-container .inner{
+        width: calc(50% - .5em);
+        margin: .5em 0;
+        padding: 1.5em 1em;
+    }
+    /*for best coin*/
+    .TrendCoins .trend-coins-container .inner.first{
+        width: 100%;
+    }
+    /*badge*/
+    .TrendCoins .trend-coins-container .inner .badge.rank{
+        font-size: 14px;
+    }
+    /*link*/
+    .TrendCoins .trend-coins-container .inner .content a{
+        font-size: 18px;
+    }
+    /*img*/
+    .TrendCoins .trend-coins-container .inner img{
+        height: 60px;
+    }
+    .TrendCoins .trend-coins-container .inner.first img{
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .TrendCoins .trend-coins-container .inner{
+        width: calc(50% - .5em);
+        margin: .5em 0;
+        padding: 1em .5em;
+    }
+    /*for best coin*/
+    .TrendCoins .trend-coins-container .inner.first{
+        width: 100%;
+    }
+    .TrendCoins .inner.first .span-best{
+        font-size: 40px;
+    }
+    /*badge*/
+    .TrendCoins .trend-coins-container .inner .badge.rank{
+        font-size: 12px;
+    }
+    /*link*/
+    .TrendCoins .trend-coins-container .inner .content a{
+        font-size: 15px;
+    }
+    /*img*/
+    .TrendCoins .trend-coins-container .inner img{
+        height: 35px;
+    }
+    .TrendCoins .trend-coins-container .inner.first img{
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .TrendCoins .trend-coins-container .inner{
+        width: 100%;
+        margin: .25em 0;
+    }
+    .TrendCoins .trend-coins-container .inner.first{
+        border-bottom: .15em solid var(--blue-main);
+    }
+    .TrendCoins .trend-coins-container .inner.first img{
+        height: 35px;
+    }
+}

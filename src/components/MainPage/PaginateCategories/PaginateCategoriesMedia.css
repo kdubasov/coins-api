@@ -1,0 +1,5 @@
+@media screen and (max-width: 768px) {
+    .categories-table td.coins-logos img{
+        width: 23px;
+    }
+}

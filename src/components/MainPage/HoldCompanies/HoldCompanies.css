@@ -1,10 +1,21 @@
+.container.HoldCompanies{
+    overflow-x: hidden !important;
+}
+/*table container*/
+.container.HoldCompanies .table-container{
+    overflow-x: auto;
+}
+.container.HoldCompanies .table-container table{
+    min-width: 700px !important;
+}
+
 .HoldCompanies h5.select-value{
     display: flex;
     align-items: center;
 }
 .HoldCompanies h5.select-value select{
-    width: 120px;
-    margin: 2em 5px;
+    width: 125px;
+    margin: 2em 10px 2.3em 0;
     font-weight: 700;
 }
 
@@ -13,6 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
+    flex-wrap: wrap;
 }
 
 .InfoHoldCompanies .inner{

@@ -19,13 +19,13 @@ const PaginateCategoriesTr = ({elem,ids}) => {
                 </Link>
             </td>
             {/*Топ монеты*/}
-            <td>
+            <td className={"coins-logos"}>
                 {
                     Boolean(elem[GL_CAT_TOP_3].length) ?
                         <>
-                            <img width={25} src={elem[GL_CAT_TOP_3][0]} alt=""/>
-                            <img width={25} className={'mx-2'} src={elem[GL_CAT_TOP_3][1]} alt=""/>
-                            <img width={25} src={elem[GL_CAT_TOP_3][2]} alt=""/>
+                            <img src={elem[GL_CAT_TOP_3][0]} alt=""/>
+                            <img className={'mx-2'} src={elem[GL_CAT_TOP_3][1]} alt=""/>
+                            <img src={elem[GL_CAT_TOP_3][2]} alt=""/>
                         </>:
                         <Spinner size={"sm"} animation={"border"} variant={"primary"} />
                 }

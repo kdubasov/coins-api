@@ -6,10 +6,11 @@ import {Form} from "react-bootstrap";
 import {GL_CH_PR_1H_PR, GL_CH_PR_24H_PR, GL_CH_PR_7D_PR} from "../../../constants/ApiConstants";
 import {getLang} from "../../../functions/Lang/getLang";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 //css
 import "./TopLoseCoins.css";
-import {getTheme} from "../../../functions/Theme/getTheme";
+import "./TopLoseCoinsMedia.css";
 
 const TopLoseCoins = () => {
 
@@ -58,7 +59,7 @@ const TopLoseCoins = () => {
             {
                 //check result and show spinner or table with coins
                 Object.keys(data).length?
-                    <div className={"w-100 d-flex justify-content-between"}>
+                    <div className={"tables-container"}>
                         <div className={"container-table"}>
                             <h6 className={"top"}>
                                 {getLang() === 'rus' && 'Список валют, наиболее выросших в цене.'}

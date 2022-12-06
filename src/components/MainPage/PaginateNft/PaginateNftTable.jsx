@@ -8,6 +8,10 @@ import PaginateNftTr from "./PaginateNftTr";
 import {getLang} from "../../../functions/Lang/getLang";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
+//css
+import "./PaginateNftTable.css";
+import "./PaginateNftTableMedia.css";
+
 const PaginateNftTable = ({setShowAlert}) => {
 
     const dataSearch = useApi(GLOBAL_API_SEARCH('')).data;
@@ -23,7 +27,7 @@ const PaginateNftTable = ({setShowAlert}) => {
     if (Object.values(dataSearch).length && dataSearch.nfts.length){
         return (
             <div>
-                <Table className={getTheme(true)}>
+                <Table className={`table-nft ${getTheme(true)}`}>
                     <thead>
                         <tr className={"small"}>
                             <th>#</th>

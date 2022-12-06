@@ -7,7 +7,7 @@ import {getLang} from "../../../functions/Lang/getLang";
 
 const TopLoseCoinsTable = ({selectSort,data,sort}) => {
     return (
-        <Table className={getTheme(true)}>
+        <Table className={"TopLoseCoinsTable " + getTheme(true)}>
             <thead>
             <tr className={"small"}>
                 <td>

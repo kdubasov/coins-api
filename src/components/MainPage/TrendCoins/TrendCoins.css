@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    overflow-x: hidden !important;
 }
 
 /*inner block container*/
@@ -68,4 +69,5 @@
     right: -5px;
     top: -5px;
     font-size: 16px;
+    background: var(--blue-main) !important;
 }

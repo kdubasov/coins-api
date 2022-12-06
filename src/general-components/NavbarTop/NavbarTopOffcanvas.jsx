@@ -7,6 +7,7 @@ import "./NavbarTopOffcanvas.css";
 import {Link} from "react-router-dom";
 import {getLang} from "../../functions/Lang/getLang";
 import {getTheme} from "../../functions/Theme/getTheme";
+import FooterBottom from "../FooterBottom/FooterBottom";
 
 const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
     return (
@@ -46,6 +47,7 @@ const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
 
             <Offcanvas.Body>
                 <NavbarInfo theme={getTheme(true)} />
+                <FooterBottom warningShow={false} />
             </Offcanvas.Body>
         </Offcanvas>
     );

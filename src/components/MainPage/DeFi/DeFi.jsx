@@ -1,10 +1,11 @@
 import React from 'react';
 import DeFiMainData from "./components/DeFiMainData";
 import {getLang} from "../../../functions/Lang/getLang";
+import FeedbackForm from "../../../general-components/FeedbackForm/FeedbackForm";
 
 //css
 import "./DeFi.css";
-import FeedbackForm from "../../../general-components/FeedbackForm/FeedbackForm";
+import "./DeFiMedia.css";
 
 const DeFi = () => {
 

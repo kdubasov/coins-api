@@ -9,12 +9,12 @@ import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/Spinne
 
 //css
 import "./PaginateCategories.css";
+import "./PaginateCategoriesMedia.css";
 
 const PaginateCategories = () => {
 
     const data = useApi(GLOBAL_API_CATEGORIES_LIST_ALL).data;
     // console.log(data,'GLOBAL_API_CATEGORIES_LIST_ALL data');
-
 
     return (
         <div className={`Categories container`}>
@@ -40,7 +40,7 @@ const PaginateCategories = () => {
             {/*table categories*/}
             {
                 Object.values(data).length?
-                    <Table className={getTheme(true)}>
+                    <Table className={`categories-table ${getTheme(true)}`}>
                         <thead>
                             <tr className={"small"}>
                                 <th>#</th>

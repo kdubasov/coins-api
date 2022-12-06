@@ -1,0 +1,17 @@
+@media screen and (max-width:991px) {
+    .table-nft td.first p.small{
+        margin-bottom: -2px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .table-nft td img{
+        height: 25px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .table-nft td.first p.small{
+        margin-bottom: -5px;
+    }
+}

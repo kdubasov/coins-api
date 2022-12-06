@@ -1,0 +1,21 @@
+@media screen and (max-width:991px) {
+    /*container for one table*/
+    .TopLoseCoins .container-table{
+        width: 100%;
+    }
+    .TopLoseCoins .container-table:first-child{
+        margin-bottom: 2em;
+    }
+
+    /*img*/
+    .TopLoseCoins .TopLoseCoinsTable td img{
+        width: 23px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    /*select*/
+    .TopLoseCoins.dark select{
+        font-size: 12px;
+    }
+}

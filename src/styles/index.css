@@ -74,6 +74,8 @@ input.small, .list-group.small, .alert.small{
     }
     h4{font-size: 21px !important;}
     h5{font-size: 19px !important;}
+    h6{font-size: 16px !important;}
+    p{font-size: 14px !important;}
 }
 @media screen and (max-width: 500px){
     p.small, a.small, button.btn-sm, tr.small,
@@ -82,6 +84,8 @@ input.small, .list-group.small, .alert.small{
     }
     h4{font-size: 18px !important;}
     h5{font-size: 16px !important;}
+    h6{font-size: 14px !important;}
+    p{font-size: 12px !important;}
 }
 
 /*полоса прокрутки*/

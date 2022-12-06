@@ -11,6 +11,7 @@ import {getTheme} from "../../../functions/Theme/getTheme";
 
 //css
 import "./HoldCompanies.css";
+import "./HoldCompaniesMedia.css";
 
 const HoldCompanies = () => {
 
@@ -27,7 +28,7 @@ const HoldCompanies = () => {
                 {getLang() === 'eng' && "Holding companies"}
             </h4>
 
-            <p className={"mb-3 small"}>
+            <p className={"small m-0"}>
                 {
                     getLang() === 'rus' &&
                     "Холдинг - стратегия по покупке и хранению криптовалют. Менее рискованная," +
@@ -48,7 +49,7 @@ const HoldCompanies = () => {
                 Object.values(data).length?
                     <>
                         {/*select for coin with text*/}
-                        <h5 className={"select-value"}>
+                        <h5 className={"select-value m-0"}>
                             <Form.Select
                                 value={selectCoin}
                                 onChange={e => setSelectCoin(e.target.value)}
@@ -68,16 +69,18 @@ const HoldCompanies = () => {
                         {/*main data of hold*/}
                         <InfoHoldCompanies info={data} />
 
-                        {//Table with companies
-                            Object.values(data[GL_COMP]).length &&
-                            <>
-                                <h4 className={'mb-2'}>
-                                    {getLang() === 'rus' && `Лучшие холдинговые компании ${selectCoin.toUpperCase()}`}
-                                    {getLang() === 'eng' && `Best holding companies for ${selectCoin.toUpperCase()}`}
-                                </h4>
-                                <TableHoldCompanies value={data[GL_HOLD_TT_VAL]} data={data[GL_COMP]} />
-                            </>
-                        }
+                        <div className="table-container">
+                            {//Table with companies
+                                Object.values(data[GL_COMP]).length &&
+                                <>
+                                    <h4 className={'mb-2'}>
+                                        {getLang() === 'rus' && `Лучшие холдинговые компании ${selectCoin.toUpperCase()}`}
+                                        {getLang() === 'eng' && `Best holding companies for ${selectCoin.toUpperCase()}`}
+                                    </h4>
+                                    <TableHoldCompanies value={data[GL_HOLD_TT_VAL]} data={data[GL_COMP]} />
+                                </>
+                            }
+                        </div>
                     </>:
                     <SpinnerAlert />
             }

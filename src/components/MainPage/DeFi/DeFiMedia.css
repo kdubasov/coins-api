@@ -1,0 +1,22 @@
+@media screen and (max-width: 991px){
+    .DeFiMainData{
+        padding: 1em 0;
+    }
+    .DeFiMainData .inner{
+        width: calc(50% - .5em);
+        padding: 1.5em .5em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .DeFiMainData{
+        padding: .5em 0;
+    }
+    .DeFiMainData .inner{
+        width: 100%;
+        padding: 1em .5em;
+        text-align: center;
+        margin: .25em 0;
+        border-bottom: .15em solid var(--blue-main);
+    }
+}

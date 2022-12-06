@@ -1,0 +1,22 @@
+/*table*/
+.table-nft{
+    min-width: 600px;
+}
+
+/*image nft*/
+.table-nft td img{
+    height: 40px;
+    border-radius: .25em;
+    padding: 0;
+    margin: 0;
+}
+
+/*первая td с номером и кнопокой добавить в изранное*/
+.table-nft td.first{
+    display: flex;
+    align-items: center;
+}
+.table-nft td.first p.small{
+    margin-bottom: -5px;
+    margin-right: .5em;
+}

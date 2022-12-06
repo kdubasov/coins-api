@@ -1,0 +1,33 @@
+@media screen and (max-width: 991px) {
+    /*select*/
+    .HoldCompanies h5.select-value select{
+        width: 125px;
+        margin: 2em 10px 1.8em 0;
+    }
+    /*block*/
+    .InfoHoldCompanies .inner{
+        width: calc(50% - .5em);
+        padding: 1.5em 1em;
+        margin: .5em 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /*select*/
+    .HoldCompanies h5.select-value select{
+        width: 115px;
+        font-size: 12px;
+        margin: 1.5em 10px 1.3em 0;
+    }
+    /*block*/
+    .InfoHoldCompanies .inner{
+        width: 100%;
+        padding: 1.2em 1em;
+        margin: .25em 0;
+        text-align: center;
+    }
+    .InfoHoldCompanies .inner p{
+        width: 100%;
+        text-align: center !important;
+    }
+}

@@ -5,6 +5,9 @@
     align-items: flex-start;
     padding: 3em 1em;
 }
+.FooterBottom .container.noPadding{
+    padding: 0;
+}
 
 /*left*/
 .FooterBottom .container .left{
@@ -51,6 +54,9 @@
     margin-top: 3em;
     padding: 1.5em 0;
     background: var(--bg-search-input-dark);
+}
+.Disclaimer.notShow{
+    display: none;
 }
 .Disclaimer.light{
     background: var(--bg-search-input-light);

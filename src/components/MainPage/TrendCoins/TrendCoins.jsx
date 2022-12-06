@@ -8,10 +8,11 @@ import {getNumRedAfterDoot} from "../../../functions/getNumRedAfterDoot";
 import {getLang} from "../../../functions/Lang/getLang";
 import TableBestCoins from "../../../general-components/TableBestCoins/TableBestCoins";
 import SpinnerAlert from "../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
+import {getTheme} from "../../../functions/Theme/getTheme";
 
 //css
 import "./TrendCoins.css";
-import {getTheme} from "../../../functions/Theme/getTheme";
+import "./TrendCoinsMedia.css";
 
 const TrendCoins = ({setShowAlert,showBestCoins = true}) => {
 

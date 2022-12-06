@@ -14,7 +14,7 @@ const TopLoseCoinsTr = ({selectSort,elem}) => {
             {/*img and name*/}
             <td>
                 <Link to={`/coins/${elem.id}`}>
-                    <img style={{width:25,marginRight:5}} src={elem[GL_IMAGE]} alt=""/>
+                    <img src={elem[GL_IMAGE]} alt=""/>
                     {elem[GL_SYMBOL].toUpperCase()} ({elem[GL_NAME]})
                 </Link>
             </td>

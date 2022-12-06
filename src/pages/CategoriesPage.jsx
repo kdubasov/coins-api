@@ -10,10 +10,11 @@ import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert/Er
 import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 import {getTheme} from "../functions/Theme/getTheme";
 import {getLang} from "../functions/Lang/getLang";
+import CategoriesDataList from "../components/CategoriesPage/CategoriesDataList/CategoriesDataList";
 
 //css
 import "../components/CategoriesPage/CategoriesPage.css";
-import CategoriesDataList from "../components/CategoriesPage/CategoriesDataList/CategoriesDataList";
+import "../components/CategoriesPage/CategoriesPageMedia.css";
 
 
 const CategoriesPage = ({setShowAlert}) => {
@@ -102,7 +103,7 @@ const CategoriesPage = ({setShowAlert}) => {
                         </h4>
                         <Table className={getTheme(true)}>
                             <thead>
-                            <PaginateCoinsSort data={data.data} setDataSort={setDataSort} />
+                                <PaginateCoinsSort data={data.data} setDataSort={setDataSort} />
                             </thead>
 
                             <tbody>

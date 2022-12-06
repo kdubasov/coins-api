@@ -7,13 +7,13 @@ import {getLang} from "../../functions/Lang/getLang";
 import "./FooterBottom.css";
 import "./FooterBottomMedia.css";
 
-const FooterBottom = () => {
+const FooterBottom = ({warningShow = true}) => {
 
     const theme = getTheme(true)
 
     return (
         <>
-            <div className={`Disclaimer ${theme}`}>
+            <div className={`Disclaimer ${theme} ${!warningShow && 'notShow'}`}>
                 <Container className="small">
                     <h4>
                         {getLang() === "eng" ? "Warning!" : "Предупреждение!"}
@@ -57,7 +57,7 @@ const FooterBottom = () => {
 
             <div className={`FooterBottom ${theme}`}>
 
-                <Container>
+                <Container className={!warningShow && 'noPadding'}>
                     <div className="left">
                         <img src={`/images/NavbarTop/${theme}.svg`} alt=""/>
                         <p className="small">
@@ -95,10 +95,13 @@ const FooterBottom = () => {
                             </Badge>
                         </div>
 
-                        <p className="small">
+                        <p className="small text-end">
                             © {new Date().getFullYear()} cryptoQuick.
                             {getLang() === "eng" && " All Rights Reserved."}
                             {getLang() === "rus" && " Все права защищены."}
+                            <br />
+                            {getLang() === "eng" && "Powered by CoinGecko."}
+                            {getLang() === "rus" && "При поддержке CoinGecko."}
                         </p>
                     </div>
                 </Container>

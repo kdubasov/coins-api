@@ -1,6 +1,7 @@
 /*table coin*/
 .TopLoseCoins .container-table{
-    width: calc(50% - .25em);
+    width: calc(50% - .5em);
+    overflow-x: hidden !important;
 }
 
 .TopLoseCoins select{
@@ -22,4 +23,25 @@
 .TopLoseCoins .container-table h6.lose{
     border-left: 3px solid var(--bs-red);
     padding: .5em 0 .5em .5em;
+}
+
+/*all tables container*/
+.TopLoseCoins .tables-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/*one table container*/
+.TopLoseCoins .container-table{
+    overflow-x: auto !important;
+}
+/*table*/
+.TopLoseCoins .TopLoseCoinsTable{
+    min-width: 400px !important;
+}
+.TopLoseCoins .TopLoseCoinsTable td img{
+    border-radius: .25em;
+    width: 25px;
+    margin-right: 5px;
 }
