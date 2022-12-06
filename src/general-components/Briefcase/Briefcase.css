@@ -1,0 +1,5 @@
+.SavedNftsTable,
+.SavedExchangesTable,
+.SavedCoinsTable{
+    overflow-x: auto !important;
+}

@@ -14,7 +14,7 @@ import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 
 const SavedExchangesTr = ({elem,setShowAlert,elemId}) => {
 
-    console.log(elemId,'SavedExchangesTr');
+    // console.log(elemId,'SavedExchangesTr');
 
     return (
         <tr className={"small"}>

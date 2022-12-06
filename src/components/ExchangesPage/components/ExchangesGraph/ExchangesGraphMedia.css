@@ -1,0 +1,19 @@
+@media screen and (max-width: 991px){
+    .ExchangesGraph h5{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .ExchangesGraph h5 strong{
+        width: 100%;
+        margin-bottom: .5em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .ExchangesGraphSelect button{
+        font-size: 12px !important;
+    }
+    /*.recharts-cartesian-axis-ticks{*/
+    /*    display: none;*/
+    /*}*/
+}

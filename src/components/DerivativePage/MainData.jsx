@@ -9,10 +9,12 @@ import {
     GL_URL
 } from "../../constants/ApiConstants";
 import {getLang} from "../../functions/Lang/getLang";
+import {getTheme} from "../../functions/Theme/getTheme";
 
 //css
 import "./MainDataDerivatives.css";
-import {getTheme} from "../../functions/Theme/getTheme";
+import "./MainDataDerivativesMedia.css";
+import {Button} from "react-bootstrap";
 
 const MainData = ({data}) => {
 
@@ -41,12 +43,17 @@ const MainData = ({data}) => {
                     <h4>{data[GL_NAME]}</h4>
                 </span>
 
-                <h5 className={"m-0"}>
-                    <a href={data[GL_URL]} target={"_blank"} rel={"noreferrer"}>
-                        {getLang() === "eng" && "Go official website"}
-                        {getLang() === "rus" && "Перейти на оф.сайт"}
+                <Button className={`but-${getTheme(true)}`} size={"sm"}>
+                    <a
+                        className={"text-decoration-none text-white fw-semibold"}
+                        href={data[GL_URL]}
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                    >
+                        {getLang() === "eng" && "Start trade"}
+                        {getLang() === "rus" && "Оф.сайт"}
                     </a>
-                </h5>
+                </Button>
             </header>
 
             <div className={'deriv-blocks-container'}>

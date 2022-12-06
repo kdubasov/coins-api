@@ -8,6 +8,7 @@ import {getLang} from "../../../functions/Lang/getLang";
 
 //css
 import "./UserProfile.css";
+import "./UserProfileMedia.css";
 
 const UserProfile = () => {
   const { logOut, user } = useUserAuth();

@@ -1,5 +1,5 @@
-.NavbarTop{
-
+.NavbarTop .container{
+    overflow: visible !important;
 }
 
 /*set border and color*/

@@ -10,6 +10,9 @@ import GeneralInfo from "../GeneralInfo/GeneralInfo";
 import {getLang} from "../../functions/Lang/getLang";
 import {getTheme} from "../../functions/Theme/getTheme";
 
+//css
+import "./Briefcase.css";
+
 const Briefcase = () => {
 
     const { user } = useUserAuth();

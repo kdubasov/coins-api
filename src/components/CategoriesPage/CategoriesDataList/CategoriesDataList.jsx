@@ -8,6 +8,7 @@ import {Badge} from "react-bootstrap";
 
 //css
 import "./CategoriesDataList.css";
+import "./CategoriesDataListMedia.css";
 
 const CategoriesDataList = ({name}) => {
 

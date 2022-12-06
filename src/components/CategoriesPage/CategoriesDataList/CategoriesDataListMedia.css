@@ -1,0 +1,13 @@
+@media screen and (max-width: 991px){
+    .CategoriesDataList .inner{
+        width: calc(50% - .25em);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .CategoriesDataList .inner{
+        width: 100%;
+        text-align: center;
+        padding: .75em .5em;
+    }
+}

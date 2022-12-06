@@ -66,8 +66,8 @@
 /*badge rank*/
 .TrendCoins .trend-coins-container .inner .badge.rank{
     position: absolute;
-    right: -5px;
-    top: -5px;
+    right: 5px;
+    top: 5px;
     font-size: 16px;
     background: var(--blue-main) !important;
 }

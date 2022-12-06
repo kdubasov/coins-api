@@ -47,7 +47,7 @@ const SavedExchangesTable = ({setShowAlert}) => {
     // console.log(allExchangesList,'allExchangesList');
 
     return (
-        <>
+        <div className={"SavedExchangesTable"}>
             {
                 (Boolean(data.length) && Boolean(allExchangesList.length)) ?
                     <Table className={getTheme(true)}>
@@ -78,7 +78,7 @@ const SavedExchangesTable = ({setShowAlert}) => {
                     </Table>:
                     <AlertNoValue value={getLang() === "eng" ? "exchanges" : "биржи"} />
             }
-        </>
+        </div>
     );
 };
 

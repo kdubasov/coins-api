@@ -4,13 +4,15 @@
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .CategoriesDataList .inner{
-    width: calc(33% - .5em);
-    padding: 1.5em 1em;
+    width: calc(33% - .25em);
+    padding: 1.5em .75em;
     border-radius: .25em;
     background: var(--bg-search-input-dark);
+    margin: .25em 0;
 }
 .CategoriesDataList.light .inner{
     background: var(--bg-search-input-light);

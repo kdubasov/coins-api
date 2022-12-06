@@ -36,7 +36,7 @@ const SavedCoinsTable = ({setShowAlert}) => {
     },[briefcaseDBData])
 
     return (
-        <>
+        <div className={"SavedCoinsTable"}>
             {
                 Boolean(data.length) ?
                     <Table className={getTheme(true)}>
@@ -66,7 +66,7 @@ const SavedCoinsTable = ({setShowAlert}) => {
                     </Table>:
                     <AlertNoValue value={getLang() === "eng" ? "coins" : "монеты"} />
             }
-        </>
+        </div>
     );
 };
 

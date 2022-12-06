@@ -38,7 +38,7 @@ const SavedNftsTable = ({setShowAlert}) => {
     },[briefcaseDBData])
 
     return (
-        <>
+        <div className={"SavedNftsTable"}>
             {
                 Boolean(data.length) ?
                     <Table className={getTheme(true)}>
@@ -66,7 +66,7 @@ const SavedNftsTable = ({setShowAlert}) => {
                     </Table>:
                     <AlertNoValue value={"nft"} />
             }
-        </>
+        </div>
     );
 };
 

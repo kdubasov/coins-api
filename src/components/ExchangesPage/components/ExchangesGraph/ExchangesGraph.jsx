@@ -6,11 +6,12 @@ import {Area, AreaChart, Brush, CartesianGrid, ResponsiveContainer, Tooltip, XAx
 import {getGraphDate} from "../../../../functions/getGraphDate";
 import ExchangesGraphSelect from "./ExchangesGraphSelect";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
+import {getLang} from "../../../../functions/Lang/getLang";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 //css
 import "./ExchangesGraph.css";
-import {getLang} from "../../../../functions/Lang/getLang";
-import {getTheme} from "../../../../functions/Theme/getTheme";
+import "./ExchangesGraphMedia.css";
 
 const ExchangesGraph = ({id}) => {
 
@@ -46,8 +47,10 @@ const ExchangesGraph = ({id}) => {
     return (
         <div className={`ExchangesGraph ${getTheme(true)}`}>
             <h5>
-                {getLang() === "rus" && "График рыночной капитализации биржи. (BTC)"}
-                {getLang() === "eng" && "Market cap graph of the exchange. (BTC)"}
+                <strong>
+                    {getLang() === "rus" && "График рыночной капитализации биржи. (BTC)"}
+                    {getLang() === "eng" && "Market cap graph of the exchange. (BTC)"}
+                </strong>
                 <ExchangesGraphSelect daysShow={daysShow} setDaysShow={setDaysShow} />
             </h5>
 
@@ -69,7 +72,7 @@ const ExchangesGraph = ({id}) => {
                     />
                     <YAxis
                         fontSize={10}
-                        width={80}
+                        width={70}
                         hide={false}
                         //тут показываем мин и макс значение рафика
                         domain={['dataMin', 'dataMax']}

@@ -33,7 +33,7 @@
 .UserData header span.placeholder{
     width: 100px;
     height: auto;
-    border-radius: .5em;
+    border-radius: .25em;
 }
 /*text*/
 .UserData header .text-container{

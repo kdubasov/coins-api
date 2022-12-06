@@ -5,11 +5,12 @@ import {
 } from "../../constants/ApiConstants";
 import {Badge} from "react-bootstrap";
 import MainButtons from "../CoinPage/components/MainButtons/MainButtons";
+import {getLang} from "../../functions/Lang/getLang";
+import MarketDataNft from "./MarketDataNft";
 
 // css
 import "./NftPage.css";
-import {getLang} from "../../functions/Lang/getLang";
-import MarketDataNft from "./MarketDataNft";
+import "./NftPageMedia.css";
 
 const MainData = ({dataMain,setShowAlert}) => {
 

@@ -1,0 +1,23 @@
+@media screen and (max-width: 991px){
+    /*header with descr*/
+    .MainData.nft header{
+        width: 100%;
+    }
+    .MainData.nft header .top-content{
+        padding: 1em 0;
+    }
+
+    /*blocks*/
+    .nft-market-data{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .nft-market-data .inner{
+        padding: .75em 1em;
+    }
+}

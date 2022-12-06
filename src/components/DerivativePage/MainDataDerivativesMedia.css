@@ -1,0 +1,19 @@
+@media screen and (max-width:991px) {
+    .MainData.derivatives header{
+        padding: 2em 0;
+    }
+    .deriv-blocks-container .inner{
+        width: calc(50% - .25em);
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .MainData.derivatives header{
+        padding: 1.5em 0;
+    }
+    /*logo*/
+    .MainData.derivatives header .logo-cont img{
+        width: 50px;
+    }
+}

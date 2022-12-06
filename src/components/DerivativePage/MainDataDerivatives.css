@@ -9,6 +9,7 @@
     padding: 3em 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .MainData.derivatives header .logo-cont{
     display: flex;
@@ -26,18 +27,21 @@
 /*deriv-blocks-container*/
 .deriv-blocks-container{
     width: 100%;
+    padding: 0 0 1em;
     display: flex;
     justify-content: space-between;
-    padding: 0 0 1em;
+    flex-wrap: wrap;
 }
 .deriv-blocks-container .inner{
-    width: calc(20% - .5em);
+    width: calc(20% - .25em);
+    margin: .25em 0;
     padding: 1.5em 1em;
     border-radius: .25em;
     background: var(--bg-search-input-dark);
     display: flex;
     align-content: center;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 .derivatives.light .deriv-blocks-container .inner{
     background: var(--bg-search-input-light);

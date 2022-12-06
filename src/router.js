@@ -26,6 +26,10 @@ import SearchInput from "./general-components/SearchMain/SearchInput";
 
 const Router = () => {
 
+    //path from url
+    const path = window.location.pathname;
+
+    //theme
     const theme = getTheme(true);
 
     // for show/hide alert
@@ -51,9 +55,12 @@ const Router = () => {
                 <NavbarTop theme={theme} />
 
                 {/*general search*/}
-                <div className="container search-mobile">
-                    <SearchInput theme={theme} />
-                </div>
+                {
+                    path === "/" &&
+                    <div className="container search-mobile">
+                        <SearchInput theme={theme} />
+                    </div>
+                }
 
                 {/*проверяем коннект с апи*/}
                 <CheckConnectApi />
