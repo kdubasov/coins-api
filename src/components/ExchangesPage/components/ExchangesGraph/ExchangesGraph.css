@@ -9,3 +9,18 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.exch-graph-container{
+    margin: 2em 0;
+}
+
+/*for mobile when we hide graph*/
+.ExchangesGraph .mobile-block-exch{
+    display: none;
+    padding: 1.5em .75em;
+    border-radius: .25em;
+    background: var(--bg-search-input-dark);
+}
+.ExchangesGraph.light .mobile-block-exch{
+    background: var(--bg-search-input-light);
+}

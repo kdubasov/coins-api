@@ -49,3 +49,15 @@
     font-weight: 700;
     color: var(--text-dark);
 }
+
+/*gen-graph-cont FOR MOBILE*/
+.GeneralGraph .gen-graph-cont-mobile{
+    display: none;
+    padding: 1.5em 1em;
+    margin: .5em 0;
+    border-radius: .25em;
+    background-color: var(--bg-search-input-dark);
+}
+.GeneralGraph.light .gen-graph-cont-mobile{
+    background-color: var(--bg-search-input-light);
+}

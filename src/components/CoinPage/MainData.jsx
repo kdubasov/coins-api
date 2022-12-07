@@ -18,6 +18,7 @@ import {getTheme} from "../../functions/Theme/getTheme";
 
 //css
 import "./MainDataCoin.css";
+import "./MainDataCoinMedia.css";
 
 const MainData = ({dataMain,setShowAlert}) => {
 

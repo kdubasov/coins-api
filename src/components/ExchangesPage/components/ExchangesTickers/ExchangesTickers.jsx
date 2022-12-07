@@ -2,7 +2,7 @@ import React from 'react';
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_EXCHANGES_ID_TICKERS} from "../../../../constants/ApiCommand";
 import {GL_TICKERS} from "../../../../constants/ApiConstants";
-import {Table} from "react-bootstrap";
+import {Container, Table} from "react-bootstrap";
 import ExchangesTickersTr from "./ExchangesTickersTr";
 import {getLang} from "../../../../functions/Lang/getLang";
 import {getTheme} from "../../../../functions/Theme/getTheme";
@@ -27,8 +27,9 @@ const ExchangesTickers = ({id,mainData}) => {
                 {getLang() === "eng" && "Markets"}
             </h4>
 
-            <Table className={getTheme(true)}>
-                <thead>
+            <Container className={"exch-table-container"}>
+                <Table className={getTheme(true)}>
+                    <thead>
                     <tr className={"small"}>
                         <th>#</th>
                         <th>{getLang() === "eng" ? "Coins" : "Монеты"}</th>
@@ -39,16 +40,17 @@ const ExchangesTickers = ({id,mainData}) => {
                         <th>{getLang() === "eng" ? "Converted volume" : "Преобразованный объем"}</th>
                         <th>{getLang() === "eng" ? "Last trade" : "Последняя сделка"}</th>
                     </tr>
-                </thead>
+                    </thead>
 
-                <tbody>
+                    <tbody>
                     {
                         showData.map((tick,ids) => (
                             <ExchangesTickersTr key={ids} tick={tick} ids={ids} />
                         ))
                     }
-                </tbody>
-            </Table>
+                    </tbody>
+                </Table>
+            </Container>
         </div>
     );
 };

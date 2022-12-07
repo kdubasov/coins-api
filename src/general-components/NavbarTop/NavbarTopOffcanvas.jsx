@@ -14,6 +14,12 @@ const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
         <Offcanvas show={show} onHide={handleClose} backdrop="static" className={getTheme(true)}>
             <Offcanvas.Header>
                 <div className={"left d-flex align-items-center"}>
+                    <img
+                        src="/images/general-svg/favicon.svg"
+                        alt="logo"
+                        width={40}
+                        style={{marginRight:15}}
+                    />
                     {//check user is logged or not
                         user ?
                             <div className={"login-container"}>
@@ -33,7 +39,11 @@ const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
                     }
 
                     {/*briefcase link*/}
-                    <Link className={'small briefcase-link'} to={'/briefcase'}>
+                    <Link
+                        className={'small text-white'}
+                        to={'/briefcase'}
+                        style={{marginLeft:10}}
+                    >
                         {getLang() === 'rus' ? 'Избранное' : 'Favorites'}
                     </Link>
                 </div>

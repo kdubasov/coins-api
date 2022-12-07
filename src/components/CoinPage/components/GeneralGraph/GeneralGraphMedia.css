@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px) {
+    .GeneralGraph{
+        margin-bottom: 0;
+    }
+    .gen-graph-cont{
+        display: none;
+    }
+    .GeneralGraph .gen-graph-cont-mobile{
+        display: flex;
+    }
+}

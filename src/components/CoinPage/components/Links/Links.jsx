@@ -8,11 +8,12 @@ import {
     GL_LINK_REDDIT,
     GL_LINK_REPOS, GL_TWIT_NAME
 } from "../../../../constants/ApiConstants";
+import {getLang} from "../../../../functions/Lang/getLang";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 //css
 import "./Links.css";
-import {getLang} from "../../../../functions/Lang/getLang";
-import {getTheme} from "../../../../functions/Theme/getTheme";
+import "./LinksMedia.css";
 
 const Links = ({data}) => {
 

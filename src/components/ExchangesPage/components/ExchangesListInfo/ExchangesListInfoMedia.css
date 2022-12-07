@@ -1,0 +1,16 @@
+@media screen and (max-width:991px) {
+    .ExchangesListInfo{
+        justify-content: flex-start;
+    }
+    .ExchangesListInfo .inner{
+        width: calc(33% - .25em);
+        margin: .125em .25em .125em 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .ExchangesListInfo .inner{
+        width: calc(50% - .25em);
+        text-align: center;
+    }
+}

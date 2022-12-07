@@ -1,5 +1,5 @@
 .DateInfo{
-    padding: 2em 0;
+    padding: 1em 0;
 }
 
 /*text top*/
@@ -11,14 +11,18 @@
 }
 
 .DateInfo .form-control{
+    width: 30%;
     padding: .5em 1em;
     font-size: 1.4em;
     font-weight: 800;
 }
 /*placeholder colors*/
 .DateInfo.dark .form-control{
+    min-width: 200px;
+    background: none;
     font-weight: 500;
     color: var(--white-op-15);
+    transition: .3s;
 }
 .DateInfo.light .form-control{
     font-weight: 500;
@@ -27,10 +31,6 @@
 /*inputs styles*/
 .DateInfo .form-control,
 .DateInfo .form-control:focus{
-    width: 30%;
-    min-width: 200px;
-    padding: .5em 1em;
-    background: none;
     color: var(--white);
     border: 1px solid var(--white-op-15);
 }

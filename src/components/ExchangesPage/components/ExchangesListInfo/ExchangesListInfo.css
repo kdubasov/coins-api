@@ -3,6 +3,7 @@
     margin: 2em 0 1em;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .ExchangesListInfo .inner{
     width: calc(20% - .5em);

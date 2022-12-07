@@ -32,7 +32,10 @@ const DevGraph = ({data}) => {
                         domain={['dataMin', 'dataMax']}
                     />
                     <Legend />
-                    <Bar dataKey="commits" fill="#326CF4" />
+                    <Bar
+                        dataKey="commits"
+                        fill={getTheme(true) === "dark" ? "#DCDCDC" : "#373737"}
+                    />
                 </BarChart>
             </ResponsiveContainer>
         </div>

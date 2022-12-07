@@ -8,6 +8,7 @@ import {getLang} from "../../../../functions/Lang/getLang";
 
 //css
 import "./TableChangePrice.css";
+import "./TableChangePriceMedia.css";
 
 const TableChangePrice = ({data}) => {
 

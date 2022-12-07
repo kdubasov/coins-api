@@ -7,6 +7,7 @@ import {getLang} from "../../../../functions/Lang/getLang";
 
 //css
 import "./CoinConverter.css";
+import "./CoinConverterMedia.css";
 
 const CoinConverter = ({symbol,data}) => {
 

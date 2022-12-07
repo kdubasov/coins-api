@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px){
+    /*input font-size*/
+    .CoinConverter .converter-container .form-control{
+        font-size: 1.2em;
+    }
+    /*delete arrow from select and add image arrow*/
+    .CoinConverter .converter-container select{
+        background: none;
+    }
+    .CoinConverter.light .converter-container select{
+        background: none;
+    }
+
+    /*inputs*/
+    .CoinConverter .converter-container{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .CoinConverter .converter-container .input-group{
+        width: 100%;
+    }
+    .CoinConverter .converter-container img{
+        width: 30px;
+        margin: .5em 0;
+    }
+}
+
+@media screen and (max-width: 500px){
+    /*input font-size*/
+    .CoinConverter .converter-container .form-control{
+        font-size: 1em;
+    }
+    .CoinConverter .converter-container img{
+        width: 20px;
+        margin: .25em 0;
+    }
+}

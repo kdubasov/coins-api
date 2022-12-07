@@ -13,10 +13,11 @@ import {getLang} from "../../../../functions/Lang/getLang";
 import MainButtons from "../MainButtons/MainButtons";
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_SIMPLE_PRICE} from "../../../../constants/ApiCommand";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 //css
 import "./DefaultInfo.css";
-import {getTheme} from "../../../../functions/Theme/getTheme";
+import "./DefaultInfoMedia.css";
 
 const DefaultInfo = ({dataMain,setShowAlert}) => {
 

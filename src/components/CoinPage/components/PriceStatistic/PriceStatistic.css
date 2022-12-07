@@ -36,20 +36,31 @@
 .PriceStatistic .cont-blocks-ps .inner p.right{
     margin: 0;
     display: flex;
-    text-align: right;
-    flex-direction: column !important;
+    text-align: right !important;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 /*for blocks with absolute min and max*/
+.PriceStatistic .cont-blocks-ps .inner p strong{
+    width: 100%;
+}
 .PriceStatistic .cont-blocks-ps .inner p.right.abs strong{
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-.PriceStatistic .cont-blocks-ps .inner p.right.abs .badge{
+.PriceStatistic .cont-blocks-ps .inner p.right.abs span.badge{
+    max-width: 100px !important;
     margin-left: .5em;
 }
 
 .PriceStatistic .cont-blocks-ps .inner p.small{
     font-weight: 500;
     opacity: .5;
+    margin: 0;
+}
+
+/*badge*/
+.PriceStatistic .badge{
+    max-width: 100px;
 }

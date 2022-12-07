@@ -1,0 +1,19 @@
+@media screen and (max-width: 991px) {
+    .MainData.coin .top-block .left{
+        width: 100%;
+    }
+    .MainData.coin .top-block .right{
+        width: 100%;
+        margin-top: .5em;
+    }
+
+    .MainData.coin .center-block{
+        flex-wrap: wrap;
+        margin-bottom: 3em;
+    }
+    .MainData.coin .center-block .right{
+        width: 100%;
+        padding-left: 0;
+        margin-top: 3em;
+    }
+}

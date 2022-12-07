@@ -2,10 +2,11 @@ import React from 'react';
 import {GL_COUNTR, GL_EXC_YEAR, GL_EXH_24H_VOL, GL_EXH_TR_SC, GL_TWIT_NAND} from "../../../../constants/ApiConstants";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
 import {getLang} from "../../../../functions/Lang/getLang";
+import {getTheme} from "../../../../functions/Theme/getTheme";
 
 //css
 import "./ExchangesListInfo.css";
-import {getTheme} from "../../../../functions/Theme/getTheme";
+import "./ExchangesListInfoMedia.css";
 
 
 const ExchangesListInfo = ({data}) => {

@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 .MainData.coin.dark .top-block{
     border-bottom: 1px solid var(--bg-search-input-dark);

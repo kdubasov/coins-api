@@ -1,0 +1,35 @@
+@media screen and (max-width:991px) {
+    .PriceStatistic{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .PriceStatistic .cont-blocks-ps .inner{
+        width: calc(50% - .25em);
+        padding: 1em;
+        margin: .125em .25em .125em 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-bottom: 0;
+        background-color: var(--dark-bg);
+        border-radius: .25em;
+    }
+    .PriceStatistic.light .cont-blocks-ps .inner{
+        background-color: var(--white);
+    }
+    .PriceStatistic .cont-blocks-ps .inner p.right{
+        width: 100%;
+        justify-content: center;
+        text-align: center !important;
+    }
+    .PriceStatistic .cont-blocks-ps .inner p.right.abs strong{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .PriceStatistic .cont-blocks-ps .inner{
+        width: 100%;
+        margin: .125em 0 .125em 0;
+        padding: .5em;
+    }
+}

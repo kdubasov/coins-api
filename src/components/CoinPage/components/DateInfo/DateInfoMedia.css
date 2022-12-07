@@ -1,0 +1,36 @@
+@media screen and (max-width: 768px) {
+    /*text top*/
+    .DateInfo p{
+        margin-bottom: 1em;
+    }
+
+    /*input*/
+    .DateInfo .form-control{
+        width: 50%;
+        padding: .5em .75em;
+        font-size: 1.2em;
+        font-weight: 800;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /*main container*/
+    .DateInfo{
+        padding: 0;
+    }
+    /*input*/
+    .DateInfo .form-control{
+        width: 50%;
+        padding: .25em .75em;
+        font-size: 1.2em;
+        font-weight: 800;
+    }
+
+    /*inner block*/
+    .DateInfoResult .inner{
+        width: calc(100% - .25em);
+        margin: .125em 0;
+        padding: .75em 1em;
+        text-align: center;
+    }
+}

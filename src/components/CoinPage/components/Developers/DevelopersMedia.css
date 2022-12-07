@@ -1,0 +1,23 @@
+@media screen and (max-width: 991px) {
+    .Developers{
+        margin: 3em 0;
+    }
+    .Developers .dev-blocks-container{
+        padding: .5em 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .Developers .dev-blocks-container .inner{
+        width: calc(33% - .25em);
+        padding: 1em .75em;
+        margin: .125em .25em .125em 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Developers .dev-blocks-container .inner{
+        width: calc(50% - .25em);
+        padding: .75em .5em;
+        text-align: center;
+    }
+}

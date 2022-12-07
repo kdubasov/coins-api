@@ -2,15 +2,17 @@ import React, {useState} from 'react';
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_COINS_TICKERS} from "../../../../constants/ApiCommand";
 import {GL_TICKERS} from "../../../../constants/ApiConstants";
-import {Alert, Table} from "react-bootstrap";
+import {Alert, Container, Table} from "react-bootstrap";
 import TickersTableTr from "./TickersTableTr";
 import TickersTableShowMore from "./TickersTableShowMore";
 import {getTheme} from "../../../../functions/Theme/getTheme";
+import {getLang} from "../../../../functions/Lang/getLang";
+import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
+
 
 //css
 import "./TickersTable.css";
-import {getLang} from "../../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
+import "./TickersTableMedia.css";
 
 const TickersTable = ({id,name = false}) => {
 
@@ -18,13 +20,13 @@ const TickersTable = ({id,name = false}) => {
     // console.log(data,'GLOBAL_API_COINS_TICKERS');
 
     //показать больше маркетов
-    const [showMore,setShowMore] = useState(false)
+    const [showMore,setShowMore] = useState(false);
 
     return (
-        <div className={'TickersTable'}>
+        <Container className={'TickersTable'}>
             <h4>
                 {getLang() === "rus" && `${name && name} Рынки:`}
-                {getLang() === "eng " && `${name && name} Markets:`}
+                {getLang() === "eng" && `${name && name} Markets:`}
             </h4>
 
             {
@@ -91,7 +93,7 @@ const TickersTable = ({id,name = false}) => {
                     </>:
                     <SpinnerAlert />
             }
-        </div>
+        </Container>
     );
 };
 

@@ -12,6 +12,7 @@ import {getTheme} from "../../../../functions/Theme/getTheme";
 
 //css
 import "./Developers.css";
+import "./DevelopersMedia.css";
 
 const Developers = ({data}) => {
 
@@ -36,6 +37,7 @@ const Developers = ({data}) => {
                 {getLang() === "eng" && "Development Information"}
                 {getLang() === "rus" && "Информация о разработке"}
             </h4>
+
             {
                 data?
                     <>

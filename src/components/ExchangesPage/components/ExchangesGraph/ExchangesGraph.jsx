@@ -51,7 +51,9 @@ const ExchangesGraph = ({id}) => {
                     {getLang() === "rus" && "График рыночной капитализации биржи. (BTC)"}
                     {getLang() === "eng" && "Market cap graph of the exchange. (BTC)"}
                 </strong>
-                <ExchangesGraphSelect daysShow={daysShow} setDaysShow={setDaysShow} />
+                <div className={'exch-select-container'}>
+                    <ExchangesGraphSelect daysShow={daysShow} setDaysShow={setDaysShow} />
+                </div>
             </h5>
 
             {//check data for graph
@@ -62,7 +64,22 @@ const ExchangesGraph = ({id}) => {
                 </Alert>
             }
 
-            <ResponsiveContainer className={'mt-3 mb-3'} width="100%" height={350}>
+            <div className="mobile-block-exch">
+                <h6 className={"m-0"}>
+                    {
+                        getLang() === "rus" &&
+                        "Для отображения графика вы должны открыть приложение " +
+                        "на компбютере или планшете."
+                    }
+                    {
+                        getLang() === "eng" &&
+                        "To display the graph, you must open the application " +
+                        "on your computer or tablet."
+                    }
+                </h6>
+            </div>
+
+            <ResponsiveContainer className={'exch-graph-container'} width="100%" height={300}>
                 <AreaChart
                     data={dataObjGraph}
                 >

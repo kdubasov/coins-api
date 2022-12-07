@@ -13,7 +13,14 @@
     .ExchangesGraphSelect button{
         font-size: 12px !important;
     }
-    /*.recharts-cartesian-axis-ticks{*/
-    /*    display: none;*/
-    /*}*/
+    .exch-graph-container,
+    .exch-select-container{
+        display: none !important;
+    }
+    .ExchangesGraph h5{
+        margin-bottom: .5em;
+    }
+    .ExchangesGraph .mobile-block-exch{
+        display: block;
+    }
 }

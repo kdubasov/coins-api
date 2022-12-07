@@ -4,12 +4,13 @@ import {
     GL_DESCRIPT, GL_EXC_CENTR, GL_IMAGE, GL_NAME
 } from "../../constants/ApiConstants";
 import {getTheme} from "../../functions/Theme/getTheme";
-
-//css
-import "./MainDataExchanges.css";
 import {getLang} from "../../functions/Lang/getLang";
 import MainButtons from "../CoinPage/components/MainButtons/MainButtons";
 import ExchangesListInfo from "./components/ExchangesListInfo/ExchangesListInfo";
+
+//css
+import "./MainDataExchanges.css";
+import "./MainDataExchangesMedia.css";
 
 const MainData = ({data,setShowAlert,id}) => {
 

@@ -23,4 +23,10 @@
     .FooterBottom .container .right{
         margin-top: 2em;
     }
+    .FooterBottom .container .right .links{
+        justify-content: flex-start;
+    }
+    .FooterBottom .container .right p{
+        text-align: left !important;
+    }
 }

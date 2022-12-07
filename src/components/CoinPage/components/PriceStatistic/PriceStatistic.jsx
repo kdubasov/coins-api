@@ -12,6 +12,7 @@ import {getLang} from "../../../../functions/Lang/getLang";
 
 //css
 import "./PriceStatistic.css";
+import "./PriceStatisticMedia.css";
 import {Badge} from "react-bootstrap";
 
 const PriceStatistic = ({data,title}) => {

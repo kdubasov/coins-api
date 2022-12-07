@@ -10,6 +10,9 @@
 }
 
 /*left*/
+.FooterBottom .container .left.notShow{
+    display: none !important;
+}
 .FooterBottom .container .left{
     width: calc(25% - 1em);
 }

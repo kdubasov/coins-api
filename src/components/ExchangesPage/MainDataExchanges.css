@@ -33,3 +33,12 @@
 .exchanges header .right button{
     margin-bottom: .5em;
 }
+
+/*tickers table container*/
+.exch-table-container{
+    padding: 0 !important;
+}
+/*main block exchanges page*/
+.container.ExchangesPage{
+    overflow-x: hidden !important;
+}

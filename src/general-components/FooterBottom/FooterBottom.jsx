@@ -58,7 +58,7 @@ const FooterBottom = ({warningShow = true}) => {
             <div className={`FooterBottom ${theme}`}>
 
                 <Container className={!warningShow && 'noPadding'}>
-                    <div className="left">
+                    <div className={`left ${!warningShow && 'notShow'}`}>
                         <img src={`/images/NavbarTop/${theme}.svg`} alt=""/>
                         <p className="small">
                             {

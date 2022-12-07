@@ -10,15 +10,16 @@ import {
 } from "../../../../constants/ApiConstants";
 import {Badge} from "react-bootstrap";
 import {getTheme} from "../../../../functions/Theme/getTheme";
+import {getLang} from "../../../../functions/Lang/getLang";
 
 //css
 import "./TableMarketData.css";
-import {getLang} from "../../../../functions/Lang/getLang";
+import "./TableMarketDataMedia.css";
 
 const TableMarketData = ({data}) => {
 
     return (
-        <div className={`TableMarketData my-3 ${getTheme(true)}`}>
+        <div className={`TableMarketData ${getTheme(true)}`}>
             <div className={"inner"}>
                 <p className={"small"}>
                     {getLang() === "rus" && "Изменение цены за 24ч:"}

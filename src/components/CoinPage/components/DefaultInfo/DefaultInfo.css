@@ -6,7 +6,8 @@
 /*badge with rank*/
 .DefaultInfo .coin-rank {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 700;
+    background: var(--blue-main) !important;
 }
 
 .DefaultInfo header{
@@ -16,7 +17,7 @@
 /*name*/
 .DefaultInfo .name-block{
     margin-right: 3em;
-    padding: 1em 0 1.5em;
+    padding: 1.25em 0;
     display: flex;
     align-items: center;
 }

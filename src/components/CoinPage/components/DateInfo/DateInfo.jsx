@@ -5,10 +5,11 @@ import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_COINS_HISTORY} from "../../../../constants/ApiCommand";
 import {GL_MD} from "../../../../constants/ApiConstants";
 import {getTheme} from "../../../../functions/Theme/getTheme";
+import {getLang} from "../../../../functions/Lang/getLang";
 
 //css
 import "./DateInfo.css";
-import {getLang} from "../../../../functions/Lang/getLang";
+import "./DateInfoMedia.css";
 
 const DateInfo = ({id,name}) => {
 

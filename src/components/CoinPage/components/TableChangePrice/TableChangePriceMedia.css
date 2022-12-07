@@ -1,0 +1,17 @@
+@media screen and (max-width:1200px) {
+    .TableChangePrice .inner{
+        width: calc((100% / 4) - .5em);
+        margin: .25em 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .TableChangePrice{
+        margin: 2em 0;
+    }
+    .TableChangePrice .inner{
+        width: calc((100% / 2) - .25em);
+        padding: .5em;
+    }
+}

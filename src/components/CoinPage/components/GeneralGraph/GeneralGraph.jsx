@@ -15,12 +15,12 @@ import {
 import {getGraphDate} from "../../../../functions/getGraphDate";
 import GeneralGraphHeader from "./GeneralGraphHeader";
 import {GL_MKS, GL_PRICES, GL_TT_VOLS} from "../../../../constants/ApiConstants";
-
-//css
-import "./GeneralGraph.css";
 import {getTheme} from "../../../../functions/Theme/getTheme";
 import {getLang} from "../../../../functions/Lang/getLang";
 
+//css
+import "./GeneralGraph.css";
+import "./GeneralGraphMedia.css";
 
 const GeneralGraph = ({id,name,symbol}) => {
 
@@ -85,14 +85,16 @@ const GeneralGraph = ({id,name,symbol}) => {
             </p>
 
             {/*sort header*/}
-            <GeneralGraphHeader
-                timeInterval={timeInterval}
-                setTimeInterval={setTimeInterval}
-                getObjectGraph={getObjectGraph}
-                dataMarketCaps={dataMarketCaps}
-                dataVolumes={dataVolumes}
-                dataPrices={dataPrices}
-            />
+            <div className="gen-graph-cont">
+                <GeneralGraphHeader
+                    timeInterval={timeInterval}
+                    setTimeInterval={setTimeInterval}
+                    getObjectGraph={getObjectGraph}
+                    dataMarketCaps={dataMarketCaps}
+                    dataVolumes={dataVolumes}
+                    dataPrices={dataPrices}
+                />
+            </div>
 
             {//alert if value for graph false
                 showValue.length <= 1 &&
@@ -102,7 +104,22 @@ const GeneralGraph = ({id,name,symbol}) => {
                 </Alert>
             }
 
-            <ResponsiveContainer className={'mt-3 mb-3'} width="100%" height={400}>
+            <div className="gen-graph-cont-mobile">
+                <h6 className={"m-0"}>
+                    {
+                        getLang() === "rus" &&
+                        "Для отображения графика вы должны открыть приложение " +
+                        "на компбютере или планшете."
+                    }
+                    {
+                        getLang() === "eng" &&
+                        "To display the graph, you must open the application " +
+                        "on your computer or tablet."
+                    }
+                </h6>
+            </div>
+
+            <ResponsiveContainer className={'gen-graph-cont mt-3 mb-3'} width="100%" height={400}>
                 <AreaChart
                     //----------GRAPH----------
                     className={`graph-coin ${getTheme(true)}`}

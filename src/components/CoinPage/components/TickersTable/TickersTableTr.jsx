@@ -40,8 +40,8 @@ const TickersTableTr = ({data,ids}) => {
             <td>
                 <div
                     style={{
-                        width:25,
-                        height:25,
+                        width:22,
+                        height:22,
                         background:`${data[GL_EXH_TR_SC]}`,
                         borderRadius:5,
                         margin:"auto",
