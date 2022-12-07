@@ -1,0 +1,31 @@
+@media screen and (max-width:1200px) {
+    .Login{
+        min-height: 60vh;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .Login .buttons-container{
+        flex-direction: column;
+    }
+    .Login .buttons-container button:last-child{
+        margin: .5em 0;
+    }
+    .Login .buttons-container button{
+        width: 100%;
+        margin: .5em 0;
+    }
+}
+
+/*phone login*/
+@media screen and (max-width:500px) {
+    /*input*/
+    .phone-input-block,
+    .otp-input{
+        padding: .5em 1em;
+    }
+    .phone-input-block input,
+    .otp-input{
+        font-size: 1em;
+    }
+}

@@ -23,12 +23,16 @@ const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
                     {//check user is logged or not
                         user ?
                             <div className={"login-container"}>
-                                <Link className={'small'} to={'/userProfile'}>
-                                    {getLang() === 'rus' ? 'Аккаунт' : 'Account'}
-                                </Link>
                                 <Button size={"sm"} onClick={handleLogout} variant={"primary"}>
                                     {getLang() === 'rus' ? 'Выйти' : 'Sign out'}
                                 </Button>
+                                <Link
+                                    className={'small text-white'}
+                                    style={{margin:"0 5px 0 15px"}}
+                                    to={'/userProfile'}
+                                >
+                                    {getLang() === 'rus' ? 'Аккаунт' : 'Account'}
+                                </Link>
                             </div>:
 
                             <Link className={'small'} to={'/login'}>

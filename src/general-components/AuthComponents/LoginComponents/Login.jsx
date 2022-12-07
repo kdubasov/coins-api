@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import {Button, Container} from "react-bootstrap";
 import GoogleButton from "react-google-button";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
+import {getTheme} from "../../../functions/Theme/getTheme";
+import {getLang} from "../../../functions/Lang/getLang";
+
 
 //css
 import "./Login.css";
-import {getTheme} from "../../../functions/Theme/getTheme";
-import {getLang} from "../../../functions/Lang/getLang";
+import "./LoginMedia.css";
 
 const Login = () => {
 
