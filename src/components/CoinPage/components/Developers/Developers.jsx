@@ -21,14 +21,12 @@ const Developers = ({data}) => {
 
     //for get list item
     const getListItem = (value,text) =>{
-        if (value){
-            return(
-                <div className={"inner"}>
-                    <h5>{value ? value : '?'}</h5>
-                    <p className={"small"}>{text}</p>
-                </div>
-            )
-        }else return false;
+        return(
+            <div className={"inner"}>
+                <h5>{value ? value : '?'}</h5>
+                <p className={"small"}>{text}</p>
+            </div>
+        )
     }
 
     return (

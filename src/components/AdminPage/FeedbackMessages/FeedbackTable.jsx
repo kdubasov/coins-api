@@ -13,12 +13,10 @@ const FeedbackTable = ({setShowAlert}) => {
         return (
             <div className={"FeedbackTable"}>
                 <h5>
-                    <Badge bg={"secondary"} className={"fw-light"}>
-                        Заявки с формы обратной связи
-                    </Badge>
+                    Заявки с формы обратной связи
                 </h5>
 
-                <Table striped bordered variant={getTheme(true)}>
+                <Table className={getTheme(true)}>
                     <thead>
                     <tr className={"small"}>
                         <th>Дата</th>

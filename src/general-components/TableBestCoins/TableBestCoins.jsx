@@ -53,19 +53,21 @@ const TableBestCoins = ({setShowAlert}) => {
             </Table>
 
             {/*show more button*/}
-            <Button size={"sm"} onClick={handleShowMore}>
-                {
-                    showCoins === 10 ?
-                        <>
-                            {getLang() === 'eng' && "Show more"}
-                            {getLang() === 'rus' && "Показать еще"}
-                        </>:
-                        <>
-                            {getLang() === 'eng' && "Hide"}
-                            {getLang() === 'rus' && "Скрыть"}
-                        </>
-                }
-            </Button>
+            <div className="d-flex justify-content-center">
+                <Button size={"sm"} onClick={handleShowMore}>
+                    {
+                        showCoins === 10 ?
+                            <>
+                                {getLang() === 'eng' && "Show more"}
+                                {getLang() === 'rus' && "Показать еще"}
+                            </>:
+                            <>
+                                {getLang() === 'eng' && "Hide"}
+                                {getLang() === 'rus' && "Скрыть"}
+                            </>
+                    }
+                </Button>
+            </div>
         </div>
     );
 };
