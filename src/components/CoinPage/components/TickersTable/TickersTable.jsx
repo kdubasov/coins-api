@@ -7,7 +7,6 @@ import TickersTableTr from "./TickersTableTr";
 import TickersTableShowMore from "./TickersTableShowMore";
 import {getTheme} from "../../../../functions/Theme/getTheme";
 import {getLang} from "../../../../functions/Lang/getLang";
-import SpinnerAlert from "../../../../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 
 
 //css
@@ -38,7 +37,7 @@ const TickersTable = ({id,name = false}) => {
             }
 
             {
-                data?
+                data &&
                     <>
                         <Table className={getTheme(true)}>
                             <thead>
@@ -90,8 +89,7 @@ const TickersTable = ({id,name = false}) => {
                             Object.values(data).length >= 20 &&
                             <TickersTableShowMore showMore={showMore} setShowMore={setShowMore} />
                         }
-                    </>:
-                    <SpinnerAlert />
+                    </>
             }
         </Container>
     );

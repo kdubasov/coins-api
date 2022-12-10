@@ -21,7 +21,7 @@
     min-width: 200px;
     background: none;
     font-weight: 500;
-    color: var(--white-op-15);
+    color: var(--white);
     transition: .3s;
 }
 .DateInfo.light .form-control{
@@ -67,4 +67,14 @@
 }
 .DateInfoResult .inner p.small{
     opacity: .5;
+}
+
+/*alert*/
+.DateInfo .alert{
+    padding: 1em;
+    background: var(--blue-main);
+    border: none;
+    color: var(--white);
+    font-weight: 600 !important;
+    text-align: center;
 }

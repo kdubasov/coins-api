@@ -23,7 +23,7 @@ const NftPage = ({setShowAlert}) => {
             <ErrorGetInfoAlert data={data} />
 
             {   //show result or wait result
-                Object.values(data.data).length?
+                Boolean(Object.values(data.data).length)?
                     <MainData dataMain={data.data} setShowAlert={setShowAlert} /> :
                     <SpinnerAlert />
             }

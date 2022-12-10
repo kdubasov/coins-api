@@ -4,12 +4,20 @@ import NavbarInfo from "../NavbarInfo/NavbarInfo";
 
 //css
 import "./NavbarTopOffcanvas.css";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {getLang} from "../../functions/Lang/getLang";
 import {getTheme} from "../../functions/Theme/getTheme";
 import FooterBottom from "../FooterBottom/FooterBottom";
 
 const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
+
+    const navigate = useNavigate();
+    //go link and close menu
+    const handleLink = url => {
+        navigate(url);
+        handleClose();
+    }
+
     return (
         <Offcanvas show={show} onHide={handleClose} backdrop="static" className={getTheme(true)}>
             <Offcanvas.Header>
@@ -18,7 +26,7 @@ const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
                         src="/images/general-svg/favicon.svg"
                         alt="logo"
                         width={40}
-                        style={{marginRight:15}}
+                        style={{marginRight:20}}
                     />
                     {//check user is logged or not
                         user ?
@@ -26,30 +34,29 @@ const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
                                 <Button size={"sm"} onClick={handleLogout} variant={"primary"}>
                                     {getLang() === 'rus' ? 'Выйти' : 'Sign out'}
                                 </Button>
-                                <Link
+                                <p
+                                    onClick={() => handleLink('/userProfile')}
                                     className={'small text-white'}
-                                    style={{margin:"0 5px 0 15px"}}
-                                    to={'/userProfile'}
+                                    style={{margin:"0 5px 0 10px"}}
                                 >
                                     {getLang() === 'rus' ? 'Аккаунт' : 'Account'}
-                                </Link>
+                                </p>
                             </div>:
 
-                            <Link className={'small'} to={'/login'}>
-                                <Button size={"sm"} variant={'primary'}>
-                                    {getLang() === 'rus' ? 'Вход' : 'Sign in'}
-                                </Button>
-                            </Link>
+                            <Button size={"sm"} variant={'primary'} onClick={() => handleLink('/login')}>
+                                {getLang() === 'rus' ? 'Вход' : 'Sign in'}
+                            </Button>
+
                     }
 
                     {/*briefcase link*/}
-                    <Link
-                        className={'small text-white'}
-                        to={'/briefcase'}
+                    <p
+                        className={'small text-white m-0 mx-2'}
+                        onClick={() => handleLink('/briefcase')}
                         style={{marginLeft:10}}
                     >
                         {getLang() === 'rus' ? 'Избранное' : 'Favorites'}
-                    </Link>
+                    </p>
                 </div>
 
                 {/*close button*/}

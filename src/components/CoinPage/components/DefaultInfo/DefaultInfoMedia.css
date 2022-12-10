@@ -1,7 +1,24 @@
 @media screen and (max-width: 991px) {
-
+    .DefaultInfo header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 500px) {
 
+    .DefaultInfo .coin-rank {
+        font-size: 12px;
+    }
+
+    .DefaultInfo header{
+        flex-wrap: wrap;
+    }
+    .DefaultInfo .name-block{
+        width: 100%;
+    }
+    .DefaultInfo .price-block h3{
+        margin-top: 1em;
+    }
 }

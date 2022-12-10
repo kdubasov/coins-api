@@ -24,12 +24,12 @@ const CoinPage = ({setShowAlert}) => {
             <ErrorGetInfoAlert data={dataMain} />
 
             {//SEO
-                Object.values(dataMain.data).length &&
+                Boolean(Object.values(dataMain.data).length) &&
                 <SeoCoinPage data={dataMain.data} />
             }
 
             {
-                Object.values(dataMain.data).length?
+                Boolean(Object.values(dataMain.data).length)?
                     <MainData dataMain={dataMain.data} setShowAlert={setShowAlert} /> :
                     <SpinnerAlert />
             }

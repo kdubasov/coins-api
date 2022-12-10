@@ -58,13 +58,14 @@ const DateInfo = ({id,name}) => {
                 ref={inpurRef}
                 type={'date'}
                 onChange={handleSendDate}
+                placeholder={getLang() === "eng" ? "Set date" : "Выберите дату"}
             />
 
             {/*blcok with search result*/}
             {
                 (data[GL_MD] && Object.values(data[GL_MD]).length) ?
                     <DateInfoResult data={data[GL_MD]} date={date} />:
-                    <Alert className={"mt-2 p-2 small"}>
+                    <Alert className={"mt-2 small"}>
                         {getLang() === "eng" && `No information found for ${date}, please try another date.`}
                         {getLang() === "rus" && `Информация за ${date} не найдена, попробуйте другую дату.`}
                     </Alert>
