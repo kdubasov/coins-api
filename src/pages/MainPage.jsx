@@ -11,6 +11,7 @@ import PaginateNft from "../components/MainPage/PaginateNft/PaginateNft";
 import HoldCompanies from "../components/MainPage/HoldCompanies/HoldCompanies";
 import FeedbackForm from "../general-components/FeedbackForm/FeedbackForm";
 import BannerTop from "../static-components/MainPage/BannerTop/BannerTop";
+import SeoMainPage from "../SEO/SeoMainPage";
 
 
 const MainPage = ({setShowAlert,theme}) => {
@@ -19,6 +20,8 @@ const MainPage = ({setShowAlert,theme}) => {
 
     return (
         <>
+
+            <SeoMainPage />
 
             {/*static banner*/}
             <BannerTop theme={theme} />

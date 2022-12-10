@@ -1,10 +1,10 @@
 import React from 'react';
-import {Badge} from "react-bootstrap";
+import NotFoundPageInner from "../components/NotFoundPage/NotFoundPageInner";
 
 const NotFoundPage = () => {
     return (
         <div className={"NotFoundPage d-flex justify-content-center"}>
-            <h1 className={"mt-5"}><Badge bg={"danger"}>404</Badge></h1>
+            <NotFoundPageInner />
         </div>
     );
 };

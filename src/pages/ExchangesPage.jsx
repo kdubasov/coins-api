@@ -6,6 +6,7 @@ import {useApi} from "../hooks/useApi";
 import {GLOBAL_API_EXCHANGES_ID_DATA} from "../constants/ApiCommand";
 import ExchangesGraph from "../components/ExchangesPage/components/ExchangesGraph/ExchangesGraph";
 import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
+import SeoExchangesPage from "../SEO/SeoExchangesPage";
 
 const ExchangesPage = ({setShowAlert}) => {
 
@@ -17,6 +18,13 @@ const ExchangesPage = ({setShowAlert}) => {
 
     return (
         <div className={`ExchangesPage container py-5`}>
+
+            {/*SEO*/}
+            {
+                Object.values(mainData).length &&
+                <SeoExchangesPage data={mainData} />
+            }
+
             {
                 Object.values(mainData).length?
                     <>

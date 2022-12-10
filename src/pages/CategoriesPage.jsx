@@ -15,6 +15,7 @@ import CategoriesDataList from "../components/CategoriesPage/CategoriesDataList/
 //css
 import "../components/CategoriesPage/CategoriesPage.css";
 import "../components/CategoriesPage/CategoriesPageMedia.css";
+import SeoCategoriesPage from "../SEO/SeoCategoriesPage";
 
 
 const CategoriesPage = ({setShowAlert}) => {
@@ -85,6 +86,12 @@ const CategoriesPage = ({setShowAlert}) => {
                         }
                     </p>
                 </>
+            }
+
+            {/*SEO*/}
+            {
+                (getIdAndName() && getIdAndName()[GL_NAME]) &&
+                <SeoCategoriesPage data={getIdAndName()[GL_NAME]} />
             }
 
             {

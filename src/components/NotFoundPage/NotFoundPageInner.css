@@ -1,0 +1,31 @@
+.NotFoundPageInner{
+    width: 100%;
+    min-height: 80vh;
+    padding: 4em 0 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NotFoundPageInner .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*img*/
+.NotFoundPageInner .container img{
+    max-width: 100%;
+}
+
+.NotFoundPageInner .container .text-container{
+    width: 100%;
+    margin-top: 3em;
+    text-align: center;
+}
+
+/*text*/
+.NotFoundPageInner .container .text-container h1{
+    font-weight: 900;
+}

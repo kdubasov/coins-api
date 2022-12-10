@@ -6,6 +6,7 @@ import MainData from "../components/CoinPage/MainData";
 import ErrorGetInfoAlert from "../general-components/Alerts/ErrorGetInfoAlert/ErrorGetInfoAlert";
 import SpinnerAlert from "../general-components/Alerts/SpinnerAlert/SpinnerAlert";
 import TrendCoins from "../components/MainPage/TrendCoins/TrendCoins";
+import SeoCoinPage from "../SEO/SeoCoinPage";
 
 const CoinPage = ({setShowAlert}) => {
 
@@ -21,6 +22,11 @@ const CoinPage = ({setShowAlert}) => {
 
             {/*проверяет ошибки запроса*/}
             <ErrorGetInfoAlert data={dataMain} />
+
+            {//SEO
+                Object.values(dataMain.data).length &&
+                <SeoCoinPage data={dataMain.data} />
+            }
 
             {
                 Object.values(dataMain.data).length?

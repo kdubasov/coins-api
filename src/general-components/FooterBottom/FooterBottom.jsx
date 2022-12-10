@@ -100,8 +100,17 @@ const FooterBottom = ({warningShow = true}) => {
                             {getLang() === "eng" && " All Rights Reserved."}
                             {getLang() === "rus" && " Все права защищены."}
                             <br />
-                            {getLang() === "eng" && "Powered by CoinGecko."}
-                            {getLang() === "rus" && "При поддержке CoinGecko."}
+                            {getLang() === "eng" && "Powered by "}
+                            {getLang() === "rus" && "При поддержке "}
+                            <a
+                                className={"small"}
+                                href="https://www.coingecko.com/"
+                                rel={"noreferrer"}
+                                target={"_blank"}
+                                style={{color:"#326CF4",textDecoration:"underline"}}
+                            >
+                                CoinGecko
+                            </a>
                         </p>
                     </div>
                 </Container>

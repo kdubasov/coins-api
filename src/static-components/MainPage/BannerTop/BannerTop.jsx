@@ -24,13 +24,15 @@ const BannerTop = ({theme}) => {
                     <p className="small">
                         {
                             getLang() === "eng" &&
-                            "After authorization, you will be able to add coins," +
-                            " nft or exchanges to your favorites and track their changes in your personal account."
+                            "After authorization, you will be able to add coins, " +
+                            "nft or exchanges to your favorites and track their changes in your personal account. " +
+                            "No content on our web-site should be an solicitation or solicitation."
                         }
                         {
                             getLang() === "rus" &&
-                            "После авторизации вы сможете добавлять в избранное монеты, nft или биржи и" +
-                            " отслеживать их изменения у себя в личном кабинете."
+                            "После авторизации вы сможете добавлять в избранное монеты, nft или биржи и " +
+                            "отслеживать их изменения у себя в личном кабинете. " +
+                            "Никакой контент на нашем Сайте не является призывом или предложением."
                         }
                     </p>
 
