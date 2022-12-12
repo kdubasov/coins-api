@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--  created with sitemap generator https://octopus.do  -->
+
+    <url>
+        <loc>https://cryptoquick.ru</loc>
+        <loc>https://cryptoquick.ru/login</loc>
+        <loc>https://cryptoquick.ru/login</loc>
+        <loc>https://cryptoquick.ru/phoneLogin</loc>
+        <loc>https://cryptoquick.ru/coins/bitcoin</loc>
+        <loc>https://cryptoquick.ru/coins/ethereum</loc>
+        <loc>https://cryptoquick.ru/coins/tether</loc>
+        <loc>https://cryptoquick.ru/categories/EthereumEcosystem</loc>
+        <loc>https://cryptoquick.ru/exchanges/gdax</loc>
+        <loc>https://cryptoquick.ru/exchanges/gdax</loc>
+        <loc>https://cryptoquick.ru/coins/dogecoin</loc>
+        <loc>https://cryptoquick.ru/userProfile</loc>
+        <loc>https://cryptoquick.ru/briefcase</loc>
+        <loc>https://cryptoquick.ru/coins/binancecoin</loc>
+        <lastmod>2022-12-12</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>

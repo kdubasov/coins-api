@@ -28,6 +28,13 @@
     font-weight: 500;
     color: var(--black-op-15);
 }
+/*placeholder*/
+.DateInfo.dark .form-control::placeholder{
+    color: var(--white);
+}
+.DateInfo.light .form-control::placeholder{
+    color: var(--text-dark);
+}
 /*inputs styles*/
 .DateInfo .form-control,
 .DateInfo .form-control:focus{

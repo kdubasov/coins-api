@@ -41,7 +41,7 @@ const PaginateCoinsTr = ({elem,setShowAlert,theme}) => {
             </td>
 
             {/*current price*/}
-            <td>{elem[GL_CUR_PRICE] && elem[GL_CUR_PRICE]?.toLocaleString("RU") + '$'}</td>
+            <td>{elem[GL_CUR_PRICE] && elem[GL_CUR_PRICE]?.toLocaleString("RU",{maximumFractionDigits: 6}) + '$'}</td>
 
             {/*price change 1 hour*/}
             <PaginateChangeTd value={elem[GL_CH_PR_1H_PR]} text={'%'} />

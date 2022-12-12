@@ -37,7 +37,7 @@ const Developers = ({data}) => {
             </h4>
 
             {
-                data?
+                data &&
                     <>
                         <div className={'dev-blocks-container'}>
                             {getListItem(data[GL_DEV_STARS],getLang() === "eng" ? 'Stars' : 'Звезды')}
@@ -64,7 +64,6 @@ const Developers = ({data}) => {
                                 <DevGraph data={data[GL_COMM_GRAPH]} />
                         }
                     </>
-                :''
             }
 
         </div>

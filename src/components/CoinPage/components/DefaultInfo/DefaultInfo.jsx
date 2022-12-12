@@ -52,7 +52,11 @@ const DefaultInfo = ({dataMain,setShowAlert}) => {
                 <h3>
                     {//price
                         dataMain[GL_MD][GL_CUR_PRICE]["usd"] &&
-                        dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString() + "$"
+                        dataMain[GL_MD][GL_CUR_PRICE]["usd"].toLocaleString("RU", {
+                            style: 'currency',
+                            currency: 'USD',
+                            maximumFractionDigits: 7,
+                        })
                     }
                 </h3>
                 {/*btc price*/}
