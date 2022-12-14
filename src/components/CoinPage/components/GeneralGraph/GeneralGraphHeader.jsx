@@ -35,7 +35,7 @@ const GeneralGraphHeader = ({
 
                 <Button className={`but-${theme} border`} disabled={selectData === 3} onClick={() => handleChangeData(3,dataVolumes)}>
                     {getLang() === "eng" && "Volume"}
-                    {getLang() === "rus" && "Об. торгов."}
+                    {getLang() === "rus" && "Об. торг."}
                 </Button>
             </ButtonGroup>
 
@@ -82,7 +82,7 @@ const GeneralGraphHeader = ({
 
                 <Button className={`but-${theme} border`} disabled={timeInterval==='max'} onClick={() => setTimeInterval('max')}>
                     {getLang() === "eng" && "Max"}
-                    {getLang() === "rus" && "Максимум"}
+                    {getLang() === "rus" && "Макс."}
                 </Button>
             </ButtonGroup>
         </header>

@@ -60,10 +60,11 @@ const NavbarTopOffcanvas = ({show,handleClose,user,handleLogout}) => {
                 </div>
 
                 {/*close button*/}
-                <CloseButton
-                    variant={getTheme(true) === "dark" ? "white" : "black"}
-                    onClick={handleClose}
-                />
+                {
+                    getTheme(true) === "dark" ?
+                        <CloseButton variant={"white"} onClick={handleClose}/>:
+                        <CloseButton onClick={handleClose}/>
+                }
             </Offcanvas.Header>
 
             <Offcanvas.Body>

@@ -74,7 +74,7 @@ const GeneralGraph = ({id,name,symbol}) => {
 
             <h4>
                 {getLang() === "eng" && `${name} Price Chart (${symbol}/USD)`}
-                {getLang() === "rus" && ``}
+                {getLang() === "rus" && `График цены ${name} в (${symbol}/USD)`}
             </h4>
             <p className="small">
                 {getLang() === "rus" && "Послднее обновление "}

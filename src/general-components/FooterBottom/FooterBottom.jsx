@@ -6,6 +6,7 @@ import {getLang} from "../../functions/Lang/getLang";
 //css
 import "./FooterBottom.css";
 import "./FooterBottomMedia.css";
+import {TickerTape} from "react-ts-tradingview-widgets";
 
 const FooterBottom = ({warningShow = true}) => {
 
@@ -54,6 +55,8 @@ const FooterBottom = ({warningShow = true}) => {
                     </p>
                 </Container>
             </div>
+
+            <TickerTape displayMode={"compact"} colorTheme={getTheme(true)}></TickerTape>
 
             <div className={`FooterBottom ${theme}`}>
 

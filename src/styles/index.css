@@ -18,9 +18,12 @@
     --blue-main-op50: rgba(50, 108, 244, 0.50);
 
     /*dark theme*/
-    --dark-bg: #1A1A1A;
+    /*так было в макете*/
+    /*--dark-bg: #1A1A1A;*/
+    --dark-bg: #161616;
     --border-nav-dark:#373737;
-    --bg-search-input-dark: #272727;
+    /*!*--bg-search-input-dark: #272727;*! так было в макете*/
+    --bg-search-input-dark:#1e222d;
 
     /*light theme*/
     --text-dark: #1A1B27;
