@@ -56,7 +56,10 @@ const FooterBottom = ({warningShow = true}) => {
                 </Container>
             </div>
 
-            <TickerTape displayMode={"compact"} colorTheme={getTheme(true)}></TickerTape>
+            {
+                warningShow &&
+                <TickerTape displayMode={"compact"} colorTheme={getTheme(true)}></TickerTape>
+            }
 
             <div className={`FooterBottom ${theme}`}>
 
