@@ -11,6 +11,7 @@ import {getTheme} from "../../../functions/Theme/getTheme";
 //css
 import "./TopLoseCoins.css";
 import "./TopLoseCoinsMedia.css";
+import {Timeline} from "react-ts-tradingview-widgets";
 
 const TopLoseCoins = () => {
 
@@ -79,6 +80,16 @@ const TopLoseCoins = () => {
                     :
                     <SpinnerAlert />
             }
+
+            <br />
+            <Timeline
+                colorTheme={getTheme(true)}
+                feedMode="market"
+                displayMode={"adaptive"}
+                market="crypto"
+                height={400}
+                width="100%"
+            />
         </div>
     );
 };

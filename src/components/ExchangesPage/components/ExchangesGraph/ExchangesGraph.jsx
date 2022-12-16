@@ -2,7 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {Alert} from "react-bootstrap";
 import {useApi} from "../../../../hooks/useApi";
 import {GlOBAL_API_EXCHANGES_ID_GRAPH} from "../../../../constants/ApiCommand";
-import {Area, AreaChart, Brush, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {
+    Brush,
+    CartesianGrid,
+    Line,
+    LineChart,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis
+} from "recharts";
 import {getGraphDate} from "../../../../functions/getGraphDate";
 import ExchangesGraphSelect from "./ExchangesGraphSelect";
 import {getNumRedAfterDoot} from "../../../../functions/getNumRedAfterDoot";
@@ -80,7 +89,7 @@ const ExchangesGraph = ({id}) => {
             </div>
 
             <ResponsiveContainer className={'exch-graph-container'} width="100%" height={300}>
-                <AreaChart
+                <LineChart
                     data={dataObjGraph}
                 >
                     <CartesianGrid
@@ -96,13 +105,13 @@ const ExchangesGraph = ({id}) => {
                     />
                     <Tooltip cursor={{ stroke: "#326CF4", strokeWidth: 1, }} />
                     <XAxis dataKey="date" fontSize={10} />
-                    <Area type="natural" strokeWidth={2} dataKey="value" stroke="#0d6efd" fill="#326CF4" />
+                    <Line type="natural" strokeWidth={3} dataKey="value" stroke="#0d6efd" />
                     <Brush
                         height={12}
                         fill={getTheme(true) === "dark" ? "#1A1A1A" : "#FFFFFF"}
                         stroke={"#326CF4"}
                     />
-                </AreaChart>
+                </LineChart>
             </ResponsiveContainer>
         </div>
     );

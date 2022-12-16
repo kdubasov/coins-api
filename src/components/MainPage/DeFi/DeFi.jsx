@@ -27,6 +27,7 @@ const DeFi = () => {
 
             {/*defi data*/}
             <DeFiMainData />
+
             {/*feedback form with main data*/}
             <FeedbackForm showInfo={true} />
         </div>
