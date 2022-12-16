@@ -1,11 +1,19 @@
+@media screen and (max-width: 991px) {
+    .GeneralGraph .adv-chart-container{
+        height: 400px;
+    }
+}
 @media screen and (max-width: 768px) {
     .GeneralGraph{
         margin-bottom: 0;
     }
     .gen-graph-cont{
-        display: none;
+        display: none !important;
     }
     .GeneralGraph .gen-graph-cont-mobile{
         display: flex;
+    }
+    .GeneralGraph .adv-chart-container{
+        height: 300px;
     }
 }

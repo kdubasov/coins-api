@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useApi} from "../../../../hooks/useApi";
 import {GLOBAL_API_COIN_MARKET_CHART} from "../../../../constants/ApiCommand";
-import {Alert} from "react-bootstrap";
+import {Alert, Button} from "react-bootstrap";
 import {
     Brush,
     Area,
@@ -21,6 +21,7 @@ import {getLang} from "../../../../functions/Lang/getLang";
 //css
 import "./GeneralGraph.css";
 import "./GeneralGraphMedia.css";
+import {AdvancedRealTimeChart} from "react-ts-tradingview-widgets";
 
 const GeneralGraph = ({id,name,symbol}) => {
 
@@ -28,8 +29,12 @@ const GeneralGraph = ({id,name,symbol}) => {
     // 1 - 90 days from current time = hourly data
     // above 90 days from current time = daily data (00:00 UTC)
 
+    //выбор показа цены рын кап или объема торгов
     const [showValue,setShowValue] = useState([])
     // console.log(showValue)
+
+    //выбор показа графика
+    const [showAdvGraph,setShowAdvGraph] = useState(false);
 
     //interval for fetch from api (default = 1day)
     const [timeInterval,setTimeInterval] = useState(1)
@@ -96,6 +101,20 @@ const GeneralGraph = ({id,name,symbol}) => {
                 />
             </div>
 
+            {/*кнопка для переключения графиков*/}
+            <div className="gen-graph-cont w-100 d-flex justify-content-end">
+                <Button
+                    onClick={() => setShowAdvGraph(!showAdvGraph)}
+                    className={`but-${getTheme(true)} border fw-light`}
+                >
+                    {
+                        showAdvGraph ?
+                            getLang() === "eng" ? "Hide more detailed graph" : "Скрыть более подробный график":
+                            getLang() === "eng" ? "Show more detailed graph" : "Показать более подробный график"
+                    }
+                </Button>
+            </div>
+
             {//alert if value for graph false
                 showValue.length <= 1 &&
                 <Alert className={"p-2 small"}>
@@ -109,7 +128,7 @@ const GeneralGraph = ({id,name,symbol}) => {
                     {
                         getLang() === "rus" &&
                         "Для отображения графика вы должны открыть приложение " +
-                        "на компбютере или планшете."
+                        "на компьютере или планшете."
                     }
                     {
                         getLang() === "eng" &&
@@ -119,40 +138,51 @@ const GeneralGraph = ({id,name,symbol}) => {
                 </h6>
             </div>
 
-            <ResponsiveContainer className={'gen-graph-cont mt-3 mb-3'} width="100%" height={400}>
-                <AreaChart
-                    //----------GRAPH----------
-                    className={`graph-coin ${getTheme(true)}`}
-                    data={showValue}
-                >
-                    <defs>
-                        <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="rgba(50, 108, 244, 0.75)" stopOpacity={1}/>
-                            <stop offset="95%" stopColor="#326CF4" stopOpacity={0}/>
-                        </linearGradient>
-                    </defs>
-                    <CartesianGrid
-                        strokeDasharray="5 0"
-                        stroke={getTheme(true) === "dark" ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.15)"}
-                    />
-                    <YAxis
-                        fontSize={12}
-                        width={100}
-                        orientation={"left"}
-                        hide={false}
-                        //тут показываем мин и макс значение рафика
-                        domain={['dataMin', 'dataMax']}
-                    />
-                    <Tooltip cursor={{ stroke: "#326CF4", strokeWidth: 2, }} />
-                    <XAxis dataKey="date" fontSize={12} />
-                    <Area dot={false} type="natural" strokeWidth={2} dataKey="value" fill="url(#gradient)" stroke="#326CF4" />
-                    <Brush
-                        height={12}
-                        fill={getTheme(true) === "dark" ? "#1A1A1A" : "#FFFFFF"}
-                        stroke={"#326CF4"}
-                    />
-                </AreaChart>
-            </ResponsiveContainer>
+            {
+                showAdvGraph &&
+                <div className={'adv-chart-container mt-4 mb-4'}>
+                    <AdvancedRealTimeChart theme={getTheme(true)} autosize symbol={symbol?.toUpperCase()+"USD"} />
+                </div>
+            }
+
+
+            {
+                !showAdvGraph &&
+                <ResponsiveContainer className={'gen-graph-cont mt-3 mb-3'} width="100%" height={400}>
+                    <AreaChart
+                        //----------GRAPH----------
+                        className={`graph-coin ${getTheme(true)}`}
+                        data={showValue}
+                    >
+                        <defs>
+                            <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="rgba(50, 108, 244, 0.75)" stopOpacity={1}/>
+                                <stop offset="95%" stopColor="#326CF4" stopOpacity={0}/>
+                            </linearGradient>
+                        </defs>
+                        <CartesianGrid
+                            strokeDasharray="5 0"
+                            stroke={getTheme(true) === "dark" ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.15)"}
+                        />
+                        <YAxis
+                            fontSize={12}
+                            width={100}
+                            orientation={"left"}
+                            hide={false}
+                            //тут показываем мин и макс значение рафика
+                            domain={['dataMin', 'dataMax']}
+                        />
+                        <Tooltip cursor={{ stroke: "#326CF4", strokeWidth: 2, }} />
+                        <XAxis dataKey="date" fontSize={12} />
+                        <Area dot={false} type="natural" strokeWidth={2} dataKey="value" fill="url(#gradient)" stroke="#326CF4" />
+                        <Brush
+                            height={12}
+                            fill={getTheme(true) === "dark" ? "#1A1A1A" : "#FFFFFF"}
+                            stroke={"#326CF4"}
+                        />
+                    </AreaChart>
+                </ResponsiveContainer>
+            }
         </div>
     );
 };
